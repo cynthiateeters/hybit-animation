@@ -279,6 +279,13 @@ Work in this order:
 - Specificity: Inline styles override everything
 - **Only exception**: User grants explicit permission for specific use case
 
+### Local server rules
+- ❌ **NEVER start a server with bash commands (python, node, php, etc.)**
+- ✅ User manually starts "Live Server" themselves
+- ✅ Testing URL is ALWAYS: `http://127.0.0.1:5500/index.html`
+- ✅ Both user and Claude can access this URL for testing
+- ✅ Use WebFetch tool to check pages at this URL when testing
+
 ---
 
 ## Why this workflow matters

@@ -100,20 +100,12 @@ This workflow applies to:
 
 ### Running the site locally
 
-Since this is a static site with no build process, use any local server:
+**IMPORTANT: User starts Live Server manually**
 
-```bash
-# Python 3 (recommended for simplicity)
-python3 -m http.server 8000
-
-# Node.js
-npx http-server
-
-# PHP
-php -S localhost:8000
-```
-
-Then open `http://localhost:8000`
+- User runs "Live Server" from their IDE/editor
+- Site is accessible at: `http://127.0.0.1:5500/index.html`
+- Both user and Claude can test at this URL
+- **Do NOT start server with bash commands** (user handles this)
 
 **Important:** Do not open `index.html` directly via `file://` protocol - the easter egg feature loads JSON data via fetch and requires a server.
 

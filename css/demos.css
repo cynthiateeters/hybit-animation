@@ -1,0 +1,158 @@
+/* ============================================================================
+   HAP's Learning Lab - Interactive Demo Styles
+
+   Demo-specific CSS for interactive demonstrations throughout the learning lab.
+   This file is loaded after style.css for demo components.
+   ============================================================================ */
+
+/* Three-Column Animation Comparison Demo
+   ========================================= */
+
+.demo-section {
+    margin: 2rem 0;
+}
+
+.three-column-demo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.demo-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: hsl(0, 0%, 98%);
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 90%);
+}
+
+.demo-column p {
+    margin: 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: hsl(0, 0%, 40%);
+}
+
+/* Demo Buttons
+   ============ */
+
+.button-instant,
+.button-smooth {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: hsl(32, 76%, 63%);
+    color: hsl(0, 0%, 100%);
+    transform: scale(1);
+}
+
+/* Button without transition - instant change */
+.button-instant:hover {
+    background: hsl(32, 76%, 53%);
+    transform: scale(1.05);
+}
+
+.button-instant:active {
+    transform: scale(0.98);
+}
+
+/* Button with smooth transition */
+.button-smooth {
+    transition: background 300ms ease-out,
+                transform 300ms ease-out;
+}
+
+.button-smooth:hover {
+    background: hsl(32, 76%, 53%);
+    transform: scale(1.05);
+}
+
+.button-smooth:active {
+    transform: scale(0.98);
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .button-smooth {
+        transition: none;
+    }
+}
+
+/* Simulated reduced motion (when checkbox is checked) */
+.demo-reduced-motion .button-smooth {
+    transition: none;
+}
+
+/* Checkbox Control
+   ================ */
+
+.demo-column label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.demo-column input[type="checkbox"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+}
+
+/* Focus states for accessibility */
+.button-instant:focus-visible,
+.button-smooth:focus-visible {
+    outline: 3px solid hsl(32, 76%, 63%);
+    outline-offset: 3px;
+}
+
+.demo-column input[type="checkbox"]:focus-visible {
+    outline: 3px solid hsl(32, 76%, 63%);
+    outline-offset: 2px;
+}
+
+/* Responsive: Stack vertically on mobile
+   ====================================== */
+
+@media (max-width: 768px) {
+    .three-column-demo {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .demo-column {
+        padding: 1rem;
+    }
+}
+
+/* Demo Section Heading and Context
+   ================================= */
+
+.demo-section h2 {
+    margin-bottom: 0.5rem;
+}
+
+.demo-section .demo-context {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: hsl(32, 76%, 95%);
+    border-left: 4px solid hsl(32, 76%, 63%);
+    border-radius: 4px;
+}
+
+.demo-section .demo-context p {
+    margin: 0;
+}
+
+.demo-section .demo-context strong {
+    color: hsl(32, 76%, 35%);
+}
