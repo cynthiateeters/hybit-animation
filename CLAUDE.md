@@ -55,6 +55,47 @@ This project includes 7 mandatory Claude Skills in `.claude/skills/`:
 
 See "Using Claude Skills effectively" section below for detailed timing and usage.
 
+## 🚨 CRITICAL: Implementation workflow
+
+**READ THIS BEFORE WRITING ANY HTML FILES.**
+
+### Mandatory workflow for all 7 HTML files
+
+This project uses a **plan → approve → implement → validate** workflow:
+
+1. **Create implementation plan** (markdown report) BEFORE writing HTML
+2. **Get user approval** on the plan
+3. **Review relevant Skills** to understand requirements
+4. **Write HTML** following approved plan
+5. **Validate with Skills** after writing
+6. **Manual testing** in browser
+7. **Mark complete** and move to next file
+
+### Critical rules
+
+- ❌ **Never write HTML without an approved implementation plan**
+- ❌ **Never skip post-writing skill validation**
+- ✅ **Always create plan in `reports/implementation-plans/` directory**
+- ✅ **Always get user approval before proceeding to implementation**
+
+### Why this workflow exists
+
+- Prevents rework by planning thoroughly first
+- Catches issues early through skill validation
+- Ensures all requirements are met
+- Documents decisions and reasoning
+- Maintains consistent quality across all files
+
+### Complete workflow documentation
+
+**See `.claude/IMPLEMENTATION-WORKFLOW.md` for detailed step-by-step instructions.**
+
+This workflow applies to:
+- index.html (Hub page)
+- stations/station1.html through station6.html (all 6 stations)
+
+**Total**: 7 HTML files requiring implementation plans and validation.
+
 ## Development commands
 
 ### Running the site locally
@@ -505,6 +546,8 @@ Save reports to `/reports/` directory with descriptive names.
 - **Remove license headers** - Multi-license structure protects code (MIT), character (proprietary), and content (proprietary)
 - **Use `file://` protocol for testing** - Easter egg fetch requires server
 - **Add user-controlled content to easter egg** - XSS prevention via whitelist only
+- **Use `<style>` tags in HTML** - All CSS goes in separate .css files
+- **Use inline styles (`style=""`)** - Must get explicit permission first, use CSS classes instead
 
 ### Always
 
@@ -513,6 +556,8 @@ Save reports to `/reports/` directory with descriptive names.
 - **Test easter egg after modifying JSONC** - JSON parse errors break feature silently
 - **Use Cloudinary for images** - Automatic optimization and format selection
 - **Follow sentence case for headers** - Per markdown standards in global CLAUDE.md
+- **Use CSS classes, not inline styles** - No `style=""` attributes unless explicit permission granted
+- **No `<style>` tags in HTML** - All CSS in separate .css files
 
 ## Dependencies
 
