@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │  HAP LEARNING LAB - COMPLETE EXAMPLE STATION                         │
+    │                                                                      │
+    │  PURPOSE: Fully-realized station showing all patterns in action     │
+    │                                                                      │
+    │  This station demonstrates:                                         │
+    │  • Complete HTML structure (all 6 required sections)                │
+    │  • Realistic HAP voice (not placeholder text)                       │
+    │  • Working code examples (tested and copy-paste ready)              │
+    │  • Interactive elements (challenge with solution reveal)            │
+    │  • Before/after comparison patterns                                 │
+    │  • HAP note callouts with personal stories                          │
+    │                                                                      │
+    │  Use this as a REFERENCE when creating your own stations.           │
+    │  Compare your stations to this example for consistency.             │
+    └─────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAP's Learning Lab - Station 1: Responsive Design</title>
+    <meta name="description"
+        content="Join HAP as he learns about responsive design with Prof. Teeters - building websites that work on any screen size.">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- SECTION 1: Skip link (accessibility requirement) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- SECTION 2: Header with HAP avatar and introduction -->
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP (HyBit A. ProtoBot) studying on his laptop" width="200" height="200" decoding="async"
+                        fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: Responsive Design</h1>
+                    <p class="subtitle">Learning to build websites that work on any screen size</p>
+                </div>
+            </div>
+
+            <!-- HAP's introduction - demonstrates authentic first-person voice -->
+            <div class="intro-box">
+                <p><strong>Welcome to Station 1!</strong> I'm HAP, and when Prof. Teeters first showed me a website that looked perfect on both my phone and my laptop, I was confused. How could the SAME HTML create different layouts? Prof. Teeters taught me about responsive design, and once I understood it, my mind was BLOWN 🔬 Now I can build sites that adapt to any screen! 🟠</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECTION 3: Top navigation -->
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+        <div class="page-position" data-page="1">Station 1 of 6</div>
+    </nav>
+
+    <!-- SECTION 4: Main content -->
+    <main id="main-content" class="content-container">
+
+        <!-- What You'll Learn Section (EXACTLY 3 insight cards) -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
+
+            <div class="overview-grid mt-2">
+                <!-- Insight Card 1 -->
+                <div class="insight-card">
+                    <h3><span class="insight-icon">📱</span> Mobile-First Approach</h3>
+                    <p class="stat-large">320px → 1920px</p>
+                    <p><strong>One codebase, infinite screen sizes</strong></p>
+                    <p>When I first started, I built everything for desktop and tried to "shrink it down" for mobile. Prof. Teeters showed me that starting with mobile and building UP is way easier!</p>
+                </div>
+
+                <!-- Insight Card 2 -->
+                <div class="insight-card">
+                    <h3><span class="insight-icon">🎯</span> Media Queries</h3>
+                    <p class="stat-large stat-teal">@media (min-width: 768px)</p>
+                    <p><strong>CSS that adapts automatically</strong></p>
+                    <p>I learned that media queries let me write CSS that only applies at certain screen sizes. It felt like magic when my layout rearranged itself!</p>
+                </div>
+
+                <!-- Insight Card 3 -->
+                <div class="insight-card">
+                    <h3><span class="insight-icon">📐</span> Flexible Layouts</h3>
+                    <p class="stat-large stat-brown">Flexbox & Grid</p>
+                    <p><strong>Layouts that flow naturally</strong></p>
+                    <p>Prof. Teeters taught me to stop using fixed widths everywhere. Percentages, flexbox, and grid make layouts that WANT to be responsive!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Teaching Section 1: The Confusion -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>My Responsive Design Confusion</h2>
+                <p class="mb-2">When I first tried responsive design, I made everything tiny on mobile. Prof. Teeters explained: "Start with mobile, then ADD complexity for larger screens."</p>
+
+                <!-- Before/After comparison - shows HAP's learning journey -->
+                <div class="warning-box mt-2">
+                    <h3>🟠 HAP's Old Way vs. What I Learned</h3>
+
+                    <p><strong class="text-error">❌ WRONG: How I Used to Do It</strong></p>
+                    <pre><code class="language-css">/* I started with desktop and tried to fix mobile */
+.container {
+  width: 1200px;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+    /* Ugh, now I have to override everything! */
+  }
+}</code></pre>
+
+                    <p class="mt-1"><strong class="text-success">✅ RIGHT: What Prof. Teeters Taught Me</strong></p>
+                    <pre><code class="language-css">/* Start with mobile - it just works! */
+.container {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Add complexity ONLY when there's room */
+@media (min-width: 768px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2.5rem;
+  }
+}</code></pre>
+
+                    <p class="mt-1">Notice how the mobile styles are simple and clean? Then I ENHANCE for larger screens. This is called "mobile-first" and it's way less frustrating!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HAP Note Callout - personal learning story -->
+        <section class="content-section">
+            <div class="hap-note-callout mt-2">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit,a_hflip/v1759331571/HyBit_holding_a_paintbrush_ycfapu.jpg"
+                    alt="HAP excited about his discovery"
+                    width="150"
+                    height="150"
+                    class="hap-note-image"
+                    decoding="async"
+                    loading="lazy">
+                <div class="hap-note-content">
+                    <h3>HAP's Breakthrough Moment:</h3>
+                    <p>I spent HOURS trying to make my desktop layout work on mobile. Prof. Teeters watched me struggle, then said: "HAP, why don't you start with the mobile version first?"</p>
+                    <p class="mt-1">It felt backwards at first, but once I tried it, everything clicked. Mobile layouts are simpler (one column, stacked). Desktop layouts are complex (multiple columns, side-by-side). Starting simple and adding complexity is SO much easier than starting complex and removing things!</p>
+                    <p class="mt-1"><strong>Now I always start with mobile.</strong> 🟠</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Teaching Section 2: Media Queries -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Understanding Media Queries</h2>
+                <p class="mb-2">Prof. Teeters explained media queries like this: "Think of them as conditional styling - CSS that only applies when certain conditions are true."</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Basic media query structure:</div>
+                    <pre><code class="language-css">/* Base styles (mobile) - no media query needed */
+.card {
+  width: 100%;
+  padding: 1rem;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .card {
+    width: 33.333%;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">I learned that mobile styles don't need a media query - they're the default! Then you ADD styling for larger screens. This is the mobile-first approach.</p>
+                </div>
+
+                <h3 class="mt-2">Common Breakpoints</h3>
+                <p class="mt-1">Prof. Teeters taught me these standard breakpoints, but she always says: "Test YOUR content to find natural breaking points."</p>
+
+                <div class="hap-info-grid mt-2">
+                    <div class="info-item">
+                        <h4>📱 Mobile</h4>
+                        <p><strong>320px - 767px</strong></p>
+                        <p>Default (no media query)</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>📱 Tablet</h4>
+                        <p><strong>768px - 1023px</strong></p>
+                        <p><code>@media (min-width: 768px)</code></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>💻 Desktop</h4>
+                        <p><strong>1024px - 1439px</strong></p>
+                        <p><code>@media (min-width: 1024px)</code></p>
+                    </div>
+                    <div class="info-item">
+                        <h4>🖥️ Large Desktop</h4>
+                        <p><strong>1440px+</strong></p>
+                        <p><code>@media (min-width: 1440px)</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Try It Yourself Challenge -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Try It Yourself - Make a Responsive Card</h2>
+
+                <p class="mb-2"><strong>Your Mission:</strong> Create a card that stacks vertically on mobile but displays side-by-side on desktop.</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Starting HTML:</div>
+                    <pre><code class="language-html">&lt;div class="card"&gt;
+  &lt;img src="image.jpg" alt="Example image"&gt;
+  &lt;div class="card-content"&gt;
+    &lt;h3&gt;Card Title&lt;/h3&gt;
+    &lt;p&gt;Card description text.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h3 class="mt-2">Your Challenge:</h3>
+                <ol class="mt-1">
+                    <li>Write mobile-first CSS (stacked layout)</li>
+                    <li>Add a media query for screens 768px and wider</li>
+                    <li>Use flexbox to make image and content side-by-side</li>
+                </ol>
+
+                <button type="button"
+                        class="btn-primary mt-2"
+                        id="showSolution"
+                        onclick="this.style.background='hsl(32, 76%, 55%)'"
+                        onmouseover="this.style.background='hsl(32, 76%, 55%)'"
+                        onmouseout="this.style.background='hsl(32, 76%, 63%)'"
+                        aria-expanded="false"
+                        aria-controls="solutionContent">
+                    Show Solution
+                </button>
+
+                <div id="solutionContent" style="display: none;">
+                    <p class="mt-2"><strong class="text-success">✅ HAP's Solution:</strong></p>
+
+                    <div class="prompt-box mt-1">
+                        <div class="prompt-label">Mobile-first CSS:</div>
+                        <pre><code class="language-css">/* Mobile: Everything stacks (default) */
+.card {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+/* Desktop: Side-by-side with flexbox */
+@media (min-width: 768px) {
+  .card {
+    display: flex;
+  }
+
+  .card img {
+    width: 40%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    width: 60%;
+  }
+}</code></pre>
+                    </div>
+
+                    <p class="mt-1"><strong>How it works:</strong></p>
+                    <ul class="mt-1">
+                        <li><strong>Mobile (default):</strong> Everything stacks naturally because block elements are 100% wide</li>
+                        <li><strong>Desktop (768px+):</strong> Flexbox makes items sit side-by-side, image takes 40%, content takes 60%</li>
+                        <li><strong>Why it's better:</strong> Mobile works without ANY media query! We only add code for desktop.</li>
+                    </ul>
+                </div>
+
+                <script>
+                    document.getElementById('showSolution').addEventListener('click', function() {
+                        const solution = document.getElementById('solutionContent');
+                        if (solution.style.display === 'none') {
+                            solution.style.display = 'block';
+                            this.textContent = 'Hide Solution';
+                            this.setAttribute('aria-expanded', 'true');
+                        } else {
+                            solution.style.display = 'none';
+                            this.textContent = 'Show Solution';
+                            this.setAttribute('aria-expanded', 'false');
+                        }
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- Quick Reference Section -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">Quick Reference</h2>
+
+            <div class="tips-grid mt-2">
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div>
+                        <h3>Start Mobile-First</h3>
+                        <p>Write base styles for mobile, then ADD complexity with media queries for larger screens.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div>
+                        <h3>Common Breakpoints</h3>
+                        <p>768px (tablet), 1024px (desktop), 1440px (large desktop). But test YOUR content to find natural breaks!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div>
+                        <h3>Use Relative Units</h3>
+                        <p><code>rem</code>, <code>em</code>, <code>%</code>, <code>vw</code> scale better than <code>px</code>.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Test Real Devices</h3>
+                        <p>DevTools is great, but nothing beats testing on an actual phone or tablet!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">5</div>
+                    <div>
+                        <h3>Flexible Images</h3>
+                        <p><code>max-width: 100%</code> on images makes them scale down automatically.</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">6</div>
+                    <div>
+                        <h3>Viewport Meta Tag</h3>
+                        <p>Always include: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 5: Bottom navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+        <a href="station2.html" class="nav-link next-link">Next: Station 2 →</a>
+    </nav>
+
+    <!-- SECTION 6: Footer -->
+    <footer class="footer">
+        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
+        <p class="footer-reminder">
+            Remember: Start with mobile, then enhance for larger screens. Mobile-first is the way! 🟠 — HAP
+        </p>
+        <div class="footer-copyright">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759331571/HAP-learner_dvehmt.jpg"
+                alt="Illustration of HAP the apprentice learner with his study book and tools"
+                class="footer-hybit"
+                width="80"
+                height="80"
+                decoding="async"
+                loading="lazy">
+            <div>
+                <p>HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters. Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Easter egg system -->
+    <script src="../js/easter-egg.js"></script>
+
+    <!-- Syntax highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+
+    <!-- Copy button functionality (required for code examples) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add copy buttons to all code blocks in .prompt-box
+            document.querySelectorAll('.prompt-box pre').forEach(pre => {
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                button.addEventListener('click', async () => {
+                    const code = pre.querySelector('code').textContent;
+                    try {
+                        await navigator.clipboard.writeText(code);
+                        button.classList.add('copied');
+                        button.textContent = 'Copied';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+
+                pre.appendChild(button);
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--
+    ┌─────────────────────────────────────────────────────────────────────┐
+    │  HAP LEARNING LAB TEMPLATE - STATION REFERENCE DOCUMENT             │
+    │                                                                      │
+    │  PURPOSE: Reference documentation showing station HTML structure    │
+    │                                                                      │
+    │  ⚠️  DO NOT COPY THIS FILE TO CREATE NEW STATIONS                   │
+    │                                                                      │
+    │  This file is a REFERENCE showing available HTML components and     │
+    │  structure. Each learning lab has exactly 6 stations.               │
+    │                                                                      │
+    │  TO CUSTOMIZE YOUR LEARNING LAB:                                    │
+    │  1. Edit the existing station1.html - station6.html files           │
+    │  2. Replace placeholders like [STATION_TITLE] with your content     │
+    │  3. Use this file as a reference for available components           │
+    │                                                                      │
+    │  The underscore prefix (_template-) indicates this is a reference   │
+    │  file, not an actual station page for your learning lab.            │
+    └─────────────────────────────────────────────────────────────────────┘
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAP's Learning Lab - Station [N]: [STATION_TITLE]</title>
+    <meta name="description"
+        content="Join HAP as he learns about [BRIEF_DESCRIPTION].">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="icon" type="image/png" sizes="192x192"
+        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="header-content">
+            <div class="hybit-welcome">
+                <div class="hybit-avatar">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP (HyBit A. ProtoBot) studying on his laptop" width="200" height="200" decoding="async"
+                        fetchpriority="high">
+                </div>
+                <div>
+                    <h1>HAP's Learning Lab: [STATION_TITLE]</h1>
+                    <p class="subtitle">[SUBTITLE]</p>
+                </div>
+            </div>
+
+            <!-- ┌─────────────────────────────────────────────────────────────────┐
+                 │ VOICE PATTERN: HAP's Station Introduction                       │
+                 │                                                                  │
+                 │ Structure:                                                       │
+                 │   1. Greeting: "Welcome to Station N!"                          │
+                 │   2. Confusion/Problem: What HAP didn't understand initially    │
+                 │   3. Learning moment: What Prof. Teeters taught                 │
+                 │   4. Enthusiasm: HAP's excitement about the discovery           │
+                 │   5. Emoji: End with 🟠                                          │
+                 │                                                                  │
+                 │ WRONG voice examples:                                           │
+                 │   ❌ "In this tutorial, you will learn..." (instructional)      │
+                 │   ❌ "This station teaches..." (third-person, not HAP's voice)  │
+                 │   ❌ "Let's explore..." (collective "we", not HAP's "I")        │
+                 │   ❌ "Obviously, the answer is..." (not humble)                 │
+                 │                                                                  │
+                 │ RIGHT voice examples:                                           │
+                 │   ✅ "When I first tried [X], I thought..."                     │
+                 │   ✅ "Prof. Teeters showed me..."                               │
+                 │   ✅ "I used to make this mistake..."                           │
+                 │   ✅ "My mind was BLOWN when..." (enthusiasm)                   │
+                 │                                                                  │
+                 │ See stations/station6-example.html for complete example         │
+                 └─────────────────────────────────────────────────────────────────┘ -->
+            <div class="intro-box">
+                <p><strong>Welcome to Station [N]!</strong> I'm HAP, and when Prof. Teeters first showed me [TOPIC], I was [CONFUSED/AMAZED/OVERWHELMED]. [What HAP didn't understand]. But Prof. Teeters explained [KEY INSIGHT], and once I got it, my mind was BLOWN 🔬 [What HAP can now do]. 🟠</p>
+            </div>
+        </div>
+    </header>
+
+    <nav aria-label="Page navigation" class="page-navigation top-nav">
+        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+        <div class="page-position" data-page="[N]">Station [N] of 6</div>
+    </nav>
+
+    <main id="main-content" class="content-container">
+
+        <!-- Introduction Section -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">[SECTION_HEADING]</h2>
+
+            <div class="intro-box">
+                <p><strong>HAP's Discovery:</strong> [HAP's first-person narrative about learning this concept from Prof. Teeters]</p>
+            </div>
+
+            <!-- ┌─────────────────────────────────────────────────────────────────┐
+                 │ PATTERN: Insight Cards (EXACTLY 3)                              │
+                 │                                                                  │
+                 │ Each card shows what HAP learned from Prof. Teeters.            │
+                 │ MUST use first-person voice: "I learned...", "I discovered..."  │
+                 │                                                                  │
+                 │ Card structure:                                                  │
+                 │   • Icon emoji (visual interest)                                │
+                 │   • Heading (what was learned)                                  │
+                 │   • Stat (key metric or fact)                                   │
+                 │   • Emphasis (one-sentence summary)                             │
+                 │   • Explanation (HAP's personal learning story)                 │
+                 │                                                                  │
+                 │ WRONG voice examples:                                           │
+                 │   ❌ "ViewBox is important for SVG scaling."                    │
+                 │      (no personal voice, generic statement)                     │
+                 │   ❌ "You need to understand viewBox."                          │
+                 │      (instructional, not personal)                              │
+                 │   ❌ "This tutorial covers viewBox."                            │
+                 │      (third-person, not HAP's voice)                            │
+                 │                                                                  │
+                 │ RIGHT voice examples:                                           │
+                 │   ✅ "When I first saw viewBox, I had no idea what those       │
+                 │       numbers meant."                                           │
+                 │   ✅ "Prof. Teeters explained it like a camera viewfinder,     │
+                 │       and suddenly it clicked!"                                 │
+                 │   ✅ "I used to avoid viewBox because it confused me."         │
+                 │                                                                  │
+                 │ See stations/station6-example.html for complete examples        │
+                 └─────────────────────────────────────────────────────────────────┘ -->
+            <!-- Key Insights Cards (3 cards) -->
+            <div class="overview-grid mt-2">
+                <div class="insight-card">
+                    <h3><span class="insight-icon">[EMOJI]</span> [What HAP Learned]</h3>
+                    <p class="stat-large">[Key Metric or Statistic]</p>
+                    <p><strong>[One-sentence summary of importance]</strong></p>
+                    <!-- Personal learning story - use "I" perspective: -->
+                    <p>When I first [encountered this topic], I [HAP's initial reaction]. Prof. Teeters [what mentor taught], and [HAP's realization]!</p>
+                </div>
+                <div class="insight-card">
+                    <h3><span class="insight-icon">[EMOJI]</span> [What HAP Learned]</h3>
+                    <p class="stat-large stat-teal">[Key Metric or Statistic]</p>
+                    <p><strong>[One-sentence summary of importance]</strong></p>
+                    <p>When I first [encountered this topic], I [HAP's initial reaction]. Prof. Teeters [what mentor taught], and [HAP's realization]!</p>
+                </div>
+                <div class="insight-card">
+                    <h3><span class="insight-icon">[EMOJI]</span> [What HAP Learned]</h3>
+                    <p class="stat-large stat-brown">[Key Metric or Statistic]</p>
+                    <p><strong>[One-sentence summary of importance]</strong></p>
+                    <p>When I first [encountered this topic], I [HAP's initial reaction]. Prof. Teeters [what mentor taught], and [HAP's realization]!</p>
+                </div>
+            </div>
+
+            <!-- ┌─────────────────────────────────────────────────────────────────┐
+                 │ PATTERN: HAP Note Callout                                       │
+                 │                                                                  │
+                 │ Personal story or insight from HAP's learning experience.       │
+                 │ Use for:                                                        │
+                 │   • Mistakes HAP made (confession)                              │
+                 │   • Breakthroughs HAP had (discovery)                           │
+                 │   • Advice from Prof. Teeters (teaching)                        │
+                 │   • Tips HAP wishes he'd known earlier                          │
+                 │                                                                  │
+                 │ Voice: First-person narrative, specific story, concrete details │
+                 │                                                                  │
+                 │ WRONG voice examples:                                           │
+                 │   ❌ "It's important to remember..."  (generic advice)          │
+                 │   ❌ "Best practice is..."  (no personal connection)            │
+                 │   ❌ "You should always..."  (instructional, not reflective)    │
+                 │                                                                  │
+                 │ RIGHT voice examples:                                           │
+                 │   ✅ "I spent 3 hours debugging before I realized..."           │
+                 │   ✅ "Prof. Teeters watched me struggle, then asked..."        │
+                 │   ✅ "Now I always check [X] before [Y]"                        │
+                 │                                                                  │
+                 │ See stations/station6-example.html for complete example         │
+                 └─────────────────────────────────────────────────────────────────┘ -->
+            <!-- HAP's Confession Callout -->
+            <div class="hap-note-callout">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                    alt="HAP looking confused while studying" width="150" height="150" class="hap-note-image"
+                    decoding="async" loading="lazy">
+                <div class="hap-note-content">
+                    <h3>[HAP's Discovery/Tip/Mistake]:</h3>
+                    <!-- Tell specific story with concrete details -->
+                    <p>[What happened]: When I was working on [PROJECT], I [WHAT HAP DID]. [What went wrong or what HAP learned].</p>
+                    <p class="mt-1">Prof. Teeters [watched/explained/showed me]: "[QUOTE FROM PROF. TEETERS]"</p>
+                    <p class="mt-1"><strong>[Key takeaway in HAP's voice]</strong> 🟠</p>
+                </div>
+            </div>
+
+            <!-- ┌─────────────────────────────────────────────────────────────────────────┐
+                 │ PATTERN VARIATIONS: HAP Note Callout (3 Types)                         │
+                 │                                                                          │
+                 │ TYPE 1: Tip/Insight (use hap-explaining_pbhsgn.jpg)                    │
+                 │ TYPE 2: Warning/Mistake (use hap-confused_v8jmqk.jpg)                  │
+                 │ TYPE 3: Breakthrough (use hap-excited - if available)                  │
+                 │                                                                          │
+                 │ UNCOMMENT THE TYPE YOU NEED:                                           │
+                 └─────────────────────────────────────────────────────────────────────────┘
+
+            TYPE 1: TIP/INSIGHT (Most common - use for helpful advice)
+            ─────────────────────────────────────────────────────────────
+            <div class="hap-note-callout mt-2">
+              <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,h_80,c_fill/HAP/hap-explaining_pbhsgn.jpg"
+                   alt="HAP sharing a helpful tip"
+                   width="80"
+                   height="80"
+                   loading="lazy">
+              <div class="hap-note-content">
+                <h4>HAP's Tip: [TIP TITLE]</h4>
+                <p>Prof. Teeters taught me [SPECIFIC TECHNIQUE]. This saved me so much time! 🟠</p>
+                <p class="mt-1"><strong>When to use it:</strong> [PRACTICAL SCENARIO]</p>
+              </div>
+            </div>
+
+
+            TYPE 2: WARNING/MISTAKE (Use when showing common errors)
+            ─────────────────────────────────────────────────────────────
+            <div class="hap-note-callout warning mt-2">
+              <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,h_80,c_fill/HAP/hap-confused_v8jmqk.jpg"
+                   alt="HAP warning about a common mistake"
+                   width="80"
+                   height="80"
+                   loading="lazy">
+              <div class="hap-note-content">
+                <h4>⚠️ HAP's Mistake: [WHAT WENT WRONG]</h4>
+                <p>I tried [WRONG APPROACH] and it completely broke [RESULT]. Prof. Teeters explained why this doesn't work: [EXPLANATION].</p>
+                <p class="mt-1"><strong>The right way:</strong> [CORRECT APPROACH] 🟠</p>
+              </div>
+            </div>
+
+
+            TYPE 3: BREAKTHROUGH (Use for "aha!" moments)
+            ─────────────────────────────────────────────────────────────
+            <div class="hap-note-callout breakthrough mt-2">
+              <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,h_80,c_fill/HAP/hap-explaining_pbhsgn.jpg"
+                   alt="HAP having a breakthrough moment"
+                   width="80"
+                   height="80"
+                   loading="lazy">
+              <div class="hap-note-content">
+                <h4>💡 HAP's Breakthrough!</h4>
+                <p>This is the moment when [CONCEPT] finally clicked for me! Prof. Teeters said: <em>"[QUOTE]"</em></p>
+                <p class="mt-1">Once I understood [KEY INSIGHT], everything else made sense. Now I use this [HOW OFTEN]! 🟠</p>
+              </div>
+            </div>
+
+                 END PATTERN VARIATIONS
+                 ───────────────────────────────────────────────────────────────────────── -->
+
+        </section>
+
+        <!-- Main Content Section -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>[Main Topic Heading]</h2>
+
+                <p class="mb-2">[Introduction paragraph explaining what Prof. Teeters taught HAP about this topic]</p>
+
+                <!-- Analysis Points Grid -->
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>[Analysis Point Title 1]</h3>
+                        <p><strong>[Subheading]</strong> [Content]</p>
+                    </div>
+                    <div class="analysis-point">
+                        <h3>[Analysis Point Title 2]</h3>
+                        <p><strong>[Subheading]</strong> [Content]</p>
+                    </div>
+                </div>
+
+                <!-- Code Example Box -->
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">[Code Example Label]:</div>
+                    <pre><code class="language-html">[CODE EXAMPLE HERE]</code></pre>
+                    <p class="code-comment mt-1">[Explanation of code example]</p>
+                </div>
+
+                <!-- Interactive Demo Section -->
+                <div class="interactive-demo mt-2">
+                    <h3>[Interactive Demo Title]</h3>
+                    <ul class="mt-1">
+                        <li>[List item 1]</li>
+                        <li>[List item 2]</li>
+                        <li>[List item 3]</li>
+                    </ul>
+                </div>
+
+                <!-- ┌─────────────────────────────────────────────────────────────────────────┐
+                     │ INTERACTIVE PATTERN: Calculator/Tool                                   │
+                     │                                                                          │
+                     │ Use when: Students need to experiment with values                      │
+                     │ Examples: Aspect ratio calculator, color converter, size calculator    │
+                     │                                                                          │
+                     │ Pattern structure:                                                      │
+                     │   1. Tool container with inputs                                         │
+                     │   2. Real-time calculation display                                      │
+                     │   3. Inline JavaScript for immediate feedback                           │
+                     │   4. HAP's voice explaining what to notice                              │
+                     │                                                                          │
+                     │ UNCOMMENT THIS BLOCK TO USE:                                           │
+                     └─────────────────────────────────────────────────────────────────────────┘
+
+                <div class="demo-container mt-3">
+                  <h3>🔬 Interactive Tool: [TOOL NAME]</h3>
+
+                  <p>Prof. Teeters showed me this tool helps understand [CONCEPT] by letting you experiment with different values. Try changing the numbers! 🟠</p>
+
+                  <div class="demo-controls mt-2">
+                    <label for="input1-[UNIQUE-ID]">[INPUT 1 LABEL]:</label>
+                    <input type="number"
+                           id="input1-[UNIQUE-ID]"
+                           value="[DEFAULT]"
+                           min="[MIN]"
+                           max="[MAX]"
+                           oninput="calculate[ToolName]()"
+                           class="demo-input">
+
+                    <label for="input2-[UNIQUE-ID]" class="mt-1">[INPUT 2 LABEL]:</label>
+                    <input type="number"
+                           id="input2-[UNIQUE-ID]"
+                           value="[DEFAULT]"
+                           min="[MIN]"
+                           max="[MAX]"
+                           oninput="calculate[ToolName]()"
+                           class="demo-input">
+                  </div>
+
+                  <div class="demo-result mt-2">
+                    <strong>Result:</strong>
+                    <span id="result-[UNIQUE-ID]" class="result-value">[INITIAL RESULT]</span>
+                  </div>
+
+                  <script>
+                  function calculate[ToolName]() {
+                    const input1 = parseFloat(document.getElementById('input1-[UNIQUE-ID]').value);
+                    const input2 = parseFloat(document.getElementById('input2-[UNIQUE-ID]').value);
+
+                    // Perform calculation
+                    const result = [CALCULATION];
+
+                    // Update display
+                    document.getElementById('result-[UNIQUE-ID]').textContent = result;
+                  }
+
+                  // Run once on load
+                  calculate[ToolName]();
+                  </script>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                  <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,h_80,c_fill/HAP/hap-explaining_pbhsgn.jpg"
+                       alt="HAP explaining the concept"
+                       width="80"
+                       height="80"
+                       loading="lazy">
+                  <div class="hap-note-content">
+                    <h4>What to Notice</h4>
+                    <p>When Prof. Teeters had me play with this tool, she asked me to notice [WHAT TO OBSERVE]. Once I saw the pattern, [BREAKTHROUGH MOMENT]! 🟠</p>
+                  </div>
+                </div>
+
+                     END PATTERN: Interactive Calculator
+                     ───────────────────────────────────────────────────────────────────────── -->
+
+                <!-- ┌─────────────────────────────────────────────────────────────────┐
+                     │ PATTERN: Before/After Code Comparison                           │
+                     │                                                                  │
+                     │ Shows HAP's learning journey from mistake to understanding.     │
+                     │ Structure:                                                       │
+                     │   1. HAP's wrong approach (what he tried first)                 │
+                     │   2. Prof. Teeters' teaching (the right way)                    │
+                     │   3. Explanation (why new way is better)                        │
+                     │                                                                  │
+                     │ Voice requirements:                                             │
+                     │   • Frame as HAP's mistake: "I used to do it this way..."      │
+                     │   • Credit Prof. Teeters: "Prof. Teeters taught me..."         │
+                     │   • Explain the learning: "Now I understand why..."            │
+                     │                                                                  │
+                     │ WRONG voice:                                                    │
+                     │   ❌ "The correct approach is..."  (no personal story)          │
+                     │   ❌ "You should avoid..."  (instructional, not reflective)     │
+                     │                                                                  │
+                     │ RIGHT voice:                                                    │
+                     │   ✅ "I used to think [X], but Prof. Teeters showed me [Y]"    │
+                     │   ✅ "This was tricky for me because [REASON]"                  │
+                     │                                                                  │
+                     │ See stations/station6-example.html for complete example         │
+                     └─────────────────────────────────────────────────────────────────┘ -->
+                <!-- Right/Wrong Comparison Box -->
+                <div class="warning-box mt-2">
+                    <h3>🟠 HAP's Old Way vs. What I Learned</h3>
+
+                    <p><strong class="text-error">❌ WRONG: How I Used to Do It</strong></p>
+                    <pre><code class="language-[css/html/javascript]">/* HAP's initial approach (explain what went wrong) */
+[Code showing HAP's mistake]
+/* Why this didn't work well */</code></pre>
+
+                    <p class="mt-1"><strong class="text-success">✅ RIGHT: What Prof. Teeters Taught Me</strong></p>
+                    <pre><code class="language-[css/html/javascript]">/* Prof. Teeters' approach */
+[Correct code]
+/* Why this works better */</code></pre>
+
+                    <p class="mt-1">Prof. Teeters explained: [KEY INSIGHT]. Once I understood [CONCEPT], everything made sense!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Reference Section -->
+        <section class="content-section">
+            <div class="tips-container">
+                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+
+                <div class="tip-card">
+                    <div class="tip-number">1</div>
+                    <div>
+                        <h3>[Tip Title 1]</h3>
+                        <p>[HAP's practical advice about this topic]</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">2</div>
+                    <div>
+                        <h3>[Tip Title 2]</h3>
+                        <p>[HAP's practical advice about this topic]</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">3</div>
+                    <div>
+                        <h3>[Tip Title 3]</h3>
+                        <p>[HAP's practical advice about this topic]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ┌─────────────────────────────────────────────────────────────────────────┐
+             │ INTERACTIVE PATTERN: Solution Reveal Button                            │
+             │                                                                          │
+             │ Use when: Students should try solving before seeing answer             │
+             │ Example: Station challenges, practice exercises                        │
+             │                                                                          │
+             │ Pattern structure:                                                      │
+             │   1. Challenge description with "Try it yourself!" encouragement       │
+             │   2. Hidden solution content                                            │
+             │   3. Button to reveal solution                                          │
+             │   4. JavaScript to toggle visibility                                    │
+             │                                                                          │
+             │ UNCOMMENT THIS BLOCK TO USE:                                           │
+             └─────────────────────────────────────────────────────────────────────────┘
+
+        <section class="content-section">
+          <div class="challenge-box mt-2">
+            <h3>🎯 Try It Yourself!</h3>
+            <p><strong>Challenge:</strong> [DESCRIBE THE TASK]</p>
+
+            <p class="mt-1">I remember when Prof. Teeters gave me this same challenge - I was stuck at first, but once I figured it out, it made SO much sense! Give it a try before peeking at the solution. 🟠</p>
+
+            <button onclick="document.getElementById('solution-[UNIQUE-ID]').style.display='block'; this.style.display='none';"
+                    class="reveal-button mt-2">
+              Show Solution
+            </button>
+
+            <div id="solution-[UNIQUE-ID]" style="display:none;" class="mt-2">
+              <h4>✅ Solution</h4>
+              <pre><code class="language-[LANGUAGE]">[SOLUTION CODE]</code></pre>
+
+              <p class="mt-1"><strong>Why this works:</strong> [HAP's EXPLANATION]</p>
+            </div>
+          </div>
+        </section>
+
+             END PATTERN: Solution Reveal
+             ─────────────────────────────────────────────────────────────────────────── -->
+
+        <!-- ┌─────────────────────────────────────────────────────────────────────────┐
+             │ PATTERN: Prof. Teeters Quotes                                           │
+             │                                                                          │
+             │ Prof. Teeters is HAP's mentor. Reference her teaching throughout.       │
+             │                                                                          │
+             │ Quote patterns:                                                         │
+             │   • Direct teaching: "Prof. Teeters explained..."                       │
+             │   • Analogies: "Prof. Teeters compared it to..."                        │
+             │   • Wisdom: "Prof. Teeters always says..."                              │
+             │   • Questions: "Prof. Teeters asked me..."                              │
+             │   • Observations: "Prof. Teeters noticed that I..."                     │
+             │                                                                          │
+             │ Example quotes to adapt for your topic:                                │
+             │                                                                          │
+             │ Teaching moments:                                                       │
+             │   • "Prof. Teeters explained it like this: [ANALOGY]"                   │
+             │   • "Prof. Teeters showed me that [CONCEPT] is really just             │
+             │      [SIMPLER CONCEPT]"                                                 │
+             │   • "Prof. Teeters taught me: 'Start simple, then add complexity'"     │
+             │   • "Prof. Teeters broke it down: [STEP-BY-STEP EXPLANATION]"          │
+             │                                                                          │
+             │ Wisdom/advice:                                                          │
+             │   • "Prof. Teeters always says: '[MEMORABLE PRINCIPLE]'"                │
+             │   • "Prof. Teeters reminded me: '[PRACTICAL TIP]'"                      │
+             │   • "As Prof. Teeters puts it: '[CLEVER PHRASE]'"                       │
+             │   • "Prof. Teeters' rule: '[GUIDELINE TO FOLLOW]'"                      │
+             │                                                                          │
+             │ Guiding questions:                                                      │
+             │   • "Prof. Teeters asked: 'What if you tried [APPROACH]?'"              │
+             │   • "Prof. Teeters wondered: 'Why do you think [X] happens?'"           │
+             │   • "Prof. Teeters challenged me: 'Can you think of a simpler way?'"   │
+             │                                                                          │
+             │ Observations:                                                           │
+             │   • "Prof. Teeters noticed I was [STRUGGLING WITH X]"                   │
+             │   • "Prof. Teeters saw that I [PATTERN HAP DIDN'T SEE]"                 │
+             │   • "Prof. Teeters watched me [ACTION], then suggested [IMPROVEMENT]"  │
+             │                                                                          │
+             │ IMPORTANT: Always attribute knowledge to Prof. Teeters.                │
+             │            HAP learns FROM her; he doesn't claim expertise himself.     │
+             │                                                                          │
+             │ See stations/station6-example.html for usage in context                 │
+             └─────────────────────────────────────────────────────────────────────────┘ -->
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
+        <a href="station[N-1].html" class="nav-link prev-link">← Previous: Station [N-1] - [PREV_STATION_TITLE]</a>
+        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
+        <a href="station[N+1].html" class="nav-link next-link">Next: Station [N+1] - [NEXT_STATION_TITLE] →</a>
+    </nav>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
+        <p class="footer-reminder">
+            [HAP's memorable takeaway about this station] 🟠 — HAP
+        </p>
+        <div class="footer-copyright">
+            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80"
+                height="80" decoding="async" loading="lazy">
+            <div>
+                <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
+                <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are
+                    proprietary educational innovations.</p>
+                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+                    Visual elements created with AI assistance.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/easter-egg.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
+        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+        crossorigin="anonymous"></script>
+
+    <!-- ┌─────────────────────────────────────────────────────────────────────────┐
+         │ REQUIRED JAVASCRIPT: Copy Button Functionality                         │
+         │                                                                          │
+         │ This script adds "Copy" buttons to all code blocks automatically       │
+         │ Students can click to copy code examples for testing                   │
+         │                                                                          │
+         │ This version targets ALL code blocks (not just .prompt-box)            │
+         │ Uncomment and customize if needed, or use as-is                        │
+         └─────────────────────────────────────────────────────────────────────────┘ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Find all code blocks
+          const codeBlocks = document.querySelectorAll('pre code');
+
+          codeBlocks.forEach((codeBlock) => {
+            // Create copy button
+            const button = document.createElement('button');
+            button.className = 'copy-button';
+            button.textContent = 'Copy';
+            button.setAttribute('aria-label', 'Copy code to clipboard');
+
+            // Add button to DOM
+            const pre = codeBlock.parentNode;
+            pre.style.position = 'relative';
+            pre.appendChild(button);
+
+            // Copy functionality
+            button.addEventListener('click', async () => {
+              const code = codeBlock.textContent;
+
+              try {
+                await navigator.clipboard.writeText(code);
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                  button.textContent = 'Copy';
+                  button.classList.remove('copied');
+                }, 2000);
+              } catch (err) {
+                console.error('Failed to copy:', err);
+                button.textContent = 'Error';
+              }
+            });
+          });
+        });
+    </script>
+
+    <!-- END REQUIRED JAVASCRIPT
+         ─────────────────────────────────────────────────────────────────────────── -->
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+{
+  "allowedParams": [
+    "detail",
+    "example1",
+    "example2"
+  ],
+  "messages": {
+    "detail": {
+      "title": "🔬 HAP's Detail",
+      "content": "Message content here with <code>HTML tags</code> allowed."
+    },
+    "example1": {
+      "title": "🟠 Example Parameter 1",
+      "content": "This shows how to create a custom parameter message."
+    },
+    "example2": {
+      "title": "🎯 Example Parameter 2",
+      "content": "Parameters can have <strong>bold</strong> and <em>italic</em> text."
+    }
+  },
+  "pageHelp": {
+    "index.html": {
+      "title": "🏠 Welcome to HAP's Learning Lab!",
+      "intro": "Hi! I'm HAP. Let me help you navigate this learning lab.",
+      "suggestions": [
+        "Try adding <code>?hybit=detail</code> to see lab statistics",
+        "Each station has its own tips - try <code>?hybit</code> on any page",
+        "Questions? Look for the 🟠 orange circles!"
+      ]
+    },
+    "stations/station1.html": {
+      "title": "🔬 Station 1 Tips",
+      "intro": "Welcome to Station 1! Here are some things I learned that might help you.",
+      "suggestions": [
+        "Try the interactive examples - they helped me understand!",
+        "Pay attention to the before/after comparisons",
+        "Don't skip the challenge exercise - it's when things clicked for me!"
+      ]
+    }
+  }
+}
