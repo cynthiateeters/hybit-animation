@@ -66,7 +66,7 @@
 /* Button with smooth transition */
 .button-smooth {
     transition: background 300ms ease-out,
-                transform 300ms ease-out;
+        transform 300ms ease-out;
 }
 
 .button-smooth:hover {
@@ -119,6 +119,230 @@
     outline: 3px solid hsl(32, 76%, 63%);
     outline-offset: 2px;
 }
+
+
+.layout-demo-container {
+    padding: 2rem;
+    background: hsl(48, 100%, 97%);
+    border-radius: 8px;
+}
+
+.layout-demo-box {
+    width: 100px;
+    height: 100px;
+    background: hsl(32, 76%, 63%);
+    border-radius: 8px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    transition: transform 300ms ease-out;
+}
+
+.layout-demo-box:hover {
+    transform: translateX(50px);
+}
+
+.layout-demo-static {
+    width: 100px;
+    height: 100px;
+    background: hsl(168, 28%, 54%);
+    border-radius: 8px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .layout-demo-box {
+        transition: none;
+    }
+
+    .layout-demo-box:hover {
+        transform: none;
+        opacity: 0.8;
+    }
+}
+
+/* Scale Demo
+   =========== */
+.scale-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.scale-demo-item {
+    text-align: center;
+}
+
+.scale-demo-box {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin: 0 auto 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+    transition: transform 300ms ease-out;
+    cursor: pointer;
+}
+
+.scale-demo-box-1 {
+    background: hsl(32, 76%, 63%);
+}
+
+.scale-demo-box-1:hover {
+    transform: scale(1.2);
+}
+
+.scale-demo-box-2 {
+    background: hsl(168, 28%, 54%);
+}
+
+.scale-demo-box-2:hover {
+    transform: scale(1.5);
+}
+
+.scale-demo-box-3 {
+    background: hsl(28, 45%, 45%);
+}
+
+.scale-demo-box-3:hover {
+    transform: scale(0.8);
+}
+
+.scale-demo-label-code {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.scale-demo-label-explain {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 40%);
+    margin: 0.25rem 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scale-demo-box {
+        transition: none;
+    }
+    .scale-demo-box-1:hover,
+    .scale-demo-box-2:hover {
+        transform: none;
+        opacity: 0.85;
+    }
+    .scale-demo-box-3:hover {
+        transform: none;
+        opacity: 0.95;
+    }
+}
+
+@media (max-width: 600px) {
+    .scale-demo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Transform Order Demo
+   ===================== */
+.order-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.order-demo-item {
+    text-align: center;
+}
+
+.order-demo-container {
+    width: 200px;
+    height: 200px;
+    background: hsl(48, 100%, 97%);
+    border: 2px dashed hsl(0, 0%, 80%);
+    border-radius: 8px;
+    margin: 1rem auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-demo-box {
+    width: 60px;
+    height: 60px;
+    background: hsl(32, 76%, 63%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    position: absolute;
+}
+
+.order-demo-box-1 {
+    /* rotate THEN translate */
+    transform: rotate(45deg) translateY(50px);
+}
+
+.order-demo-box-2 {
+    /* translate THEN rotate */
+    transform: translateY(50px) rotate(45deg);
+}
+
+.order-demo-origin {
+    width: 60px;
+    height: 60px;
+    border: 2px solid hsl(168, 28%, 54%);
+    border-radius: 4px;
+    position: absolute;
+}
+
+.order-demo-label-bold {
+    font-weight: bold;
+    margin: 0 0 0.5rem;
+}
+
+.order-demo-label-code {
+    font-size: 0.875rem;
+    margin: 0.5rem 0 0;
+}
+
+.order-demo-label-code-sub {
+    font-size: 0.875rem;
+    margin: 0.25rem 0 0;
+}
+
+.order-demo-label-explain {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 40%);
+    margin: 0.5rem 0 0;
+}
+
+@media (max-width: 600px) {
+    .order-demo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+
 
 /* Responsive: Stack vertically on mobile
    ====================================== */
