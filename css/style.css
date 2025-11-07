@@ -1367,6 +1367,12 @@ WHEN TO CREATE NEW UTILITIES:
   margin-bottom: 2rem;
 }
 
+/* Display */
+
+.hidden {
+  display: none;
+}
+
 /* Fonts */
 
 .text-bold {

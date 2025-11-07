@@ -4,11 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAP's Learning Lab - Station 1: [STATION_TITLE]</title>
+    <title>HAP's Learning Lab - Station 1: CSS Transforms</title>
     <meta name="description"
-        content="Join HAP as he learns about [BRIEF_DESCRIPTION].">
+        content="Join HAP as he learns about CSS transforms from Prof. Teeters. Discover how to move, scale, and rotate elements without breaking layout.">
+    <meta property="og:title" content="HAP's Learning Lab - Station 1: CSS Transforms">
+    <meta property="og:description"
+        content="Learn CSS transforms with HAP: moving, scaling, and rotating elements while preserving document flow. Interactive demonstrations and hands-on practice.">
+    <meta property="og:type" content="website">
     <meta property="og:image"
         content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="16x16"
         href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
     <link rel="icon" type="image/png" sizes="32x32"
@@ -17,7 +24,11 @@
         href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
     <link rel="icon" type="image/png" sizes="192x192"
         href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+
+    <!-- Performance optimization -->
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/style.css">
     <link href="../css/prism-hap-theme.css" rel="stylesheet">
 </head>
@@ -25,6 +36,7 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
+    <!-- Header with HAP -->
     <header class="header">
         <div class="header-content">
             <div class="hybit-welcome">
@@ -34,16 +46,17 @@
                         fetchpriority="high">
                 </div>
                 <div>
-                    <h1>HAP's Learning Lab: [STATION_TITLE]</h1>
-                    <p class="subtitle">[SUBTITLE]</p>
+                    <h1>HAP's Learning Lab: CSS Transforms</h1>
+                    <p class="subtitle">Moving, scaling, and rotating elements without breaking layout</p>
                 </div>
             </div>
             <div class="intro-box">
-                <p><strong>Welcome to Station 1!</strong> [HAP's apprentice voice introduction: describe what HAP learned from Prof. Teeters at this station, using first-person perspective] 🟠</p>
+                <p><strong>Welcome to Station 1!</strong> I spent hours trying to move elements with position and margin before Prof. Teeters showed me transforms. I kept breaking my layouts — other elements would shift around, creating gaps and overlaps everywhere. Then Prof. Teeters asked, "What if you could move elements visually without affecting anything around them?" That question changed everything. Transforms let me move, scale, and rotate elements while the document flow stays perfectly intact. Let me share what I discovered! 🔬</p>
             </div>
         </div>
     </header>
 
+    <!-- Top Navigation -->
     <nav aria-label="Page navigation" class="page-navigation top-nav">
         <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
         <div class="page-position" data-page="1">Station 1 of 6</div>
@@ -51,110 +64,486 @@
 
     <main id="main-content" class="content-container">
 
+        <!-- SECTION 1: What You'll Learn -->
         <section class="content-section">
-            <h2 class="section-heading-centered">[SECTION_HEADING]</h2>
-
-            <div class="intro-box">
-                <p><strong>HAP's Discovery:</strong> [HAP's first-person narrative about learning this concept from Prof. Teeters]</p>
-            </div>
+            <h2 class="section-heading-centered">What You'll Learn at This Station</h2>
 
             <div class="overview-grid mt-2">
+                <!-- Insight Card 1: Transforms Don't Break Layout -->
                 <div class="insight-card">
-                    <h3><span class="insight-icon">📸</span> [Insight Title 1]</h3>
-                    <p class="stat-large">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">📐</span> Transforms don't break layout</h3>
+                    <p class="stat-large">Zero reflow</p>
+                    <p><strong>Unlike position or margin, transforms preserve document flow</strong></p>
+                    <p>I used to move elements with <code>position: relative</code> and margins, and everything around them would shift. Prof. Teeters showed me that transforms move elements <em>visually</em> without affecting the space they occupy in the layout. The element moves, but the layout stays intact. This is the foundation of performant animation!</p>
                 </div>
+
+                <!-- Insight Card 2: The Browser Coordinate System -->
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🔬</span> [Insight Title 2]</h3>
-                    <p class="stat-large stat-teal">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">🧭</span> The browser coordinate system</h3>
+                    <p class="stat-large stat-teal">X, Y, Z axes</p>
+                    <p><strong>X goes right, Y goes down, Z comes toward you</strong></p>
+                    <p>This confused me at first! In math class, Y goes <em>up</em>, but in browsers Y increases <em>downward</em>. Prof. Teeters drew a diagram showing the origin at the top-left corner. X increases to the right, Y increases down the page, and Z comes out of the screen toward you. Understanding these axes is critical for predicting how transforms work.</p>
                 </div>
+
+                <!-- Insight Card 3: Transform Origin Matters -->
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🎯</span> [Insight Title 3]</h3>
-                    <p class="stat-large stat-brown">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">🎯</span> Transform origin matters</h3>
+                    <p class="stat-large stat-brown">Default: center</p>
+                    <p><strong>Transforms happen from the center point by default</strong></p>
+                    <p>I was surprised when my first rotation happened from the <em>center</em> of the element, not the top-left corner like I expected. Prof. Teeters explained that this is called the transform origin, and it defaults to center because that's usually what creates the most natural-looking effects. You can change it, but center is almost always what you want.</p>
                 </div>
             </div>
 
-            <div class="hap-note-callout">
+            <!-- HAP's Confession -->
+            <div class="hap-note-callout mt-2">
                 <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                    alt="HAP looking confused while studying" width="150" height="150" class="hap-note-image"
+                    alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
                     decoding="async" loading="lazy">
                 <div class="hap-note-content">
-                    <h3>HAP's Confession:</h3>
-                    <p>[HAP's apprentice voice: describe initial confusion or learning moment about this topic]</p>
+                    <h3>HAP's confession: I broke so many layouts</h3>
+                    <p>Before Prof. Teeters taught me about transforms, I tried moving elements by changing <code>position: relative</code> with <code>top</code> and <code>left</code> properties, or by adjusting margins. Every time I moved something, the entire layout would shift! Elements would create gaps, overlap in weird ways, and I'd spend hours trying to fix all the side effects. Prof. Teeters patiently explained that the <code>transform</code> property was designed specifically for visual manipulation without layout disruption. When she showed me my first <code>translateX()</code>, and <em>nothing else moved</em>, I finally understood the power of transforms. It was like discovering a secret superpower!</p>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION 2: Introduction to CSS Transforms -->
         <section class="content-section">
             <div class="topic-section">
-                <h2>[Main Topic Heading]</h2>
+                <h2>Introduction to CSS transforms</h2>
 
-                <p class="mb-2">[Introduction paragraph explaining what Prof. Teeters taught HAP about this topic]</p>
+                <p class="mb-2">The <code>transform</code> property allows you to visually manipulate elements — moving, scaling, or rotating them in space — without affecting document flow or surrounding elements. This is what makes transforms so powerful for animation!</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 1]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>What transforms are</h3>
+                        <p><strong>Visual manipulation without layout disruption</strong></p>
+                        <p>Transforms move, scale, or rotate elements in space, but other elements stay in their original positions. Only the transformed element appears to move. No reflows, no repaints of surrounding content — which means better performance than changing position or dimensions.</p>
                     </div>
+
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 2]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>The browser coordinate system</h3>
+                        <p><strong>Understanding X, Y, and Z axes</strong></p>
+                        <p>The X axis runs horizontally left to right. The Y axis runs vertically top to bottom (yes, downward!). The Z axis runs toward and away from the viewer. The origin point is typically the center of the element. This system is crucial for understanding how transforms work.</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP studying on his laptop" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's breakthrough moment</h3>
+                        <p>I tried using <code>position: relative</code> with margins to move a button, and the entire layout broke. Other content shifted, creating gaps and overlaps everywhere. Prof. Teeters showed me the <code>transform</code> property, and when I used my first <code>translateX()</code>, I was amazed — the button moved, but <em>nothing else did</em>. That's when I understood why transforms are special. They're designed specifically for visual manipulation without layout consequences!</p>
+                    </div>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>🟠 HAP's Old Way vs. What I Learned</h3>
+                    <p><strong class="text-error">❌ WRONG: Moving with position and margins</strong></p>
+                    <pre><code class="language-css">.button {
+  position: relative;
+  left: 50px; /* This affects layout! */
+  top: 20px; /* Surrounding elements shift */
+}</code></pre>
+
+                    <p class="mt-1"><strong class="text-success">✅ RIGHT: What I Learned — Moving with transforms</strong></p>
+                    <pre><code class="language-css">.button {
+  transform: translate(50px, 20px);
+  /* Moves visually, layout stays intact */
+}</code></pre>
+
+                    <p class="mt-1">Prof. Teeters explained that the first approach disrupts document flow, causing reflows and repaints. The second approach moves the button visually while preserving its original space in the layout. This is why transforms are the foundation for performant animations!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Accessibility reminder from Prof. Teeters:</div>
+                    <pre><code class="language-css">/* Right now, transforms are instant state changes */
+.box {
+  transform: translateX(100px); /* Instant, not animated */
+}
+
+/* In Station 2, we'll make them transition smoothly */
+/* That's when motion preferences become critical */
+@media (prefers-reduced-motion: reduce) {
+  /* We'll learn this pattern next! */
+}</code></pre>
+                    <p class="code-comment mt-1">Prof. Teeters taught me to think about accessibility from the start. Instant transforms are safe (they're not motion), but when we animate them in Station 2, we'll need to respect user motion preferences. Building good habits now!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Translate and Scale -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Translate and scale</h2>
+
+                <h3 class="mt-2">Understanding translation</h3>
+                <p class="mb-2">Translation moves elements horizontally, vertically, or both. Think of it as sliding the element across the page without affecting anything around it.</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Horizontal and vertical movement:</div>
+                    <pre><code class="language-css">/* Move right 50 pixels */
+.box { transform: translateX(50px); }
+
+/* Move down 30 pixels (remember Y goes down!) */
+.box { transform: translateY(30px); }
+
+/* Move right 50px AND down 30px */
+.box { transform: translate(50px, 30px); }
+
+/* Move left (negative) and up (negative) */
+.box { transform: translate(-20px, -40px); }</code></pre>
+                    <p class="code-comment mt-1">The combined <code>translate()</code> function takes X first, then Y. Positive X moves right, positive Y moves down (this confused me at first because in math class Y goes up!).</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's confusion about percentages</h3>
+                        <p>I spent an hour confused about <code>translate(50%, 0)</code>. I thought the percentage was relative to the parent container's width, like with <code>width</code> or <code>position</code>. Wrong! Prof. Teeters clarified that translate percentages are relative to <em>the element's own size</em>. So a 100px wide element moved by <code>translateX(50%)</code> moves 50px, not half the parent's width. This is different from how percentages work with position!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Understanding scale</h3>
+                <p class="mb-2">Scale stretches or shrinks elements. A value of 1 means no change, 2 means twice as large, and 0.5 means half the size. Scale affects <em>everything</em> inside the element, including text, images, and borders.</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Scaling examples:</div>
+                    <pre><code class="language-css">/* Make twice as wide */
+.box { transform: scaleX(2); }
+
+/* Make half as tall */
+.box { transform: scaleY(0.5); }
+
+/* Scale proportionally (both dimensions) */
+.box { transform: scale(1.5); }
+
+/* Scale X and Y independently */
+.box { transform: scale(2, 0.5); } /* Wide and short */
+
+/* Flip horizontally */
+.box { transform: scaleX(-1); }</code></pre>
+                    <p class="code-comment mt-1">A value of 1 equals normal size. Values greater than 1 make larger, values less than 1 make smaller. You can even use negative values to flip elements!</p>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>🟠 HAP's Mistake Story</h3>
+                    <p>I tried to hide a button by using <code>scale(0)</code> — the button disappeared as expected. But then I couldn't make it reappear on hover because it was invisible <em>and</em> had no clickable area. Prof. Teeters explained that <code>scale(0)</code> makes the element invisible but it still exists in the layout and can't be interacted with.</p>
+                    <p class="mt-1"><strong>Better approaches I learned:</strong></p>
+                    <ul class="mt-1">
+                        <li><code>opacity: 0</code> (invisible but still takes space)</li>
+                        <li><code>visibility: hidden</code> (invisible and no pointer events)</li>
+                        <li><code>display: none</code> (removed from layout completely)</li>
+                    </ul>
+                    <p class="mt-1">Each has different use cases. Prof. Teeters taught me to choose the right tool for the job!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Rotate and Combining Transforms -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Rotate and combining transforms</h2>
+
+                <h3 class="mt-2">Understanding rotation</h3>
+                <p class="mb-2">Rotation spins elements in the 2D plane. Measured in degrees, positive values rotate clockwise (like clock hands moving forward), and negative values rotate counterclockwise.</p>
+
+                <div class="prompt-box">
+                    <div class="prompt-label">Rotation examples:</div>
+                    <pre><code class="language-css">/* Rotate 45 degrees clockwise */
+.box { transform: rotate(45deg); }
+
+/* Rotate 90 degrees counterclockwise */
+.box { transform: rotate(-90deg); }
+
+/* Full rotation */
+.box { transform: rotate(360deg); }
+
+/* rotate() is shorthand for rotateZ() */
+.box { transform: rotateZ(45deg); } /* Same as rotate() */</code></pre>
+                    <p class="code-comment mt-1">By default, rotation happens from the center of the element (not the top-left corner like I initially expected). This is controlled by the <code>transform-origin</code> property, which defaults to <code>center</code>.</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP studying" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's observation about rotation</h3>
+                        <p>I was surprised when my first <code>rotate(180deg)</code> flipped the element in place from its center, not from the corner. Prof. Teeters explained that <code>transform-origin: center</code> is the default, and it usually creates the most natural-looking rotation. Try <code>transform-origin: top left</code> if you want to see the difference — the element rotates around the top-left corner instead!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Combining transforms — order matters!</h3>
+                <p class="mb-2">This is where it gets tricky! Transforms are applied sequentially from left to right, and <strong>each transform modifies the coordinate system for the next one</strong>. Different orders create completely different results.</p>
+
+                <div class="warning-box">
+                    <h3>🟠 HAP's Biggest Mistake</h3>
+                    <p><strong class="text-error">❌ What confused me:</strong></p>
+                    <pre><code class="language-css">.box {
+  transform: rotate(90deg) translateY(100px);
+  /* I expected this to move DOWN */
+}</code></pre>
+                    <p class="mt-1">The element moved <em>sideways</em> instead of down! I was completely confused. I tried different values, changed the order, and spent time debugging.</p>
+
+                    <p class="mt-1"><strong class="text-success">✅ What I learned from Prof. Teeters:</strong></p>
+                    <p>She drew a diagram showing that after <code>rotate(90deg)</code>, the coordinate system rotates with the element. The Y axis now points <em>horizontally</em>, not vertically! So <code>translateY(100px)</code> moves along the new horizontal Y axis.</p>
+
+                    <div class="prompt-box mt-1">
+                        <div class="prompt-label">The order you choose changes everything:</div>
+                        <pre><code class="language-css">/* Rotate THEN translate: Moves along rotated axis */
+.box {
+  transform: rotate(90deg) translateY(100px);
+  /* Element moves to the RIGHT because Y axis rotated */
+}
+
+/* Translate THEN rotate: Moves first, rotates second */
+.box {
+  transform: translateY(100px) rotate(90deg);
+  /* Element moves DOWN first, then rotates in place */
+}</code></pre>
+                    </div>
+
+                    <p class="mt-1">Prof. Teeters taught me to think step-by-step: visualize the coordinate system after each transform. This systematic thinking is critical for predicting results!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Common transform combinations:</div>
+                    <pre><code class="language-css">/* Card lift effect: Scale, rotate, then translate */
+.card:hover {
+  transform: scale(1.05) rotate(2deg) translateY(-10px);
+  /* Grows from center, tilts slightly, lifts up */
+}
+
+/* Scale and translate for zoom effect */
+.photo:hover {
+  transform: scale(1.2) translate(10px, 10px);
+  /* Zooms in and shifts position */
+}
+
+/* Multiple translations combine */
+.box {
+  transform: translateX(50px) translateY(30px);
+  /* Same as translate(50px, 30px) */
+}</code></pre>
+                    <p class="code-comment mt-1">The most common pattern I learned from Prof. Teeters: scale first (to grow from center), rotate second (on the scaled element), translate last (to move the scaled and rotated element). This creates natural lifting motion!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Try It Yourself Exercise -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Try it yourself challenge</h2>
+
+                <div class="hap-note-callout">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                        alt="HAP with his study book and tools" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>Practice makes perfect!</h3>
+                        <p>Prof. Teeters always gives me practice challenges to solidify what I learned. This one tests understanding of multiple transforms and how order affects the result. Try it yourself before looking at the solution — that's how learning happens!</p>
                     </div>
                 </div>
 
                 <div class="prompt-box mt-2">
-                    <div class="prompt-label">[Code Example Label]:</div>
-                    <pre><code class="language-html">[CODE EXAMPLE HERE]</code></pre>
-                    <p class="code-comment mt-1">[Explanation of code example]</p>
-                </div>
-
-                <div class="interactive-demo mt-2">
-                    <h3>[Interactive Demo Title]</h3>
+                    <div class="prompt-label">The challenge:</div>
+                    <p class="mt-1"><strong>Create a card hover effect that combines three transforms:</strong></p>
                     <ul class="mt-1">
-                        <li>[List item 1]</li>
-                        <li>[List item 2]</li>
-                        <li>[List item 3]</li>
+                        <li>Lift the card up by 20 pixels (use <code>translateY</code>)</li>
+                        <li>Grow the card by 5% larger (use <code>scale</code>)</li>
+                        <li>Rotate the card 5 degrees (use <code>rotate</code>)</li>
                     </ul>
+                    <p class="mt-1">All three transforms must be combined in the <code>transform</code> property. Remember: order matters for a natural-looking effect!</p>
                 </div>
 
                 <div class="warning-box mt-2">
-                    <h3>🟠 [Warning Title]</h3>
-                    <p><strong class="text-success">✅ RIGHT:</strong></p>
-                    <pre><code class="language-html">[Correct example]</code></pre>
-                    <p><strong class="text-error">❌ WRONG:</strong></p>
-                    <pre><code class="language-html">[Incorrect example]</code></pre>
-                    <p class="mt-1">[Explanation of why this matters]</p>
+                    <h3>🟠 Need a hint?</h3>
+                    <p><strong>HAP's hint about order:</strong> I found that scaling first, then rotating, then translating creates the most natural lifting effect. Why? Because the card grows from its center, then tilts slightly, then lifts up. Try different orders to see the difference!</p>
+                    <p class="mt-1"><strong>Steps to approach this:</strong></p>
+                    <ol class="mt-1">
+                        <li>Start with the <code>.card:hover</code> selector</li>
+                        <li>Add the <code>transform</code> property</li>
+                        <li>List all three transforms separated by spaces</li>
+                        <li>Experiment with different orders to see what looks best</li>
+                    </ol>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <button id="reveal-solution"
+                            class="copy-button"
+                            aria-label="Reveal solution">
+                        Click to reveal solution
+                    </button>
+                    <div id="solution-content" class="hidden">
+                        <div class="prompt-label">The solution:</div>
+                        <pre><code class="language-css">.card:hover {
+  transform: scale(1.05) rotate(5deg) translateY(-20px);
+  /* Scale happens first: card grows from center */
+  /* Rotate happens second: scaled card tilts */
+  /* Translate happens last: scaled+rotated card lifts up */
+}</code></pre>
+                        <p class="code-comment mt-1"><strong>Why this order works:</strong> Scaling first establishes the new size from the center point. Then rotation works on the already-scaled card, tilting it slightly. Finally, translation moves the already-scaled and rotated card upward. Each transform builds on the previous one, creating a smooth, natural lifting effect!</p>
+
+                        <p class="mt-1"><strong>What about the transition?</strong> In Station 2, we'll learn how to make this transform <em>animate</em> smoothly instead of happening instantly. We'll also add <code>prefers-reduced-motion</code> support for accessibility:</p>
+                        <pre class="mt-1"><code class="language-css">/* Preview of Station 2! */
+.card {
+  transition: transform 300ms ease-out;
+}
+
+.card:hover {
+  transform: scale(1.05) rotate(5deg) translateY(-20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none; /* Remove animation for users who prefer reduced motion */
+  }
+}</code></pre>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-waving_dgzacg.jpg"
+                        alt="HAP waving" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's encouragement</h3>
+                        <p>Try different orders and see what happens! Swap <code>scale</code> and <code>rotate</code>, or put <code>translateY</code> first. Experimentation is how I learned to visualize coordinate system changes. Prof. Teeters taught me that there's no wrong way to learn — every "mistake" teaches you something about how transforms work!</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- SECTION 6: Quick Reference -->
         <section class="content-section">
-            <div class="tips-container">
-                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+            <h2 class="section-heading-centered">Quick Reference</h2>
 
+            <div class="tips-grid mt-2">
+                <!-- Tip 1 -->
                 <div class="tip-card">
                     <div class="tip-number">1</div>
                     <div>
-                        <h3>[Tip Title 1]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Transforms don't break layout</h3>
+                        <p>Unlike position or margin, transforms preserve document flow. Your element moves visually but nothing around it shifts. This is why transforms are perfect for animation — no layout disruption means better performance and no unexpected side effects.</p>
                     </div>
                 </div>
 
+                <!-- Tip 2 -->
                 <div class="tip-card">
                     <div class="tip-number">2</div>
                     <div>
-                        <h3>[Tip Title 2]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Order matters when combining</h3>
+                        <p>Transforms apply sequentially, and each one changes the coordinate system for the next. Different orders create completely different results. Example: <code>rotate(90deg) translateY(100px)</code> moves sideways because Y axis rotated!</p>
                     </div>
                 </div>
 
+                <!-- Tip 3 -->
                 <div class="tip-card">
                     <div class="tip-number">3</div>
                     <div>
-                        <h3>[Tip Title 3]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Think in coordinate systems</h3>
+                        <p>Visualize the axes after each transform. X goes right, Y goes down, Z toward you. After rotation, these axes rotate too. You must think step-by-step through the sequence to predict the final result. Prof. Teeters taught me to visualize systematically.</p>
+                    </div>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Use translate for movement</h3>
+                        <p>Translate is better than position or margin for animations. No layout disruption, no reflows, smoother performance, and easier to combine with other transforms. It's the go-to choice for moving elements, especially when animating.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: Learning Objectives Checklist -->
+        <section class="content-section">
+            <h2 class="section-heading-centered">Learning Objectives Checklist</h2>
+
+            <div class="hap-note-callout mt-2">
+                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+                    alt="HAP the apprentice learner with his study book and tools" width="150" height="150"
+                    class="hap-note-image" decoding="async" loading="lazy">
+                <div class="hap-note-content">
+                    <h3>Check your understanding before Station 2</h3>
+                    <p>Prof. Teeters taught me to master the fundamentals before moving forward. Make sure you can do all of these before heading to Station 2 where we'll make these transforms <em>animate</em> smoothly over time!</p>
+                </div>
+            </div>
+
+            <div class="topic-section mt-2">
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>Understanding transforms fundamentally</h3>
+                        <ul>
+                            <li>Can explain that transforms move elements visually</li>
+                            <li>Understand that document flow stays unchanged</li>
+                            <li>Know why this matters for animation</li>
+                            <li>Recognize difference from position changes</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Translate mastery</h3>
+                        <ul>
+                            <li>Can move elements horizontally with <code>translateX()</code></li>
+                            <li>Can move elements vertically with <code>translateY()</code></li>
+                            <li>Understand positive and negative value directions</li>
+                            <li>Know percentage calculation is relative to element size</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Scale mastery</h3>
+                        <ul>
+                            <li>Can resize elements proportionally with <code>scale()</code></li>
+                            <li>Understand scale values: 1 = normal, 2 = double, 0.5 = half</li>
+                            <li>Know that scale affects all content inside element</li>
+                            <li>Recognize when to use scale vs other sizing methods</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Rotate mastery</h3>
+                        <ul>
+                            <li>Can rotate elements using <code>rotate()</code> or <code>rotateZ()</code></li>
+                            <li>Understand degree values and direction</li>
+                            <li>Know positive = clockwise, negative = counterclockwise</li>
+                            <li>Understand rotation happens from center by default</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Combining transforms</h3>
+                        <ul>
+                            <li>Can combine multiple transforms in one property</li>
+                            <li>Understand that order matters critically</li>
+                            <li>Can visualize coordinate system changes</li>
+                            <li>Can predict results of different orderings</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Coordinate system understanding</h3>
+                        <ul>
+                            <li>Know X increases to right, Y down, Z toward viewer</li>
+                            <li>Understand that axes rotate with element</li>
+                            <li>Can think through sequential coordinate changes</li>
+                            <li>Can predict translation direction after rotation</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Accessibility awareness</h3>
+                        <ul>
+                            <li>Know that instant transforms are currently safe</li>
+                            <li>Understand this changes with animation in Station 2</li>
+                            <li>Aware of <code>prefers-reduced-motion</code> consideration</li>
+                            <li>Ready to test accessibility in next station</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -162,15 +551,17 @@
 
     </main>
 
+    <!-- Bottom Navigation -->
     <nav aria-label="Station pagination" class="page-navigation bottom-nav">
         <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
-        <a href="station2.html" class="nav-link next-link">Next: Station 2 - [NEXT_STATION_TITLE] →</a>
+        <a href="station2.html" class="nav-link next-link">Next: Station 2 - CSS Transitions →</a>
     </nav>
 
+    <!-- Footer -->
     <footer class="footer">
         <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
-        <p class="footer-reminder">
-            [HAP's memorable takeaway about this station] 🟠 — HAP
+        <p class="footer-reminder readable-width">
+            Transforms let you move, scale, and rotate elements without breaking layout — this is the foundation for all animation! 🔬 — HAP
         </p>
         <div class="footer-copyright">
             <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
@@ -186,40 +577,74 @@
         </div>
     </footer>
 
+    <!-- Easter Egg System -->
     <script src="../js/easter-egg.js"></script>
 
+    <!-- Prism.js for syntax highlighting -->
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
-        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"
+        integrity="sha384-dKDeH1pQ8XG4DJw7VLAZ+5wqEIYXVV2huLbXZPwS6N62DLOkCrVvs3FH3OMf6N7n"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
         integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
         crossorigin="anonymous"></script>
 
+    <!-- Copy button functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.prompt-box pre').forEach(pre => {
-                const button = document.createElement('button');
-                button.className = 'copy-button';
-                button.textContent = 'Copy';
-                button.setAttribute('aria-label', 'Copy code to clipboard');
+            // Function to add copy buttons to code blocks
+            function addCopyButtons() {
+                document.querySelectorAll('.prompt-box pre, .warning-box pre').forEach(pre => {
+                    // Skip if already has a copy button
+                    if (pre.querySelector('.copy-button')) return;
 
-                button.addEventListener('click', async () => {
-                    const code = pre.querySelector('code').textContent;
-                    try {
-                        await navigator.clipboard.writeText(code);
-                        button.classList.add('copied');
-                        button.textContent = 'Copied';
-                        setTimeout(() => {
-                            button.classList.remove('copied');
-                            button.textContent = 'Copy';
-                        }, 2000);
-                    } catch (err) {
-                        console.error('Failed to copy:', err);
-                    }
+                    const button = document.createElement('button');
+                    button.className = 'copy-button';
+                    button.textContent = 'Copy';
+                    button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                    button.addEventListener('click', async () => {
+                        const code = pre.querySelector('code').textContent;
+                        try {
+                            await navigator.clipboard.writeText(code);
+                            button.classList.add('copied');
+                            button.textContent = 'Copied';
+                            setTimeout(() => {
+                                button.classList.remove('copied');
+                                button.textContent = 'Copy';
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Failed to copy:', err);
+                        }
+                    });
+
+                    pre.appendChild(button);
                 });
+            }
 
-                pre.appendChild(button);
-            });
+            // Add copy buttons initially
+            addCopyButtons();
+
+            // Solution reveal functionality
+            const revealButton = document.getElementById('reveal-solution');
+            const solutionContent = document.getElementById('solution-content');
+
+            if (revealButton && solutionContent) {
+                revealButton.addEventListener('click', () => {
+                    solutionContent.classList.remove('hidden');
+                    revealButton.classList.add('hidden');
+
+                    // Apply syntax highlighting to revealed code
+                    if (typeof Prism !== 'undefined') {
+                        Prism.highlightAllUnder(solutionContent);
+                    }
+
+                    // Add copy buttons to revealed code blocks
+                    addCopyButtons();
+                });
+            }
         });
     </script>
 
