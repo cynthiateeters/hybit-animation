@@ -120,12 +120,18 @@ COMMON WORKFLOWS:
      Use WebAIM contrast checker: https://webaim.org/resources/contrastchecker/
      ═══════════════════════════════════════════════════════════════════ */
 
-  --teal-darker: hsl(169, 35%, 35%);              /* 4.5:1 on cream - normal text */
-  --orange-darker: hsl(32, 62%, 47%);             /* 3.1:1 on cream - large bold text */
-  --orange-darkest: hsl(32, 63%, 33%);            /* 4.5:1 on peach - normal text */
-  --success-darker: hsl(142, 71%, 36%);           /* 4.5:1 - success messages */
-  --success-green-accessible: hsl(109, 43%, 43%); /* 3.1:1 - large bold success */
-  --error-darker: hsl(0, 73%, 51%);               /* 4.5:1 - error messages */
+  --teal-darker: hsl(169, 35%, 35%);
+  /* 4.5:1 on cream - normal text */
+  --orange-darker: hsl(32, 62%, 47%);
+  /* 3.1:1 on cream - large bold text */
+  --orange-darkest: hsl(32, 63%, 33%);
+  /* 4.5:1 on peach - normal text */
+  --success-darker: hsl(142, 71%, 36%);
+  /* 4.5:1 - success messages */
+  --success-green-accessible: hsl(109, 43%, 43%);
+  /* 3.1:1 - large bold success */
+  --error-darker: hsl(0, 73%, 51%);
+  /* 4.5:1 - error messages */
 
   /* Light background variants for examples */
   --success-bg-light: hsl(138, 76%, 97%);
@@ -985,6 +991,12 @@ h4 {
   text-align: center;
   color: var(--dark-brown);
   margin-bottom: 2rem;
+}
+
+.readable-width {
+  max-width: var(--readable-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .station-card-link {
