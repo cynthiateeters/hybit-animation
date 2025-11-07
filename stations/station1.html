@@ -327,7 +327,8 @@
                     <h3>🟠 See It In Action: Scale on hover</h3>
                     <p>Hover over these boxes to see <code>scale()</code> in action. Notice how they grow from the
                         <strong>center point</strong>, not from a corner. That's <code>transform-origin: center</code>
-                        at work!</p>
+                        at work!
+                    </p>
 
                     <div class="demo-box">
                         <div class="scale-demo-grid">
@@ -353,7 +354,8 @@
                         shrink from their center point? That's because <code>transform-origin</code> defaults to
                         <code>center</code>. Prof. Teeters taught me that this creates the most natural-looking
                         effects. Also notice that the text inside scales too—everything inside the element is
-                        affected! 🔬</p>
+                        affected! 🔬
+                    </p>
                 </div>
             </div>
         </section>
@@ -556,11 +558,15 @@
                     </ol>
                 </div>
 
-                <div class="prompt-box mt-2">
-                    <button id="reveal-solution" class="copy-button" aria-label="Reveal solution">
-                        Click to reveal solution
+                <div class="warning-box mt-2">
+                    <h3>🟠 Solution: Click to Reveal</h3>
+
+                    <button type="button" id="toggleSolution" class="btn-primary"
+                        aria-expanded="false" aria-controls="solutionContent">
+                        Show Solution
                     </button>
-                    <div id="solution-content" style="display: none;">
+
+                    <div id="solutionContent" style="display: none;">
                         <div class="prompt-label">The solution:</div>
                         <pre><code class="language-css">.card:hover {
   transform: scale(1.05) rotate(5deg) translateY(-20px);
@@ -826,21 +832,25 @@
             addCopyButtons();
 
             // Solution reveal functionality
-            const revealButton = document.getElementById('reveal-solution');
-            const solutionContent = document.getElementById('solution-content');
+            const toggleButton = document.getElementById('toggleSolution');
+            const solutionContent = document.getElementById('solutionContent');
 
-            if (revealButton && solutionContent) {
-                revealButton.addEventListener('click', () => {
-                    solutionContent.style.display = 'block';
-                    revealButton.style.display = 'none';
+            if (toggleButton && solutionContent) {
+                toggleButton.addEventListener('click', function () {
+                    const isHidden = solutionContent.style.display === 'none';
+                    solutionContent.style.display = isHidden ? 'block' : 'none';
+                    toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
+                    toggleButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
 
-                    // Apply syntax highlighting to revealed code
-                    if (typeof Prism !== 'undefined') {
+                    // Apply syntax highlighting when revealing (only on first reveal)
+                    if (isHidden && typeof Prism !== 'undefined') {
                         Prism.highlightAllUnder(solutionContent);
                     }
 
-                    // Add copy buttons to revealed code blocks
-                    addCopyButtons();
+                    // Add copy buttons when revealing (only on first reveal)
+                    if (isHidden) {
+                        addCopyButtons();
+                    }
                 });
             }
         });

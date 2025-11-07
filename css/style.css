@@ -1568,6 +1568,28 @@ WHEN TO CREATE NEW UTILITIES:
   box-shadow: var(--shadow-sm);
 }
 
+/* Primary button for solution reveals */
+.btn-primary {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  background: hsl(32, 76%, 63%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 200ms ease;
+}
+
+.btn-primary:hover {
+  background: hsl(32, 76%, 55%);
+}
+
+.btn-primary:focus-visible {
+  outline: 3px solid hsl(32, 76%, 63%);
+  outline-offset: 3px;
+}
+
 .demo-status {
   color: var(--medium-brown);
   font-weight: 600;
