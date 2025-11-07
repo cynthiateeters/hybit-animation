@@ -221,6 +221,186 @@
             </div>
         </section>
 
+        <!-- SECTION 3: Duration and Property Selection -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Duration and property selection</h2>
+
+                <p class="mb-2">Getting transitions right comes down to two critical decisions: how long should they last, and which properties should animate. I learned both of these lessons through spectacular failures — a 2-second button that felt like watching paint dry, and a phone that stuttered because I animated everything at once!</p>
+
+                <h3 class="mt-2">Understanding duration: How long is just right?</h3>
+                <p class="mb-2">Duration controls how long the transition takes from start to finish. You can specify it in milliseconds (ms) or seconds (s), but Prof. Teeters taught me to always use milliseconds for consistency. The duration you choose completely changes how the animation feels!</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>The sweet spot: 250-500ms</h3>
+                        <p><strong>Fast enough to feel responsive, slow enough to see</strong></p>
+                        <p>This range works for most UI animations. Buttons, links, hover states, menu items — if you're unsure about duration, start with 300ms. Prof. Teeters calls it the "default duration" because it works in almost every situation. It's fast enough that users don't feel like they're waiting, but slow enough that the motion is visible and smooth.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Too fast: 100ms and under</h3>
+                        <p><strong>Barely noticeable on many screens</strong></p>
+                        <p>At 100ms, the transition happens so quickly that users might not even register it as motion. It feels almost instant, which defeats the purpose of smooth transitions. Prof. Teeters explained that animations this fast only work for very subtle effects where you want a hint of motion without drawing attention.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Too slow: 1000ms (1 second) and above</h3>
+                        <p><strong>Feels sluggish and frustrating</strong></p>
+                        <p>Anything over 1 second makes users feel like they're waiting for the interface to catch up with them. For UI elements, slow animations communicate "loading" or "processing," not polish. Prof. Teeters has a strict rule: if an animation makes you tap your fingers waiting for it to finish, it's too slow!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Duration comparison examples:</div>
+                    <pre><code class="language-css">/* Too fast - barely noticeable */
+.button-fast {
+  transition: background 100ms;
+}
+
+/* Sweet spot - responsive and visible */
+.button-perfect {
+  transition: background 300ms;
+}
+
+/* Too slow - feels sluggish */
+.button-slow {
+  transition: background 1000ms;
+}
+
+/* Way too slow - ridiculous for UI */
+.button-ridiculous {
+  transition: background 2000ms;
+}</code></pre>
+                    <p class="code-comment mt-1">Prof. Teeters taught me to hover over each of these durations to feel the difference. The 300ms version feels polished and professional. The 2000ms version feels like a joke!</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's 2-second button disaster</h3>
+                        <p>When I first learned about transitions, I thought "more animation equals more impressive." I created a button with a 2-second background color transition because I wanted people to really <em>see</em> the effect happening. I was so proud of it! I showed it to Prof. Teeters, hovering over the button and watching the excruciatingly slow color fade. She didn't say anything at first — she just watched the entire 2-second transition happen, then started laughing. "HAP," she said, "that's not polished, that's paint drying." She changed it to 300ms and had me hover again. The difference was instant — the button felt responsive instead of broken. I learned that fast beats slow every single time for UI animations. Speed equals polish, not the other way around!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Milliseconds vs seconds (use milliseconds):</div>
+                    <pre><code class="language-css">/* Recommended: milliseconds for clarity */
+.button {
+  transition: background 300ms;
+  /* Easier to read and compare durations */
+}
+
+/* Works but less clear: seconds with decimals */
+.button {
+  transition: background 0.3s;
+  /* Harder to compare and coordinate with JavaScript */
+}</code></pre>
+                    <p class="code-comment mt-1">JavaScript uses milliseconds for timing (like <code>setTimeout(fn, 300)</code>), so using milliseconds in CSS makes coordination easier. Prof. Teeters taught me that consistency across languages prevents confusion!</p>
+                </div>
+
+                <h3 class="mt-2">Understanding property selection: Be specific, always</h3>
+                <p class="mb-2">The second critical decision is <strong>which properties to transition</strong>. This is where I made my biggest mistake — using <code>transition: all</code> because it seemed convenient. Prof. Teeters has a strict rule about this with absolutely no exceptions: <strong>Never use transition: all</strong>.</p>
+
+                <div class="warning-box mt-2">
+                    <h3>🔴 The danger of transition: all</h3>
+                    <p><strong class="text-error">❌ WRONG: Never use transition all</strong></p>
+                    <pre><code class="language-css">.button {
+  background: hsl(32, 76%, 63%);
+  transform: scale(1);
+  transition: all 300ms; /* Animates EVERYTHING that changes */
+}
+
+.button:hover {
+  background: hsl(32, 76%, 53%);
+  transform: scale(1.05);
+  /* Only two properties change, but all are being watched */
+}</code></pre>
+
+                    <p class="mt-1"><strong class="text-success">✅ RIGHT: List specific properties</strong></p>
+                    <pre><code class="language-css">.button {
+  background: hsl(32, 76%, 63%);
+  transform: scale(1);
+  transition: transform 300ms ease-out,
+              background 300ms ease-out;
+}
+
+.button:hover {
+  background: hsl(32, 76%, 53%);
+  transform: scale(1.05);
+  /* Only the properties we named are animated */
+}</code></pre>
+
+                    <p class="mt-1"><strong>Why specific properties matter:</strong></p>
+                    <ul class="mt-1">
+                        <li><strong>Performance</strong>: <code>transition: all</code> watches every property for changes, even ones you didn't intend to animate. This creates extra work for the browser.</li>
+                        <li><strong>Unexpected animations</strong>: Properties like width, margin, padding might change in ways you didn't expect, causing janky motion.</li>
+                        <li><strong>Mobile suffers</strong>: On slower devices (budget phones), <code>transition: all</code> causes visible stuttering and dropped frames.</li>
+                        <li><strong>Debugging nightmare</strong>: When something animates unexpectedly, you can't tell which property is causing the problem.</li>
+                    </ul>
+                    <p class="mt-1">Prof. Teeters taught me that the few extra seconds to list specific properties is always worth the smooth performance you get in return!</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP studying on his laptop" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's transition: all phone stuttering experience</h3>
+                        <p>I built a card component with hover effects — background color change, slight scale transform, and a subtle shadow. I used <code>transition: all 300ms</code> because it was convenient and seemed to work perfectly. On my desktop Mac, it looked smooth and professional. I showed Prof. Teeters my work and she said, "Now test it on this phone." She handed me her budget Android phone, and when I hovered (tapped) on the cards, they stuttered badly. The motion was choppy and janky, nothing like the smooth animation on my Mac. We opened Chrome DevTools to see what was actually animating — turns out the card's width and margin were also being transitioned, even though they weren't changing! The browser was doing extra work watching and interpolating properties I didn't intend to animate. Prof. Teeters had me rewrite it listing only transform, background, and box-shadow. Suddenly the phone was smooth again. That's when I understood why "all" is forbidden — desktop hides performance problems that mobile devices can't!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Multiple properties with commas:</div>
+                    <pre><code class="language-css">/* Transition multiple properties - list them all */
+.card {
+  background: hsl(0, 0%, 100%);
+  transform: scale(1);
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.1);
+  transition: transform 300ms ease-out,
+              background 300ms ease-out,
+              box-shadow 300ms ease-out;
+}
+
+.card:hover {
+  background: hsl(32, 76%, 98%);
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.15);
+  /* All three properties smoothly transition */
+}</code></pre>
+                    <p class="code-comment mt-1">Yes, it's more typing than <code>transition: all</code>. But it's explicit, performant, and works smoothly on all devices. Prof. Teeters says the extra 10 seconds is always worth it!</p>
+                </div>
+
+                <h3 class="mt-2">Guidelines for choosing duration</h3>
+                <p class="mb-2">Prof. Teeters taught me these rules of thumb for common UI elements:</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>Buttons and links: 200-300ms</h3>
+                        <p>Fast and responsive. Users interact with these constantly, so animations should be quick. 250ms is the sweet spot for hover effects on buttons.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Modals and panels: 300-400ms</h3>
+                        <p>Slightly longer for larger elements appearing/disappearing. This gives users time to notice the movement and understand what's happening.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Small UI details: 150-250ms</h3>
+                        <p>Subtle effects like icon rotations, color shifts, or tiny scale changes can be faster. They're small enough that you want just a hint of motion.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>When in doubt: 300ms</h3>
+                        <p>Prof. Teeters calls this the "universal duration" because it works in almost every situation. Start here and adjust only if you have a specific reason!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- SECTION 6: Quick Reference -->
         <section class="content-section">
             <h2 class="section-heading-centered">Quick Reference</h2>
