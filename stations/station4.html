@@ -427,6 +427,12 @@
                     <p class="code-comment mt-1">Prof. Teeters' complete button pattern: 2px lift on hover (not 30px!), press-down on active, visible focus outline for keyboard users, and always respect prefers-reduced-motion!</p>
                 </div>
 
+                <div class="button-states-demo">
+                    <h4>🎯 Interactive Demo: Try the button states</h4>
+                    <p>Hover over the button, click it, then press Tab to see the focus state. Notice how 2px feels professional, not excessive!</p>
+                    <button type="button" class="micro-button-demo">Try Me!</button>
+                </div>
+
                 <h3 class="mt-3">Part B: Form feedback patterns</h3>
                 <p class="mb-2">Form validation needs clear, accessible feedback. Prof. Teeters taught me that animations enhance error communication but never replace text, color, and icons!</p>
 
@@ -512,6 +518,17 @@
   Please enter a valid email address
 &lt;/span&gt;</code></pre>
                     <p class="mt-1">Animation + Color + Icon + Text = Complete accessible error communication!</p>
+                </div>
+
+                <div class="form-feedback-demo">
+                    <h4>🎯 Interactive Demo: Test form validation feedback</h4>
+                    <p>Try entering invalid text (no @), then a valid email. Watch for the 5px shake, color change, icons, and message!</p>
+                    <div class="form-demo-field">
+                        <input type="email" class="form-demo-input" placeholder="Enter your email" aria-describedby="demo-message">
+                        <span class="form-demo-icon success-icon" aria-hidden="true">✓</span>
+                        <span class="form-demo-icon error-icon" aria-hidden="true">⚠️</span>
+                        <div class="form-demo-message" id="demo-message" role="alert"></div>
+                    </div>
                 </div>
 
                 <h3 class="mt-3">Part C: Toggle state animations</h3>
@@ -604,6 +621,31 @@
 }</code></pre>
                     <p class="code-comment mt-1">The checkmark scales in with a gentle bouncy curve, providing tactile satisfaction without excessive movement!</p>
                 </div>
+
+                <div class="toggle-demo">
+                    <h4>🎯 Interactive Demo: Try the toggle animations</h4>
+                    <p>Click the checkbox and switch. Notice how satisfying the animations feel when perfectly tuned!</p>
+                    <div class="toggle-demo-grid">
+                        <div class="toggle-demo-item">
+                            <div class="toggle-demo-label">Checkbox with checkmark</div>
+                            <label class="checkbox-demo-wrapper">
+                                <input type="checkbox" class="checkbox-demo-input">
+                                <div class="custom-checkbox-demo">
+                                    <span class="checkmark">✓</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="toggle-demo-item">
+                            <div class="toggle-demo-label">Switch toggle</div>
+                            <label class="switch-demo-wrapper">
+                                <input type="checkbox" class="switch-demo-input">
+                                <div class="toggle-switch-demo">
+                                    <div class="toggle-circle-demo"></div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -678,6 +720,18 @@
   }
 }</code></pre>
                     <p class="code-comment mt-1">The magical transformation: top and bottom lines rotate into X, middle line fades out, 300ms duration, and reduced-motion instant state change!</p>
+                </div>
+
+                <div class="hamburger-demo">
+                    <h4>🎯 Interactive Demo: Click the hamburger icon</h4>
+                    <p>Watch the magical transformation! Click again to reverse it. This is icon-only — no actual menu!</p>
+                    <button type="button" class="hamburger-button-demo" aria-label="Toggle menu" aria-expanded="false">
+                        <div class="hamburger-icon-demo">
+                            <span class="hamburger-line-demo"></span>
+                            <span class="hamburger-line-demo"></span>
+                            <span class="hamburger-line-demo"></span>
+                        </div>
+                    </button>
                 </div>
 
                 <h3 class="mt-3">Part B: Navigation feedback</h3>
@@ -778,6 +832,16 @@
   }
 }</code></pre>
                     <p class="code-comment mt-1">The wave pattern: 10px bounce (not 50px!), staggered delay creates smooth wave, reduced-motion shows static dots!</p>
+                </div>
+
+                <div class="loading-demo">
+                    <h4>🎯 Interactive Demo: Loading dots animation</h4>
+                    <p>Watch the gentle wave pattern! Notice how 10-12px is plenty — restraint creates elegance!</p>
+                    <div class="loading-dots-demo">
+                        <div class="loading-dot-demo"></div>
+                        <div class="loading-dot-demo"></div>
+                        <div class="loading-dot-demo"></div>
+                    </div>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -1293,6 +1357,53 @@ document.querySelector('.like-button').addEventListener('click', function() {
 
                 pre.appendChild(button);
             });
+        });
+    </script>
+
+    <!-- Demo 2: Form validation functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formInput = document.querySelector('.form-demo-input');
+            const formField = document.querySelector('.form-demo-field');
+            const message = document.querySelector('.form-demo-message');
+
+            if (formInput && formField && message) {
+                formInput.addEventListener('blur', () => {
+                    const value = formInput.value.trim();
+
+                    // Remove previous states
+                    formField.classList.remove('input-success', 'input-error');
+                    message.textContent = '';
+
+                    if (value === '') {
+                        // Empty - no validation
+                        return;
+                    }
+
+                    // Simple validation: check for @ symbol
+                    if (value.includes('@')) {
+                        formField.classList.add('input-success');
+                        message.textContent = 'Valid email format!';
+                    } else {
+                        formField.classList.add('input-error');
+                        message.textContent = 'Please include an @ symbol';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Demo 4: Hamburger menu toggle functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerButton = document.querySelector('.hamburger-button-demo');
+
+            if (hamburgerButton) {
+                hamburgerButton.addEventListener('click', function() {
+                    const isOpen = this.classList.toggle('open');
+                    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
         });
     </script>
 
