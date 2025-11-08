@@ -522,13 +522,14 @@
 
                 <div class="form-feedback-demo">
                     <h4>🎯 Interactive Demo: Test form validation feedback</h4>
-                    <p>Try entering invalid text (no @), then a valid email. Watch for the 5px shake, color change, icons, and message!</p>
+                    <p>Enter text and press Enter or click Validate. Watch for the 5px shake, color change, icons, and message!</p>
                     <div class="form-demo-field">
                         <input type="email" class="form-demo-input" placeholder="Enter your email" aria-describedby="demo-message">
                         <span class="form-demo-icon success-icon" aria-hidden="true">✓</span>
                         <span class="form-demo-icon error-icon" aria-hidden="true">⚠️</span>
-                        <div class="form-demo-message" id="demo-message" role="alert"></div>
                     </div>
+                    <button type="button" class="form-demo-validate-btn">Validate</button>
+                    <div class="form-demo-message" id="demo-message" role="alert"></div>
                 </div>
 
                 <h3 class="mt-3">Part C: Toggle state animations</h3>
@@ -1366,9 +1367,11 @@ document.querySelector('.like-button').addEventListener('click', function() {
             const formInput = document.querySelector('.form-demo-input');
             const formField = document.querySelector('.form-demo-field');
             const message = document.querySelector('.form-demo-message');
+            const validateBtn = document.querySelector('.form-demo-validate-btn');
 
-            if (formInput && formField && message) {
-                formInput.addEventListener('blur', () => {
+            if (formInput && formField && message && validateBtn) {
+                // Shared validation function
+                const validateEmail = () => {
                     const value = formInput.value.trim();
 
                     // Remove previous states
@@ -1387,6 +1390,17 @@ document.querySelector('.like-button').addEventListener('click', function() {
                     } else {
                         formField.classList.add('input-error');
                         message.textContent = 'Please include an @ symbol';
+                    }
+                };
+
+                // Trigger validation on button click
+                validateBtn.addEventListener('click', validateEmail);
+
+                // Trigger validation on Enter key
+                formInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        validateEmail();
                     }
                 });
             }
