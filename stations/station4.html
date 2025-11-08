@@ -607,6 +607,270 @@
             </div>
         </section>
 
+        <!-- Section 4: Icon Transformations and Navigation -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>🔄 Icon transformations and navigation</h2>
+                <p class="mb-2">Prof. Teeters taught me that icon transformations create magical moments where users feel the interface responding intelligently. Navigation animations must be fast (200 to 300ms maximum), and loading indicators need restraint!</p>
+
+                <h3 class="mt-2">Part A: Icon transformation patterns</h3>
+                <p class="mb-2">When icons transform between states, they help users understand relationships and state changes. The hamburger to X transformation was my first "aha moment" with micro-interactions!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP discovering the magic of transformations" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's transformation revelation</h3>
+                        <p>I was building my first hamburger menu icon, and Prof. Teeters suggested making it transform into an X when clicked instead of just disappearing. I spent an afternoon figuring out how to rotate and move the three lines into an X shape. When I finally got it working, I clicked it over and over, watching the smooth transformation. I couldn't stop smiling! Prof. Teeters noticed and asked, "HAP, why are you smiling?" I said, "It just feels magical! The lines becoming an X makes so much sense — it shows that clicking the same button will close the menu!" She explained that this is exactly what good icon transformations do: they create mini aha moments that help users understand how the interface works. The transformation isn't decoration — it teaches users the relationship between the hamburger icon and the close action. She taught me that icon transformations should be smooth but quick (250 to 300ms), use meaningful motion that makes sense for the transformation, and always show the relationship between states. That moment made me realize micro-interactions aren't just about making things pretty — they're about making interfaces feel intelligent and responsive!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Hamburger → X transformation (icon only, no menu)</div>
+                    <pre><code class="language-css">/* Hamburger menu icon (3 lines) */
+.hamburger {
+  width: 30px;
+  height: 24px;
+  position: relative;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: hsl(0, 0%, 20%);
+  position: absolute;
+  transition: transform 300ms ease-out,
+              opacity 300ms ease-out;
+}
+
+.hamburger-line:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-line:nth-child(3) {
+  bottom: 0;
+}
+
+/* Transform to X when open */
+.hamburger.open .hamburger-line:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger-line {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The magical transformation: top and bottom lines rotate into X, middle line fades out, 300ms duration, and reduced-motion instant state change!</p>
+                </div>
+
+                <h3 class="mt-3">Part B: Navigation feedback</h3>
+                <p class="mb-2">Navigation animations must be fast! Prof. Teeters taught me that 1 second feels like forever when users are trying to navigate. 200 to 300ms maximum!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP learning about speed" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's navigation speed lesson</h3>
+                        <p>I built a beautiful navigation menu with a sliding underline indicator that moved between tabs. I made the animation 1 second long because I thought users would appreciate seeing the smooth, elegant movement. It looked stunning! Then Prof. Teeters tested it by clicking between tabs quickly, the way real users navigate. The underline was still sliding to the previous tab when she clicked the next one. She looked frustrated and said, "HAP, I'm trying to get somewhere, and your animation is holding me hostage!" I was confused — wasn't smooth animation good? She explained that there's a critical difference between decorative animations and functional animations. Navigation is functional — users are trying to accomplish a task, and slow animations block them from their goal. She changed my 1-second animation to 250 milliseconds. I worried it would feel too fast, but when I tested it, the movement was still visible and elegant, yet it didn't slow me down. She taught me Prof. Teeters' navigation rule: 200 to 300 milliseconds maximum for navigation animations. Speed over drama. Users are navigating to accomplish something, not to watch your animations perform!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Animated underline (scale from 0 to full width)</div>
+                    <pre><code class="language-css">/* Navigation link with animated underline */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: hsl(0, 0%, 20%);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: hsl(32, 76%, 63%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-link::after {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">Fast navigation feedback: 300ms maximum, scaleX from 0 to 1, ease-out for immediate response!</p>
+                </div>
+
+                <h3 class="mt-3">Part C: Loading and notification patterns</h3>
+                <p class="mb-2">Loading indicators and notifications need restraint! Prof. Teeters constantly reminded me: 10 pixels for loading dots, 2 pixels for notification bounces, not 50!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP learning about loading indicators" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's loading dot refinement</h3>
+                        <p>My first loading indicator was three dots that bounced 50 pixels high in sequence. I thought it looked fun and energetic! When Prof. Teeters saw it, she said, "HAP, those aren't loading dots, those are bouncing balls!" I defended my design — the high bounce made it really noticeable! She explained patiently that loading indicators should communicate "something is happening" without being distracting or exhausting to watch. Users might stare at loading indicators for several seconds, and excessive motion becomes annoying or even nauseating for users with vestibular disorders. She changed my dots to bounce just 10 pixels high. I thought they'd be barely visible, but when I tested it, the gentle wave motion was perfect. The staggered delay (each dot bouncing 0.16 seconds after the previous one) created a smooth wave effect that clearly communicated loading without being aggressive. She taught me that 10 pixels is plenty for loading dots — tiny movements create the pattern. She also made an important accessibility point: always provide a reduced-motion alternative where the dots appear static. Users with motion sensitivity still need to know something is loading, just without the animation!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">CSS loading dots (staggered animation-delay)</div>
+                    <pre><code class="language-css">/* Three dots bouncing in sequence */
+.loading-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.loading-dot {
+  width: 8px;
+  height: 8px;
+  background: hsl(32, 76%, 63%);
+  border-radius: 50%;
+  animation: dotBounce 1.4s infinite ease-out;
+}
+
+.loading-dot:nth-child(2) {
+  animation-delay: 0.16s; /* Staggered delay */
+}
+
+.loading-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes dotBounce {
+  0%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); } /* 10px max, not 50px */
+}
+
+/* Prof. Teeters rule: 10px is plenty for loading dots */
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-dot {
+    animation: none; /* Static dots */
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The wave pattern: 10px bounce (not 50px!), staggered delay creates smooth wave, reduced-motion shows static dots!</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP learning about notification restraint" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's notification restraint</h3>
+                        <p>This story comes full circle to where Station 4 started — my 50-pixel notification badge bounce! When I first created notification badges, I wanted them to really grab users' attention. A new message is important, so I made the badge bounce 50 pixels when it appeared. It bounced wildly, practically flying around the screen! Prof. Teeters watched it bounce and said, "HAP, that's a macro-distraction, not a micro-interaction." I thought bigger movement meant more attention, but she taught me something important about appropriate attention-grabbing. A notification badge needs to catch the user's eye without being aggressive or annoying. She changed my bounce to just 2 pixels. Just 2! I was certain users would never notice it. But when I tested it, the tiny gentle bounce was perfect. It caught my attention through subtle movement without demanding all my focus. She explained that 2 pixels is enough because the badge also has color (bright red), position (near important content), and shape (circular with number) to grab attention. The animation enhances those cues but doesn't need to do all the work alone. I learned that restraint creates professionalism, and subtle movements respect users' attention while still being effective!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Notification badge pop-in (gentle bounce)</div>
+                    <pre><code class="language-css">/* Notification badge with bouncy entrance */
+.notification-badge {
+  background: hsl(0, 73%, 50%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  transform: scale(0);
+}
+
+.notification-badge.show {
+  animation: badgePopIn 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes badgePopIn {
+  0% { transform: scale(0); }
+  50% { transform: scale(1.15); } /* Slight overshoot */
+  100% { transform: scale(1); }
+}
+
+/* Prof. Teeters: Overshoot grabs attention without being aggressive */
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-badge.show {
+    animation: none;
+    transform: scale(1); /* Appears instantly */
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">Gentle bounce: slight overshoot to 1.15, settles at 1.0, grabs attention without flying around the screen!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Tooltip fade-in (opacity + slight movement)</div>
+                    <pre><code class="language-css">/* Tooltip with fade + slight upward movement */
+.tooltip {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 200ms ease-out,
+              transform 200ms ease-out;
+  pointer-events: none;
+}
+
+.tooltip-trigger:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">Subtle tooltip: 5px movement, 200ms duration, fades in smoothly without demanding attention!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Toast notification entry (slide + fade)</div>
+                    <pre><code class="language-css">/* Toast slides in from side with fade */
+.toast {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 300ms ease-out,
+              transform 300ms ease-out;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">Toast entry: slides from offscreen with fade, 300ms duration, ease-out for immediate response!</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 6: Quick Reference Tips -->
         <section class="content-section">
             <div class="tips-container">
