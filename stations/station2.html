@@ -967,22 +967,105 @@
     <!-- Easter Egg System -->
     <script src="../js/easter-egg.js"></script>
 
+    <!-- Copy Button Functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to add copy buttons to code blocks
+            function addCopyButtons() {
+                document.querySelectorAll('.prompt-box pre, .warning-box pre').forEach(pre => {
+                    // Skip if already has a copy button
+                    if (pre.querySelector('.copy-button')) return;
+
+                    const button = document.createElement('button');
+                    button.className = 'copy-button';
+                    button.textContent = 'Copy';
+                    button.setAttribute('aria-label', 'Copy code to clipboard');
+                    button.setAttribute('type', 'button');
+
+                    button.addEventListener('click', async () => {
+                        const code = pre.querySelector('code').textContent;
+                        try {
+                            await navigator.clipboard.writeText(code);
+                            button.classList.add('copied');
+                            button.textContent = 'Copied!';
+                            setTimeout(() => {
+                                button.classList.remove('copied');
+                                button.textContent = 'Copy';
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Failed to copy:', err);
+                            button.textContent = 'Failed';
+                            setTimeout(() => {
+                                button.textContent = 'Copy';
+                            }, 2000);
+                        }
+                    });
+
+                    pre.appendChild(button);
+                });
+            }
+
+            // Add copy buttons initially
+            addCopyButtons();
+        });
+    </script>
+
     <!-- Solution Reveal Toggle -->
     <script>
-        const toggleButton = document.getElementById('toggleSolution');
-        const solutionContent = document.getElementById('solution-content');
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggleSolution');
+            const solutionContent = document.getElementById('solution-content');
 
-        if (toggleButton && solutionContent) {
-            toggleButton.addEventListener('click', function() {
-                if (solutionContent.style.display === 'none') {
-                    solutionContent.style.display = 'block';
-                    toggleButton.textContent = 'Hide Solution';
-                } else {
-                    solutionContent.style.display = 'none';
-                    toggleButton.textContent = 'Show Solution';
-                }
-            });
-        }
+            if (toggleButton && solutionContent) {
+                let isFirstReveal = true;
+
+                toggleButton.addEventListener('click', function() {
+                    const isHidden = solutionContent.style.display === 'none';
+                    solutionContent.style.display = isHidden ? 'block' : 'none';
+                    toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
+                    toggleButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+
+                    // On first reveal, apply syntax highlighting and add copy buttons
+                    if (isHidden && isFirstReveal) {
+                        if (typeof Prism !== 'undefined') {
+                            Prism.highlightAllUnder(solutionContent);
+                        }
+                        // Add copy buttons to solution code blocks
+                        solutionContent.querySelectorAll('pre').forEach(pre => {
+                            if (pre.querySelector('.copy-button')) return;
+
+                            const button = document.createElement('button');
+                            button.className = 'copy-button';
+                            button.textContent = 'Copy';
+                            button.setAttribute('aria-label', 'Copy code to clipboard');
+                            button.setAttribute('type', 'button');
+
+                            button.addEventListener('click', async () => {
+                                const code = pre.querySelector('code').textContent;
+                                try {
+                                    await navigator.clipboard.writeText(code);
+                                    button.classList.add('copied');
+                                    button.textContent = 'Copied!';
+                                    setTimeout(() => {
+                                        button.classList.remove('copied');
+                                        button.textContent = 'Copy';
+                                    }, 2000);
+                                } catch (err) {
+                                    console.error('Failed to copy:', err);
+                                    button.textContent = 'Failed';
+                                    setTimeout(() => {
+                                        button.textContent = 'Copy';
+                                    }, 2000);
+                                }
+                            });
+
+                            pre.appendChild(button);
+                        });
+                        isFirstReveal = false;
+                    }
+                });
+            }
+        });
     </script>
 
     <!-- Reduced Motion Demo Toggle -->
