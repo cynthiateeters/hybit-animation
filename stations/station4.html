@@ -871,6 +871,146 @@
             </div>
         </section>
 
+        <!-- Section 5: Try It Yourself Exercise -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>💪 Try it yourself: Like button with heart icon</h2>
+                <p class="mb-2">Prof. Teeters says this exercise is her favorite because it combines everything we learned: restraint (subtle hover, gentle bounce), purpose (feedback on user action), accessibility (reduced-motion support), and that satisfying feeling of a well-tuned micro-interaction!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP encouraging you to try" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's exercise encouragement</h3>
+                        <p>When Prof. Teeters assigned me this exercise, she said, "HAP, I want you to feel the satisfaction of a perfectly-tuned micro-interaction." I spent an hour tweaking the bounce amount — too little felt flat and boring, too much felt excessive and annoying. When I finally found the sweet spot (scaling to 1.2, then settling at 1.1), I couldn't stop clicking it! She explained that this feeling — the satisfaction of clicking something that responds just right — is what we're aiming for with all micro-interactions. It's not about big flashy animations. It's about tiny movements that feel perfect. Your challenge: create a like button with a heart icon that feels satisfying to click. Start with my recommended values, then experiment! Try different bounce amounts. Try different durations. Try different timing functions. Prof. Teeters always says: feel it, don't just see it. You'll know when you've found the right balance because you won't be able to stop clicking it. That's the magic of micro-interactions!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-3">The challenge</h3>
+                <p class="mb-2">Build a like button with a heart icon that demonstrates everything you learned in Station 4:</p>
+
+                <ul class="mt-1">
+                    <li><strong>Hover state:</strong> Subtle scale from 1 to 1.05 (micro means micro!)</li>
+                    <li><strong>Click action:</strong> Fill the heart with color (gray to red)</li>
+                    <li><strong>Click animation:</strong> Gentle bounce (scale to 1.2, settle to 1.1)</li>
+                    <li><strong>Accessibility:</strong> Must respect prefers-reduced-motion</li>
+                    <li><strong>Performance:</strong> Use only transform and opacity</li>
+                    <li><strong>Functionality:</strong> Toggle on repeated clicks</li>
+                </ul>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Your starting HTML</div>
+                    <pre><code class="language-html">&lt;button class="like-button" type="button" aria-label="Like this content"&gt;
+  &lt;svg class="heart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+    &lt;path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/&gt;
+  &lt;/svg&gt;
+&lt;/button&gt;</code></pre>
+                </div>
+
+                <details class="mt-2">
+                    <summary><strong>🤔 Need a hint?</strong> Click to see HAP's step-by-step guide</summary>
+                    <div class="hint-content mt-1">
+                        <p><strong>HAP's hints:</strong></p>
+                        <ol class="mt-1">
+                            <li><strong>Start with the base button:</strong> Remove default button styles, add cursor pointer, set up transition for transform (300ms ease-out from Station 3!)</li>
+                            <li><strong>Style the heart icon:</strong> Set initial fill color to gray using hsl(0, 0%, 60%), add transition for fill property</li>
+                            <li><strong>Add hover state:</strong> Remember the helicopter test! Scale to 1.05, not 1.5</li>
+                            <li><strong>Create liked state:</strong> Add a .liked class that changes heart fill to red hsl(0, 73%, 50%)</li>
+                            <li><strong>Add bounce animation:</strong> Use @keyframes with a gentle bouncy cubic-bezier from Station 3</li>
+                            <li><strong>Add JavaScript toggle:</strong> Simple click listener that toggles the .liked class</li>
+                            <li><strong>Don't forget accessibility:</strong> Prefers-reduced-motion removes transitions and animations</li>
+                        </ol>
+                        <p class="mt-1"><strong>Prof. Teeters' reminder:</strong> Test with keyboard navigation (Tab to focus, Space/Enter to click) and test with reduced-motion enabled!</p>
+                    </div>
+                </details>
+
+                <div class="mt-3">
+                    <button id="toggleSolution" class="show-solution-btn" aria-expanded="false">Show Solution</button>
+                </div>
+
+                <div id="solution-content" class="solution-content" style="display: none;">
+                    <h3 class="mt-2">✅ HAP's solution</h3>
+                    <p class="mb-2">Here's how I built it using everything Prof. Teeters taught me about micro-interactions!</p>
+
+                    <div class="prompt-box mt-2">
+                        <div class="prompt-label">Complete CSS solution</div>
+                        <pre><code class="language-css">/* Like button base */
+.like-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+}
+
+.like-button:hover {
+  transform: scale(1.05);
+  /* Subtle hover, saves drama for click */
+}
+
+/* Focus state for keyboard accessibility */
+.like-button:focus {
+  outline: 2px solid hsl(32, 76%, 63%);
+  outline-offset: 2px;
+}
+
+/* Heart icon */
+.heart-icon {
+  fill: hsl(0, 0%, 60%);
+  transition: fill 300ms ease-out;
+}
+
+/* Liked state */
+.like-button.liked .heart-icon {
+  fill: hsl(0, 73%, 50%);
+  animation: heartBounce 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes heartBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .like-button {
+    transition: none;
+  }
+  .like-button.liked .heart-icon {
+    animation: none;
+  }
+}</code></pre>
+                    </div>
+
+                    <div class="prompt-box mt-2">
+                        <div class="prompt-label">JavaScript for toggle functionality</div>
+                        <pre><code class="language-javascript">// Simple toggle on click
+document.querySelector('.like-button').addEventListener('click', function() {
+  this.classList.toggle('liked');
+});</code></pre>
+                    </div>
+
+                    <h4 class="mt-3">Why this solution works</h4>
+                    <ul class="mt-1">
+                        <li><strong>Restraint in hover:</strong> 1.05 scale is subtle — just enough to say "I'm interactive" without screaming</li>
+                        <li><strong>Purpose is clear:</strong> Provides feedback (heart fills, bounce confirms action)</li>
+                        <li><strong>Gentle bounce:</strong> The cubic-bezier creates a satisfying overshoot without being excessive</li>
+                        <li><strong>Smart animation timing:</strong> Bounce only happens on click (liked state), not on hover</li>
+                        <li><strong>Performance:</strong> Using transform and fill (not layout properties)</li>
+                        <li><strong>Accessibility:</strong> Focus outline for keyboard users, reduced-motion support</li>
+                        <li><strong>Inline SVG benefit:</strong> Can directly animate fill property with CSS</li>
+                    </ul>
+
+                    <p class="mt-2"><strong>Prof. Teeters' note:</strong> The sweet spot is scale(1.2) at 50%. Try changing it to scale(1.5) and you'll see it becomes too aggressive. Try scale(1.1) and it feels flat. This is why Prof. Teeters always says: feel it, don't just see it. Micro-interactions are about finding that perfect balance!</p>
+
+                    <p class="mt-2"><strong>HAP's final encouragement:</strong> Now experiment! Change the bounce amount. Try different cubic-bezier curves from Station 3. Try adding a subtle rotation. Make it your own, but remember: micro means micro. Restraint is power, and subtle is professional! 🟠</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 6: Quick Reference Tips -->
         <section class="content-section">
             <div class="tips-container">
@@ -1068,6 +1208,93 @@
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+
+    <!-- Solution reveal functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggleSolution');
+            const solutionContent = document.getElementById('solution-content');
+
+            if (toggleButton && solutionContent) {
+                let isFirstReveal = true;
+
+                toggleButton.addEventListener('click', function() {
+                    const isHidden = solutionContent.style.display === 'none';
+                    solutionContent.style.display = isHidden ? 'block' : 'none';
+                    toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
+                    toggleButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+
+                    if (isHidden && isFirstReveal) {
+                        if (typeof Prism !== 'undefined') {
+                            Prism.highlightAllUnder(solutionContent);
+                        }
+
+                        // Add copy buttons to solution code blocks
+                        solutionContent.querySelectorAll('pre').forEach(pre => {
+                            const button = document.createElement('button');
+                            button.className = 'copy-button';
+                            button.textContent = 'Copy';
+                            button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                            button.addEventListener('click', async () => {
+                                const code = pre.querySelector('code').textContent;
+                                try {
+                                    await navigator.clipboard.writeText(code);
+                                    button.classList.add('copied');
+                                    button.textContent = 'Copied';
+                                    setTimeout(() => {
+                                        button.classList.remove('copied');
+                                        button.textContent = 'Copy';
+                                    }, 2000);
+                                } catch (err) {
+                                    console.error('Failed to copy:', err);
+                                }
+                            });
+
+                            pre.appendChild(button);
+                        });
+
+                        isFirstReveal = false;
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Copy button functionality for main content -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.prompt-box pre, .warning-box pre').forEach(pre => {
+                // Skip if already has copy button (from solution reveal)
+                if (pre.querySelector('.copy-button')) return;
+
+                const button = document.createElement('button');
+                button.className = 'copy-button';
+                button.textContent = 'Copy';
+                button.setAttribute('aria-label', 'Copy code to clipboard');
+
+                button.addEventListener('click', async () => {
+                    const code = pre.querySelector('code').textContent;
+                    try {
+                        await navigator.clipboard.writeText(code);
+                        button.classList.add('copied');
+                        button.textContent = 'Copied';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.textContent = 'Copy';
+                        }, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                });
+
+                pre.appendChild(button);
+            });
+        });
+    </script>
 
 </body>
 
