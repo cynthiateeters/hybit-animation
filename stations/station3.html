@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAP's Learning Lab - Station 3: [STATION_TITLE]</title>
+    <title>HAP's Learning Lab - Station 3: Timing Functions</title>
     <meta name="description"
-        content="Join HAP as he learns about [BRIEF_DESCRIPTION].">
+        content="Join HAP as he learns about timing functions, ease-out curves, DevTools workflow, and how timing expresses brand personality through CSS animations.">
     <meta property="og:image"
         content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -19,6 +19,7 @@
         href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demos.css">
     <link href="../css/prism-hap-theme.css" rel="stylesheet">
 </head>
 
@@ -34,12 +35,12 @@
                         fetchpriority="high">
                 </div>
                 <div>
-                    <h1>HAP's Learning Lab: [STATION_TITLE]</h1>
-                    <p class="subtitle">[SUBTITLE]</p>
+                    <h1>Station 3: Timing Functions</h1>
+                    <p class="subtitle">It's not just how long, but how it moves</p>
                 </div>
             </div>
             <div class="intro-box">
-                <p><strong>Welcome to Station 3!</strong> [HAP's apprentice voice introduction: describe what HAP learned from Prof. Teeters at this station, using first-person perspective] 🟠</p>
+                <p><strong>Welcome to Station 3!</strong> I created two buttons with exactly the same duration and properties — both animated for 300 milliseconds, both changed the same transform. But when I tested them, one felt snappy and responsive while the other felt weird and sluggish. I was completely confused! Prof. Teeters looked at my code and revealed the missing piece: timing functions. The curves that control acceleration and deceleration matter just as much as the duration. That moment changed how I think about animation — it's not just technical, it's about how motion feels! 🟠</p>
             </div>
         </div>
     </header>
@@ -51,110 +52,908 @@
 
     <main id="main-content" class="content-container">
 
+        <!-- Section 1: What You'll Learn -->
         <section class="content-section">
-            <h2 class="section-heading-centered">[SECTION_HEADING]</h2>
+            <h2 class="section-heading-centered">What you'll learn</h2>
 
             <div class="intro-box">
-                <p><strong>HAP's Discovery:</strong> [HAP's first-person narrative about learning this concept from Prof. Teeters]</p>
+                <p><strong>HAP's discovery:</strong> I thought duration was everything — if two buttons both animated for 300 milliseconds, they'd feel the same. But Prof. Teeters showed me two identical buttons with the same duration, and they felt completely different! One jumped out instantly and settled smoothly, while the other hesitated before finally moving. She explained that timing functions control the speed curve during those 300 milliseconds — how the animation accelerates and decelerates. The curve matters just as much as the duration!</p>
             </div>
 
             <div class="overview-grid mt-2">
                 <div class="insight-card">
-                    <h3><span class="insight-icon">📸</span> [Insight Title 1]</h3>
-                    <p class="stat-large">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">📈</span> Duration vs speed curve</h3>
+                    <p class="stat-large">Same time, different feel</p>
+                    <p>Duration controls how long an animation takes. Timing functions control how it moves during that time — constant speed versus acceleration and deceleration. Prof. Teeters used a car racing metaphor: two cars can complete the same track in the same time, but one accelerates smoothly while the other jerks and hesitates. Same duration, completely different experience!</p>
                 </div>
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🔬</span> [Insight Title 2]</h3>
-                    <p class="stat-large stat-teal">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">🎨</span> DevTools for visual experimentation</h3>
+                    <p class="stat-large stat-teal">See curves, not just code</p>
+                    <p>I used to guess timing functions in my code and refresh the page over and over. Prof. Teeters showed me the DevTools curve editor — a purple icon that opens a visual bezier curve tool. I can drag handles, watch the animation preview in real-time, and copy the perfect values. It changed my workflow completely. Now I always experiment visually first!</p>
                 </div>
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🎯</span> [Insight Title 3]</h3>
-                    <p class="stat-large stat-brown">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">✨</span> Timing expresses personality</h3>
+                    <p class="stat-large stat-brown">Motion communicates emotion</p>
+                    <p>Prof. Teeters gave me an assignment: create a button for a kids' toy store and a button for a law firm. Same visual design, but different timing functions. Fast and bouncy for the toy store, slow and smooth for the law firm. Same button, completely different brand feeling. I learned that timing isn't just technical — it's emotional!</p>
                 </div>
             </div>
 
             <div class="hap-note-callout">
                 <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                    alt="HAP looking confused while studying" width="150" height="150" class="hap-note-image"
+                    alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
                     decoding="async" loading="lazy">
                 <div class="hap-note-content">
-                    <h3>HAP's Confession:</h3>
-                    <p>[HAP's apprentice voice: describe initial confusion or learning moment about this topic]</p>
+                    <h3>HAP's confession: Ignoring timing functions</h3>
+                    <p>When I first learned about transitions, I focused entirely on duration and properties. I'd write <code>transition: transform 300ms;</code> and call it done. All my animations used the default timing function without me even realizing it. Prof. Teeters watched me build several buttons and asked, "Why do they all feel robotic?" I was confused — they were smooth transitions! She explained that the default <code>ease</code> timing wasn't ideal for most UI interactions. She changed one button to <code>ease-out</code> and the difference was instant. The responsive one felt alive, like it was reacting to me. I realized I'd been creating technically smooth animations that felt lifeless because I ignored how they moved. Now I think about timing curves for every transition I create!</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section 2: Understanding Timing Functions -->
         <section class="content-section">
             <div class="topic-section">
-                <h2>[Main Topic Heading]</h2>
+                <h2>Understanding timing functions</h2>
 
-                <p class="mb-2">[Introduction paragraph explaining what Prof. Teeters taught HAP about this topic]</p>
+                <p class="mb-2">In Station 2, I learned that transitions control duration — how long changes take. But I thought duration was the whole story. When Prof. Teeters showed me two buttons with identical 300ms durations that felt completely different, I realized I was missing something fundamental. Timing functions control the <em>speed curve</em> during that duration — how the animation accelerates and decelerates. Same time, vastly different feel!</p>
 
-                <div class="analysis-grid">
-                    <div class="analysis-point">
-                        <h3>[Analysis Point Title 1]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                <h3 class="mt-2">What timing functions control</h3>
+                <p class="mb-2">Timing functions don't change how long an animation takes — that's duration's job. Instead, they control how the animation moves through time. Think of it like this: duration is the length of a race track, timing function is how the runner accelerates and slows down while covering that distance. Linear timing is constant speed (robotic). Ease-out accelerates fast then decelerates (responsive). Same track length, totally different running style!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's two buttons mystery</h3>
+                        <p>I was building a navigation menu and created two buttons with identical code — both had <code>transition: transform 300ms;</code> and both scaled from 1 to 1.05 on hover. But when I tested them, one felt snappy and alive while the other felt sluggish and weird. I stared at my code for 20 minutes trying to figure out what was different. Finally I asked Prof. Teeters for help. She looked at the buttons, hovered over each one, and immediately said, "Different timing functions." I was confused — I hadn't specified any timing functions! She explained that I'd accidentally left the default <code>ease</code> on one button while the other had inherited <code>ease-out</code> from a parent style. That's when I understood that timing functions aren't optional extras — they're always present, either explicitly or as defaults. The curve matters just as much as the duration!</p>
                     </div>
+                </div>
+
+                <h3 class="mt-2">The five standard curves</h3>
+                <p class="mb-2">CSS provides five built-in timing functions. Prof. Teeters taught me to understand what each curve does before choosing one. Here's how each timing function moves:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">All five timing function syntaxes:</div>
+                    <pre><code class="language-css">/* Linear - constant speed throughout (robotic) */
+.button-linear {
+  transition: transform 300ms linear;
+  /* Same speed from start to finish */
+  /* Feels mechanical and unnatural */
+}
+
+/* Ease - default (balanced but not optimal) */
+.button-ease {
+  transition: transform 300ms ease;
+  /* Starts medium, speeds up middle, slows down end */
+  /* Rarely the best choice for UI */
+}
+
+/* Ease-in - slow start, fast end (feels hesitant) */
+.button-ease-in {
+  transition: transform 300ms ease-in;
+  /* Starts slow, gradually accelerates */
+  /* Good for elements leaving the screen */
+}
+
+/* Ease-out - fast start, slow end (RECOMMENDED) */
+.button-ease-out {
+  transition: transform 300ms ease-out;
+  /* Starts fast, gradually decelerates */
+  /* Best for most UI interactions */
+}
+
+/* Ease-in-out - slow both ends (good for long movements) */
+.button-ease-in-out {
+  transition: transform 300ms ease-in-out;
+  /* Starts slow, speeds up middle, ends slow */
+  /* Symmetrical curve for across-screen movement */
+}</code></pre>
+                </div>
+
+                <div class="analysis-grid mt-2">
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 2]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>Linear: Constant speed (robotic)</h3>
+                        <p><strong>Moves at exactly the same speed throughout</strong></p>
+                        <p>No acceleration or deceleration at all. Starts at full speed, maintains that speed, stops instantly. Feels mechanical and unnatural because nothing in the real world moves this way. Almost never used for UI animations unless you intentionally want a robotic, technical feel. Prof. Teeters taught me to avoid this for most interactions!</p>
                     </div>
+
+                    <div class="analysis-point">
+                        <h3>Ease: Default behavior (balanced)</h3>
+                        <p><strong>Starts medium speed, accelerates middle, slows down end</strong></p>
+                        <p>This is the default if you don't specify a timing function. It's balanced but not optimized for any particular use case. Prof. Teeters taught me to always specify timing explicitly rather than relying on the default. For most UI interactions, <code>ease-out</code> is better than <code>ease</code>.</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Ease-in: Slow start (feels hesitant)</h3>
+                        <p><strong>Starts slow, gradually accelerates, ends at full speed</strong></p>
+                        <p>Feels like gathering momentum or winding up. Not ideal for hover states because the slow start makes it feel unresponsive. Prof. Teeters taught me to use this for elements <em>leaving</em> the screen — the acceleration gives a sense of something being pulled away or dismissed.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Ease-out: Fast start (RECOMMENDED)</h3>
+                        <p><strong>Starts fast, gradually decelerates, settles smoothly</strong></p>
+                        <p>This is Prof. Teeters' go-to recommendation for 95% of UI interactions. The fast start means users see immediate visual feedback when they hover or click. The slow end feels like natural settling into the final state. Mimics real-world physics where moving objects naturally slow down. Feels most responsive!</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Ease-in-out: Slow both ends (long movements)</h3>
+                        <p><strong>Starts slow, speeds up middle, ends slow (symmetrical)</strong></p>
+                        <p>Good for longer movements where an element travels across the screen. The symmetrical curve feels balanced for transitions that go from point A to point B. Less responsive feeling than <code>ease-out</code> because of the slow start. Prof. Teeters taught me to use this sparingly!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Which timing should you choose?</h3>
+                        <p><strong>Ease-out for almost everything</strong></p>
+                        <p>Prof. Teeters' rule is simple: start with <code>ease-out</code> for all hover states, focus states, and appearing elements. Only use other timing functions when you have a specific reason. Linear for intentional robotic feel. Ease-in for dismissals. Ease-in-out for cross-screen movement. But <code>ease-out</code> is the default choice!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Why ease-out wins for UI: The psychology of responsiveness</h3>
+                <p class="mb-2">Prof. Teeters explained that ease-out isn't just technically better — it's psychologically better. Users need immediate visual feedback when they interact with your interface. The fast start of ease-out shows instant reaction to user input, while the slow ending feels like natural settling. This mimics real-world physics where things naturally decelerate, creating a satisfying interaction feel!</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Why ease-out feels responsive:</div>
+                    <pre><code class="language-css">/* Recommended pattern for most UI interactions */
+.button {
+  background: hsl(32, 76%, 63%);
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+  /* Fast start = immediate feedback */
+  /* Slow end = smooth settling */
+}
+
+.button:hover {
+  transform: scale(1.05);
+  /* User sees instant reaction */
+  /* Then smooth deceleration into final state */
+}
+
+/* ALWAYS include reduced motion query */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+    /* Button still scales, just instantly */
+  }
+}</code></pre>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>User hovers button</h3>
+                        <p><strong>Ease-out jumps out fast immediately</strong></p>
+                        <p>The button starts moving right away at full speed. Users see the reaction instantly — their hover caused something to happen! This immediate feedback feels responsive and polished. Prof. Teeters taught me that responsiveness is about perception, not actual speed. Fast start equals perceived responsiveness!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Animation settles smoothly</h3>
+                        <p><strong>Then decelerates into final state</strong></p>
+                        <p>After the fast start, the button gradually slows down and settles into its final scaled state. This feels natural because real-world objects decelerate when they stop moving. The smooth settling feels polished and intentional, not abrupt. Ease-in would feel delayed at the start. Linear would feel robotic. Ease-out feels just right!</p>
+                    </div>
+                </div>
+
+                <!-- Demo 1: Timing Comparison -->
+                <h3 class="mt-2">🎨 See it in action: Timing function comparison</h3>
+                <p class="mb-2">Hover over each button below to feel the difference between timing functions. The ease-out button is highlighted because Prof. Teeters recommends it for most UI interactions!</p>
+
+                <div class="timing-demo-grid">
+                    <div class="timing-demo-item">
+                        <button type="button" class="timing-demo-button timing-linear">Hover me</button>
+                        <p class="timing-demo-label">Linear</p>
+                        <p class="timing-demo-note">Robotic and mechanical</p>
+                    </div>
+
+                    <div class="timing-demo-item">
+                        <button type="button" class="timing-demo-button timing-ease">Hover me</button>
+                        <p class="timing-demo-label">Ease (default)</p>
+                        <p class="timing-demo-note">Balanced but not optimal</p>
+                    </div>
+
+                    <div class="timing-demo-item">
+                        <button type="button" class="timing-demo-button timing-ease-in">Hover me</button>
+                        <p class="timing-demo-label">Ease-in</p>
+                        <p class="timing-demo-note">Hesitant feeling</p>
+                    </div>
+
+                    <div class="timing-demo-item recommended">
+                        <button type="button" class="timing-demo-button timing-ease-out">Hover me</button>
+                        <p class="timing-demo-label">Ease-out ✓</p>
+                        <p class="timing-demo-note">Responsive and polished!</p>
+                    </div>
+
+                    <div class="timing-demo-item">
+                        <button type="button" class="timing-demo-button timing-ease-in-out">Hover me</button>
+                        <p class="timing-demo-label">Ease-in-out</p>
+                        <p class="timing-demo-note">Delayed at start</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's timing revelation: Testing all five curves</h3>
+                        <p>After Prof. Teeters explained timing functions, she had me create five identical buttons — same size, same color, same duration, same transform. The only difference was the timing function. She said, "Hover over each one and <em>feel</em> the difference. Don't think about code, just pay attention to how each one makes you feel." I started with linear and it felt robotic and lifeless. Then ease, which felt okay but nothing special. Ease-in felt hesitant, like the button didn't want to respond. Ease-out felt perfect — it jumped out to greet my cursor and settled smoothly. Ease-in-out felt delayed at the start. I kept coming back to ease-out. It was the only one that felt truly responsive and alive. Prof. Teeters smiled and said, "Now you understand why I recommend ease-out for 95% of UI. Your intuition just learned what I've been trying to explain!" That exercise changed everything — now I always feel timing curves, not just see them in code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: DevTools and Custom Curves -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>DevTools and custom curves</h2>
+
+                <p class="mb-2">Once I understood the five standard timing functions, I wanted to experiment with different curves. But guessing timing functions in code and refreshing the page over and over was painfully slow. Prof. Teeters showed me the DevTools curve editor — a visual tool that changed my entire workflow. Now I experiment visually first, then copy the perfect values into my code!</p>
+
+                <h3 class="mt-2">Using browser DevTools for timing</h3>
+                <p class="mb-2">Both Firefox and Chrome have built-in bezier curve editors that let you visualize and experiment with timing functions. Prof. Teeters taught me to use DevTools as my primary workflow tool for timing, not just for debugging. Here's how to access the curve editor:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">DevTools workflow for timing functions:</div>
+                    <div class="code-comment">
+                        <p><strong>Steps to open the DevTools curve editor:</strong></p>
+                        <ol class="mt-1">
+                            <li>Open Chrome or Firefox DevTools (F12 or Cmd+Option+I)</li>
+                            <li>Inspect an element with a transition</li>
+                            <li>Look for the <strong>purple curve icon</strong> next to the timing function in the Styles panel</li>
+                            <li>Click the purple icon to open the bezier curve editor</li>
+                            <li>Drag the control point handles to experiment with different curves</li>
+                            <li>Watch the real-time animation preview as you adjust the curve</li>
+                            <li>When you find the perfect curve, copy the <code>cubic-bezier()</code> values</li>
+                            <li>Paste those values into your CSS</li>
+                        </ol>
+                        <p class="mt-1"><strong>Pro tip from Prof. Teeters:</strong> The visual preview is 10x faster than guess-and-refresh. Always experiment visually first!</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's DevTools workflow discovery</h3>
+                        <p>I was building a card hover effect and kept tweaking the timing function in my code, saving, and refreshing the browser to see how it felt. I tried <code>ease</code>, then <code>ease-out</code>, then <code>ease-in-out</code>, but nothing felt quite right. After the 15th refresh, Prof. Teeters came over and asked what I was doing. I explained my process and she laughed. "HAP, you're doing this the hard way! Let me show you something." She opened DevTools, found my transition, and clicked a tiny purple icon I'd never noticed before. Suddenly a bezier curve editor appeared with draggable handles and a real-time animation preview! She dragged one handle and the preview immediately showed how that curve would feel. We found the perfect timing in about 30 seconds. I felt like I'd been washing dishes by hand when there was a dishwasher right next to me the whole time! Now I ALWAYS use DevTools for timing experimentation. The visual workflow is so much faster than code-and-refresh.</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Understanding cubic-bezier curves</h3>
+                <p class="mb-2">Prof. Teeters explained that all timing functions are secretly cubic-bezier curves under the hood. <code>ease</code>, <code>ease-out</code>, <code>linear</code> — they're all just shortcuts for specific cubic-bezier values. Understanding bezier curves unlocks unlimited timing possibilities!</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Standard timing functions as cubic-bezier values:</div>
+                    <pre><code class="language-css">/* All timing functions are cubic-bezier under the hood */
+
+/* Linear */
+.linear {
+  transition: transform 300ms linear;
+  /* Same as: cubic-bezier(0, 0, 1, 1) */
+  /* Constant speed throughout */
+}
+
+/* Ease (default) */
+.ease {
+  transition: transform 300ms ease;
+  /* Same as: cubic-bezier(0.25, 0.1, 0.25, 1) */
+  /* Balanced curve */
+}
+
+/* Ease-in */
+.ease-in {
+  transition: transform 300ms ease-in;
+  /* Same as: cubic-bezier(0.42, 0, 1, 1) */
+  /* Slow start, fast end */
+}
+
+/* Ease-out (RECOMMENDED) */
+.ease-out {
+  transition: transform 300ms ease-out;
+  /* Same as: cubic-bezier(0, 0, 0.58, 1) */
+  /* Fast start, slow end */
+}
+
+/* Ease-in-out */
+.ease-in-out {
+  transition: transform 300ms ease-in-out;
+  /* Same as: cubic-bezier(0.42, 0, 0.58, 1) */
+  /* Slow both ends */
+}</code></pre>
+                </div>
+
+                <h3 class="mt-2">The four cubic-bezier values</h3>
+                <p class="mb-2">Cubic-bezier takes four values: <code>cubic-bezier(x1, y1, x2, y2)</code>. These values control two control points that define the curve shape. The X axis represents time (0 to 1), and the Y axis represents progress (0 to 1). Prof. Teeters taught me that understanding these values helps, but you don't need to memorize them — use DevTools to experiment visually!</p>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>What the values mean</h3>
+                        <p><strong>X axis is time, Y axis is progress</strong></p>
+                        <p>The format <code>cubic-bezier(x1, y1, x2, y2)</code> defines two control points. The first point is (x1, y1) and the second point is (x2, y2). X values must stay between 0 and 1 (representing time from start to finish). Y values can go outside the 0-1 range, which creates bouncy or anticipation effects! Prof. Teeters taught me to focus on the visual curve, not the numbers.</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Creating custom curves</h3>
+                        <p><strong>Drag handles to create any motion pattern</strong></p>
+                        <p>In the DevTools curve editor, you drag the two control point handles to shape the curve. Dragging up makes the animation faster at that point. Dragging down makes it slower. Dragging beyond the top creates overshoot (bouncy). Dragging below zero creates pull-back (anticipation). The curve you see is exactly how the animation will move!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Common custom cubic-bezier curves</h3>
+                <p class="mb-2">While the five standard curves work for most cases, custom bezier curves let you create specific feelings. Prof. Teeters showed me three common patterns that add personality to animations:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Custom cubic-bezier curve examples:</div>
+                    <pre><code class="language-css">/* Bouncy - overshoots then settles (playful) */
+.button-bouncy {
+  background: hsl(32, 76%, 63%);
+  transform: scale(1);
+  transition: transform 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Y value above 1 creates overshoot */
+  /* Perfect for playful, energetic brands */
+}
+
+.button-bouncy:hover {
+  transform: scale(1.1);
+  /* Bounces past 1.1, then settles back */
+}
+
+/* Anticipation - pulls back first (emphasis) */
+.button-anticipation {
+  background: hsl(210, 50%, 50%);
+  transform: translateX(0);
+  transition: transform 400ms cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  /* Negative Y value creates pull-back */
+  /* Feels like winding up before moving */
+}
+
+.button-anticipation:hover {
+  transform: translateX(20px);
+  /* Pulls back slightly, then moves forward */
+}
+
+/* Smooth elegant - Material Design style (professional) */
+.button-smooth {
+  background: hsl(220, 13%, 18%);
+  transform: scale(1);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Gentle curve, refined feeling */
+  /* Google's Material Design easing */
+}
+
+.button-smooth:hover {
+  transform: scale(1.05);
+  /* Subtle, sophisticated motion */
+}
+
+/* ALWAYS include reduced motion for all custom curves */
+@media (prefers-reduced-motion: reduce) {
+  .button-bouncy,
+  .button-anticipation,
+  .button-smooth {
+    transition: none;
+  }
+}</code></pre>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Bouncy curves (playful)</h3>
+                        <p><strong>Y values above 1 create overshoot</strong></p>
+                        <p>When the Y value goes above 1, the animation overshoots its target, then bounces back and settles. This creates a spring-like, energetic feeling. Perfect for playful brands, kids' products, or fun interactions. Prof. Teeters taught me to use this sparingly — too much bounce feels cartoonish!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Anticipation curves (emphasis)</h3>
+                        <p><strong>Negative Y values create pull-back</strong></p>
+                        <p>When the Y value goes below 0, the animation pulls back before moving forward — like winding up. This mimics real-world physics where you pull back before throwing. Adds emphasis and character. Good for important actions where you want to draw attention!</p>
+                    </div>
+                </div>
+
+                <!-- Demo 2: Custom Curves -->
+                <h3 class="mt-2">🎨 See it in action: Custom cubic-bezier curves</h3>
+                <p class="mb-2">Hover over each button to experience different custom curves. Notice how bouncy feels playful, smooth feels elegant!</p>
+
+                <div class="custom-curves-demo-grid">
+                    <div class="custom-curves-item">
+                        <button type="button" class="custom-curves-button curve-bouncy">Hover me</button>
+                        <p class="custom-curves-label">Bouncy (playful)</p>
+                        <p class="custom-curves-bezier"><code>cubic-bezier(0.68, -0.55, 0.265, 1.55)</code></p>
+                    </div>
+
+                    <div class="custom-curves-item">
+                        <button type="button" class="custom-curves-button curve-anticipation">Hover me</button>
+                        <p class="custom-curves-label">Anticipation (emphasis)</p>
+                        <p class="custom-curves-bezier"><code>cubic-bezier(0.6, -0.28, 0.735, 0.045)</code></p>
+                    </div>
+
+                    <div class="custom-curves-item">
+                        <button type="button" class="custom-curves-button curve-smooth">Hover me</button>
+                        <p class="custom-curves-label">Smooth (elegant)</p>
+                        <p class="custom-curves-bezier"><code>cubic-bezier(0.4, 0, 0.2, 1)</code></p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's bezier adventure: Hours in the curve editor</h3>
+                        <p>After Prof. Teeters showed me the DevTools curve editor, I spent an entire afternoon experimenting with custom bezier curves. I dragged handles randomly, creating wild bouncing effects where buttons would overshoot their target by ridiculous amounts. I made curves that pulled back so far they went off-screen before moving forward. I was having so much fun that I didn't even realize Prof. Teeters was watching me. She appreciated my experimentation but then asked, "Have you found any curves you actually want to use?" I realized I'd been playing for hours without creating anything practical! She smiled and showed me <strong>easings.net</strong> — a visual gallery of pre-made bezier curves with names like "easeOutBack" and "easeInOutElastic." Each curve had ready-to-copy cubic-bezier values. I felt silly spending hours creating curves that already existed! But Prof. Teeters said the experimentation wasn't wasted — I'd developed an intuition for how bezier curves work by dragging those handles. Now I start with easings.net presets, then fine-tune them in DevTools if needed. Best of both worlds!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Resources for custom curves</h3>
+                <p class="mb-2">Prof. Teeters taught me not to reinvent curves that already exist. These resources provide pre-made timing functions ready to copy:</p>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Easings.net</h3>
+                        <p><strong>Visual gallery of pre-made curves</strong></p>
+                        <p>This is my go-to resource! Easings.net shows visual previews of dozens of timing curves with names like "easeOutBounce", "easeInBack", and "easeOutElastic". Each curve has ready-to-copy cubic-bezier values. I can see the curve shape and watch an animation preview before copying. Prof. Teeters taught me to start here before creating custom curves!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Cubic-bezier.com</h3>
+                        <p><strong>Interactive curve creation tool</strong></p>
+                        <p>This is a web-based bezier curve editor similar to DevTools but with more features. You can drag handles, watch previews, compare curves side-by-side, and save your favorites. Great for creating truly custom curves that aren't in the easings.net library. Prof. Teeters taught me to use this when I need something specific!</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Material Design easing documentation</h3>
+                        <p><strong>Google's design system timing</strong></p>
+                        <p>Google's Material Design has extensive documentation about timing and easing curves. They explain the philosophy behind their choices and provide specific cubic-bezier values for different use cases. Great for understanding professional, polished timing. Their curves feel refined and sophisticated!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Prof. Teeters' workflow recommendation</h3>
+                        <p><strong>Start with presets, then fine-tune</strong></p>
+                        <p>Don't create curves from scratch unless you have a very specific need. Start with easings.net presets or Material Design curves. Then, if needed, open DevTools and fine-tune by dragging handles. This workflow is much faster than experimenting blindly. Learn from curves that already work!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Timing and Brand Personality -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Timing and brand personality</h2>
+
+                <p class="mb-2">After I learned the technical aspects of timing functions, Prof. Teeters taught me something that changed my perspective completely: timing isn't just technical, it's emotional. The same button with different timing functions can feel playful, professional, friendly, or technical. Timing communicates brand values and personality just as much as colors and typography do!</p>
+
+                <h3 class="mt-2">Timing as emotional expression</h3>
+                <p class="mb-2">Prof. Teeters explained that users don't consciously think about timing functions, but they <em>feel</em> them. Fast, bouncy timing feels energetic and playful. Slow, smooth timing feels professional and calm. The timing choices you make create emotional responses that reinforce or contradict your brand identity. This isn't just about making animations work — it's about making them communicate!</p>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Fast timing for energetic brands</h3>
+                        <p><strong>Short duration (200-250ms), bouncy curves</strong></p>
+                        <p>When brands want to feel playful, youthful, or energetic, fast timing with bouncy cubic-bezier curves creates that personality. Overshooting animations, quick responses, snappy interactions — all of these communicate energy and fun. Perfect for kids' products, gaming, entertainment, or casual applications. Prof. Teeters taught me that speed equals energy in users' minds!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Slow timing for calm brands</h3>
+                        <p><strong>Longer duration (400-500ms), smooth curves</strong></p>
+                        <p>Professional services, luxury brands, and sophisticated products use slower timing with gentle ease-in-out curves. The unhurried pace feels refined and deliberate. Nothing rushes, nothing bounces — every transition is smooth and controlled. Healthcare, finance, and high-end brands use this timing to communicate trustworthiness and sophistication!</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Medium timing for friendly brands</h3>
+                        <p><strong>Standard duration (300-350ms), ease-out</strong></p>
+                        <p>Most e-commerce, educational products, and general-purpose applications use medium timing with ease-out curves. It's balanced — not aggressive, not sluggish. Approachable and versatile. This is the safe default when you want broad appeal without strong personality in either direction. Prof. Teeters called this the "Swiss army knife" of timing choices!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Linear timing for technical brands</h3>
+                        <p><strong>Any duration, constant speed (precise)</strong></p>
+                        <p>Developer tools, industrial equipment, and data dashboards sometimes use linear timing intentionally. The robotic, mechanical feel communicates precision and technical accuracy. This is the one case where linear timing is a deliberate choice, not a mistake. When you want to emphasize logic over emotion, linear can work!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">Code examples: Timing for different brand personalities</h3>
+                <p class="mb-2">Prof. Teeters showed me how the same button with different timing creates completely different feelings. Here are four brand personality examples:</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Fast timing for energetic brands:</div>
+                    <pre><code class="language-css">/* Energetic brand: short duration, bouncy curve */
+.button-energetic {
+  background: hsl(32, 76%, 63%);
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Fast and playful */
+  /* Perfect for kids' products, gaming, fun brands */
+}
+
+.button-energetic:hover {
+  transform: scale(1.1);
+  /* Snappy, immediate, energetic */
+  /* Bounces past target then settles */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-energetic {
+    transition: none;
+  }
+}</code></pre>
                 </div>
 
                 <div class="prompt-box mt-2">
-                    <div class="prompt-label">[Code Example Label]:</div>
-                    <pre><code class="language-html">[CODE EXAMPLE HERE]</code></pre>
-                    <p class="code-comment mt-1">[Explanation of code example]</p>
+                    <div class="prompt-label">Slow timing for professional brands:</div>
+                    <pre><code class="language-css">/* Professional brand: longer duration, smooth curve */
+.button-professional {
+  background: hsl(220, 13%, 18%);
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 400ms ease-in-out,
+              opacity 400ms ease-in-out;
+  /* Slow and elegant */
+  /* Perfect for law firms, healthcare, luxury brands */
+}
+
+.button-professional:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  /* Refined, calm, sophisticated */
+  /* Unhurried and deliberate */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-professional {
+    transition: none;
+  }
+}</code></pre>
                 </div>
 
-                <div class="interactive-demo mt-2">
-                    <h3>[Interactive Demo Title]</h3>
-                    <ul class="mt-1">
-                        <li>[List item 1]</li>
-                        <li>[List item 2]</li>
-                        <li>[List item 3]</li>
-                    </ul>
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Medium timing for friendly brands:</div>
+                    <pre><code class="language-css">/* Friendly brand: balanced duration, ease-out */
+.button-friendly {
+  background: hsl(32, 76%, 63%);
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+  /* Approachable and responsive */
+  /* Perfect for e-commerce, education, general use */
+}
+
+.button-friendly:hover {
+  transform: scale(1.05);
+  /* Balanced, versatile, safe */
+  /* Neither aggressive nor sluggish */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-friendly {
+    transition: none;
+  }
+}</code></pre>
                 </div>
 
-                <div class="warning-box mt-2">
-                    <h3>🟠 [Warning Title]</h3>
-                    <p><strong class="text-success">✅ RIGHT:</strong></p>
-                    <pre><code class="language-html">[Correct example]</code></pre>
-                    <p><strong class="text-error">❌ WRONG:</strong></p>
-                    <pre><code class="language-html">[Incorrect example]</code></pre>
-                    <p class="mt-1">[Explanation of why this matters]</p>
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Linear timing for technical brands:</div>
+                    <pre><code class="language-css">/* Technical brand: constant speed, precise */
+.button-technical {
+  background: hsl(210, 13%, 50%);
+  transform: translateX(0);
+  transition: transform 300ms linear;
+  /* Precise and mechanical */
+  /* Perfect for dev tools, dashboards, industrial UI */
+}
+
+.button-technical:hover {
+  transform: translateX(5px);
+  /* Robotic, intentional, technical */
+  /* Constant speed emphasizes precision */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-technical {
+    transition: none;
+  }
+}</code></pre>
+                </div>
+
+                <!-- Demo 3: Brand Personality -->
+                <h3 class="mt-2">🎨 See it in action: Brand personality comparison</h3>
+                <p class="mb-2">Hover over each button to feel how timing communicates different brand personalities. Same interaction, completely different emotional response!</p>
+
+                <div class="brand-demo-grid">
+                    <div class="brand-demo-item">
+                        <button type="button" class="brand-demo-button brand-energetic">Energetic</button>
+                        <p class="brand-demo-label">Fast & bouncy</p>
+                        <p class="brand-demo-note">Kids' toys, gaming</p>
+                    </div>
+
+                    <div class="brand-demo-item">
+                        <button type="button" class="brand-demo-button brand-professional">Professional</button>
+                        <p class="brand-demo-label">Slow & smooth</p>
+                        <p class="brand-demo-note">Law firm, healthcare</p>
+                    </div>
+
+                    <div class="brand-demo-item">
+                        <button type="button" class="brand-demo-button brand-friendly">Friendly</button>
+                        <p class="brand-demo-label">Balanced</p>
+                        <p class="brand-demo-note">E-commerce, education</p>
+                    </div>
+
+                    <div class="brand-demo-item">
+                        <button type="button" class="brand-demo-button brand-technical">Technical</button>
+                        <p class="brand-demo-label">Linear & precise</p>
+                        <p class="brand-demo-note">Developer tools</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's brand timing exercise: Toy store vs law firm</h3>
+                        <p>Prof. Teeters gave me an assignment to really drive home the emotional impact of timing: "Create two buttons with identical visual design — same size, same color, same border radius. One button is for a kids' toy store. The other is for a law firm. The only difference should be the timing function." I started with the toy store button and used a fast 250ms duration with a bouncy cubic-bezier curve that overshoots the target. When I hovered over it, the button felt playful and fun — like it was excited to be clicked! For the law firm button, I used a slow 400ms duration with smooth ease-in-out timing. The same hover effect felt completely different — refined, deliberate, professional. I showed both buttons to Prof. Teeters and she said, "Now hover between them back and forth. Feel the difference?" I did, and it was shocking. Same button, same visual design, completely different personality. The toy store button felt like a puppy jumping up to greet you. The law firm button felt like a handshake in a boardroom. That's when I truly understood that timing isn't just technical — it communicates brand values and creates emotional responses. Now when I choose timing functions, I think about the brand personality first!</p>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Matching timing to brand values</h3>
+                        <p><strong>Consider user expectations for your brand</strong></p>
+                        <p>Prof. Teeters taught me to ask: What does my brand stand for? Playful and energetic brands should have fast, bouncy timing. Professional and serious brands should have slow, smooth timing. Educational and approachable brands should have medium, balanced timing. Technical and precise brands can use linear timing. Match the emotional tone to the brand identity!</p>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Same duration, different curve, different feeling</h3>
+                        <p><strong>The curve matters as much as the speed</strong></p>
+                        <p>Two buttons with 300ms duration can feel completely different based on the curve. Ease-out feels responsive. Ease-in-out feels deliberate. Bouncy feels playful. Linear feels robotic. The duration controls how long, but the curve controls how it feels. Prof. Teeters taught me to experiment with both duration and curve to find the perfect brand expression!</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Section 5: Try It Yourself Exercise -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Try it yourself: Brand personality challenge</h2>
+
+                <p class="mb-2">Prof. Teeters taught me that understanding timing comes from experimentation, not memorization. This challenge will help you apply what you've learned about timing functions and brand personality. Create two buttons with different timing to express different brand feelings!</p>
+
+                <div class="warning-box mt-2">
+                    <h3>🎯 Your challenge</h3>
+                    <p><strong>Create two buttons for different brands using timing functions to express personality.</strong></p>
+
+                    <p class="mt-1"><strong>Button 1: Playful/energetic brand</strong></p>
+                    <ul class="mt-1">
+                        <li>Duration: 250ms (fast and snappy)</li>
+                        <li>Timing function: Bouncy cubic-bezier curve with overshoot</li>
+                        <li>Transform: scale from 1 to 1.1 on hover</li>
+                        <li>Background: warm orange <code>hsl(32, 76%, 63%)</code></li>
+                        <li><strong>Must include <code>prefers-reduced-motion</code> query</strong></li>
+                    </ul>
+
+                    <p class="mt-1"><strong>Button 2: Professional/calm brand</strong></p>
+                    <ul class="mt-1">
+                        <li>Duration: 400ms (slow and deliberate)</li>
+                        <li>Timing function: Ease-in-out (smooth and refined)</li>
+                        <li>Transform: scale from 1 to 1.05 AND opacity from 1 to 0.9 on hover</li>
+                        <li>Background: dark professional <code>hsl(220, 13%, 18%)</code></li>
+                        <li><strong>Must include <code>prefers-reduced-motion</code> query</strong></li>
+                    </ul>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <details class="hint-details">
+                        <summary class="hint-summary">Need a hint? Click to expand</summary>
+                        <div class="hint-content">
+                            <h3>HAP's hints for solving this</h3>
+                            <p><strong>Step 1:</strong> Start with the base button styles — set background and transform properties</p>
+                            <p><strong>Step 2:</strong> For the playful button, use a bouncy cubic-bezier curve. Try <code>cubic-bezier(0.68, -0.55, 0.265, 1.55)</code> — the Y value above 1 creates the overshoot effect!</p>
+                            <p><strong>Step 3:</strong> For the professional button, use <code>ease-in-out</code> for smooth, symmetrical motion. Remember to transition both transform AND opacity!</p>
+                            <p><strong>Step 4:</strong> Create hover states that change the properties</p>
+                            <p><strong>Step 5:</strong> Add the <code>@media (prefers-reduced-motion: reduce)</code> query setting <code>transition: none;</code> for both buttons</p>
+                            <p class="mt-1"><strong>Remember from Prof. Teeters:</strong> Transitions go on the base state, NOT the hover state! And always test with DevTools to see how the timing feels!</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="solution-section mt-2">
+                    <button type="button" id="toggleSolution" class="btn-primary">Show Solution</button>
+
+                    <div id="solution-content" style="display: none;">
+                        <div class="prompt-box mt-2">
+                            <div class="prompt-label">Solution:</div>
+                            <pre><code class="language-css">/* Button 1: Playful/energetic brand */
+.button-playful {
+  background: hsl(32, 76%, 63%);
+  color: hsl(0, 0%, 100%);
+  transform: scale(1);
+  transition: transform 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* Fast duration = snappy and energetic */
+  /* Bouncy curve overshoots target then settles */
+}
+
+.button-playful:hover {
+  transform: scale(1.1);
+  /* Larger scale for more dramatic effect */
+  /* Bounces past 1.1, then settles back */
+}
+
+/* Button 2: Professional/calm brand */
+.button-professional {
+  background: hsl(220, 13%, 18%);
+  color: hsl(0, 0%, 100%);
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 400ms ease-in-out,
+              opacity 400ms ease-in-out;
+  /* Slow duration = deliberate and refined */
+  /* Ease-in-out = smooth symmetrical curve */
+}
+
+.button-professional:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+  /* Subtle scale for sophisticated feel */
+  /* Opacity adds elegance */
+}
+
+/* REQUIRED: Respect user motion preferences for both buttons */
+@media (prefers-reduced-motion: reduce) {
+  .button-playful,
+  .button-professional {
+    transition: none;
+    /* Buttons still change, just instantly */
+    /* Functionality preserved, motion removed */
+  }
+}</code></pre>
+                        </div>
+
+                        <div class="analysis-grid mt-2">
+                            <div class="analysis-point">
+                                <h3>Why the playful button works</h3>
+                                <p><strong>Fast + bouncy = energetic personality</strong></p>
+                                <p>The 250ms duration is snappy and immediate. The bouncy cubic-bezier curve with Y value above 1 creates an overshoot effect — the button scales past 1.1, then bounces back and settles. This playful motion feels fun and energetic, perfect for kids' products or casual brands. Users subconsciously feel the energy!</p>
+                            </div>
+
+                            <div class="analysis-point">
+                                <h3>Why the professional button works</h3>
+                                <p><strong>Slow + smooth = sophisticated personality</strong></p>
+                                <p>The 400ms duration is deliberate and unhurried. The ease-in-out curve is symmetrical and smooth — no sudden starts or stops. Adding opacity change creates visual sophistication. The subtle 1.05 scale (instead of 1.1) feels refined, not aggressive. Perfect for professional services or luxury brands!</p>
+                            </div>
+                        </div>
+
+                        <div class="hap-note-callout mt-2">
+                            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                                alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+                                decoding="async" loading="lazy">
+                            <div class="hap-note-content">
+                                <h3>HAP's encouragement: Experiment with DevTools!</h3>
+                                <p>When I was first learning timing functions, I felt overwhelmed by all the cubic-bezier values and timing options. Prof. Teeters told me, "Stop staring at code, HAP. Open DevTools and experiment visually!" That changed everything. I could see the curve, drag the handles, and watch the preview in real-time. I tried bouncy curves, smooth curves, anticipation curves — and I could <em>feel</em> which ones worked. Don't just copy the solution above! Open DevTools, find the purple curve icon, and experiment with different timing functions. Try making the playful button even bouncier. Try making the professional button slower. Drag handles and watch what happens. Prof. Teeters taught me that understanding timing comes from feeling it, not just reading about it. So go experiment — that's where the real learning happens!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Quick Reference Tips -->
         <section class="content-section">
             <div class="tips-container">
-                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+                <h2 class="section-heading-centered">🎓 HAP's quick reference</h2>
 
                 <div class="tip-card">
                     <div class="tip-number">1</div>
                     <div>
-                        <h3>[Tip Title 1]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Ease-out for 95% of UI</h3>
+                        <p>Prof. Teeters taught me to use <code>ease-out</code> for almost all user interface interactions. It starts fast (immediate visual feedback when users hover) and ends slow (smooth settling into final state). Hover states, focus states, appearing elements — ease-out feels most responsive. I only deviate from this when I have a specific reason!</p>
                     </div>
                 </div>
 
                 <div class="tip-card">
                     <div class="tip-number">2</div>
                     <div>
-                        <h3>[Tip Title 2]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Use DevTools to feel timing</h3>
+                        <p>I learned not to guess timing functions in code. Instead, I open the DevTools curve editor (purple icon next to timing functions), try different curves visually, and watch the animation preview. I can feel which curve is right, then copy the cubic-bezier values. This workflow is 10x faster than the code-and-refresh cycle I used before!</p>
                     </div>
                 </div>
 
                 <div class="tip-card">
                     <div class="tip-number">3</div>
                     <div>
-                        <h3>[Tip Title 3]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Timing expresses brand personality</h3>
+                        <p>Prof. Teeters taught me that timing isn't just technical — it's emotional communication. Fast and bouncy equals energetic (perfect for playful brands). Slow and smooth equals professional (ideal for sophisticated brands). When I choose timing functions now, I think about the brand values and user expectations. Same duration, different curve, completely different feeling!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Resources for custom curves</h3>
+                        <p>I spent hours experimenting in the DevTools bezier editor before Prof. Teeters showed me <strong>easings.net</strong> — a visual gallery of pre-made timing curves ready to copy. There's also <strong>cubic-bezier.com</strong> for interactive curve creation. I learned to start with easings.net presets, then fine-tune in DevTools if needed. Don't reinvent curves that already exist!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Learning Objectives Checklist -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>📋 Learning objectives checklist</h2>
+                <p class="mb-2">Before moving to Station 4, make sure you can confidently check off these learning objectives. Prof. Teeters taught me that mastery means understanding deeply, not just completing tasks!</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>Understanding timing functions</h3>
+                        <ul class="mt-1">
+                            <li>Can explain what timing functions control (acceleration/deceleration, not duration)</li>
+                            <li>Know the five standard curves (linear, ease, ease-in, ease-out, ease-in-out)</li>
+                            <li>Understand when to use each timing function</li>
+                            <li>Know that ease-out is best for most UI interactions</li>
+                            <li>Can recognize robotic versus natural motion</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>DevTools proficiency</h3>
+                        <ul class="mt-1">
+                            <li>Can find the timing function icon in DevTools (purple curve)</li>
+                            <li>Know how to open the bezier curve editor</li>
+                            <li>Can experiment with different curves visually</li>
+                            <li>Understand how to copy cubic-bezier values</li>
+                            <li>Use DevTools as primary workflow tool for timing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Cubic-bezier understanding</h3>
+                        <ul class="mt-1">
+                            <li>Know that all timing functions are cubic-bezier under the hood</li>
+                            <li>Understand the four-value format (x1, y1, x2, y2)</li>
+                            <li>Can recognize bouncy versus smooth curves</li>
+                            <li>Know where to find pre-made curves (easings.net)</li>
+                            <li>Comfortable experimenting with custom values</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Brand personality awareness</h3>
+                        <ul class="mt-1">
+                            <li>Understand that timing expresses personality and brand values</li>
+                            <li>Can choose appropriate timing for different brands</li>
+                            <li>Know fast/bouncy equals energetic feeling</li>
+                            <li>Know slow/smooth equals professional feeling</li>
+                            <li>Recognize emotional impact of timing choices</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Accessibility compliance</h3>
+                        <ul class="mt-1">
+                            <li>Always include <code>prefers-reduced-motion</code> query in every transition</li>
+                            <li>Test with Chrome DevTools reduced motion emulation</li>
+                            <li>Understand that smooth motion is not required for accessibility</li>
+                            <li>Know that functionality is preserved with reduced motion (changes happen instantly)</li>
+                            <li>Committed to accessible animations in all work</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Ready for Station 4</h3>
+                        <ul class="mt-1">
+                            <li>Confident choosing timing functions for different use cases</li>
+                            <li>Can use DevTools to experiment and find perfect curves</li>
+                            <li>Understand how timing communicates brand personality</li>
+                            <li>Ready to apply timing knowledge to real UI patterns</li>
+                            <li>Excited to build micro-interactions with intentional timing!</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -163,15 +962,15 @@
     </main>
 
     <nav aria-label="Station pagination" class="page-navigation bottom-nav">
-        <a href="station2.html" class="nav-link prev-link">← Previous: Station 2 - [PREV_STATION_TITLE]</a>
+        <a href="station2.html" class="nav-link prev-link">← Previous: Station 2 - CSS Transitions</a>
         <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
-        <a href="station4.html" class="nav-link next-link">Next: Station 4 - [NEXT_STATION_TITLE] →</a>
+        <a href="station4.html" class="nav-link next-link">Next: Station 4 - Micro-interactions →</a>
     </nav>
 
     <footer class="footer">
         <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
-        <p class="footer-reminder">
-            [HAP's memorable takeaway about this station] 🟠 — HAP
+        <p class="footer-reminder readable-width">
+            Remember: ease-out for UI, DevTools for experimentation, and timing expresses personality! Prof. Teeters taught me that how motion feels is just as important as what it does. 🟠 — HAP
         </p>
         <div class="footer-copyright">
             <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
@@ -192,35 +991,111 @@
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
         integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
-        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"
+        integrity="sha384-il2LGCD/dbZSj+R1EkDCDmd9MP5JK91rfAT7HTgBmbdRWsX99gFCbXlnMqrXYFZY"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"
+        integrity="sha384-buRG6Ay2QaSf/RKCMnb5lUXNZRQhTvj1MUIr1MTDDqtV9qSp0eYcIL/y8HlSZ7YD"
         crossorigin="anonymous"></script>
 
+    <!-- Copy Button Functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.prompt-box pre').forEach(pre => {
-                const button = document.createElement('button');
-                button.className = 'copy-button';
-                button.textContent = 'Copy';
-                button.setAttribute('aria-label', 'Copy code to clipboard');
+            // Function to add copy buttons to code blocks
+            function addCopyButtons() {
+                document.querySelectorAll('.prompt-box pre, .warning-box pre').forEach(pre => {
+                    // Skip if already has a copy button
+                    if (pre.querySelector('.copy-button')) return;
 
-                button.addEventListener('click', async () => {
-                    const code = pre.querySelector('code').textContent;
-                    try {
-                        await navigator.clipboard.writeText(code);
-                        button.classList.add('copied');
-                        button.textContent = 'Copied';
-                        setTimeout(() => {
-                            button.classList.remove('copied');
+                    const button = document.createElement('button');
+                    button.className = 'copy-button';
+                    button.textContent = 'Copy';
+                    button.setAttribute('aria-label', 'Copy code to clipboard');
+                    button.setAttribute('type', 'button');
+
+                    button.addEventListener('click', async () => {
+                        const code = pre.querySelector('code').textContent;
+                        try {
+                            await navigator.clipboard.writeText(code);
+                            button.classList.add('copied');
+                            button.textContent = 'Copied!';
+                            setTimeout(() => {
+                                button.classList.remove('copied');
+                                button.textContent = 'Copy';
+                            }, 2000);
+                        } catch (err) {
+                            console.error('Failed to copy:', err);
+                            button.textContent = 'Failed';
+                            setTimeout(() => {
+                                button.textContent = 'Copy';
+                            }, 2000);
+                        }
+                    });
+
+                    pre.appendChild(button);
+                });
+            }
+
+            // Add copy buttons initially
+            addCopyButtons();
+        });
+    </script>
+
+    <!-- Solution Reveal Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleButton = document.getElementById('toggleSolution');
+            const solutionContent = document.getElementById('solution-content');
+
+            if (toggleButton && solutionContent) {
+                let isFirstReveal = true;
+
+                toggleButton.addEventListener('click', function() {
+                    const isHidden = solutionContent.style.display === 'none';
+                    solutionContent.style.display = isHidden ? 'block' : 'none';
+                    toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
+                    toggleButton.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
+
+                    // On first reveal, apply syntax highlighting and add copy buttons
+                    if (isHidden && isFirstReveal) {
+                        if (typeof Prism !== 'undefined') {
+                            Prism.highlightAllUnder(solutionContent);
+                        }
+                        // Add copy buttons to solution code blocks
+                        solutionContent.querySelectorAll('pre').forEach(pre => {
+                            if (pre.querySelector('.copy-button')) return;
+
+                            const button = document.createElement('button');
+                            button.className = 'copy-button';
                             button.textContent = 'Copy';
-                        }, 2000);
-                    } catch (err) {
-                        console.error('Failed to copy:', err);
+                            button.setAttribute('aria-label', 'Copy code to clipboard');
+                            button.setAttribute('type', 'button');
+
+                            button.addEventListener('click', async () => {
+                                const code = pre.querySelector('code').textContent;
+                                try {
+                                    await navigator.clipboard.writeText(code);
+                                    button.classList.add('copied');
+                                    button.textContent = 'Copied!';
+                                    setTimeout(() => {
+                                        button.classList.remove('copied');
+                                        button.textContent = 'Copy';
+                                    }, 2000);
+                                } catch (err) {
+                                    console.error('Failed to copy:', err);
+                                    button.textContent = 'Failed';
+                                    setTimeout(() => {
+                                        button.textContent = 'Copy';
+                                    }, 2000);
+                                }
+                            });
+
+                            pre.appendChild(button);
+                        });
+                        isFirstReveal = false;
                     }
                 });
-
-                pre.appendChild(button);
-            });
+            }
         });
     </script>
 
