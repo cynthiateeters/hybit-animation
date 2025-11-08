@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAP's Learning Lab - Station 4: [STATION_TITLE]</title>
+    <title>HAP's Learning Lab - Station 4: Micro-interactions</title>
     <meta name="description"
-        content="Join HAP as he learns about [BRIEF_DESCRIPTION].">
+        content="Join HAP as he learns that micro means micro, safety is not optional, and purpose beats decoration. Discover practical animation patterns for real interfaces.">
     <meta property="og:image"
         content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -19,6 +19,7 @@
         href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demos.css">
     <link href="../css/prism-hap-theme.css" rel="stylesheet">
 </head>
 
@@ -34,12 +35,18 @@
                         fetchpriority="high">
                 </div>
                 <div>
-                    <h1>HAP's Learning Lab: [STATION_TITLE]</h1>
-                    <p class="subtitle">[SUBTITLE]</p>
+                    <h1>Station 4: Micro-interactions</h1>
+                    <p class="subtitle">Subtle is powerful - applying animation to real interfaces</p>
                 </div>
             </div>
             <div class="intro-box">
-                <p><strong>Welcome to Station 4!</strong> [HAP's apprentice voice introduction: describe what HAP learned from Prof. Teeters at this station, using first-person perspective] 🟠</p>
+                <p><strong>Welcome to Station 4!</strong> I was so proud of my notification badge — it bounced a full 50
+                    pixels to grab attention! I thought it looked amazing and users would definitely notice new
+                    notifications. Then Prof. Teeters watched me demo it and said, "HAP, that's not a micro-interaction,
+                    that's a macro-distraction." She changed the bounce to just 2 pixels, and somehow it was even more
+                    noticeable! The subtle movement caught my eye without being annoying. That's when I learned the most
+                    important lesson about animation: micro means micro, and subtle is powerful. Let me share what Prof.
+                    Teeters taught me about restraint, safety, and purpose! 🟠</p>
             </div>
         </div>
     </header>
@@ -51,110 +58,714 @@
 
     <main id="main-content" class="content-container">
 
+        <!-- Section 1: What You'll Learn -->
         <section class="content-section">
-            <h2 class="section-heading-centered">[SECTION_HEADING]</h2>
-
-            <div class="intro-box">
-                <p><strong>HAP's Discovery:</strong> [HAP's first-person narrative about learning this concept from Prof. Teeters]</p>
-            </div>
+            <h2 class="section-heading-centered">What you'll learn</h2>
 
             <div class="overview-grid mt-2">
                 <div class="insight-card">
-                    <h3><span class="insight-icon">📸</span> [Insight Title 1]</h3>
-                    <p class="stat-large">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">📏</span> Micro means micro</h3>
+                    <p class="stat-large">2-5% scale, 5-10px max</p>
+                    <p><strong>Restraint is the hardest skill to learn</strong></p>
+                    <p>I kept making buttons lift 30 pixels, forms shake 50 pixels, and notifications bounce wildly
+                        across the screen. Every time, Prof. Teeters would ask, "Is it a button or a helicopter?" She
+                        constantly reminded me: 2 to 5 percent scale changes maximum, 5 to 10 pixel movements maximum,
+                        150 to 300 millisecond durations. The power is in the restraint, not the excess. Less is more
+                        became my mantra after Station 4!</p>
                 </div>
+
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🔬</span> [Insight Title 2]</h3>
-                    <p class="stat-large stat-teal">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">⚠️</span> Safety is not optional</h3>
+                    <p class="stat-large stat-teal">No flashing >3x/second</p>
+                    <p><strong>The web must be safe for everyone</strong></p>
+                    <p>I made a notification badge flash red and white very quickly to grab attention. Prof. Teeters
+                        immediately stopped me and explained that flashing more than 3 times per second can trigger
+                        seizures in people with photosensitive epilepsy. I was horrified — I never wanted to hurt
+                        anyone! She taught me that safety comes before everything else. Always respect
+                        prefers-reduced-motion, never flash rapidly, and provide pause controls for auto-playing
+                        animations.</p>
                 </div>
+
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🎯</span> [Insight Title 3]</h3>
-                    <p class="stat-large stat-brown">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">🎯</span> Purpose over decoration</h3>
+                    <p class="stat-large stat-brown">4 valid purposes only</p>
+                    <p><strong>Every animation must help the user</strong></p>
+                    <p>I wanted to make the logo spin forever because "it looks cool." Prof. Teeters asked me what
+                        purpose it served, and I had no answer. She taught me the framework that transformed how I think
+                        about animation: every animation must provide feedback, direct attention, show relationships, or
+                        demonstrate something. If the only reason is "it looks cool," don't build it. That question —
+                        help the user or show off — guides every animation I create now!</p>
                 </div>
             </div>
 
             <div class="hap-note-callout">
                 <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                    alt="HAP looking confused while studying" width="150" height="150" class="hap-note-image"
+                    alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
                     decoding="async" loading="lazy">
                 <div class="hap-note-content">
-                    <h3>HAP's Confession:</h3>
-                    <p>[HAP's apprentice voice: describe initial confusion or learning moment about this topic]</p>
+                    <h3>HAP's confession: everything big and flashy</h3>
+                    <p>When I first started creating animations, I thought more movement meant better design. My buttons
+                        didn't just hover — they flew across the screen! My forms didn't gently shake on errors — they
+                        violently shook like earthquakes! My loading spinners were huge and spun at dizzying speeds.
+                        Every notification bounced, pulsed, and flashed like a disco. I genuinely thought users would
+                        appreciate the energy and excitement. Then Prof. Teeters watched me demo a login form where
+                        every field had excessive animations. She looked exhausted after 30 seconds and said, "HAP, I
+                        feel like I'm being attacked by your interface. These aren't micro-interactions, they're
+                        macro-distractions." She explained that micro-interactions are like seasoning in cooking — a
+                        little goes a long way, but too much ruins the dish. She showed me the same form with subtle
+                        2-pixel movements, gentle 300ms transitions, and restrained scale changes. It felt professional,
+                        polished, and respectful of the user's attention. I learned that my job isn't to entertain users
+                        with flashy animations — it's to help them accomplish their goals with smooth, purposeful
+                        feedback. Subtle is powerful, and restraint is a skill!</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section 2: Safety Rules and Purpose Framework -->
         <section class="content-section">
             <div class="topic-section">
-                <h2>[Main Topic Heading]</h2>
+                <h2>⚠️ Safety rules and purpose framework</h2>
+                <p class="mb-2">Before Prof. Teeters taught me these rules, I created dangerous animations without
+                    realizing it. I made a notification badge flash rapidly to grab attention, and she immediately
+                    stopped me. I learned two critical lessons: safety is not optional, and every animation must have a
+                    clear purpose!</p>
 
-                <p class="mb-2">[Introduction paragraph explaining what Prof. Teeters taught HAP about this topic]</p>
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP looking alarmed" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's flashing mistake</h3>
+                        <p>I was building a notification badge and wanted it to really grab users' attention when a new
+                            message arrived. I made it flash between bright red and white very quickly — probably about
+                            6 or 7 times per second. I thought it looked urgent and attention-grabbing! Then I showed
+                            Prof. Teeters my work, and she turned her head. She immediately told me to turn it off. I
+                            was confused until she explained that flashing more than 3 times per second can trigger
+                            seizures in people with photosensitive epilepsy. I felt horrible! I never wanted to create
+                            something that could hurt someone. She taught me this is the web's strictest safety rule —
+                            never flash rapidly, no exceptions. She showed me how to create attention-grabbing
+                            notifications that use a gentle pulse or a single subtle bounce instead of dangerous
+                            flashing. I learned that safety always comes before aesthetics, and I'm grateful Prof.
+                            Teeters caught my mistake before anyone got hurt. Now I test every animation to make sure
+                            it's safe for everyone!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-3">Critical safety rules</h3>
+                <p class="mb-2">Prof. Teeters made me memorize these non-negotiable safety requirements. Breaking these
+                    rules can cause real harm to users!</p>
+
+                <div class="warning-box">
+                    <h3>🔴 NEVER DO THIS: Flashing danger</h3>
+                    <p><strong class="text-error">❌ WRONG:</strong> This animation can trigger seizures!</p>
+                    <pre><code class="language-css">/* NEVER DO THIS - Triggers seizures */
+.dangerous-flash {
+  animation: flash 150ms infinite; /* 6.67 times per second */
+}
+
+@keyframes flash {
+  0%, 100% { background: hsl(0, 73%, 50%); }
+  50% { background: hsl(0, 0%, 100%); }
+}
+
+/* Prof. Teeters rule: NEVER flash more than 3 times per second */</code></pre>
+                    <p class="mt-1 text-error"><strong>Why this is dangerous:</strong> Flashing more than 3 times per
+                        second can trigger photosensitive epileptic seizures. This is not a preference or guideline —
+                        it's a strict safety requirement. Never create rapidly flashing animations!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">✅ SAFE: Auto-play with reduced-motion solution</div>
+                    <pre><code class="language-css">/* Auto-playing animation with accessibility */
+.auto-animation {
+  animation: pulse 2s infinite;
+}
+
+/* REQUIRED: Respect user preference */
+@media (prefers-reduced-motion: reduce) {
+  .auto-animation {
+    animation: none; /* Stop all looping animations */
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}</code></pre>
+                    <p class="code-comment mt-1">Prof. Teeters taught me: if an animation auto-plays or loops
+                        continuously, always respect prefers-reduced-motion. Users with vestibular disorders can
+                        experience nausea and dizziness from repeated motion!</p>
+                </div>
+
+                <div class="hap-note-callout mt-3">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP learning from Prof. Teeters" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>Prof. Teeters' purpose framework</h3>
+                        <p>After I kept suggesting animations that "looked cool," Prof. Teeters sat me down for a
+                            serious conversation. She asked me, "HAP, when you create an animation, are you helping the
+                            user or showing off?" I didn't have a good answer. She taught me that every animation must
+                            serve one of four valid purposes, or it shouldn't exist. Purpose 1: Provide feedback — show
+                            the user their action was registered (button press, form submission). Purpose 2: Direct
+                            attention — guide the user's eyes to something important (new notification, critical error).
+                            Purpose 3: Show relationships — help users understand how UI elements connect (dropdown from
+                            button, tooltip from icon). Purpose 4: Demonstrate or teach — explain how something works
+                            (tutorial steps, interactive examples). If my only reason for an animation is "it looks
+                            cool," that's decoration, not functionality. She explained that decoration wastes users'
+                            attention, distracts from real tasks, and slows down interfaces. This framework completely
+                            transformed how I think about animation. Now, before building anything, I ask: what purpose
+                            does this serve? If I can't name one of the four purposes, I don't build it!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-3">The four valid purposes</h3>
+                <p class="mb-2">Prof. Teeters drilled these into me. Every animation must serve at least one of these
+                    purposes, or it's just decoration!</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 1]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>Purpose 1: Provide feedback</h3>
+                        <p><strong>Tell users their actions were registered</strong></p>
+                        <div class="prompt-box mt-1">
+                            <div class="prompt-label">Example: Button hover feedback</div>
+                            <pre><code class="language-css">/* Purpose: Tell user button is interactive */
+.button-feedback {
+  transform: translateY(0);
+  transition: transform 300ms ease-out;
+}
+
+.button-feedback:hover {
+  transform: translateY(-2px);
+  /* Fast start provides immediate feedback */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-feedback {
+    transition: none;
+  }
+}</code></pre>
+                            <p class="code-comment mt-1">The subtle lift tells users: "This is clickable, and I'm ready
+                                for your action!" That's feedback.</p>
+                        </div>
                     </div>
+
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 2]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>Purpose 2: Direct attention</h3>
+                        <p><strong>Guide users' eyes to important information</strong></p>
+                        <div class="prompt-box mt-1">
+                            <div class="prompt-label">Example: Notification badge pop-in</div>
+                            <pre><code class="language-css">/* Purpose: Direct user's eyes to new notification */
+.notification-badge {
+  transform: scale(0);
+  animation: popIn 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-badge {
+    animation: none;
+    transform: scale(1); /* Appears instantly */
+  }
+}</code></pre>
+                            <p class="code-comment mt-1">The gentle bounce catches attention without being aggressive.
+                                That's directing attention with purpose!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Purpose 3: Show relationships</h3>
+                        <p><strong>Help users understand UI connections</strong></p>
+                        <div class="prompt-box mt-1">
+                            <div class="prompt-label">Example: Dropdown from button</div>
+                            <pre><code class="language-css">/* Purpose: Show menu comes from this button */
+.dropdown-menu {
+  opacity: 0;
+  transform: translateY(-10px);
+  transform-origin: top;
+  transition: opacity 200ms ease-out,
+              transform 200ms ease-out;
+}
+
+.dropdown-menu.open {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-menu {
+    transition: none;
+  }
+}</code></pre>
+                            <p class="code-comment mt-1">The downward slide from the button helps users understand the
+                                menu belongs to that control!</p>
+                        </div>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Purpose 4: Demonstrate or teach</h3>
+                        <p><strong>Explain how something works</strong></p>
+                        <div class="prompt-box mt-1">
+                            <div class="prompt-label">Example: Tooltip on hover</div>
+                            <pre><code class="language-css">/* Purpose: Teach user what this icon does */
+.tooltip {
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 200ms ease-out,
+              transform 200ms ease-out;
+  pointer-events: none;
+}
+
+.tooltip-trigger:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip {
+    transition: none;
+  }
+}</code></pre>
+                            <p class="code-comment mt-1">The fade-in teaches users what the icon means without them
+                                having to click!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-3">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP thinking critically" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's framework application</h3>
+                        <p>The first time I used Prof. Teeters' framework, I wanted to make the site logo spin
+                            continuously. I was excited to show her my idea — I thought it would add energy to the page!
+                            She asked me, "What's the purpose?" I said, "It looks cool!" She shook her head and said,
+                            "That's not one of the four purposes. Does it provide feedback? No, the logo doesn't respond
+                            to user actions. Does it direct attention? No, the logo isn't important information. Does it
+                            show relationships? No, it doesn't connect to anything. Does it demonstrate something? No,
+                            spinning doesn't teach users anything. So what's the purpose?" I had no answer. She
+                            explained that continuously spinning logos waste users' attention and make sites look
+                            amateurish, like 1990s websites. Then I suggested adding a hover lift to the call-to-action
+                            button. She asked the same question: "What's the purpose?" I thought carefully and said, "It
+                            provides feedback — it shows users the button is interactive and responds to their mouse!"
+                            She smiled and said, "Exactly! That's a valid purpose. Build it!" That moment clicked for
+                            me. The framework isn't about saying no to animation — it's about saying yes to meaningful
+                            animation and no to meaningless decoration. Now I use this framework before building
+                            anything, and my animations serve users instead of just showing off!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Button, Form, and Toggle Patterns -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>🎨 Button, form, and toggle patterns</h2>
+                <p class="mb-2">After learning about safety and purpose, Prof. Teeters taught me practical patterns for the most common UI interactions. Every pattern emphasizes restraint: 2 to 4 pixels for button lifts, 5 pixels maximum for error shakes, and always multiple cues for accessibility!</p>
+
+                <h3 class="mt-2">Part A: Button state feedback</h3>
+                <p class="mb-2">Buttons need to communicate their interactive nature through hover, active, and focus states. Prof. Teeters constantly reminded me: micro means micro, not helicopter!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP embarrassed by his mistake" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's button journey: helicopter vs subtle lift</h3>
+                        <p>I was so excited to create my first interactive button! I added a hover effect that lifted the button 30 pixels into the air. I thought it looked dynamic and exciting — users would definitely notice the button was clickable! Then I showed Prof. Teeters, and she watched silently as I hovered over the button. It practically flew off the screen. She looked at me and asked, "HAP, is that a button or a helicopter?" I was confused, so she explained: micro-interactions are called micro for a reason. A 30-pixel lift is excessive, distracting, and unprofessional. She changed my hover to just 2 pixels — barely noticeable, I thought! But when I tested it, the subtle movement was perfect. It communicated "clickable" without screaming "LOOK AT ME!" She taught me that 2 to 4 pixels is plenty for button lifts. Anything more starts feeling like the button is trying too hard. I learned that restraint creates polish, and subtle movements feel professional. The helicopter test became my constant reminder: if it looks like it's taking flight, it's too much!</p>
                     </div>
                 </div>
 
                 <div class="prompt-box mt-2">
-                    <div class="prompt-label">[Code Example Label]:</div>
-                    <pre><code class="language-html">[CODE EXAMPLE HERE]</code></pre>
-                    <p class="code-comment mt-1">[Explanation of code example]</p>
+                    <div class="prompt-label">Complete button pattern (hover, active, focus)</div>
+                    <pre><code class="language-css">/* Base button state */
+.micro-button {
+  background: hsl(32, 76%, 63%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px hsl(0, 0%, 0% / 0.1);
+  transition: transform 300ms ease-out,
+              box-shadow 300ms ease-out;
+}
+
+/* Hover: Subtle lift (2-4px maximum) */
+.micro-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px hsl(0, 0%, 0% / 0.15);
+}
+
+/* Active: Press down motion */
+.micro-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px hsl(0, 0%, 0% / 0.1);
+}
+
+/* Focus: Keyboard accessibility (NEVER remove) */
+.micro-button:focus {
+  outline: 2px solid hsl(32, 76%, 63%);
+  outline-offset: 2px;
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .micro-button {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">Prof. Teeters' complete button pattern: 2px lift on hover (not 30px!), press-down on active, visible focus outline for keyboard users, and always respect prefers-reduced-motion!</p>
                 </div>
 
-                <div class="interactive-demo mt-2">
-                    <h3>[Interactive Demo Title]</h3>
-                    <ul class="mt-1">
-                        <li>[List item 1]</li>
-                        <li>[List item 2]</li>
-                        <li>[List item 3]</li>
-                    </ul>
+                <h3 class="mt-3">Part B: Form feedback patterns</h3>
+                <p class="mb-2">Form validation needs clear, accessible feedback. Prof. Teeters taught me that animations enhance error communication but never replace text, color, and icons!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+                        alt="HAP learning about gentle feedback" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's violent shake mistake: earthquake not shake</h3>
+                        <p>When I built my first form with error validation, I wanted the error feedback to be really obvious. I created a shake animation that moved the input field 50 pixels left and right. It shook violently back and forth like an earthquake! I thought users would definitely notice the error with such dramatic movement. When Prof. Teeters tested my form and entered invalid data, the entire screen seemed to shake. She pulled back from her monitor and said, "HAP, I thought my screen broke! That's not a gentle shake, that's an earthquake!" I felt embarrassed, but she explained patiently: error shakes should be noticeable but not alarming. Users are already frustrated that they made an error — don't make them think the interface is broken too. She changed my shake to just 5 pixels left and right. I worried it wouldn't be noticeable enough, but when I tested it, the subtle movement clearly communicated "error" without being aggressive. She taught me that 5 pixels is plenty for error shakes. Small movement with clear message. And she made an important point: the shake is just one cue among many. It should never be the only way users know about errors!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Error shake animation (5px maximum, once only)</div>
+                    <pre><code class="language-css">/* Gentle shake on validation error (5px maximum) */
+.input-error {
+  animation: errorShake 300ms ease-out;
+  border-color: hsl(0, 73%, 50%);
+}
+
+@keyframes errorShake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Prof. Teeters rule: Shake ONCE, not loop */
+/* 5px is plenty - 50px is earthquake */
+
+@media (prefers-reduced-motion: reduce) {
+  .input-error {
+    animation: none; /* Border color change remains */
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The shake runs once only, moves just 5 pixels (not 50!), and respects reduced-motion by removing animation but keeping the red border!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Success checkmark animation (opacity + scale)</div>
+                    <pre><code class="language-css">/* Success icon appears after validation */
+.success-icon {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 300ms ease-out,
+              transform 300ms ease-out;
+}
+
+.input-success .success-icon {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .success-icon {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The checkmark fades in and scales from 0 to 1, providing gentle success confirmation without celebration!</p>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP making a promise" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's accessibility promise</h3>
+                        <p>After I learned about error shakes and success checkmarks, I was proud of my form validation animations. Then Prof. Teeters asked me a critical question: "HAP, what happens if a user can't see the shake animation?" I was confused — the shake was right there on the screen! She explained that some users have prefers-reduced-motion enabled and won't see any animation at all. Some users have visual impairments and might not notice subtle movements. Some users are just focused on the keyboard and not watching the screen closely. She made me promise: never rely on animation alone for error communication. Always provide multiple cues. Cue 1: Animation (the shake) for users who can see motion. Cue 2: Color change (red border) for visual users who can't see motion. Cue 3: Icon (warning symbol) for symbolic recognition. Cue 4: Text message (screen reader accessible) explaining exactly what's wrong. I promised Prof. Teeters that every form error I create will have all four cues. Animation enhances the message, but text, color, and icons make it complete and accessible to everyone!</p>
+                    </div>
                 </div>
 
                 <div class="warning-box mt-2">
-                    <h3>🟠 [Warning Title]</h3>
-                    <p><strong class="text-success">✅ RIGHT:</strong></p>
-                    <pre><code class="language-html">[Correct example]</code></pre>
-                    <p><strong class="text-error">❌ WRONG:</strong></p>
-                    <pre><code class="language-html">[Incorrect example]</code></pre>
-                    <p class="mt-1">[Explanation of why this matters]</p>
+                    <h3>✅ Multi-cue error communication</h3>
+                    <p><strong>NEVER rely on animation alone for errors!</strong> Always provide multiple cues:</p>
+                    <pre><code class="language-html">&lt;!-- Cue 1: Animation (shake) - CSS above --&gt;
+&lt;!-- Cue 2: Color (red border) - CSS above --&gt;
+
+&lt;!-- Cue 3: Icon (visual symbol) --&gt;
+&lt;span class="error-icon" aria-hidden="true"&gt;⚠️&lt;/span&gt;
+
+&lt;!-- Cue 4: Text (screen reader accessible) --&gt;
+&lt;span class="error-text" id="email-error" role="alert"&gt;
+  Please enter a valid email address
+&lt;/span&gt;</code></pre>
+                    <p class="mt-1">Animation + Color + Icon + Text = Complete accessible error communication!</p>
+                </div>
+
+                <h3 class="mt-3">Part C: Toggle state animations</h3>
+                <p class="mb-2">Toggles need to clearly communicate state changes. Prof. Teeters taught me that satisfying micro-interactions increase user engagement!</p>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP satisfied with his toggle" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's toggle satisfaction</h3>
+                        <p>The first time I created a smooth toggle transition, I spent an hour just clicking it on and off. The little circle sliding from left to right felt so satisfying! I showed Prof. Teeters and said, "I can't stop clicking it!" She smiled and explained that this is exactly what good micro-interactions do — they provide tactile satisfaction that makes interfaces feel responsive and alive. She taught me that toggle animations should be smooth but fast (200 to 300ms), use ease-out timing for immediate response, and clearly show the state change. The sliding motion helps users understand the on/off metaphor instantly. She also pointed out that the satisfaction I felt wasn't from big flashy animation — it was from the small, perfectly-tuned movement. The toggle doesn't jump or bounce excessively. It just smoothly slides from one position to the other with a gentle ease-out curve. That's the power of micro-interactions: tiny movements that feel just right!</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Switch toggle transition (sliding circle)</div>
+                    <pre><code class="language-css">/* Switch toggle with sliding circle */
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background: hsl(0, 0%, 80%);
+  border-radius: 13px;
+  position: relative;
+  transition: background 250ms ease-out;
+}
+
+.toggle-circle {
+  width: 20px;
+  height: 20px;
+  background: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: transform 250ms ease-out;
+}
+
+.toggle-input:checked + .toggle-switch {
+  background: hsl(32, 76%, 63%);
+}
+
+.toggle-input:checked + .toggle-switch .toggle-circle {
+  transform: translateX(24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle-switch,
+  .toggle-circle {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The satisfying slide: 250ms duration, ease-out timing, smooth transform, and reduced-motion support for instant state change!</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Checkbox checkmark transition (scale + bounce)</div>
+                    <pre><code class="language-css">/* Checkbox with animated checkmark */
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid hsl(0, 0%, 60%);
+  background: hsl(0, 0%, 100%);
+  transition: background 200ms ease-out,
+              border-color 200ms ease-out;
+}
+
+.custom-checkbox .checkmark {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 200ms ease-out,
+              transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.checkbox:checked + .custom-checkbox {
+  background: hsl(32, 76%, 63%);
+  border-color: hsl(32, 76%, 63%);
+}
+
+.checkbox:checked + .custom-checkbox .checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-checkbox,
+  .custom-checkbox .checkmark {
+    transition: none;
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The checkmark scales in with a gentle bouncy curve, providing tactile satisfaction without excessive movement!</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section 6: Quick Reference Tips -->
         <section class="content-section">
             <div class="tips-container">
-                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+                <h2 class="section-heading-centered">🎓 HAP's quick reference</h2>
 
                 <div class="tip-card">
                     <div class="tip-number">1</div>
                     <div>
-                        <h3>[Tip Title 1]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Micro means micro</h3>
+                        <p>Prof. Teeters drilled this into me with every excessive animation I created: 2 to 5 percent
+                            scale changes maximum, 5 to 10 pixel movements maximum, 150 to 300 millisecond durations. I
+                            kept pushing past these limits thinking bigger was better, but she was right every time.
+                            Micro-interactions are like seasoning — a little goes a long way. Subtle movements feel
+                            professional and polished. Excessive movements feel amateurish and annoying. Restraint is
+                            power!</p>
                     </div>
                 </div>
 
                 <div class="tip-card">
                     <div class="tip-number">2</div>
                     <div>
-                        <h3>[Tip Title 2]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Never flash, always give control</h3>
+                        <p>This is Prof. Teeters' strictest rule, and I understand why after learning about
+                            photosensitive epilepsy. Never flash more than 3 times per second — it can trigger seizures.
+                            Auto-playing loops cause distraction and nausea for users with vestibular disorders. Always
+                            respect prefers-reduced-motion, or provide pause controls for continuous animations. The web
+                            must be safe for everyone. No exceptions, no excuses. Safety comes before aesthetics!</p>
                     </div>
                 </div>
 
                 <div class="tip-card">
                     <div class="tip-number">3</div>
                     <div>
-                        <h3>[Tip Title 3]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Purpose over decoration</h3>
+                        <p>Before building any animation, I ask Prof. Teeters' question: does this help the user or just
+                            show off? The four valid purposes are: provide feedback (button pressed, action confirmed),
+                            direct attention (new notification, important error), show relationships (menu from button,
+                            dropdown connection), demonstrate or teach (tutorial steps, how it works). If my answer is
+                            "it looks cool," I don't build it. This framework saved me from creating countless useless
+                            animations!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Multiple cues for accessibility</h3>
+                        <p>Prof. Teeters made me promise to never rely on animation alone for important information,
+                            especially errors. Some users have reduced-motion preferences, some have visual impairments,
+                            some just can't see subtle movements. I learned to always provide multiple cues: animation
+                            for visual users who can see motion, color change for those who can't, icon for symbolic
+                            recognition, and text for screen readers. Animation enhances the message but never replaces
+                            it. Complete communication is accessible communication!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Learning Objectives Checklist -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>📋 Learning objectives checklist</h2>
+                <p class="mb-2">Before moving to Station 5, make sure you can confidently check off these learning
+                    objectives. Prof. Teeters taught me that mastery means understanding deeply, not just completing
+                    tasks!</p>
+
+                <div class="analysis-grid">
+                    <div class="analysis-point">
+                        <h3>Understanding micro-interactions</h3>
+                        <ul class="mt-1">
+                            <li>Can explain what micro-interactions are (small, focused animations that enhance UI)</li>
+                            <li>Know the size and duration constraints (2-5% scale, 5-10px, 150-300ms)</li>
+                            <li>Understand that micro means micro (restraint is power)</li>
+                            <li>Recognize difference between subtle and excessive movements</li>
+                            <li>Can identify when animation is too large or distracting</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Safety compliance</h3>
+                        <ul class="mt-1">
+                            <li>Know flashing limit of 3 times per second (seizure trigger prevention)</li>
+                            <li>Understand photosensitive epilepsy and vestibular disorder risks</li>
+                            <li>Always include prefers-reduced-motion for all animations</li>
+                            <li>Know when to provide pause controls (auto-playing content)</li>
+                            <li>Committed to making the web safe for all users</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Purpose framework mastery</h3>
+                        <ul class="mt-1">
+                            <li>Can ask: does this animation have a purpose (help user or show off)</li>
+                            <li>Know the four valid purposes (feedback, attention, relationships, teaching)</li>
+                            <li>Can identify decoration versus functional animation</li>
+                            <li>Reject animations that just "look cool" without purpose</li>
+                            <li>Apply framework before building any animation</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Button pattern implementation</h3>
+                        <ul class="mt-1">
+                            <li>Can create subtle hover lift effect (2-4px maximum)</li>
+                            <li>Know appropriate lift distance (helicopter test)</li>
+                            <li>Can implement active press-down state</li>
+                            <li>Include visible focus state for keyboard users</li>
+                            <li>Remember prefers-reduced-motion always</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Form feedback implementation</h3>
+                        <ul class="mt-1">
+                            <li>Can create success animations (checkmark fade + scale)</li>
+                            <li>Can implement gentle error shake (5px maximum, once only)</li>
+                            <li>Know shake distance limits (5px not 50px)</li>
+                            <li>Provide multiple error cues (shake + color + icon + text)</li>
+                            <li>Never rely on animation alone for errors</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Toggle and icon animations</h3>
+                        <ul class="mt-1">
+                            <li>Can create smooth toggle transitions (checkbox, switch)</li>
+                            <li>Can implement icon transformations (hamburger to X)</li>
+                            <li>Understand state relationship communication</li>
+                            <li>Know appropriate transition durations (200-300ms)</li>
+                            <li>Create satisfying but subtle interactions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Loading and notification patterns</h3>
+                        <ul class="mt-1">
+                            <li>Can implement loading indicators (dots, spinner)</li>
+                            <li>Provide reduced-motion alternatives (static state)</li>
+                            <li>Can create notification animations (badge pop, toast slide)</li>
+                            <li>Know appropriate attention levels (2px bounce vs 50px)</li>
+                            <li>Balance information with restraint</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Accessibility awareness</h3>
+                        <ul class="mt-1">
+                            <li>Understand multi-cue communication importance</li>
+                            <li>Never rely on motion alone for critical info</li>
+                            <li>Test with prefers-reduced-motion enabled</li>
+                            <li>Ensure keyboard navigation works for all demos</li>
+                            <li>Committed to accessible animation practices</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -163,15 +774,17 @@
     </main>
 
     <nav aria-label="Station pagination" class="page-navigation bottom-nav">
-        <a href="station3.html" class="nav-link prev-link">← Previous: Station 3 - [PREV_STATION_TITLE]</a>
+        <a href="station3.html" class="nav-link prev-link">← Previous: Station 3 - Timing Functions</a>
         <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
-        <a href="station5.html" class="nav-link next-link">Next: Station 5 - [NEXT_STATION_TITLE] →</a>
+        <a href="station5.html" class="nav-link next-link">Next: Station 5 - Keyframe Animations →</a>
     </nav>
 
     <footer class="footer">
         <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
-        <p class="footer-reminder">
-            [HAP's memorable takeaway about this station] 🟠 — HAP
+        <p class="footer-reminder readable-width">
+            Remember: micro means micro (2-5% scale, 5-10px max), safety is not optional (no flashing >3x/second), and
+            purpose beats decoration (help user or show off). Prof. Teeters taught me that restraint is power and subtle
+            is professional! 🟠 — HAP
         </p>
         <div class="footer-copyright">
             <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
@@ -189,40 +802,8 @@
 
     <script src="../js/easter-egg.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
-        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
-        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
-        crossorigin="anonymous"></script>
-
-    <script>
-        document.addEventListener('DOMContentLoads', () => {
-            document.querySelectorAll('.prompt-box pre').forEach(pre => {
-                const button = document.createElement('button');
-                button.className = 'copy-button';
-                button.textContent = 'Copy';
-                button.setAttribute('aria-label', 'Copy code to clipboard');
-
-                button.addEventListener('click', async () => {
-                    const code = pre.querySelector('code').textContent;
-                    try {
-                        await navigator.clipboard.writeText(code);
-                        button.classList.add('copied');
-                        button.textContent = 'Copied';
-                        setTimeout(() => {
-                            button.classList.remove('copied');
-                            button.textContent = 'Copy';
-                        }, 2000);
-                    } catch (err) {
-                        console.error('Failed to copy:', err);
-                    }
-                });
-
-                pre.appendChild(button);
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
 
 </body>
 

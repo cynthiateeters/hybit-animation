@@ -559,7 +559,46 @@ Save reports to `/reports/` directory with descriptive names.
 
 - Google Fonts (Nunito, Source Code Pro)
 - Cloudinary CDN for images
+- Prism.js CDN for syntax highlighting (see critical note below)
 - Native `<dialog>` element (requires modern browsers: Chrome 90+, Firefox 90+, Safari 15.4+)
+
+### CRITICAL: Prism.js integrity attribute issue
+
+**Problem**: CDN integrity hashes for Prism.js frequently become invalid, causing browser errors:
+```
+Failed to find a valid digest in the 'integrity' attribute for resource...
+The resource has been blocked.
+```
+
+**Why this happens**: CDN content changes but integrity hashes in code don't update automatically.
+
+**Solution**: **DO NOT use `integrity` attributes for Prism.js CDN resources.**
+
+**Correct pattern** (from Station 1):
+```html
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+```
+
+**Incorrect pattern** (will break):
+```html
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
+    integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
+    crossorigin="anonymous"></script>
+<!-- Integrity hash will fail when CDN content updates -->
+```
+
+**Language-specific components needed**:
+- `prism-core.min.js` - Always required first
+- `prism-css.min.js` - For CSS code blocks
+- `prism-markup.min.js` - For HTML code blocks (`language-html` or `language-markup`)
+- `prism-clike.min.js` - For JavaScript code blocks (loads before JS component)
+- `prism-javascript.min.js` - For JavaScript code blocks
+
+**Load order matters**: Core must load first, then clike before javascript.
+
+**When creating new stations**: Copy Prism.js script pattern from Station 1, NOT from other sources with integrity attributes.
 
 ## Browser compatibility
 
