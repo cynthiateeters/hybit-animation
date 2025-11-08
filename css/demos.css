@@ -380,3 +380,306 @@
 .demo-section .demo-context strong {
     color: hsl(32, 76%, 35%);
 }
+
+/* ============================================================================
+   STATION 2: CSS Transitions Demos
+   ============================================================================ */
+
+/* Duration Comparison Demo
+   ========================= */
+
+.duration-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.duration-demo-item {
+    text-align: center;
+}
+
+.duration-demo-button {
+    width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: hsl(32, 76%, 63%);
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 0.75rem;
+}
+
+/* Different durations */
+.duration-100ms {
+    transition: background 100ms ease-out;
+}
+
+.duration-300ms {
+    transition: background 300ms ease-out;
+}
+
+.duration-1000ms {
+    transition: background 1000ms ease-out;
+}
+
+.duration-2000ms {
+    transition: background 2000ms ease-out;
+}
+
+.duration-demo-button:hover {
+    background: hsl(32, 76%, 53%);
+}
+
+.duration-demo-button:active {
+    background: hsl(32, 76%, 43%);
+}
+
+.duration-demo-label {
+    font-size: 0.875rem;
+    font-weight: bold;
+    margin: 0 0 0.25rem;
+}
+
+.duration-demo-note {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 40%);
+    margin: 0;
+}
+
+/* Highlight the sweet spot */
+.duration-demo-item.sweet-spot .duration-demo-label {
+    color: hsl(142, 71%, 45%);
+}
+
+.duration-demo-item.sweet-spot .duration-demo-button {
+    border: 2px solid hsl(142, 71%, 45%);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .duration-100ms,
+    .duration-300ms,
+    .duration-1000ms,
+    .duration-2000ms {
+        transition: none;
+    }
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .duration-demo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Property Comparison Demo: Specific vs All
+   ========================================== */
+
+.property-demo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.property-demo-column {
+    text-align: center;
+    padding: 1.5rem;
+    background: hsl(0, 0%, 98%);
+    border-radius: 8px;
+    border: 1px solid hsl(0, 0%, 90%);
+}
+
+.property-demo-button {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: hsl(32, 76%, 63%);
+    color: hsl(0, 0%, 100%);
+    transform: scale(1);
+    margin-bottom: 1rem;
+}
+
+/* Specific properties (RECOMMENDED) */
+.property-demo-specific {
+    transition: transform 300ms ease-out,
+                background 300ms ease-out;
+}
+
+/* All properties (NOT RECOMMENDED) */
+.property-demo-all {
+    transition: all 300ms ease-out;
+}
+
+.property-demo-button:hover {
+    background: hsl(32, 76%, 53%);
+    transform: scale(1.05);
+}
+
+.property-demo-button:active {
+    background: hsl(32, 76%, 43%);
+    transform: scale(0.98);
+}
+
+.property-demo-label {
+    font-weight: bold;
+    margin: 0 0 0.5rem;
+}
+
+.property-demo-code {
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+    color: hsl(0, 0%, 30%);
+}
+
+.property-demo-note {
+    font-size: 0.75rem;
+    color: hsl(0, 0%, 40%);
+    margin: 0.5rem 0 0;
+}
+
+/* Highlight the correct approach */
+.property-demo-column.recommended {
+    border: 2px solid hsl(142, 71%, 45%);
+}
+
+.property-demo-column.recommended .property-demo-label {
+    color: hsl(142, 71%, 45%);
+}
+
+.property-demo-column.not-recommended {
+    border: 2px solid hsl(0, 71%, 55%);
+}
+
+.property-demo-column.not-recommended .property-demo-label {
+    color: hsl(0, 71%, 45%);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .property-demo-specific,
+    .property-demo-all {
+        transition: none;
+    }
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 768px) {
+    .property-demo-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Reduced Motion Toggle Demo
+   =========================== */
+
+.reduced-motion-demo-container {
+    padding: 2rem;
+    background: hsl(48, 100%, 97%);
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.reduced-motion-demo-content {
+    text-align: center;
+}
+
+.reduced-motion-demo-button {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: hsl(32, 76%, 63%);
+    color: hsl(0, 0%, 100%);
+    transform: scale(1);
+    transition: transform 300ms ease-out,
+                background 300ms ease-out;
+    margin: 1.5rem 0;
+}
+
+.reduced-motion-demo-button:hover {
+    background: hsl(32, 76%, 53%);
+    transform: scale(1.05);
+}
+
+.reduced-motion-demo-button:active {
+    background: hsl(32, 76%, 43%);
+    transform: scale(0.98);
+}
+
+/* When simulated reduced motion is enabled */
+.demo-motion-reduced .reduced-motion-demo-button {
+    transition: none;
+}
+
+.reduced-motion-toggle {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid hsl(0, 0%, 85%);
+}
+
+.reduced-motion-toggle label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+}
+
+.reduced-motion-toggle input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.reduced-motion-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: hsl(0, 0%, 95%);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.reduced-motion-status.motion-on {
+    background: hsl(142, 71%, 95%);
+    color: hsl(142, 71%, 25%);
+    border: 1px solid hsl(142, 71%, 70%);
+}
+
+.reduced-motion-status.motion-off {
+    background: hsl(32, 76%, 95%);
+    color: hsl(32, 76%, 25%);
+    border: 1px solid hsl(32, 76%, 70%);
+}
+
+/* Focus states for accessibility */
+.duration-demo-button:focus-visible,
+.property-demo-button:focus-visible,
+.reduced-motion-demo-button:focus-visible {
+    outline: 3px solid hsl(32, 76%, 63%);
+    outline-offset: 3px;
+}
+
+.reduced-motion-toggle input[type="checkbox"]:focus-visible {
+    outline: 3px solid hsl(32, 76%, 63%);
+    outline-offset: 2px;
+}
+
+/* Respect system reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reduced-motion-demo-button {
+        transition: none;
+    }
+}

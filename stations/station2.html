@@ -374,6 +374,35 @@
                     <p class="code-comment mt-1">Yes, it's more typing than <code>transition: all</code>. But it's explicit, performant, and works smoothly on all devices. Prof. Teeters says the extra 10 seconds is always worth it!</p>
                 </div>
 
+                <h3 class="mt-2">🎨 See it in action: Specific vs all comparison</h3>
+                <p class="mb-2">Both buttons below do the same thing (change background and scale on hover), but one uses specific properties and the other uses <code>transition: all</code>. On desktop they might feel similar, but the specific version is more performant, especially on mobile devices!</p>
+
+                <div class="property-demo-grid">
+                    <div class="property-demo-column recommended">
+                        <p class="property-demo-label">✅ Specific properties (RECOMMENDED)</p>
+                        <button type="button" class="property-demo-button property-demo-specific">Hover me</button>
+                        <p class="property-demo-code"><code>transition: transform 300ms,<br>background 300ms;</code></p>
+                        <p class="property-demo-note">Only animates the two properties that change. Performant on all devices!</p>
+                    </div>
+
+                    <div class="property-demo-column not-recommended">
+                        <p class="property-demo-label">❌ All properties (NOT RECOMMENDED)</p>
+                        <button type="button" class="property-demo-button property-demo-all">Hover me</button>
+                        <p class="property-demo-code"><code>transition: all 300ms;</code></p>
+                        <p class="property-demo-note">Watches ALL properties for changes. Works on desktop but can stutter on budget phones!</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+                        alt="HAP studying on his laptop" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's testing insight</h3>
+                        <p>On my Mac, both buttons feel identical — smooth and professional. But when Prof. Teeters had me test on her budget Android phone, the difference was obvious. The "all" button stuttered slightly, especially when I hovered rapidly. The specific button stayed smooth. Prof. Teeters explained that desktop hardware is so powerful it hides performance problems that slower devices can't. <strong>Always test on real devices, and always be specific!</strong></p>
+                    </div>
+                </div>
+
                 <h3 class="mt-2">Guidelines for choosing duration</h3>
                 <p class="mb-2">Prof. Teeters taught me these rules of thumb for common UI elements:</p>
 
@@ -396,6 +425,45 @@
                     <div class="analysis-point">
                         <h3>When in doubt: 300ms</h3>
                         <p>Prof. Teeters calls this the "universal duration" because it works in almost every situation. Start here and adjust only if you have a specific reason!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">🎨 See it in action: Duration comparison</h3>
+                <p class="mb-2">Hover over each button below to feel the difference between durations. The 300ms button is highlighted because it's in the sweet spot for UI animations!</p>
+
+                <div class="duration-demo-grid">
+                    <div class="duration-demo-item">
+                        <button type="button" class="duration-demo-button duration-100ms">Hover me</button>
+                        <p class="duration-demo-label">100ms</p>
+                        <p class="duration-demo-note">Too fast — barely noticeable</p>
+                    </div>
+
+                    <div class="duration-demo-item sweet-spot">
+                        <button type="button" class="duration-demo-button duration-300ms">Hover me</button>
+                        <p class="duration-demo-label">300ms ✓</p>
+                        <p class="duration-demo-note">Sweet spot — perfect balance</p>
+                    </div>
+
+                    <div class="duration-demo-item">
+                        <button type="button" class="duration-demo-button duration-1000ms">Hover me</button>
+                        <p class="duration-demo-label">1000ms</p>
+                        <p class="duration-demo-note">Too slow — feels sluggish</p>
+                    </div>
+
+                    <div class="duration-demo-item">
+                        <button type="button" class="duration-demo-button duration-2000ms">Hover me</button>
+                        <p class="duration-demo-label">2000ms</p>
+                        <p class="duration-demo-note">Way too slow — ridiculous!</p>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-2">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-waving_dgzacg.jpg"
+                        alt="HAP waving" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's observation</h3>
+                        <p>Prof. Teeters had me hover over the 2000ms button and I literally started laughing — waiting 2 full seconds for a hover effect is absurd! The 300ms button feels instant but still smooth. That's the one I use for almost everything now. The 100ms button is so fast you barely notice the transition happening, and the 1000ms button makes you feel like you're waiting for the interface to catch up. Speed really does equal polish!</p>
                     </div>
                 </div>
             </div>
@@ -574,6 +642,27 @@
                             <li>Switch back to "no-preference" to see transitions return</li>
                         </ol>
                         <p class="mt-1">Prof. Teeters taught me to test EVERY page with this setting before considering it done. This is part of the workflow, not an optional check!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-2">🎨 See it in action: Reduced motion toggle</h3>
+                <p class="mb-2">This demo simulates what happens when a user enables reduced motion in their system settings. Toggle the checkbox below to see the button transition turn on and off instantly!</p>
+
+                <div class="reduced-motion-demo-container" id="reducedMotionDemoContainer">
+                    <div class="reduced-motion-demo-content">
+                        <p><strong>Hover over this button to see smooth transitions:</strong></p>
+                        <button type="button" class="reduced-motion-demo-button">Hover me!</button>
+
+                        <div class="reduced-motion-toggle">
+                            <label for="reducedMotionCheckbox">
+                                <input type="checkbox" id="reducedMotionCheckbox">
+                                Simulate "Reduce Motion" preference
+                            </label>
+                        </div>
+
+                        <div class="reduced-motion-status motion-on" id="motionStatus">
+                            <strong>Status:</strong> Transitions are <strong>enabled</strong> — button smoothly animates on hover
+                        </div>
                     </div>
                 </div>
 
@@ -891,6 +980,29 @@
                 } else {
                     solutionContent.style.display = 'none';
                     toggleButton.textContent = 'Show Solution';
+                }
+            });
+        }
+    </script>
+
+    <!-- Reduced Motion Demo Toggle -->
+    <script>
+        const reducedMotionCheckbox = document.getElementById('reducedMotionCheckbox');
+        const reducedMotionContainer = document.getElementById('reducedMotionDemoContainer');
+        const motionStatus = document.getElementById('motionStatus');
+
+        if (reducedMotionCheckbox && reducedMotionContainer && motionStatus) {
+            reducedMotionCheckbox.addEventListener('change', function() {
+                if (this.checked) {
+                    reducedMotionContainer.classList.add('demo-motion-reduced');
+                    motionStatus.classList.remove('motion-on');
+                    motionStatus.classList.add('motion-off');
+                    motionStatus.innerHTML = '<strong>Status:</strong> Transitions are <strong>disabled</strong> — button changes instantly on hover';
+                } else {
+                    reducedMotionContainer.classList.remove('demo-motion-reduced');
+                    motionStatus.classList.remove('motion-off');
+                    motionStatus.classList.add('motion-on');
+                    motionStatus.innerHTML = '<strong>Status:</strong> Transitions are <strong>enabled</strong> — button smoothly animates on hover';
                 }
             });
         }
