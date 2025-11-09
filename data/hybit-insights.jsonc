@@ -1,14 +1,12 @@
 {
   // =============================================================================
-  // HAP's Learning Lab Template - Insights Data File (JSONC - JSON with Comments)
+  // HAP's Animation Learning Lab - Insights Data File (JSONC - JSON with Comments)
   // =============================================================================
   // This file contains all educational insights displayed by the HyBit easter egg
   // when students add ?hybit parameters to URLs.
   //
-  // CUSTOMIZE THIS FILE for your learning lab by:
-  // 1. Adding your own parameter names to "allowedParams"
-  // 2. Creating messages for each parameter in "messages" object
-  // 3. Updating page-specific help in "pageHelp" section
+  // This learning lab teaches CSS transforms, transitions, timing, micro-interactions,
+  // keyframes, and AI assistance for animation development.
   //
   // SECURITY: All content here is pre-defined and sanitized. The JavaScript
   // validates parameters against the allowedParams whitelist before displaying
@@ -17,154 +15,279 @@
   // COMPLETE DOCUMENTATION: See data/README.md for detailed instructions
   // =============================================================================
 
-  // CUSTOMIZE: Add your own parameter names here (lowercase, alphanumeric only)
+  // Parameter whitelist: 17 total (5 global, 12 station-specific)
   "allowedParams": [
-    "detail",       // Lighthouse performance score (keep this one!)
-    "stations",     // Learning lab overview (keep this one!)
-    "example1",     // Replace with your Station 1 insight parameter
-    "example2",     // Replace with your Station 2 insight parameter
-    "example3",     // Replace with your Station 3 insight parameter
-    "example4",     // Replace with your Station 4 insight parameter
-    "example5",     // Replace with your Station 5 insight parameter
-    "example6"      // Replace with your Station 6 insight parameter
+    "detail",           // Global: Performance optimization principles
+    "stations",         // Global: Learning lab roadmap
+    "workflow",         // Global: HAP's complete animation workflow
+    "accessibility",    // Global: Accessibility testing workflow
+    "devtools",         // Global: DevTools tips for animations
+    "gpu",              // Both: GPU fast lane (global + station 2)
+    "transforms",       // Station 1: Transform vs top/left performance
+    "3dtransforms",     // Station 1: Z-axis hardware acceleration trick
+    "transitionall",    // Station 2: Why 'transition: all' is dangerous
+    "easeout",          // Station 3: Why ease-out feels responsive
+    "cubicbezier",      // Station 3: Creating custom timing curves
+    "restraint",        // Station 4: Prof. Teeters' restraint rule
+    "feedback",         // Station 4: The 100ms feedback rule
+    "fillmode",         // Station 5: Animation fill-mode explained
+    "infiniteloop",     // Station 5: Infinite loop accessibility rules
+    "aiprompts",        // Station 6: HAP's prompt engineering lessons
+    "verification"      // Station 6: The verification checklist
   ],
 
-  // CUSTOMIZE: Create messages for each parameter in allowedParams
-  // Format: { "title": "...", "content": "..." }
-  // You can use HTML tags: <code>, <strong>, <em>, <br>
+  // Messages for each parameter (HAP's first-person voice)
   "messages": {
-    // Keep these two default messages:
+    // ==========================================================================
+    // GLOBAL PARAMETERS (available on all pages)
+    // ==========================================================================
+
     "detail": {
-      "title": "🚀 Lighthouse Score: 99%!",
-      "content": "This site is optimized for instant loading with modern web performance techniques."
-    },
-    "stations": {
-      "title": "🔬 Learning Stations",
-      "content": "Explore 6 interactive stations covering [YOUR TOPICS]. HAP guides you through hands-on examples and practical demonstrations."
+      "title": "🚀 Performance Through Intentional Choices",
+      "content": "Prof. Teeters taught me that performance isn't just about speed — it's about respect for users' time and devices. Every animation in this lab uses GPU-accelerated properties (transform and opacity only), all images are optimized through Cloudinary CDN with automatic format selection, and the entire site has zero framework dependencies. Pure HTML, CSS, and vanilla JavaScript. I learned to measure what matters: animations should run at 60fps on old phones, images should be responsive and lazy-loaded, and CSS should use custom properties for maintainability. Fast sites aren't magic — they're intentional choices made during development! Test your own projects with DevTools Performance panel to see what's really happening. 🟠"
     },
 
-    // CUSTOMIZE: Replace these examples with your own insights
-    "example1": {
-      "title": "🎨 [Your Station 1 Insight Title]",
-      "content": "Replace this with educational content about your Station 1 topic. Use <code>code tags</code> for technical terms and <strong>bold</strong> for emphasis."
+    "stations": {
+      "title": "🔬 Learning Lab Roadmap",
+      "content": "Prof. Teeters designed this lab to build skills progressively! I learned Station 1 (transforms) first because you need to know WHAT to animate before learning HOW to animate it (transitions in Station 2). Then timing functions (Station 3) taught me to make animations feel right, micro-interactions (Station 4) showed me when to use restraint, keyframes (Station 5) unlocked complex choreography, and finally AI assistance (Station 6) helped me work faster while staying responsible. Each station builds on the previous! Start at Station 1 and work your way through — trust Prof. Teeters' sequence! 🟠"
     },
-    "example2": {
-      "title": "📱 [Your Station 2 Insight Title]",
-      "content": "Replace this with educational content about your Station 2 topic. Keep it concise and in HAP's friendly apprentice voice!"
+
+    "workflow": {
+      "title": "🔧 HAP's Complete Animation Workflow",
+      "content": "After completing all six stations, here's my go-to workflow: <strong>1) Identify what needs animation</strong> (not everything!). <strong>2) Choose transform/opacity properties</strong> (GPU fast lane). <strong>3) Pick duration</strong> (200-300ms for interactions, 400-600ms for storytelling). <strong>4) Use ease-out timing</strong> (feels responsive). <strong>5) Add prefers-reduced-motion</strong> (ALWAYS!). <strong>6) Test on mobile</strong> (Prof. Teeters' old phone is my benchmark). <strong>7) Verify with DevTools</strong> (check performance panel). If using AI, add those requirements to my prompt upfront! This checklist prevents 90% of the mistakes I used to make. 🟠"
     },
-    "example3": {
-      "title": "🎬 [Your Station 3 Insight Title]",
-      "content": "Replace this with educational content about your Station 3 topic. Share what HAP learned from Prof. Teeters!"
+
+    "accessibility": {
+      "title": "♿ Accessibility Testing Workflow",
+      "content": "Prof. Teeters taught me this workflow for testing animation accessibility: <strong>1) Enable prefers-reduced-motion</strong> in DevTools (Rendering panel → Emulate CSS media feature). <strong>2) Reload the page</strong> and interact with all animations. Do static alternatives make sense? Is functionality preserved? <strong>3) Navigate with keyboard only</strong> (Tab, Enter, Space). Do focus states have the same animations as hover? <strong>4) Test with screen reader</strong> (if possible) — does motion distract or help? <strong>5) Check for infinite loops</strong> — are there pause controls or reduced-motion alternatives? This 5-minute test prevents accessibility violations. It's not optional — it's professional responsibility! 🟠"
     },
-    "example4": {
-      "title": "📸 [Your Station 4 Insight Title]",
-      "content": "Replace this with educational content about your Station 4 topic. Include practical tips students can use."
+
+    "devtools": {
+      "title": "🛠️ DevTools Tips for Animations",
+      "content": "Essential DevTools features I use daily: <strong>Performance panel</strong> — record an animation, see what triggers layout/paint. Green bars (composite) are good, purple (layout) are expensive. <strong>Rendering panel</strong> → Show paint flashing rectangles — see what repaints during animations. Ideally nothing flashes! <strong>Rendering panel</strong> → Emulate prefers-reduced-motion — test accessibility instantly. <strong>Elements panel</strong> → :hov toggle — force hover states without mouse for debugging. <strong>Animation inspector</strong> (three dots → More tools → Animations) — visualize timing, slow down playback, scrub through keyframes. These tools show you what's really happening, not what you think is happening! 🟠"
     },
-    "example5": {
-      "title": "⚡ [Your Station 5 Insight Title]",
-      "content": "Replace this with educational content about your Station 5 topic. Make complex concepts approachable!"
+
+    "gpu": {
+      "title": "⚡ The GPU Fast Lane Deep Dive",
+      "content": "Prof. Teeters explained the GPU 'fast lane' like this: imagine the browser has two workers. The main thread (CPU) handles layout, paint, and JavaScript — it's busy! The compositor thread (GPU) handles graphics-only changes like transform and opacity — it's specialized and fast. When you animate <code>width</code> or <code>margin</code>, the main thread has to recalculate where EVERYTHING goes (layout), repaint pixels (paint), then composite. That's three steps! But <code>transform</code> and <code>opacity</code> skip straight to compositing. One step, super fast, 60fps smooth even on old phones. The rule: <strong>transform and opacity = fast lane, everything else = traffic jam</strong>. Use DevTools Performance panel to see the difference yourself! 🟠"
     },
-    "example6": {
-      "title": "📦 [Your Station 6 Insight Title]",
-      "content": "Replace this with educational content about your Station 6 topic. Use HAP's enthusiastic learning perspective."
+
+    // ==========================================================================
+    // STATION 1: CSS TRANSFORMS
+    // ==========================================================================
+
+    "transforms": {
+      "title": "🎯 Why Transform Beats Top/Left",
+      "content": "I used to animate position with <code>top</code> and <code>left</code> until Prof. Teeters showed me the performance difference. When you change <code>top: 0</code> to <code>top: 100px</code>, the browser recalculates layout for EVERY element on the page — expensive! But <code>transform: translateY(100px)</code> happens on the GPU's compositing thread. No layout recalculation, no paint, just pure graphics card magic. I tested both on Prof. Teeters' old phone: top/left stuttered at 30fps, transform ran smooth at 60fps. The visual result looks identical, but the performance difference is massive. Always use <code>transform</code> for movement! 🟠"
+    },
+
+    "3dtransforms": {
+      "title": "🎨 The Z-Axis Trick I Discovered",
+      "content": "Here's something sneaky I learned: adding <code>transform: translateZ(0)</code> forces hardware acceleration even if you're not actually moving in 3D! It's like telling the browser 'hey, put this on its own layer.' I use this trick for elements I know will animate later — the browser pre-optimizes them. But Prof. Teeters warned me not to overuse it: too many layers waste memory. Use it strategically on elements that will definitely animate, like buttons, cards, or modals. It's a performance optimization, not a magic fix! Test before and after with DevTools Performance panel. 🟠"
+    },
+
+    // ==========================================================================
+    // STATION 2: CSS TRANSITIONS
+    // ==========================================================================
+
+    "transitionall": {
+      "title": "⚠️ Why 'transition: all' Is Dangerous",
+      "content": "My first transition code was <code>transition: all 0.3s</code> and I thought I was so clever — one line covers everything! Then Prof. Teeters showed me the performance panel. The browser was animating EVERY property that changed: background, border, padding, margin, shadows, and more. Some of those trigger layout recalculation on every frame. My '1 simple animation' was actually 8 expensive animations running simultaneously! Now I explicitly list properties: <code>transition: transform 300ms ease-out, opacity 300ms ease-out</code>. Slightly more typing, but only animates GPU-accelerated properties. Performance went from 30fps to 60fps on mobile just by being specific! 🟠"
+    },
+
+    // ==========================================================================
+    // STATION 3: TIMING FUNCTIONS
+    // ==========================================================================
+
+    "easeout": {
+      "title": "📈 Why Ease-Out Feels Responsive",
+      "content": "I used to use <code>linear</code> timing for everything because it seemed 'simple.' Then Prof. Teeters asked me to compare: hover over a button with <code>linear</code>, then hover with <code>ease-out</code>. The ease-out felt snappier, more responsive, like the button was reacting to me! She explained why: <code>ease-out</code> starts fast (instant feedback!) then slows at the end (smooth landing). Linear starts and ends at the same speed — it feels mechanical. For UI interactions like hovers, focus, and clicks, <code>ease-out</code> mimics how real objects respond to force. That's why it feels natural. Now 90% of my transitions use <code>ease-out</code>. It's not a rule, it's just what feels right for interactive elements! 🟠"
+    },
+
+    "cubicbezier": {
+      "title": "🎨 Creating Custom Timing Curves",
+      "content": "Want to go beyond the built-in timing functions? Use <code>cubic-bezier()</code>! I was intimidated at first, but then Prof. Teeters showed me <strong>cubic-bezier.com</strong> — you can drag handles visually and copy the code. My favorite custom curve is <code>cubic-bezier(0.34, 1.56, 0.64, 1)</code> for playful bounces (the 1.56 creates the overshoot). For urgent error notifications, I use <code>cubic-bezier(0.68, -0.55, 0.27, 1.55)</code> which bounces in dramatically. The four numbers control the curve: first two are the start handle (x, y), last two are the end handle (x, y). X values must be 0-1, but Y can go outside to create bounces! Experiment with the visual tool, test on real UI, then save your favorites. 🟠"
+    },
+
+    // ==========================================================================
+    // STATION 4: MICRO-INTERACTIONS
+    // ==========================================================================
+
+    "restraint": {
+      "title": "🎯 Prof. Teeters' Restraint Rule",
+      "content": "Early on, I animated EVERYTHING. Buttons bounced, cards spun, text faded, backgrounds pulsed — my pages were animation fireworks! Prof. Teeters looked at my work and said quietly, 'HAP, when everything moves, nothing feels special. Motion should guide attention, not steal it.' That hit hard. She taught me her restraint rule: <strong>animate state changes and user interactions only</strong>. Buttons should respond when you hover/click (state change). Modals should announce their entrance (interaction result). But paragraphs loading? Scrolling content? Leave them static. Motion costs attention — spend it wisely. Now I ask: 'Does this animation help the user understand something, or am I just showing off?' Be honest with yourself! 🟠"
+    },
+
+    "feedback": {
+      "title": "⚡ The 100ms Feedback Rule",
+      "content": "Prof. Teeters taught me about the '100ms rule' from psychology research: users perceive responses under 100ms as instant. For button clicks, form submissions, and toggles, I aim for 100-150ms duration with <code>ease-out</code> timing. It feels immediate! But I used to make micro-interactions TOO fast — 50ms transitions felt jarring, like the browser glitched. The sweet spot: <strong>100-200ms for instant feedback, 250-350ms for state changes you want users to notice</strong>. Error messages get 300ms (users need to see the red), success checkmarks get 150ms (feel snappy!). Test different durations on real interactions — what feels responsive to you will feel responsive to users. Your gut reaction is valid data! 🟠"
+    },
+
+    // ==========================================================================
+    // STATION 5: KEYFRAME ANIMATIONS
+    // ==========================================================================
+
+    "fillmode": {
+      "title": "♻️ Animation Fill-Mode Explained",
+      "content": "This confused me for SO LONG until Prof. Teeters drew it out. <code>animation-fill-mode</code> controls what happens BEFORE and AFTER the animation runs. <strong>none</strong> (default): element snaps back to original state after animation — usually NOT what you want for entrance effects! <strong>forwards</strong>: stays at 100% keyframe after finishing — perfect for 'appear and stay' animations like notifications. <strong>backwards</strong>: jumps to 0% keyframe before animation starts — useful with animation-delay. <strong>both</strong>: combines forwards and backwards. I use <code>forwards</code> for 90% of entrance animations. Try removing it from a slide-in notification — the element disappears after sliding in! That's confusing. <code>forwards</code> makes it stay visible. Small property, huge impact! 🟠"
+    },
+
+    "infiniteloop": {
+      "title": "♾️ Infinite Loop Accessibility Rules",
+      "content": "<code>animation-iteration-count: infinite</code> needs special care! Prof. Teeters gave me three rules: <strong>Rule 1: Always include prefers-reduced-motion</strong> — infinite motion can cause nausea for users with vestibular disorders. Provide a static alternative. <strong>Rule 2: Consider adding pause controls</strong> — even users without vestibular issues might want to stop the motion. A pause button respects user autonomy. <strong>Rule 3: Ask if infinite is necessary</strong> — could you use a 3-second animation instead? Infinite is great for loading spinners, but often finite animations with smart timing accomplish the same goal with less accessibility risk. If you DO use infinite, test it with reduced motion enabled. Does the static alternative still make sense? 🟠"
+    },
+
+    // ==========================================================================
+    // STATION 6: AI ASSISTANCE FOR ANIMATION
+    // ==========================================================================
+
+    "aiprompts": {
+      "title": "🤖 HAP's Prompt Engineering Lessons",
+      "content": "I learned prompt engineering the hard way! My first prompt: 'Make this button animate.' AI gave me <code>transition: all</code> (bad performance), no <code>prefers-reduced-motion</code> (accessibility violation), and hex colors (hard to maintain). Useless! Prof. Teeters taught me to front-load ALL requirements: <strong>Start with accessibility</strong> (include prefers-reduced-motion), <strong>specify performance</strong> (transform/opacity only), <strong>define timing</strong> (300ms ease-out), <strong>request keyboard support</strong> (:focus-visible), and <strong>enforce color format</strong> (hsl() only). Detailed prompts aren't being picky — they're being professional. AI can't read your mind about the 5 stations you completed. You have to teach it your standards every time! 🟠"
+    },
+
+    "verification": {
+      "title": "✅ The Verification Checklist I Use",
+      "content": "Here's my mandatory checklist for EVERY AI-generated animation, no exceptions: <strong>1) Read every line</strong> — understand what it does before copying. <strong>2) Check accessibility</strong> — does it have <code>@media (prefers-reduced-motion)</code>? Enable it in DevTools and verify it works. <strong>3) Verify performance</strong> — only transform/opacity should animate. Check DevTools Performance panel. <strong>4) Test on mobile</strong> — Prof. Teeters' old phone is my benchmark. <strong>5) Validate timing</strong> — does ease-out feel responsive? <strong>6) Check keyboard support</strong> — does :focus-visible work? This takes 3-5 minutes. Skipping it wastes hours fixing production bugs later. AI generates fast, verification ensures quality. Both required! 🟠"
     }
   },
 
-  // CUSTOMIZE: Update page-specific help for each station file
-  // This appears when users visit a page with bare ?hybit parameter (no value)
-  // Format: { "title": "...", "intro": "...", "suggestions": [...] }
+  // ==========================================================================
+  // PAGE-SPECIFIC HELP (appears when ?hybit used without parameter)
+  // ==========================================================================
+
   "pageHelp": {
-    // Hub page - keep this one
+    // Hub page
     "index.html": {
-      "title": "🔬 HAP's insights available!",
-      "intro": "Hey! I have some cool insights to share on this page. Try these:",
+      "title": "🔬 HAP's easter eggs available!",
+      "intro": "I hid some extra tips throughout the lab! Try these on the hub page:",
       "suggestions": [
         {
           "param": "stations",
-          "label": "Overview of learning stations"
+          "label": "Learning lab roadmap"
         },
         {
           "param": "detail",
           "label": "Performance metrics"
+        },
+        {
+          "param": "workflow",
+          "label": "HAP's complete workflow"
         }
       ]
     },
 
-    // CUSTOMIZE: Update for each of your station files
-    // If you renamed from station1.html to custom names, update the keys below
+    // Station 1: CSS Transforms
     "station1.html": {
       "title": "🔬 HAP here!",
-      "intro": "I learned so much about [YOUR TOPIC] on this page! Try:",
+      "intro": "Transforms were mind-blowing when I first learned them! Try these insights:",
       "suggestions": [
         {
-          "param": "example1",
-          "label": "[Brief description of your insight]"
+          "param": "transforms",
+          "label": "Why transform beats top/left"
+        },
+        {
+          "param": "3dtransforms",
+          "label": "The Z-axis trick I discovered"
         }
       ]
     },
+
+    // Station 2: CSS Transitions
     "station2.html": {
       "title": "🔬 HAP here!",
-      "intro": "Prof. Teeters taught me about [YOUR TOPIC]! Check out:",
+      "intro": "Transitions taught me smooth state changes! Check out:",
       "suggestions": [
         {
-          "param": "example2",
-          "label": "[Brief description of your insight]"
+          "param": "gpu",
+          "label": "The GPU fast lane explained"
+        },
+        {
+          "param": "transitionall",
+          "label": "Why 'transition: all' is dangerous"
         }
       ]
     },
+
+    // Station 3: Timing Functions
     "station3.html": {
       "title": "🔬 HAP here!",
-      "intro": "This was the station that confused me at first! Learn more:",
+      "intro": "Timing functions determine how animations feel! Explore:",
       "suggestions": [
         {
-          "param": "example3",
-          "label": "[Brief description of your insight]"
+          "param": "easeout",
+          "label": "Why ease-out feels responsive"
+        },
+        {
+          "param": "cubicbezier",
+          "label": "Creating custom timing curves"
         }
       ]
     },
+
+    // Station 4: Micro-interactions
     "station4.html": {
       "title": "🔬 HAP here!",
-      "intro": "[YOUR TOPIC] is amazing! Explore:",
+      "intro": "Micro-interactions taught me restraint! Discover:",
       "suggestions": [
         {
-          "param": "example4",
-          "label": "[Brief description of your insight]"
+          "param": "restraint",
+          "label": "Prof. Teeters' restraint rule"
+        },
+        {
+          "param": "feedback",
+          "label": "The 100ms feedback rule"
         }
       ]
     },
+
+    // Station 5: Keyframe Animations
     "station5.html": {
       "title": "🔬 HAP here!",
-      "intro": "[YOUR TOPIC] techniques can transform your sites! Try:",
+      "intro": "Keyframes unlock complex choreography! Try:",
       "suggestions": [
         {
-          "param": "example5",
-          "label": "[Brief description of your insight]"
+          "param": "fillmode",
+          "label": "Animation fill-mode explained"
+        },
+        {
+          "param": "infiniteloop",
+          "label": "Infinite loop accessibility rules"
         }
       ]
     },
+
+    // Station 6: AI Assistance for Animation
     "station6.html": {
       "title": "🔬 HAP here!",
-      "intro": "[YOUR TOPIC] is game-changing! Check out:",
+      "intro": "AI collaboration requires responsibility! Learn more:",
       "suggestions": [
         {
-          "param": "example6",
-          "label": "[Brief description of your insight]"
+          "param": "aiprompts",
+          "label": "HAP's prompt engineering lessons"
+        },
+        {
+          "param": "verification",
+          "label": "The verification checklist I use"
         }
       ]
     }
   },
 
-  // DEFAULT MESSAGES: Keep these unchanged - they provide fallback behavior
+  // ==========================================================================
+  // DEFAULT MESSAGES (fallback behavior - do not modify)
+  // ==========================================================================
+
   "defaults": {
     // Shown when parameter value doesn't match whitelist
     "unknown": {
       "title": "🎯 You discovered HAP's insights!",
-      "content": "Nice find! Try different parameters to learn more about the topics Prof. Teeters taught me."
+      "content": "Nice find! Try different parameters to learn more about the topics Prof. Teeters taught me. Each station has unique easter eggs — explore with <code>?hybit</code> to see what's available!"
     },
     // Shown when page has no specific help defined
     "emptyFallback": {
       "title": "🎯 You discovered HAP's insights!",
-      "content": "Hey there! Try adding a parameter like <code>?hybit=detail</code> to see what I've learned!"
+      "content": "Hey there! Try adding a parameter like <code>?hybit=detail</code> to see what I've learned! Or try <code>?hybit=workflow</code> to see my complete animation workflow."
     }
   }
 }
