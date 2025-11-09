@@ -90,6 +90,160 @@
             </div>
         </section>
 
+        <!-- Section 2: Keyframes Fundamentals -->
+        <section class="content-section">
+            <div class="topic-section">
+                <h2>Understanding keyframes</h2>
+                <p class="mb-2">When I first heard about keyframes, I wasn't even sure what they were! Prof. Teeters explained it brilliantly: keyframes let you define what an animation looks like at specific moments in time, and the browser smoothly fills in all the steps between those moments. It's like choreography — you describe the key positions, and the browser performs the dance!</p>
+
+                <h3 class="mt-3">What keyframes are</h3>
+                <p class="mt-1">Keyframes give you precise control over multi-step animations. Instead of just defining a start and end state (like transitions do), you can describe what happens at 0%, 25%, 50%, 75%, and 100% of the animation timeline. The browser interpolates smoothly between each keyframe, creating fluid motion. Prof. Teeters taught me to think of it like this: transitions are automatic — you change a property and the browser animates it. Keyframes are manual choreography — you describe every important moment in the sequence.</p>
+
+                <h3 class="mt-3">Keyframes vs transitions: when to use each</h3>
+                <p class="mt-1">I used to get confused about when to use transitions versus keyframes. Prof. Teeters created this comparison that finally made it click:</p>
+
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Transitions are for...</h3>
+                        <ul class="mt-1">
+                            <li><strong>Two-state changes:</strong> Start → end (hover, focus, active)</li>
+                            <li><strong>Triggered by interaction:</strong> User hover, click, focus</li>
+                            <li><strong>Automatic and smooth:</strong> Browser handles the animation</li>
+                            <li><strong>Examples:</strong> Button hover, link underline, dropdown expansion</li>
+                            <li><strong>Prof. Teeters says:</strong> "Use transitions when something changes because the user did something"</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Keyframes are for...</h3>
+                        <ul class="mt-1">
+                            <li><strong>Multi-step sequences:</strong> Multiple states over time (0%, 50%, 100%)</li>
+                            <li><strong>Choreographed timing:</strong> Play automatically or on class change</li>
+                            <li><strong>Manual control:</strong> You describe each important moment</li>
+                            <li><strong>Examples:</strong> Loading animations, entrance effects, complex sequences</li>
+                            <li><strong>Prof. Teeters says:</strong> "Use keyframes when you need more than just a start and end"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hap-note-callout mt-3">
+                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-celebration_hfyezy.jpg"
+                        alt="HAP celebrating a coding success" width="150" height="150" class="hap-note-image"
+                        decoding="async" loading="lazy">
+                    <div class="hap-note-content">
+                        <h3>HAP's first keyframes success!</h3>
+                        <p>My first working keyframe animation was a simple fade-in, and I felt like I'd unlocked magic! I wrote @keyframes fadeIn with just two states — 0% with opacity: 0, and 100% with opacity: 1. Then I applied it to a card with animation: fadeIn 400ms ease-out. When I refreshed the browser and watched that card smoothly appear, I actually said "Yes!" out loud. Prof. Teeters was sitting across from me and smiled. She said, "HAP, that's the moment I live for — when students realize they can create motion on the web." That simple fade-in taught me that keyframes aren't complicated. Start simple: define where you begin, define where you end, and the browser does the rest. Once you understand that foundation, you can add more keyframes at 25%, 50%, 75% to create complex choreography. But it all starts with that basic pattern: describe key moments, let the browser animate between them!</p>
+                    </div>
+                </div>
+
+                <h3 class="mt-3">Basic @keyframes syntax</h3>
+                <p class="mt-1">The syntax looks intimidating at first, but Prof. Teeters broke it down into two simple parts: define the keyframes, then apply them to an element.</p>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Part 1: Define keyframes with @keyframes rule</div>
+                    <pre><code class="language-css">/* Define the animation sequence */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Prof. Teeters tip: Name animations descriptively!
+   fadeIn, slideInRight, gentlePulse — names should explain what they do */</code></pre>
+                    <p class="code-comment mt-1">The @keyframes rule creates a named animation. The percentages represent points in time — 0% is the start, 100% is the end. You can add as many keyframes as you need (25%, 50%, 75%, etc.).</p>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">Part 2: Apply keyframes to an element</div>
+                    <pre><code class="language-css">/* Apply the animation to any element */
+.card {
+  animation-name: fadeIn;        /* Which keyframes to use */
+  animation-duration: 400ms;     /* How long it takes */
+  animation-timing-function: ease-out;  /* How it accelerates */
+  animation-fill-mode: forwards; /* Stay at final state */
+}
+
+/* Shorthand version (same result) */
+.card {
+  animation: fadeIn 400ms ease-out forwards;
+  /* name duration timing fill-mode */
+}</code></pre>
+                    <p class="code-comment mt-1">The animation property connects the keyframes to an element. At minimum you need animation-name and animation-duration. Everything else has sensible defaults!</p>
+                </div>
+
+                <div class="warning-box mt-2">
+                    <h3>🟠 Transitions vs Keyframes: Choosing the right tool</h3>
+
+                    <p class="mt-1"><strong>Use TRANSITIONS when:</strong></p>
+                    <pre><code class="language-css">/* Simple two-state change triggered by interaction */
+.button {
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* Perfect for: hover, focus, active states */</code></pre>
+
+                    <p class="mt-2"><strong>Use KEYFRAMES when:</strong></p>
+                    <pre><code class="language-css">/* Multi-step sequence or auto-playing animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.loading-dot {
+  animation: bounce 1.4s infinite ease-out;
+}
+
+/* Perfect for: loading animations, entrances, complex sequences */</code></pre>
+
+                    <p class="mt-1"><strong>Prof. Teeters' rule:</strong> Use the simplest tool that accomplishes your goal. If a transition works, use it! Save keyframes for when you truly need multi-step choreography. Overcomplicating is wasted effort.</p>
+                </div>
+
+                <h3 class="mt-3">Interactive demo: Basic keyframes</h3>
+                <p class="mt-1">Try this simple fade-in animation. Click the replay button to see it again!</p>
+
+                <div class="basic-keyframes-demo-container mt-2">
+                    <div class="basic-keyframes-demo">
+                        <div class="demo-card" id="fadeInCard">
+                            <p><strong>🎬 Fade-in animation</strong></p>
+                            <p>This card uses keyframes to fade in from opacity: 0 to opacity: 1 over 400ms.</p>
+                        </div>
+                    </div>
+                    <button type="button" class="replay-button mt-2" id="replayFadeIn">🔄 Replay Animation</button>
+                </div>
+
+                <div class="prompt-box mt-2">
+                    <div class="prompt-label">The keyframes and CSS for this demo</div>
+                    <pre><code class="language-css">/* The keyframes definition */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Applied to the card */
+.demo-card {
+  animation: fadeIn 400ms ease-out forwards;
+}
+
+/* Accessibility: Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .demo-card {
+    animation: none;
+    opacity: 1; /* Appears instantly */
+  }
+}</code></pre>
+                    <p class="code-comment mt-1">The forwards fill-mode keeps the card at opacity: 1 after the animation completes. Without it, the card would snap back to opacity: 0!</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Section 7: Learning Objectives Checklist -->
         <section class="content-section">
             <div class="topic-section">
@@ -298,6 +452,23 @@
 
                 pre.appendChild(button);
             });
+
+            // Demo 1: Basic keyframes replay button
+            const replayButton = document.getElementById('replayFadeIn');
+            const fadeInCard = document.getElementById('fadeInCard');
+
+            if (replayButton && fadeInCard) {
+                replayButton.addEventListener('click', () => {
+                    // Remove animation class to reset
+                    fadeInCard.style.animation = 'none';
+
+                    // Force reflow to restart animation
+                    void fadeInCard.offsetWidth;
+
+                    // Re-add animation
+                    fadeInCard.style.animation = 'fadeIn 400ms ease-out forwards';
+                });
+            }
         });
     </script>
 
