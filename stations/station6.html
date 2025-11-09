@@ -2,227 +2,1337 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAP's Learning Lab - Station 6: [STATION_TITLE]</title>
-    <meta name="description"
-        content="Join HAP as he learns about [BRIEF_DESCRIPTION].">
-    <meta property="og:image"
-        content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
-    <link rel="apple-touch-icon" sizes="180x180"
-        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
-    <link rel="icon" type="image/png" sizes="192x192"
-        href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
-    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="../css/prism-hap-theme.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAP's Learning Lab - Station 6: AI Assistance for Animation</title>
+  <meta name="description"
+    content="Join HAP as he learns to use AI responsibly for CSS animations. Discover effective prompting, accessibility verification, and the rules for working with AI while maintaining professional responsibility.">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_16,h_16/v1759596416/hap-favicon-h_gosgur.jpg">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_32,h_32/v1759596416/hap-favicon-h_gosgur.jpg">
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_180,h_180/v1759596416/hap-favicon-h_gosgur.jpg">
+  <link rel="icon" type="image/png" sizes="192x192"
+    href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/demos.css">
+  <link href="../css/prism-hap-theme.css" rel="stylesheet">
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="header">
-        <div class="header-content">
-            <div class="hybit-welcome">
-                <div class="hybit-avatar">
-                    <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495998/hap-laptop_xiewar.jpg"
-                        alt="HAP (HyBit A. ProtoBot) studying on his laptop" width="200" height="200" decoding="async"
-                        fetchpriority="high">
-                </div>
-                <div>
-                    <h1>HAP's Learning Lab: [STATION_TITLE]</h1>
-                    <p class="subtitle">[SUBTITLE]</p>
-                </div>
-            </div>
-            <div class="intro-box">
-                <p><strong>Welcome to Station 6!</strong> [HAP's apprentice voice introduction: describe what HAP learned from Prof. Teeters at this station, using first-person perspective] 🟠</p>
-            </div>
+  <header class="header">
+    <div class="header-content">
+      <div class="hybit-welcome">
+        <div class="hybit-avatar">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_200,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+            alt="HAP (HyBit A. ProtoBot) studying on his laptop" width="200" height="200" decoding="async"
+            fetchpriority="high">
         </div>
-    </header>
-
-    <nav aria-label="Page navigation" class="page-navigation top-nav">
-        <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
-        <div class="page-position" data-page="6">Station 6 of 6</div>
-    </nav>
-
-    <main id="main-content" class="content-container">
-
-        <section class="content-section">
-            <h2 class="section-heading-centered">[SECTION_HEADING]</h2>
-
-            <div class="intro-box">
-                <p><strong>HAP's Discovery:</strong> [HAP's first-person narrative about learning this concept from Prof. Teeters]</p>
-            </div>
-
-            <div class="overview-grid mt-2">
-                <div class="insight-card">
-                    <h3><span class="insight-icon">📸</span> [Insight Title 1]</h3>
-                    <p class="stat-large">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
-                </div>
-                <div class="insight-card">
-                    <h3><span class="insight-icon">🔬</span> [Insight Title 2]</h3>
-                    <p class="stat-large stat-teal">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
-                </div>
-                <div class="insight-card">
-                    <h3><span class="insight-icon">🎯</span> [Insight Title 3]</h3>
-                    <p class="stat-large stat-brown">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
-                </div>
-            </div>
-
-            <div class="hap-note-callout">
-                <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                    alt="HAP looking confused while studying" width="150" height="150" class="hap-note-image"
-                    decoding="async" loading="lazy">
-                <div class="hap-note-content">
-                    <h3>HAP's Confession:</h3>
-                    <p>[HAP's apprentice voice: describe initial confusion or learning moment about this topic]</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="topic-section">
-                <h2>[Main Topic Heading]</h2>
-
-                <p class="mb-2">[Introduction paragraph explaining what Prof. Teeters taught HAP about this topic]</p>
-
-                <div class="analysis-grid">
-                    <div class="analysis-point">
-                        <h3>[Analysis Point Title 1]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
-                    </div>
-                    <div class="analysis-point">
-                        <h3>[Analysis Point Title 2]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
-                    </div>
-                </div>
-
-                <div class="prompt-box mt-2">
-                    <div class="prompt-label">[Code Example Label]:</div>
-                    <pre><code class="language-html">[CODE EXAMPLE HERE]</code></pre>
-                    <p class="code-comment mt-1">[Explanation of code example]</p>
-                </div>
-
-                <div class="interactive-demo mt-2">
-                    <h3>[Interactive Demo Title]</h3>
-                    <ul class="mt-1">
-                        <li>[List item 1]</li>
-                        <li>[List item 2]</li>
-                        <li>[List item 3]</li>
-                    </ul>
-                </div>
-
-                <div class="warning-box mt-2">
-                    <h3>🟠 [Warning Title]</h3>
-                    <p><strong class="text-success">✅ RIGHT:</strong></p>
-                    <pre><code class="language-html">[Correct example]</code></pre>
-                    <p><strong class="text-error">❌ WRONG:</strong></p>
-                    <pre><code class="language-html">[Incorrect example]</code></pre>
-                    <p class="mt-1">[Explanation of why this matters]</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="tips-container">
-                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
-
-                <div class="tip-card">
-                    <div class="tip-number">1</div>
-                    <div>
-                        <h3>[Tip Title 1]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
-                    </div>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-number">2</div>
-                    <div>
-                        <h3>[Tip Title 2]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
-                    </div>
-                </div>
-
-                <div class="tip-card">
-                    <div class="tip-number">3</div>
-                    <div>
-                        <h3>[Tip Title 3]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <nav aria-label="Station pagination" class="page-navigation bottom-nav">
-        <a href="station5.html" class="nav-link prev-link">← Previous: Station 5 - [PREV_STATION_TITLE]</a>
-        <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
-    </nav>
-
-    <footer class="footer">
-        <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
-        <p class="footer-reminder">
-            [HAP's memorable takeaway about this station] 🟠 — HAP
-        </p>
-        <div class="footer-copyright">
-            <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
-                alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80"
-                height="80" decoding="async" loading="lazy">
-            <div>
-                <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
-                <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are
-                    proprietary educational innovations.</p>
-                <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
-                    Visual elements created with AI assistance.</p>
-            </div>
+        <div>
+          <h1>Station 6: AI Assistance for Animation</h1>
+          <p class="subtitle">AI helps code faster, but you're still responsible for accessibility</p>
         </div>
-    </footer>
+      </div>
+      <div class="intro-box">
+        <p><strong>Welcome to Station 6!</strong> After learning all about transforms, transitions, timing, and
+          keyframes, I was feeling pretty confident. Then I discovered that AI could help me write animation code in
+          seconds instead of hours! I was so excited — I asked an AI for a button hover animation, got beautiful code
+          back, and shipped it immediately. Then Prof. Teeters tested it and found a critical problem: no
+          prefers-reduced-motion support. The animation violated accessibility guidelines! She sat me down and
+          explained: "HAP, AI can generate code faster than you can type, but it doesn't care about your users the way
+          you should. You own every line of code, whether you wrote it or AI did." That lesson changed how I work with
+          AI completely. Let me show you what I learned about using AI responsibly for animations — the prompts that
+          work, the verification that's mandatory, and the rules that keep users safe! 🟠</p>
+      </div>
+    </div>
+  </header>
 
-    <script src="../js/easter-egg.js"></script>
+  <nav aria-label="Page navigation" class="page-navigation top-nav">
+    <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+    <div class="page-position" data-page="6">Station 6 of 6</div>
+  </nav>
 
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
-        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
-        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
-        crossorigin="anonymous"></script>
+  <main id="main-content" class="content-container">
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.prompt-box pre').forEach(pre => {
-                const button = document.createElement('button');
-                button.className = 'copy-button';
-                button.textContent = 'Copy';
-                button.setAttribute('aria-label', 'Copy code to clipboard');
+    <!-- Section 1: What You'll Learn -->
+    <section class="content-section">
+      <h2 class="section-heading-centered">What you'll learn</h2>
 
-                button.addEventListener('click', async () => {
-                    const code = pre.querySelector('code').textContent;
-                    try {
-                        await navigator.clipboard.writeText(code);
-                        button.classList.add('copied');
-                        button.textContent = 'Copied';
-                        setTimeout(() => {
-                            button.classList.remove('copied');
-                            button.textContent = 'Copy';
-                        }, 2000);
-                    } catch (err) {
-                        console.error('Failed to copy:', err);
-                    }
-                });
+      <div class="overview-grid mt-2">
+        <div class="insight-card">
+          <h3><span class="insight-icon">⚡</span> Time savings with verification</h3>
+          <p class="stat-large">2 hours → 5 minutes</p>
+          <p><strong>Speed is only valuable when combined with quality</strong></p>
+          <p>I used to spend hours writing animation code from scratch, carefully crafting each transition and
+            keyframe. AI can generate that same code in seconds! But Prof. Teeters taught me the critical lesson: fast
+            wrong code is completely useless. When I first started using AI, I got code instantly but had to spend hours
+            fixing accessibility and performance issues — that's not actually faster. The breakthrough came when I
+            learned to request accessibility and performance in my prompts upfront, then verify the output before using
+            it. Now my workflow is: detailed prompt (2 minutes) + AI generation (10 seconds) + verification testing (3
+            minutes) = production-ready code in 5 minutes. Speed plus validation equals true efficiency!</p>
+        </div>
 
-                pre.appendChild(button);
-            });
+        <div class="insight-card">
+          <h3><span class="insight-icon">🎯</span> Better prompts, better code</h3>
+          <p class="stat-large stat-teal">Vague → Specific</p>
+          <p><strong>Detailed prompts produce professional results</strong></p>
+          <p>My first AI prompt was embarrassingly simple: "Make this button animate on hover." The AI gave me generic
+            code that used transition: all (bad for performance), forgot prefers-reduced-motion (accessibility
+            violation), and had no keyboard focus state (usability problem). Totally unusable! Prof. Teeters showed me
+            how professionals write prompts: explicitly request transform and opacity only (GPU-optimized), specify
+            ease-out timing (responsive feel), require prefers-reduced-motion support (accessibility), include keyboard
+            focus states (usability), and use hsl() colors (maintainability). When I wrote detailed prompts with all
+            these requirements, AI suddenly gave me production-ready code! The difference between vague and specific
+            prompts is the difference between hours of fixing and code that works immediately.</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">✅</span> You own the code</h3>
+          <p class="stat-large stat-brown">AI generates, you're accountable</p>
+          <p><strong>Verification is not optional</strong></p>
+          <p>This is Prof. Teeters' strictest rule about AI, and I learned it the hard way. When I shipped that button
+            animation without testing it properly, I thought, "AI wrote it, so it must be correct!" Wrong. Dead wrong.
+            Prof. Teeters made it crystal clear: whether I typed the code myself or AI generated it, I am responsible
+            for every single line. If it violates accessibility guidelines, that's my failure. If it stutters on mobile
+            devices, that's my problem. If users with vestibular disorders get sick from my animations, that's on me,
+            not the AI. Understanding this changed my entire workflow — now I read every line of AI-generated code,
+            test accessibility with DevTools, verify performance on mobile, and only ship code I fully comprehend. AI
+            is my assistant, not my replacement. I own the code!</p>
+        </div>
+      </div>
+
+      <div class="hap-note-callout">
+        <img
+          src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+          alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+          decoding="async" loading="lazy">
+        <div class="hap-note-content">
+          <h3>HAP's confession: I copied code without reading it</h3>
+          <p>I have to share my most embarrassing AI mistake because it taught me the most important lesson about
+            working with AI. When I first discovered AI could write animation code, I went wild. I asked it for button
+            hovers, card animations, notification slides — all kinds of effects. The code looked beautiful and worked
+            perfectly in my browser! I copied it all directly into my project without reading a single line. Why would
+            I need to read it? AI is smart, right? I shipped everything to production feeling so proud of how fast I
+            worked.</p>
+          <p class="mt-1">A week later, Prof. Teeters sent me a devastating message: "HAP, I tested your animation
+            library on my accessibility testing device. Every single animation violates WCAG guidelines. No
+            prefers-reduced-motion support anywhere. You just made the site unusable for people with vestibular
+            disorders." I felt absolutely horrible. Real users were potentially getting sick because I blindly trusted
+            AI and skipped verification. Prof. Teeters didn't yell — she just looked disappointed and said quietly,
+            "Speed without responsibility isn't efficiency, HAP. It's carelessness."</p>
+          <p class="mt-1">That was my wake-up call. I went back through every AI-generated animation, read every line
+            of code, added proper accessibility features, and tested everything thoroughly. It took three days to fix
+            what I thought I'd finished in three hours. The lesson burned into my memory: AI is an incredibly powerful
+            tool for generating code quickly, but verification is absolutely mandatory. I will never again ship code I
+            don't understand, whether I wrote it or AI did. My name goes on that code — my responsibility goes with it!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: What AI Can and Can't Do -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>What AI can and can't do</h2>
+        <p class="mb-2">When I first started using AI for animations, I had unrealistic expectations. I thought AI could
+          handle everything perfectly — just describe what I wanted and get flawless code! Prof. Teeters quickly taught
+          me that wasn't how it worked. She sat me down and explained: "HAP, AI has remarkable strengths for certain
+          tasks, but serious weaknesses for others. Understanding these boundaries is essential for using AI
+          effectively." Learning what AI excels at and what it struggles with transformed how I work with it. Instead of
+          being frustrated by AI's limitations, I learned to leverage its strengths while compensating for its
+          weaknesses.</p>
+
+        <div class="analysis-grid mt-2">
+          <div class="analysis-point">
+            <h3>AI excels at</h3>
+            <ul class="mt-1">
+              <li><strong>Generating basic animation syntax:</strong> AI writes clean transition and keyframes code
+                quickly when you give it specific requirements</li>
+              <li><strong>Creating keyframes boilerplate:</strong> Multi-step animations with proper percentage markers
+                and structure are AI's specialty</li>
+              <li><strong>Converting timing values between units:</strong> Need to convert 300ms to seconds or
+                understand frame rates? AI handles conversions instantly</li>
+              <li><strong>Explaining animation concepts clearly:</strong> AI breaks down complex topics like
+                cubic-bezier curves and animation-fill-mode with excellent clarity</li>
+              <li><strong>Suggesting multiple approaches:</strong> Ask for animation solutions and AI offers several
+                valid techniques to choose from</li>
+              <li><strong>Generating starting code quickly:</strong> AI creates functional boilerplate in seconds,
+                giving you a foundation to build on</li>
+            </ul>
+          </div>
+
+          <div class="analysis-point">
+            <h3>AI struggles with</h3>
+            <ul class="mt-1">
+              <li><strong>Remembering to include prefers-reduced-motion:</strong> AI constantly forgets accessibility
+                unless explicitly prompted every single time</li>
+              <li><strong>Understanding your brand personality:</strong> AI can't judge whether animations should feel
+                playful, professional, energetic, or calm</li>
+              <li><strong>Choosing appropriate timing for context:</strong> Error notifications need different timing
+                than success messages — AI makes generic choices</li>
+              <li><strong>Optimizing for mobile performance:</strong> AI doesn't prioritize GPU properties unless you
+                specifically request them</li>
+              <li><strong>Making semantic naming choices:</strong> AI generates names like animation1 instead of
+                meaningful names like slideInNotification</li>
+              <li><strong>Judging when animation is necessary:</strong> AI will happily animate everything if you ask —
+                restraint requires human judgment</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hap-note-callout mt-3">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+            alt="HAP working on his laptop" width="150" height="150" class="hap-note-image" decoding="async"
+            loading="lazy">
+          <div class="hap-note-content">
+            <h3>HAP's takeaway: AI as teacher and assistant</h3>
+            <p>One day I was completely confused about cubic-bezier timing functions. I'd read the documentation three
+              times and still didn't get how the four numbers worked together. Out of frustration, I asked AI to explain
+              it to me like I was five years old. The explanation was brilliant! AI walked me through how the control
+              points work, gave me visual analogies, and helped me finally understand the concept. I was amazed — AI is
+              an incredible teacher for technical concepts!</p>
+            <p class="mt-1">But then I asked AI to generate a spinner animation, and it gave me beautiful code with one
+              massive problem: no prefers-reduced-motion support. Again. For the tenth time that week. I realized AI has
+              this strange split personality — excellent at explaining concepts but terrible at remembering
+              accessibility. Prof. Teeters helped me understand why: "AI is trained on millions of code examples, and
+              most of those examples don't include accessibility. It's learned the patterns of typical code, which sadly
+              means incomplete code."</p>
+            <p class="mt-1">That's when it clicked for me. AI isn't a replacement for my knowledge — it's a partner that
+              needs clear rules. When I set boundaries (always request accessibility, always specify GPU properties,
+              always ask for semantic naming), AI becomes incredibly valuable. The key is treating AI like a talented but
+              forgetful colleague who needs specific instructions to do great work!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Creating Button Hover Animations with AI -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>Creating button hover animations with AI</h2>
+        <p class="mb-2">Button hover animations were one of the first things I tried to create with AI. It seemed
+          perfect — a simple, common pattern that AI should handle easily! But my early attempts were disasters. The
+          code looked fine at first glance, but it violated performance and accessibility guidelines. Prof. Teeters used
+          my failed button animations to teach me the most important lesson about AI: the quality of AI output depends
+          entirely on the quality of your prompt. Vague requests get vague results. Detailed prompts with specific
+          requirements get production-ready code.</p>
+
+        <h3 class="mt-3">Before I learned to write good prompts</h3>
+        <p class="mt-1">My first attempt was embarrassingly simple. I just asked AI: "Make this button animate on
+          hover." That's it. No requirements, no constraints, no mention of accessibility or performance. Here's what AI
+          gave me:</p>
+
+        <div class="warning-box mt-2">
+          <h3>❌ Vague prompt produces unusable code</h3>
+          <p><strong>My vague prompt:</strong></p>
+          <div class="prompt-box mt-1">
+            <div class="prompt-label">What I asked AI:</div>
+            <pre><code class="language-text">Make this button animate on hover.</code></pre>
+          </div>
+
+          <p class="mt-2"><strong>What AI generated:</strong></p>
+          <pre><code class="language-css">/* Generic AI output without proper constraints */
+.button {
+  background: #3366cc; /* ❌ Hex colors instead of hsl() */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s; /* ❌ 'all' is bad for performance */
+}
+
+.button:hover {
+  background: #4477dd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* ❌ No prefers-reduced-motion support */
+  /* ❌ No keyboard focus state */
+  /* ❌ Animating box-shadow (CPU-bound) */
+}</code></pre>
+
+          <p class="mt-1"><strong>Problems with this code:</strong></p>
+          <ul class="mt-1">
+            <li><strong>Uses transition: all</strong> — Animates every property change, terrible for performance</li>
+            <li><strong>No accessibility support</strong> — Missing prefers-reduced-motion media query completely</li>
+            <li><strong>No keyboard focus state</strong> — Only works for mouse users, excluding keyboard navigation</li>
+            <li><strong>Hex colors</strong> — Harder to maintain than hsl() format</li>
+            <li><strong>Animates box-shadow</strong> — CPU-bound property that can stutter on mobile devices</li>
+          </ul>
+          <p class="mt-1">This code is completely unusable for production. I'd have to spend time fixing all these
+            issues — defeating the purpose of using AI!</p>
+        </div>
+
+        <h3 class="mt-3">The prompt I learned to write</h3>
+        <p class="mt-1">Prof. Teeters showed me how to write prompts that include all the requirements upfront. Instead
+          of letting AI guess what I need, I tell it exactly what standards to follow. Here's the detailed prompt that
+          produces professional code:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ Detailed prompt with all requirements:</div>
+          <pre><code class="language-text">Create a button hover animation with these requirements:
+- Use transform and opacity only (GPU-optimized)
+- Duration: 300ms with ease-out timing
+- Include prefers-reduced-motion media query
+- Add keyboard focus state with same animation
+- Use hsl() color format for consistency
+- Lift button slightly on hover (translateY)
+- Provide complete CSS including base styles</code></pre>
+        </div>
+
+        <h3 class="mt-3">What AI generates with a good prompt</h3>
+        <p class="mt-1">When I include all those requirements, AI produces code that's actually production-ready. Look
+          at the difference:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ AI output with detailed constraints:</div>
+          <pre><code class="language-css">/* Professional AI output with proper constraints */
+.button {
+  background: hsl(210, 70%, 50%);
+  color: hsl(0, 0%, 100%);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  /* Only animate GPU-accelerated properties */
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    transform: none;
+    opacity: 0.85; /* Subtle change only */
+  }
+}</code></pre>
+          <p class="code-comment mt-1"><strong>Why this code is better:</strong> Uses hsl() colors, animates only
+            transform and opacity (GPU-accelerated), includes prefers-reduced-motion support, has keyboard focus state
+            with :focus-visible, uses ease-out timing (responsive feel), and provides complete accessible implementation.
+            This code is ready to ship!</p>
+        </div>
+
+        <div class="hap-note-callout mt-3">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+            alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+            decoding="async" loading="lazy">
+          <div class="hap-note-content">
+            <h3>HAP's reflection: Learning to write better prompts</h3>
+            <p>I'll be honest — my first few weeks with AI were frustrating. I kept getting code that looked good but
+              had serious problems. I'd ask for a button animation and get code using transition: all. I'd ask for a
+              card hover effect and get code with no accessibility support. Every time, I had to spend hours fixing what
+              AI generated. I started thinking AI was useless for animations!</p>
+            <p class="mt-1">Then Prof. Teeters sat down with me and looked at my prompts. She laughed (kindly!) and
+              said, "HAP, you're asking AI to read your mind! You want GPU-optimized properties, but you didn't mention
+              that. You need accessibility, but you didn't request it. You expect ease-out timing, but you didn't
+              specify it. AI can't guess what you know from Stations 1-5 — you have to tell it!"</p>
+            <p class="mt-1">That changed everything. I started writing prompts that included every requirement: use
+              transform and opacity only, include prefers-reduced-motion, add keyboard focus states, use hsl() colors,
+              specify ease-out timing. Suddenly AI gave me perfect code on the first try! The breakthrough wasn't AI
+              getting smarter — it was me learning to communicate my requirements clearly. Detailed prompts transformed
+              AI from frustrating to invaluable!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Generating Keyframes Animations with AI -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>Generating keyframes animations with AI</h2>
+        <p class="mb-2">After I learned to write good prompts for transitions, I thought keyframes would be the same.
+          Just add more detail, right? Wrong! Keyframes are significantly more complex than transitions — they require
+          naming conventions, percentage markers, fill modes, and careful timing coordination. My first keyframes prompts
+          were too vague, and AI made assumptions that didn't match what I needed. Prof. Teeters taught me that keyframes
+          prompts need even more specificity than transition prompts. You have to describe not just what animates, but
+          also the exact sequence, the timing progression, and how the animation should behave after it completes.</p>
+
+        <h3 class="mt-3">The task: notification slide-in animation</h3>
+        <p class="mt-1">I needed a notification banner that slides in from the right side of the screen when a user
+          completes an action. The notification should start off-screen (translateX 100%), fade in while sliding, and
+          then stay visible after the animation completes. This is a perfect use case for keyframes — a choreographed
+          entrance that transitions can't handle.</p>
+
+        <h3 class="mt-3">My effective keyframes prompt</h3>
+        <p class="mt-1">Here's the detailed prompt I learned to write for keyframes animations. Notice how much more
+          specific it is compared to transition prompts — I have to describe the entire sequence:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ Effective keyframes prompt with complete requirements:</div>
+          <pre><code class="language-text">Create a notification slide-in animation with these requirements:
+- Use @keyframes named "slideInNotification"
+- Animate from translateX(100%) and opacity: 0 to translateX(0) and opacity: 1
+- Apply with animation-fill-mode: forwards so it stays visible
+- Duration: 400ms with ease-out timing
+- Include prefers-reduced-motion media query with instant appearance
+- Provide context: This is for success/error notifications
+- Use only transform and opacity (GPU-optimized)
+- Provide complete CSS including application to .notification class</code></pre>
+        </div>
+
+        <h3 class="mt-3">AI-generated keyframes code</h3>
+        <p class="mt-1">With this detailed prompt, AI generates professional keyframes code that's ready to use. Look at
+          how complete and well-structured this output is:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ Professional keyframes animation from AI:</div>
+          <pre><code class="language-css">/* Notification slide-in animation */
+@keyframes slideInNotification {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.notification {
+  /* Position notification fixed to viewport */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  /* Styling */
+  background: hsl(140, 70%, 50%);
+  color: hsl(0, 0%, 100%);
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.15);
+
+  /* Apply animation */
+  animation: slideInNotification 400ms ease-out forwards;
+}
+
+/* Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .notification {
+    animation: none;
+    /* Appears instantly at final position */
+    transform: translateX(0);
+    opacity: 1;
+  }
+}</code></pre>
+          <p class="code-comment mt-1"><strong>Why this code is excellent:</strong> Semantic naming
+            (slideInNotification), uses only GPU-accelerated properties (transform and opacity), includes
+            animation-fill-mode: forwards to keep final state, provides complete styling and positioning, includes
+            prefers-reduced-motion with instant appearance, uses hsl() colors throughout, and has ease-out timing for
+            responsive feel. This is production-ready code!</p>
+        </div>
+
+        <h3 class="mt-3">How to apply this pattern</h3>
+        <p class="mt-1">Once AI generates this keyframes animation, I can trigger it by adding the .notification class
+          to an element when needed. The beauty of keyframes is that the animation definition is reusable — I can apply
+          slideInNotification to different elements:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">Applying the animation with JavaScript:</div>
+          <pre><code class="language-javascript">// Show success notification
+function showNotification(message, type) {
+  const notification = document.createElement('div');
+  notification.className = 'notification';
+  notification.textContent = message;
+  document.body.appendChild(notification);
+
+  // Remove after 5 seconds
+  setTimeout(() => {
+    notification.remove();
+  }, 5000);
+}</code></pre>
+        </div>
+
+        <div class="hap-note-callout mt-3">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
+            alt="HAP working on his laptop" width="150" height="150" class="hap-note-image" decoding="async"
+            loading="lazy">
+          <div class="hap-note-content">
+            <h3>HAP's learning: Keyframes need comprehensive prompts</h3>
+            <p>My first keyframes prompt was terrible: "Create a slide-in animation for notifications." That's it. AI had
+              to guess everything — from which direction to slide, to what properties to animate, to whether it should
+              loop or run once. The code AI generated worked, but it wasn't what I needed! It slid from the top instead of
+              the right. It used margin-left instead of transform. It didn't include fill-mode, so the notification
+              snapped back to its starting position after animating. It was completely wrong!</p>
+            <p class="mt-1">Prof. Teeters looked at my prompt and said, "HAP, you gave AI one sentence and expected it to
+              read your mind about eight different decisions. Keyframes have so many options — direction, properties,
+              timing, fill-mode, iteration-count, naming. You have to specify what you want for each one!" She taught me
+              to think through the entire animation sequence before writing the prompt: What's the starting state? What's
+              the ending state? Should it stay at the end or reset? What's the timing? What about accessibility?</p>
+            <p class="mt-1">Once I started writing comprehensive prompts with every detail specified, AI became incredibly
+              helpful for keyframes! I'd get perfect boilerplate in seconds. The key lesson: keyframes complexity requires
+              prompt comprehensiveness. Don't ask AI to guess — tell it exactly what you need!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: AI for Animation Accessibility -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>AI for animation accessibility</h2>
+        <p class="mb-2">This is where AI fails most consistently, and it's the most important issue to understand.
+          Accessibility isn't a nice-to-have feature — it's a fundamental requirement that protects users with
+          vestibular disorders from physical harm. When I first started using AI for animations, I was shocked to
+          discover that AI forgets prefers-reduced-motion support in nearly every single response unless I explicitly
+          request it. Prof. Teeters made this her strictest rule: <strong>Never trust AI to include accessibility on its
+            own. You must request it explicitly in every prompt, then verify it manually every single time.</strong> This
+          isn't being paranoid — it's being professional.</p>
+
+        <h3 class="mt-3">The problem: AI constantly forgets accessibility</h3>
+        <p class="mt-1">I learned this lesson the hard way. I asked AI to generate five different animations for a
+          project — button hovers, card transitions, notification slides, loading spinners, and modal entrances. The code
+          looked beautiful! Every animation was smooth, well-structured, and used proper syntax. I was so proud of how
+          quickly I'd built this animation library.</p>
+
+        <p class="mt-1">Then Prof. Teeters tested my work with accessibility tools enabled. Every single animation
+          violated WCAG guidelines. Not one animation had prefers-reduced-motion support. Users who experience dizziness,
+          nausea, or seizures from motion would have been harmed by my animations. I felt terrible. Prof. Teeters sat me
+          down and explained: "AI is trained on millions of code examples, and most developers don't include
+          accessibility. AI learned to write code the way most people write it — incomplete and harmful to vulnerable
+          users."</p>
+
+        <h3 class="mt-3">The solution: Make accessibility explicit in every prompt</h3>
+        <p class="mt-1">Here's the accessibility-focused prompt template I now use for every single animation request to
+          AI:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ Accessibility-first prompt template:</div>
+          <pre><code class="language-text">Create [animation description] with these CRITICAL accessibility requirements:
+
+MANDATORY accessibility features:
+- Include @media (prefers-reduced-motion: reduce) media query
+- Provide instant state changes as alternative (animation: none)
+- Ensure functionality is preserved without motion
+- For infinite animations: add pause controls OR respect reduced-motion
+- Test that the experience makes sense without motion
+
+[Then add your other technical requirements...]</code></pre>
+        </div>
+
+        <h3 class="mt-3">Before and after: Accessibility comparison</h3>
+        <p class="mt-1">Here's a perfect example of the problem. This is what AI gives me without accessibility in the
+          prompt:</p>
+
+        <div class="warning-box mt-2">
+          <h3>❌ AI code WITHOUT accessibility request</h3>
+          <pre><code class="language-css">/* Loading spinner - AI generated without accessibility prompt */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid hsl(0, 0%, 90%);
+  border-top-color: hsl(210, 70%, 50%);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ❌ NO prefers-reduced-motion support - VIOLATES WCAG 2.1 */
+/* ❌ Infinite animation with no pause control */
+/* ❌ Users with vestibular disorders could get sick */</code></pre>
+          <p class="mt-1"><strong>This code is dangerous.</strong> It will harm users with vestibular disorders. It
+            violates WCAG 2.1 Success Criterion 2.3.3. It's not production-ready, no matter how clean the syntax looks.
+          </p>
+        </div>
+
+        <p class="mt-2">Now here's what AI generates when I explicitly request accessibility:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ AI code WITH accessibility request:</div>
+          <pre><code class="language-css">/* Loading spinner - AI generated WITH accessibility requirements */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid hsl(0, 0%, 90%);
+  border-top-color: hsl(210, 70%, 50%);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* ✅ Accessibility: respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+    border-top-color: hsl(210, 70%, 50%);
+    border-right-color: hsl(210, 70%, 50%);
+    /* Show static indication of loading state */
+  }
+
+  .spinner::after {
+    content: 'Loading...';
+    position: absolute;
+    font-size: 12px;
+    margin-top: 50px;
+  }
+}</code></pre>
+          <p class="code-comment mt-1"><strong>This code is safe.</strong> Users with prefers-reduced-motion enabled see
+            a static loading indicator with text instead of spinning motion. Functionality is preserved, but harm is
+            prevented.</p>
+        </div>
+
+        <div class="hap-note-callout mt-3">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
+            alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
+            decoding="async" loading="lazy">
+          <div class="hap-note-content">
+            <h3>HAP's accessibility checklist: Non-negotiable rules</h3>
+            <p>After my accessibility failure, I created a systematic checklist that I follow for every single AI-generated
+              animation. These rules are non-negotiable — I never skip them, no matter how rushed I am:</p>
+            <ul class="mt-1">
+              <li><strong>Always include "prefers-reduced-motion" in the prompt</strong> — Never assume AI will remember
+              </li>
+              <li><strong>Test with DevTools emulation</strong> — Enable reduced motion setting and verify it works</li>
+              <li><strong>Verify the static alternative makes sense</strong> — Does the page work without motion?</li>
+              <li><strong>Check that functionality is preserved</strong> — Users shouldn't lose features due to reduced
+                motion</li>
+              <li><strong>For infinite animations, provide pause controls</strong> — Or respect reduced-motion completely
+              </li>
+              <li><strong>Read the @media query code</strong> — Don't trust AI got it right, verify yourself</li>
+            </ul>
+            <p class="mt-1">Prof. Teeters made this crystal clear: "HAP, accessibility isn't a suggestion. It's a
+              requirement. Users with vestibular disorders deserve the same access to web experiences as everyone else. AI
+              won't protect them — you have to." That lesson is now the foundation of my entire AI workflow. I request
+              accessibility first, implement it correctly, and test it thoroughly. Every. Single. Time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Optimizing Animation Performance with AI -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>Optimizing animation performance with AI</h2>
+        <p class="mb-2">Performance is another area where AI needs explicit guidance. AI knows about GPU-accelerated
+          properties in theory, but it doesn't prioritize them unless you specifically request optimization. I learned
+          this when I built an animation that worked beautifully on my desktop computer but stuttered badly on Prof.
+          Teeters' phone. AI had used CPU-bound properties like margin and width instead of GPU-accelerated transform and
+          opacity. The lesson: AI can help optimize performance, but only if you tell it performance is a priority.</p>
+
+        <h3 class="mt-3">Remembering the GPU "fast lane" from Station 2</h3>
+        <p class="mt-1">In Station 2, Prof. Teeters taught me about the GPU "fast lane" for transform and opacity. These
+          properties get special graphics-card acceleration that makes animations silky smooth, even on slower devices.
+          When I animate width, margin, or position properties instead, the browser has to recalculate the entire page
+          layout on every frame — and that stutters on mobile! Now I needed to teach AI to follow the same rule.</p>
+
+        <h3 class="mt-3">The challenge: Animation stuttering on mobile</h3>
+        <p class="mt-1">I created a card animation that expanded when clicked. My first version worked perfectly on my
+          laptop — smooth, responsive, professional. Then I tested it on Prof. Teeters' older phone and it was janky! The
+          animation stuttered and felt sluggish. I checked the code and realized the problem: I'd asked AI for a "card
+          expansion animation" without specifying performance requirements. AI generated code using width and height
+          properties (CPU-bound) instead of transform: scale (GPU-accelerated).</p>
+
+        <h3 class="mt-3">The performance-focused prompt</h3>
+        <p class="mt-1">Here's how I learned to request performance optimization explicitly:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ Performance optimization prompt:</div>
+          <pre><code class="language-text">Optimize this animation for mobile performance with these requirements:
+
+Performance constraints:
+- Use ONLY transform and opacity (GPU-accelerated properties)
+- NO margin, padding, width, height, top, left, right, bottom (CPU-bound)
+- Explain why your choices are performant
+- Keep animation duration under 300ms for responsiveness
+- Ensure smooth playback on devices with 60fps displays
+
+[Then describe the animation you need...]</code></pre>
+        </div>
+
+        <h3 class="mt-3">Before and after: Performance comparison</h3>
+        <p class="mt-1">Here's the dramatic difference between CPU-bound and GPU-optimized code:</p>
+
+        <div class="warning-box mt-2">
+          <h3>❌ CPU-bound animation (stutters on mobile)</h3>
+          <pre><code class="language-css">/* Card expansion - CPU-bound properties */
+.card {
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  transition: width 300ms ease-out, height 300ms ease-out;
+}
+
+.card.expanded {
+  width: 400px;
+  height: 300px;
+  margin: 10px;
+  /* ❌ Animating width/height triggers layout recalculation */
+  /* ❌ Animating margin shifts surrounding elements */
+  /* ❌ Browser must recalculate entire page layout every frame */
+  /* ❌ Stutters on mobile devices */
+}</code></pre>
+          <p class="mt-1"><strong>Why this stutters:</strong> Width, height, and margin are layout properties. Changing
+            them forces the browser to recalculate positions of all surrounding elements on every animation frame. This
+            work happens on the CPU's main thread, which gets overwhelmed on mobile devices.</p>
+        </div>
+
+        <p class="mt-2">Now here's the GPU-optimized version that AI generates when I request performance explicitly:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">✅ GPU-optimized animation (smooth on mobile)</div>
+          <pre><code class="language-css">/* Card expansion - GPU-accelerated properties */
+.card {
+  width: 300px;
+  height: 200px;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 300ms ease-out, opacity 300ms ease-out;
+}
+
+.card.expanded {
+  transform: scale(1.33);
+  opacity: 0.95;
+  /* ✅ Transform happens on GPU's graphics pipeline */
+  /* ✅ No layout recalculation needed */
+  /* ✅ Surrounding elements unaffected */
+  /* ✅ Smooth on all devices, including older phones */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+  .card.expanded {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}</code></pre>
+          <p class="code-comment mt-1"><strong>Why this is smooth:</strong> Transform and opacity are GPU-accelerated
+            properties that run on a separate graphics thread. The browser doesn't need to recalculate layout or paint —
+            it just composites the pre-rendered element at a different scale. This works smoothly even on low-powered
+            mobile devices!</p>
+        </div>
+
+        <div class="hap-note-callout mt-3">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+            alt="HAP the apprentice learner with his study book and tools" width="150" height="150"
+            class="hap-note-image" decoding="async" loading="lazy">
+          <div class="hap-note-content">
+            <h3>HAP's performance rule: Always test on mobile</h3>
+            <p>Prof. Teeters has a testing ritual that I've adopted: she never approves an animation until I've tested it
+              on her phone. Not my phone — her phone. It's a few years old and doesn't have the latest processor. If my
+              animation runs smoothly on her phone, it'll run smoothly anywhere. If it stutters, I know I'm using
+              CPU-bound properties.</p>
+            <p class="mt-1">This ritual taught me that AI doesn't think about mobile performance by default. AI optimizes
+              for "works correctly" not "works smoothly on slow devices." When I ask AI for an animation without
+              mentioning performance, it often suggests margin, width, height, or position properties because they're
+              easier to understand and produce more obvious visual changes. But those properties destroy mobile
+              performance!</p>
+            <p class="mt-1">Now my workflow is simple: explicitly request transform and opacity only, explicitly forbid
+              margin/width/height/position, and test on Prof. Teeters' phone before shipping. That combination ensures my
+              AI-generated animations are accessible AND performant. Both requirements are non-negotiable!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Try It Yourself - AI Animation Challenge -->
+    <section class="content-section">
+      <h2>Try it yourself: AI animation challenge</h2>
+      <p class="mt-1">Ready to practice everything you've learned? This challenge tests your prompt crafting skills,
+        your verification process, and your ability to apply concepts from Stations 1-5 through AI collaboration. The
+        goal isn't just to get AI to generate code — it's to generate code that meets professional standards for
+        accessibility, performance, and quality!</p>
+
+      <div class="challenge-box mt-2">
+        <h3>🎯 The challenge: Card hover effect</h3>
+        <p class="mt-1">Create a card hover effect using AI assistance that meets all professional requirements. The card
+          should lift slightly and show subtle emphasis when users hover or focus on it.</p>
+
+        <h4 class="mt-2">Requirements:</h4>
+        <ul class="mt-1">
+          <li><strong>Performance:</strong> Must use transform and opacity only (no width, margin, box-shadow
+            animations)</li>
+          <li><strong>Accessibility:</strong> Must include prefers-reduced-motion support with static alternative</li>
+          <li><strong>Usability:</strong> Must work for both hover (mouse) and focus (keyboard) interactions</li>
+          <li><strong>Timing:</strong> 300ms duration with ease-out timing for responsive feel</li>
+          <li><strong>Maintainability:</strong> Use hsl() colors and semantic class names</li>
+        </ul>
+
+        <h4 class="mt-2">Your mission (5 steps):</h4>
+        <ol class="mt-1">
+          <li><strong>Craft a detailed prompt</strong> with all requirements specified (use what you learned in Sections
+            3-6)</li>
+          <li><strong>Review AI's response</strong> for correctness against the requirements checklist</li>
+          <li><strong>Test with reduced motion enabled</strong> using DevTools emulation (Rendering panel)</li>
+          <li><strong>Verify performance optimization</strong> - only transform and opacity should be animated</li>
+          <li><strong>Refine if needed</strong> - If anything is missing, write a follow-up prompt to fix it</li>
+        </ol>
+      </div>
+
+      <div class="analysis-grid mt-2">
+        <div class="analysis-point">
+          <h3>✅ Success criteria</h3>
+          <ul class="mt-1">
+            <li>Uses only transform and opacity (GPU-accelerated)</li>
+            <li>Includes prefers-reduced-motion media query</li>
+            <li>Has ease-out timing function</li>
+            <li>Duration is 300ms</li>
+            <li>Works for both :hover and :focus-visible</li>
+            <li>Uses hsl() color format</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>💡 HAP's tips for the challenge</h3>
+          <ul class="mt-1">
+            <li>Think about the example prompts from Sections 3-4</li>
+            <li>List all requirements before writing your prompt</li>
+            <li>Include concepts from Stations 1-5 in your prompt</li>
+            <li>Remember the GPU "fast lane" rule from Station 2</li>
+            <li>Don't forget keyboard accessibility (:focus-visible)</li>
+            <li>Verification is part of the exercise — test thoroughly!</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: HAP's Rules for Working with AI -->
+    <section class="content-section">
+      <div class="tips-container">
+        <h2 class="section-heading-centered">HAP's rules for working with AI</h2>
+        <p class="mb-2">After months of working with AI for animations, I've developed six non-negotiable rules. These
+          aren't suggestions — they're requirements that Prof. Teeters approves and enforces. Following these rules is
+          the difference between AI being helpful versus AI being harmful.</p>
+
+        <div class="tip-card">
+          <div class="tip-number">1</div>
+          <div>
+            <h3>Always request accessibility</h3>
+            <p>Never assume AI will include accessibility features on its own. Explicitly request prefers-reduced-motion
+              support in every single prompt. Ask for pause controls when needed. Request keyboard accessibility states.
+              This isn't optional — it's Prof. Teeters' strictest rule. AI learned from millions of code examples that
+              don't include accessibility, so it forgets unless you remind it every time. Make accessibility the first
+              requirement in your prompts, not an afterthought.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">2</div>
+          <div>
+            <h3>Specify performance constraints</h3>
+            <p>Explicitly request transform and opacity only. Mention GPU acceleration when you prompt. Specify which
+              properties to avoid (margin, width, height, position). Ask for mobile-friendly code that runs smoothly on
+              60fps displays. Performance isn't automatic — AI prioritizes "works correctly" over "works smoothly on slow
+              devices." If you don't mention performance, AI will suggest easy properties like margin and width that
+              destroy mobile performance. Make performance constraints explicit!</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">3</div>
+          <div>
+            <h3>Provide context and purpose</h3>
+            <p>Explain what the animation is for (error notification, success message, loading indicator). Mention your
+              brand personality (playful, professional, energetic). Describe user expectations for this interaction. Give
+              timing preferences based on urgency. Context dramatically improves AI's decisions! When AI knows an error
+              notification should feel urgent (200ms, sharp timing) versus a success message should feel celebratory
+              (400ms, bouncy easing), it makes better choices. Don't just describe the technical requirements — explain
+              the "why" behind the animation.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">4</div>
+          <div>
+            <h3>Use detailed specific prompts</h3>
+            <p>List all technical requirements upfront (properties, duration, timing function, fill-mode). Include
+              accessibility constraints explicitly. Mention performance needs (GPU properties only). Specify exact
+              approaches you want (use keyframes not transitions, use ease-out not linear). Detailed prompts save time —
+              they get you production-ready code on the first attempt instead of code you have to fix. Vague prompts force
+              AI to guess, and its guesses rarely match professional standards. Spend two minutes crafting a comprehensive
+              prompt to save two hours of fixing!</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">5</div>
+          <div>
+            <h3>Verify everything before using</h3>
+            <p>Read every line of generated code before copying it. Test accessibility manually with DevTools
+              prefers-reduced-motion emulation. Check performance on mobile devices (preferably older phones). Validate
+              against concepts learned in Stations 1-5. Never trust AI output blindly — verification is mandatory! AI
+              generates code in seconds, but you're responsible for every line forever. If it breaks, causes accessibility
+              violations, or performs poorly, that's your failure, not AI's. Verification isn't optional.</p>
+          </div>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-number">6</div>
+          <div>
+            <h3>Understand before shipping</h3>
+            <p>You must comprehend every line of AI-generated code. If you don't understand why it works, you can't debug
+              when problems arise. You can't modify code you don't comprehend. Knowledge beats speed — shipping code you
+              understand is better than shipping code quickly. Prof. Teeters taught me that understanding is what
+              separates professionals from code copiers. AI can generate animations, but you need to know why the timing
+              works, why ease-out feels right, why transform is performant. That knowledge makes you valuable, not the
+              code itself.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Advanced Prompt Strategies -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>Advanced prompt strategies</h2>
+        <p class="mb-2">Real AI collaboration isn't one-shot perfection — it's conversational refinement. I learned that
+          the best results come from treating AI like a colleague I'm working with, not a magic wand I wave once. These
+          advanced prompts help me iterate, troubleshoot, and refine AI output safely. Prof. Teeters calls this
+          "conversational refinement" and it's how professionals actually work with AI.</p>
+
+        <h3 class="mt-3">Iteration prompt for refinement</h3>
+        <p class="mt-1">Use this when the code works but doesn't quite feel right. Maybe the timing is too slow, the
+          easing is too sharp, or the effect is too subtle. This prompt helps you refine while preserving what's already
+          correct:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">Refinement prompt:</div>
+          <pre><code class="language-text">Revise this animation code. Keep the same technical approach
+(transform/opacity, prefers-reduced-motion) but adjust the timing
+to feel more [snappy/smooth/gentle] for a [context: e.g., error notification].
+
+Current code:
+[paste the code AI generated]
+
+Make it feel more urgent without breaking accessibility or performance.</code></pre>
+          <p class="code-comment mt-1"><strong>When to use this:</strong> When technical requirements are met but
+            aesthetic feel needs adjustment. Perfect for refining timing and easing to match brand personality while
+            keeping accessibility and performance intact.</p>
+        </div>
+
+        <h3 class="mt-3">Troubleshooting prompt for problems</h3>
+        <p class="mt-1">Use this when something isn't working correctly. AI is surprisingly good at debugging when you
+          describe the specific problem you're experiencing:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">Debugging prompt:</div>
+          <pre><code class="language-text">This animation doesn't work correctly: [describe issue].
+
+Current code:
+[paste the problematic code]
+
+Explain what might be wrong with the current implementation,
+then provide a corrected version that maintains accessibility
+and performance requirements.
+
+Specific problem: The card doesn't stay in its final position
+after the animation completes.</code></pre>
+          <p class="code-comment mt-1"><strong>When to use this:</strong> When you spot a bug or unexpected behavior. AI
+            will often identify issues like missing fill-mode, incorrect timing functions, or conflicting properties. But
+            always verify the fix yourself — understand the root cause!</p>
+        </div>
+
+        <h3 class="mt-3">Safety prompt for production code</h3>
+        <p class="mt-1">Use this when refactoring existing code that's already working in production. This prompt ensures
+          nothing critical breaks during changes:</p>
+
+        <div class="prompt-box mt-2">
+          <div class="prompt-label">Safe refactoring prompt:</div>
+          <pre><code class="language-text">Refactor this animation without breaking existing functionality.
+Preserve all:
+- Accessibility features (reduced-motion, keyboard focus)
+- Performance optimizations (GPU properties)
+- Class names and IDs (JavaScript may reference them)
+- Visual appearance (timing, easing, distances)
+
+Current code:
+[paste existing working code]
+
+Goal: Convert from transitions to keyframes while maintaining
+everything that currently works.</code></pre>
+          <p class="code-comment mt-1"><strong>When to use this:</strong> When improving or modernizing code that users
+            depend on. Ensures you don't accidentally remove accessibility, break JavaScript dependencies, or change
+            visual behavior unexpectedly.</p>
+        </div>
+
+        <div class="hap-note-callout mt-3">
+          <img
+            src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+            alt="HAP the apprentice learner with his study book and tools" width="150" height="150"
+            class="hap-note-image" decoding="async" loading="lazy">
+          <div class="hap-note-content">
+            <h3>HAP's workflow evolution: From one-shot to conversational</h3>
+            <p>Early on, I treated AI like a vending machine: insert prompt, get code, done. If the first result wasn't
+              perfect, I'd get frustrated and start over with a completely new prompt. This was exhausting and
+              inefficient!</p>
+            <p class="mt-1">Prof. Teeters watched me struggle and said, "HAP, you're treating AI like it's supposed to
+              read your mind on the first try. Real collaboration is iterative. Give AI your requirements, see what it
+              produces, then refine based on what you learn. It's a conversation, not a transaction." That completely
+              changed my approach!</p>
+            <p class="mt-1">Now my workflow is: detailed initial prompt → review output → identify what's good and what
+              needs adjustment → refinement prompt focusing on specific issues → verify → ship. I might iterate 2-3
+              times, but each iteration is targeted and quick. The total time is still faster than writing from scratch,
+              and the final code is better because I've refined it thoughtfully. Treating AI as a conversational partner
+              instead of a magic solution makes all the difference!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: When NOT to Use AI -->
+    <section class="content-section">
+      <div class="topic-section">
+        <h2>When NOT to use AI</h2>
+        <p class="mb-2">AI is powerful for animations, but it's not always the right tool. Prof. Teeters taught me to
+          recognize situations where manual work is better than AI assistance. Using AI when you shouldn't is worse than
+          not using AI at all — it creates dependencies on tools for things you should understand deeply yourself.
+          Understanding when NOT to use AI is just as important as knowing when to use it.</p>
+
+        <div class="analysis-grid mt-2">
+          <div class="analysis-point">
+            <h3>When you're still learning</h3>
+            <p><strong>Don't use AI for concepts you don't understand yet.</strong> If you're still learning how
+              keyframes work, don't let AI write them for you. Do it manually first to build understanding, then use AI
+              for repetition once you comprehend the fundamentals. Prof. Teeters put it perfectly: "You can't verify what
+              you don't understand. You can't debug what you didn't learn. AI should accelerate your knowledge, not
+              replace it."</p>
+            <p class="mt-1">Practice animations manually through Stations 1-5 first. Once you know why ease-out feels
+              responsive, why transform is performant, and why prefers-reduced-motion is mandatory, then AI becomes
+              valuable for speed. But skip the learning and AI just makes you dependent without building capability.</p>
+          </div>
+
+          <div class="analysis-point">
+            <h3>When timing must match brand</h3>
+            <p><strong>AI doesn't understand brand personality.</strong> Should your button hover feel playful and bouncy
+              or professional and subtle? That's a design judgment requiring human intuition. AI makes generic choices —
+              it suggests 300ms ease-out for everything because that's statistically common. But your brand might need
+              200ms linear for urgency, or 500ms ease-in-out for luxury.</p>
+            <p class="mt-1">Use AI to generate the technical structure, but adjust timing and easing yourself based on
+              brand personality. AI can write the syntax, but you have to provide the soul. Context-specific timing
+              decisions need your judgment, not AI's statistical averages.</p>
+          </div>
+
+          <div class="analysis-point">
+            <h3>When accessibility is critical</h3>
+            <p><strong>Never trust AI for accessibility alone.</strong> Always verify reduced motion implementation
+              manually. Check that alternatives work properly. Test with real accessibility tools. Even when you explicitly
+              request accessibility in prompts, AI sometimes gets it wrong — missing edge cases, providing incomplete
+              alternatives, or suggesting patterns that don't actually preserve functionality.</p>
+            <p class="mt-1">AI can generate the @media query syntax, but you must verify it works correctly for users.
+              Test with DevTools emulation. Verify the static alternative makes sense. Ensure functionality is preserved
+              without motion. Accessibility verification is your responsibility — AI can assist, but you must validate.
+            </p>
+          </div>
+        </div>
+
+        <div class="warning-box mt-3">
+          <h3>🟠 Prof. Teeters' warning about AI and learning</h3>
+          <p class="mt-1"><strong>"AI is a tool for saving time, not for skipping understanding."</strong></p>
+          <p class="mt-1">Prof. Teeters shared this warning after watching me rely too heavily on AI early in my learning:
+            "HAP, learning cannot be automated. You can't outsource understanding to AI and expect to become skilled. AI
+            should accelerate work you already comprehend, not replace the work of learning. If you let AI write all your
+            animations before you understand why they work, you become dependent on a tool instead of capable as a
+            developer."</p>
+          <p class="mt-1">She's right. The knowledge I gained from Stations 1-5 is what makes AI collaboration valuable. I
+            know what to ask for because I understand transforms, transitions, timing, micro-interactions, and keyframes.
+            AI can't teach you those fundamentals — you have to learn them yourself. Then AI becomes incredibly powerful
+            for applying that knowledge quickly. But skip the learning and AI just produces code you can't debug, modify,
+            or improve.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 11: Quick Reference - AI Animation Tasks -->
+    <section class="content-section">
+      <h2>Quick reference: AI animation tasks</h2>
+      <p class="mt-1">Not every animation task is equally suitable for AI assistance. I learned to evaluate each task
+        based on AI's strengths and limitations. This grid shows you what to expect from AI for different animation
+        tasks and what verification steps are critical:</p>
+
+      <div class="overview-grid mt-2">
+        <div class="insight-card">
+          <h3><span class="insight-icon">✅</span> Generate basic animation syntax</h3>
+          <p class="stat-large">AI Use: Excellent</p>
+          <p><strong>Review step: Check accessibility included</strong></p>
+          <p>AI excels at generating clean animation syntax for transitions and keyframes. Give it specific
+            requirements (properties, duration, timing), and it produces proper code quickly. However, always verify it
+            included prefers-reduced-motion support — AI sometimes forgets this critical accessibility feature!</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">✅</span> Create keyframes boilerplate</h3>
+          <p class="stat-large stat-teal">AI Use: Excellent</p>
+          <p><strong>Review step: Verify naming and structure</strong></p>
+          <p>AI is fantastic for generating @keyframes boilerplate with proper percentages and properties. Especially
+            useful for complex multi-step sequences. Just verify the naming is semantic (slideInNotification not
+            animation1) and the structure follows best practices you learned in Station 5!</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">✅</span> Optimize for performance</h3>
+          <p class="stat-large stat-green">AI Use: Good with guidance</p>
+          <p><strong>Review step: Confirm GPU properties only</strong></p>
+          <p>AI can help optimize animations for performance, but only if you explicitly request it. Ask specifically
+            for transform and opacity only, and tell it to avoid margin, width, height, and position properties. Then
+            verify the output actually uses GPU-accelerated properties — AI sometimes suggests CPU-bound alternatives!
+          </p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">⚠️</span> Add accessibility features</h3>
+          <p class="stat-large stat-yellow">AI Use: Unreliable without prompt</p>
+          <p><strong>Review step: Always verify manually</strong></p>
+          <p>AI frequently forgets accessibility unless explicitly prompted. You MUST request prefers-reduced-motion
+            support in every single prompt — never assume AI will include it. After generation, always test with
+            DevTools reduced motion emulation to verify the static alternative actually works!</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">⚠️</span> Choose timing for brand</h3>
+          <p class="stat-large stat-yellow">AI Use: Limited</p>
+          <p><strong>Review step: Adjust to feel right</strong></p>
+          <p>AI can suggest timing values, but it doesn't understand your brand personality. Is your brand playful
+            (bouncy, longer durations) or professional (subtle, 200-300ms)? AI makes generic choices. Use its generated
+            code as a starting point, then adjust timing and easing to match your brand's character!</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">🛑</span> Determine when to animate</h3>
+          <p class="stat-large stat-red">AI Use: Not recommended</p>
+          <p><strong>Review step: Make decision yourself</strong></p>
+          <p>AI cannot judge whether animation is actually necessary or helpful. Does this UI change need motion, or
+            would instant feedback be better? Prof. Teeters taught me that restraint is a design skill, not a technical
+            one. AI will happily animate everything if you ask — you need to decide what deserves motion!</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">🛑</span> Test reduced motion</h3>
+          <p class="stat-large stat-red">AI Use: Cannot do</p>
+          <p><strong>Review step: Must test manually</strong></p>
+          <p>AI can write the @media (prefers-reduced-motion) code, but it cannot test whether the static alternative
+            actually works for users. You must test this manually using DevTools emulation, verify functionality is
+            preserved without motion, and ensure the experience makes sense. Testing is your responsibility!</p>
+        </div>
+
+        <div class="insight-card">
+          <h3><span class="insight-icon">✅</span> Debug animation issues</h3>
+          <p class="stat-large stat-teal">AI Use: Helpful for suggestions</p>
+          <p><strong>Review step: Understand root cause yourself</strong></p>
+          <p>AI is surprisingly helpful when debugging! Describe what's wrong ("animation stutters on mobile," "doesn't
+            work in Safari"), and AI often suggests useful solutions. But always understand the root cause yourself —
+            if you don't know why it broke or why the fix works, you can't maintain the code long-term!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 12: Learning Objectives Checklist -->
+    <section class="content-section">
+      <h2>Learning objectives checklist</h2>
+      <p class="mt-1"><strong>Congratulations on completing all six stations of HAP's Learning Lab!</strong> Before you
+        finish, let me share one final set of questions to verify you've mastered the principles of responsible AI use
+        for animations. Can you confidently say yes to these?</p>
+
+      <div class="analysis-grid mt-2">
+        <div class="analysis-point">
+          <h3>Understanding AI capabilities</h3>
+          <ul class="mt-1">
+            <li>Know what AI excels at for animation tasks</li>
+            <li>Know what AI struggles with or forgets</li>
+            <li>Understand when to use AI versus manual work</li>
+            <li>Recognize AI limitations around accessibility</li>
+            <li>Understand AI cannot judge when animation is necessary</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>Prompt engineering skills</h3>
+          <ul class="mt-1">
+            <li>Can craft specific, detailed prompts for animations</li>
+            <li>Know to include all technical requirements upfront</li>
+            <li>Can explicitly request accessibility features</li>
+            <li>Understand how to provide context for better results</li>
+            <li>Can specify performance constraints (transform/opacity only)</li>
+            <li>Know to request hsl() color format and semantic naming</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>Verification workflow</h3>
+          <ul class="mt-1">
+            <li>Always read generated code before using it</li>
+            <li>Check for proper accessibility implementation</li>
+            <li>Verify performance optimization (GPU properties)</li>
+            <li>Test with DevTools prefers-reduced-motion emulation</li>
+            <li>Validate against concepts learned in Stations 1-5</li>
+            <li>Never ship code without understanding how it works</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>Professional responsibility</h3>
+          <ul class="mt-1">
+            <li>Understand you own the code AI generates</li>
+            <li>Know accessibility is your responsibility, not AI's</li>
+            <li>Committed to thorough testing and verification</li>
+            <li>Will never ship code without understanding it</li>
+            <li>Treat AI as assistant, not replacement for knowledge</li>
+            <li>Recognize that speed without quality is carelessness</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>Stations 1-5 integration</h3>
+          <ul class="mt-1">
+            <li>Can apply transform knowledge when prompting AI</li>
+            <li>Can request correct transition properties and timing</li>
+            <li>Can specify appropriate timing functions (ease-out default)</li>
+            <li>Can request micro-interaction patterns from Station 4</li>
+            <li>Can describe keyframes sequences to AI effectively</li>
+            <li>Understand AI works best when you know what to ask for</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>Iteration and refinement</h3>
+          <ul class="mt-1">
+            <li>Can use multiple prompts to refine AI output</li>
+            <li>Know how to troubleshoot and debug AI responses</li>
+            <li>Can preserve critical elements during code changes</li>
+            <li>Understand conversational refinement approach</li>
+            <li>Treat AI collaboration as iterative, not one-shot</li>
+          </ul>
+        </div>
+
+        <div class="analysis-point">
+          <h3>Critical evaluation</h3>
+          <ul class="mt-1">
+            <li>Can identify missing accessibility in AI code</li>
+            <li>Can spot CPU-bound properties that hurt performance</li>
+            <li>Can recognize when timing doesn't match context</li>
+            <li>Can determine when AI suggestions need refinement</li>
+            <li>Approach AI output with "trust but verify" mindset</li>
+            <li>Know when manual work is better than AI assistance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="hap-note-callout mt-3">
+        <img
+          src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+          alt="HAP the apprentice learner with his study book and tools" width="150" height="150"
+          class="hap-note-image" decoding="async" loading="lazy">
+        <div class="hap-note-content">
+          <h3>Prof. Teeters on completing all six stations</h3>
+          <p><strong>"HAP, you've come so far from that confused robot asking basic questions about transforms!"</strong>
+          </p>
+          <p class="mt-1">Prof. Teeters smiled when I finished this last station. "You started at Station 1 not knowing
+            the difference between translate and transition. Now you can build accessible, performant animations and
+            even collaborate responsibly with AI tools! But here's what I'm most proud of: you understand that
+            knowledge from Stations 1-5 is what makes AI collaboration valuable. AI can only help you build animations
+            well because you know what 'well' means. You learned transforms, transitions, timing, micro-interactions,
+            and keyframes first — then you learned to accelerate that knowledge with AI."</p>
+          <p class="mt-1">"Remember: animations should help users, not just look cool. Performance matters on every
+            device. Accessibility is non-negotiable. And AI is a powerful assistant, but you're the one responsible for
+            the code. Keep these principles close, and you'll build animations that delight users without harming them.
+            Go build something wonderful! The web needs developers who understand both the craft and the
+            responsibility." 🟠</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <nav aria-label="Page navigation" class="page-navigation bottom-nav">
+    <a href="station5.html" class="nav-link prev-link">← Previous: Station 5</a>
+    <a href="../index.html" class="nav-link hub-link">🏠 Back to Hub</a>
+  </nav>
+
+  <footer class="footer">
+    <p><strong>HAP's Learning Lab</strong> | Station 6: AI Assistance for Animation</p>
+    <p class="footer-reminder readable-width">
+      You've completed all six stations! Remember: AI can generate animation code in seconds, but verification is
+      mandatory. Always request accessibility explicitly, test with reduced motion, and understand every line before
+      shipping. You own the code — whether you wrote it or AI did! 🔬 — HAP
+    </p>
+    <div class="footer-copyright">
+      <img
+        src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
+        alt="HAP the apprentice learner with his study book and tools" class="footer-hybit" width="80" height="80"
+        decoding="async" loading="lazy">
+      <div>
+        <p>HAP&trade; Educational Content &copy; 2025 Cynthia Teeters. All rights reserved.</p>
+        <p>HyBit A. ProtoBot&trade; (HAP&trade;) character and the apprentice learning methodology are proprietary
+          educational innovations.</p>
+        <p>Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters. Visual
+          elements created with AI assistance.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Prism.js for syntax highlighting (loaded last for performance) -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js" defer></script>
+
+  <!-- Copy button functionality for code blocks -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre').forEach(function (codeBlock) {
+        const button = document.createElement('button');
+        button.className = 'copy-button';
+        button.textContent = 'Copy';
+        button.setAttribute('aria-label', 'Copy code to clipboard');
+
+        button.addEventListener('click', function () {
+          const code = codeBlock.querySelector('code');
+          const text = code ? code.textContent : codeBlock.textContent;
+          navigator.clipboard.writeText(text).then(function () {
+            button.textContent = 'Copied!';
+            button.classList.add('copied');
+            setTimeout(function () {
+              button.textContent = 'Copy';
+              button.classList.remove('copied');
+            }, 2000);
+          });
         });
-    </script>
 
+        const wrapper = document.createElement('div');
+        wrapper.className = 'code-block-wrapper';
+        codeBlock.parentNode.insertBefore(wrapper, codeBlock);
+        wrapper.appendChild(codeBlock);
+        wrapper.appendChild(button);
+      });
+    });
+  </script>
+
+  <!--
+  HAP™ Educational Content © 2025 Cynthia Teeters. All rights reserved.
+  HyBit A. ProtoBot™ (HAP™) character and the apprentice learning methodology are proprietary educational innovations.
+  Character concept, teaching methodology, and all written content created by Prof. Cynthia Teeters.
+  Visual elements created with AI assistance.
+  -->
 </body>
 
 </html>
