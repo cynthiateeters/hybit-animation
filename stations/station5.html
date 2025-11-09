@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAP's Learning Lab - Station 5: [STATION_TITLE]</title>
+    <title>HAP's Learning Lab - Station 5: Keyframe Animations</title>
     <meta name="description"
-        content="Join HAP as he learns about [BRIEF_DESCRIPTION].">
+        content="Join HAP as he learns keyframe animations for multi-step sequences. Discover when to use keyframes vs transitions, build reusable patterns, and master infinite loop accessibility.">
     <meta property="og:image"
         content="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_1200,c_fill,g_auto/v1759495998/hap-laptop_xiewar.jpg">
     <link rel="icon" type="image/png" sizes="16x16"
@@ -19,6 +19,7 @@
         href="https://res.cloudinary.com/cynthia-teeters/image/upload/f_png,q_auto,w_192,h_192/v1759596416/hap-favicon-h_gosgur.jpg">
     <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/demos.css">
     <link href="../css/prism-hap-theme.css" rel="stylesheet">
 </head>
 
@@ -34,12 +35,12 @@
                         fetchpriority="high">
                 </div>
                 <div>
-                    <h1>HAP's Learning Lab: [STATION_TITLE]</h1>
-                    <p class="subtitle">[SUBTITLE]</p>
+                    <h1>Station 5: Keyframe Animations</h1>
+                    <p class="subtitle">Going beyond hover states - choreographing multi-step sequences</p>
                 </div>
             </div>
             <div class="intro-box">
-                <p><strong>Welcome to Station 5!</strong> [HAP's apprentice voice introduction: describe what HAP learned from Prof. Teeters at this station, using first-person perspective] 🟠</p>
+                <p><strong>Welcome to Station 5!</strong> I was trying to create those bouncing loading dots like I saw on fancy websites, and I kept using transitions with different delays. But I could only get them to bounce once! I needed them to bounce up, then down, then pause, then repeat — that's way more than the two states transitions can handle. When I showed Prof. Teeters my frustrated attempts, she smiled and said, "HAP, you've hit the wall. Transitions are perfect for simple changes, but you need @keyframes for choreography." She introduced me to keyframe animations, and suddenly I could create complex multi-step sequences! The revelation: keyframes unlock a whole new level of animation control. Let me show you what I learned about when to use keyframes, how to build reusable patterns, and the critical rules for infinite loops! 🟠</p>
             </div>
         </div>
     </header>
@@ -51,110 +52,187 @@
 
     <main id="main-content" class="content-container">
 
+        <!-- Section 1: What You'll Learn -->
         <section class="content-section">
-            <h2 class="section-heading-centered">[SECTION_HEADING]</h2>
-
-            <div class="intro-box">
-                <p><strong>HAP's Discovery:</strong> [HAP's first-person narrative about learning this concept from Prof. Teeters]</p>
-            </div>
+            <h2 class="section-heading-centered">What you'll learn</h2>
 
             <div class="overview-grid mt-2">
                 <div class="insight-card">
-                    <h3><span class="insight-icon">📸</span> [Insight Title 1]</h3>
-                    <p class="stat-large">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">🔧</span> Choose the right tool</h3>
+                    <p class="stat-large">Transitions vs Keyframes</p>
+                    <p><strong>Use the simplest tool that works</strong></p>
+                    <p>I kept trying to force transitions to do everything, even when I needed multi-step sequences. Prof. Teeters taught me her golden rule: transitions are perfect for two-state changes triggered by interaction (hover, focus, click), but keyframes are essential for choreographed multi-step animations like loading indicators, entrance effects, and complex sequences. I learned to ask myself: "Do I need more than a start and end state?" If yes, keyframes. If no, transitions. Choosing the right tool makes everything easier!</p>
                 </div>
+
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🔬</span> [Insight Title 2]</h3>
-                    <p class="stat-large stat-teal">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">♻️</span> Write once, use everywhere</h3>
+                    <p class="stat-large stat-teal">Reusable Patterns</p>
+                    <p><strong>Build a small library of core animations</strong></p>
+                    <p>When Prof. Teeters showed me that keyframes are defined separately from elements, my mind exploded! I could write one @keyframes fadeIn animation and apply it to buttons, cards, modals, tooltips — anything! She taught me to build a small library of three essential patterns: entrance animations (fade in, slide in), exit animations (fade out, slide out), and attention animations (pulse, shake). Instead of writing unique animations for every element, I reuse the same proven patterns. Write once, use everywhere — that's efficiency!</p>
                 </div>
+
                 <div class="insight-card">
-                    <h3><span class="insight-icon">🎯</span> [Insight Title 3]</h3>
-                    <p class="stat-large stat-brown">[Key Statistic]</p>
-                    <p>[Supporting details about this insight]</p>
+                    <h3><span class="insight-icon">♾️</span> Infinite loops need responsibility</h3>
+                    <p class="stat-large stat-brown">Safety First</p>
+                    <p><strong>Never use infinite without controls</strong></p>
+                    <p>I created my first spinner with animation-iteration-count: infinite and felt so proud — it spun forever! Then Prof. Teeters asked, "Did you add a pause button? Did you check prefers-reduced-motion?" I hadn't. She explained that infinite loops can cause nausea and dizziness for users with vestibular disorders. This became her strictest keyframes rule: if you use infinite, you MUST either provide pause controls or respect prefers-reduced-motion with a static alternative. The web must be safe for everyone. Infinite is powerful but requires responsibility!</p>
                 </div>
             </div>
 
             <div class="hap-note-callout">
                 <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                    alt="HAP looking confused while studying" width="150" height="150" class="hap-note-image"
+                    alt="HAP looking confused while studying a map" width="150" height="150" class="hap-note-image"
                     decoding="async" loading="lazy">
                 <div class="hap-note-content">
-                    <h3>HAP's Confession:</h3>
-                    <p>[HAP's apprentice voice: describe initial confusion or learning moment about this topic]</p>
+                    <h3>HAP's confession: keyframes looked intimidating</h3>
+                    <p>When I first saw @keyframes syntax in documentation, I thought, "This looks way too complex for me!" The percentage markers, the nested properties, the animation shorthand with eight possible values — it felt overwhelming. I almost gave up before trying. But Prof. Teeters sat with me and explained it so simply: "HAP, percentages just tell a story over time. Zero percent is where you start. One hundred percent is where you end. Fifty percent is the middle of the journey. The browser smoothly fills in everything between." That clicked! I realized keyframes aren't complicated — they're just describing what happens at different moments. My first @keyframes fadeIn had only two states: 0% { opacity: 0; } and 100% { opacity: 1; }. That's it! Once I wrote that and saw it work, the intimidation vanished. Keyframes are actually simpler than they look. The syntax might seem foreign at first, but the concept is straightforward: describe your animation at key moments, and the browser handles the rest!</p>
                 </div>
             </div>
         </section>
 
+        <!-- Section 7: Learning Objectives Checklist -->
         <section class="content-section">
             <div class="topic-section">
-                <h2>[Main Topic Heading]</h2>
-
-                <p class="mb-2">[Introduction paragraph explaining what Prof. Teeters taught HAP about this topic]</p>
+                <h2>📋 Learning objectives checklist</h2>
+                <p class="mb-2">Before moving to Station 6, make sure you can confidently check off these learning objectives. Prof. Teeters taught me that mastery means understanding deeply, not just completing tasks!</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 1]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>Understanding keyframes vs transitions</h3>
+                        <ul class="mt-1">
+                            <li>Can explain when to use transitions (two-state, interaction-triggered)</li>
+                            <li>Can explain when to use keyframes (multi-step, choreographed)</li>
+                            <li>Know how to choose the simplest tool for the job</li>
+                            <li>Understand that both are essential in toolkit</li>
+                            <li>Can identify appropriate use cases for each</li>
+                        </ul>
                     </div>
+
                     <div class="analysis-point">
-                        <h3>[Analysis Point Title 2]</h3>
-                        <p><strong>[Subheading]</strong> [Content]</p>
+                        <h3>Keyframes syntax mastery</h3>
+                        <ul class="mt-1">
+                            <li>Can write @keyframes rule with percentage markers</li>
+                            <li>Know how to name animations descriptively</li>
+                            <li>Understand percentage markers as story over time (0%, 50%, 100%)</li>
+                            <li>Can apply keyframes to elements with animation property</li>
+                            <li>Know animation-name and animation-duration are required minimum</li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="prompt-box mt-2">
-                    <div class="prompt-label">[Code Example Label]:</div>
-                    <pre><code class="language-html">[CODE EXAMPLE HERE]</code></pre>
-                    <p class="code-comment mt-1">[Explanation of code example]</p>
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Animation properties knowledge</h3>
+                        <ul class="mt-1">
+                            <li>Can set animation-duration and animation-delay</li>
+                            <li>Understand animation-iteration-count (1, 3, infinite)</li>
+                            <li>Know animation-direction options (normal, reverse, alternate)</li>
+                            <li>Understand animation-fill-mode importance (especially forwards)</li>
+                            <li>Can use animation-play-state for pause controls</li>
+                            <li>Can write shorthand animation syntax when appropriate</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Pattern library building</h3>
+                        <ul class="mt-1">
+                            <li>Can create entrance animations (fade in, slide in)</li>
+                            <li>Can create exit animations (fade out, slide out)</li>
+                            <li>Can create attention animations (pulse, shake)</li>
+                            <li>Can create loading indicators (spinner, dots)</li>
+                            <li>Understand reusability benefits (write once, use everywhere)</li>
+                            <li>Have started personal pattern collection</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="interactive-demo mt-2">
-                    <h3>[Interactive Demo Title]</h3>
-                    <ul class="mt-1">
-                        <li>[List item 1]</li>
-                        <li>[List item 2]</li>
-                        <li>[List item 3]</li>
-                    </ul>
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Accessibility compliance for keyframes</h3>
+                        <ul class="mt-1">
+                            <li>Always include prefers-reduced-motion for all keyframe animations</li>
+                            <li>Know when pause controls required (infinite loops)</li>
+                            <li>Can provide static alternatives (Loading... text, static dots)</li>
+                            <li>Test with DevTools emulation for reduced motion</li>
+                            <li>Committed to accessible looping animations</li>
+                            <li>Understand vestibular disorder concerns</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Performance awareness</h3>
+                        <ul class="mt-1">
+                            <li>Continue using transform and opacity (GPU accelerated)</li>
+                            <li>Maintain performance benefits from Stations 1-3</li>
+                            <li>Understand keyframes follow same performance rules</li>
+                            <li>Avoid animating layout properties (width, height, margin)</li>
+                            <li>Know will-change usage for complex animations</li>
+                            <li>Test animation performance in DevTools</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="warning-box mt-2">
-                    <h3>🟠 [Warning Title]</h3>
-                    <p><strong class="text-success">✅ RIGHT:</strong></p>
-                    <pre><code class="language-html">[Correct example]</code></pre>
-                    <p><strong class="text-error">❌ WRONG:</strong></p>
-                    <pre><code class="language-html">[Incorrect example]</code></pre>
-                    <p class="mt-1">[Explanation of why this matters]</p>
+                <div class="analysis-grid mt-2">
+                    <div class="analysis-point">
+                        <h3>Prof. Teeters' minimalist approach</h3>
+                        <ul class="mt-1">
+                            <li>Understand three animation rule (entrance, exit, attention)</li>
+                            <li>Recognize when simple transitions work better than keyframes</li>
+                            <li>Can identify when building too many animation variations</li>
+                            <li>Value consistency and reusability over variety</li>
+                            <li>Apply efficiency principle: write once, use everywhere</li>
+                        </ul>
+                    </div>
+
+                    <div class="analysis-point">
+                        <h3>Real-world application</h3>
+                        <ul class="mt-1">
+                            <li>Can choose between transitions and keyframes for any task</li>
+                            <li>Can build complete entrance/exit animation system</li>
+                            <li>Can create accessible loading indicators</li>
+                            <li>Understand when to use staggered delays (like Station 4 dots)</li>
+                            <li>Ready to build production animation libraries</li>
+                            <li>Confident experimenting with keyframe variations</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Section 6: Quick Reference Tips -->
         <section class="content-section">
             <div class="tips-container">
-                <h2 class="section-heading-centered">🎓 HyBit's Quick Reference</h2>
+                <h2 class="section-heading-centered">🎓 HAP's quick reference</h2>
 
                 <div class="tip-card">
                     <div class="tip-number">1</div>
                     <div>
-                        <h3>[Tip Title 1]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Choose the right tool for the job</h3>
+                        <p>Prof. Teeters drilled this into me every time I reached for the wrong animation tool: transitions are perfect for two-state changes triggered by interaction (button hover, link underline, dropdown expansion). Keyframes are essential for multi-step sequences that need choreography (loading animations, entrance effects, complex movements). I learned to ask: "How many states do I need?" Two states? Transition. More than two? Keyframes. Use the simplest tool that accomplishes your goal. Overcomplicating with keyframes when a simple transition works is wasted effort. Prof. Teeters efficiency principle: choose wisely, build cleanly!</p>
                     </div>
                 </div>
 
                 <div class="tip-card">
                     <div class="tip-number">2</div>
                     <div>
-                        <h3>[Tip Title 2]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Fill mode forwards for entrances</h3>
+                        <p>This was my most common mistake, and Prof. Teeters corrected it constantly: animations snap back to their original state by default once they finish. If you fade something in from opacity: 0 to opacity: 1, it disappears again unless you add animation-fill-mode: forwards. I spent hours debugging entrance animations that "didn't work" before Prof. Teeters showed me this missing piece. Forwards tells the browser: "Keep the element in its final animated state." This is absolutely essential for fade-ins, slide-ins, and any entrance effect. Now it's automatic in my workflow — entrance animation? Add forwards. Exit animation? Forwards keeps it invisible. This one property saves so much frustration!</p>
                     </div>
                 </div>
 
                 <div class="tip-card">
                     <div class="tip-number">3</div>
                     <div>
-                        <h3>[Tip Title 3]</h3>
-                        <p>[HAP's practical advice about this topic]</p>
+                        <h3>Infinite loops require responsibility</h3>
+                        <p>This is Prof. Teeters' strictest keyframes rule, and I understand why after learning about vestibular disorders: animation-iteration-count: infinite is powerful but dangerous if misused. Continuous motion can cause nausea, dizziness, and headaches for users with motion sensitivity. Never use infinite without one of two safety measures. Option 1: Provide a pause button that users can click to stop the animation (animation-play-state: paused). Option 2: Respect prefers-reduced-motion with a static alternative that preserves functionality. For loading spinners, show "Loading..." text instead. For bouncing dots, show static dots. The web must be safe for everyone. Infinite is not optional-safety, it's required-responsibility!</p>
+                    </div>
+                </div>
+
+                <div class="tip-card">
+                    <div class="tip-number">4</div>
+                    <div>
+                        <h3>Build a small reusable library</h3>
+                        <p>Prof. Teeters taught me her minimalist approach that transformed how I work: most websites need only three core animation categories. Category 1: Entrance animations (fade in, slide in from various directions). Category 2: Exit animations (fade out, slide out). Category 3: Attention animations (gentle pulse, subtle shake, loading indicators). Instead of creating unique animations for every element, I built a small library of proven patterns and reuse them everywhere. One fadeIn keyframe animation works for modals, tooltips, notifications, cards — anything! This creates consistency across the site (every entrance feels similar), reduces code (define once, apply many times), and improves maintainability (update one keyframe, fix everywhere). Prof. Teeters wisdom: write once, use everywhere, maintain easily. Quality over quantity!</p>
                     </div>
                 </div>
             </div>
@@ -163,15 +241,15 @@
     </main>
 
     <nav aria-label="Station pagination" class="page-navigation bottom-nav">
-        <a href="station4.html" class="nav-link prev-link">← Previous: Station 4 - [PREV_STATION_TITLE]</a>
+        <a href="station4.html" class="nav-link prev-link">← Previous: Station 4 - Micro-interactions</a>
         <a href="../index.html" class="nav-link hub-link">🏠 Hub</a>
-        <a href="station6.html" class="nav-link next-link">Next: Station 6 - [NEXT_STATION_TITLE] →</a>
+        <a href="station6.html" class="nav-link next-link">Next: Station 6 - AI Assistance for Animation →</a>
     </nav>
 
     <footer class="footer">
         <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
-        <p class="footer-reminder">
-            [HAP's memorable takeaway about this station] 🟠 — HAP
+        <p class="footer-reminder readable-width">
+            Remember: transitions for two-state changes, keyframes for multi-step choreography. Build a small reusable library (entrance, exit, attention), and never use infinite without pause controls or reduced-motion alternatives. Prof. Teeters taught me that choosing the right tool and building responsibly creates powerful, accessible animations! 🟠 — HAP
         </p>
         <div class="footer-copyright">
             <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
@@ -189,12 +267,11 @@
 
     <script src="../js/easter-egg.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"
-        integrity="sha384-MXybTpajaBV0AkcBaCPT4KIvo0FzoCiWXgcihYsw4FUkEz0Pv3JGV6tk2G8vJtDc"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"
-        integrity="sha384-HkMr0bZB9kBW4iVtXn6nd35kO/L/dQtkkUBkL9swzTEDMdIe5ExJChVDSnC79aNA"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-markup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-clike.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
