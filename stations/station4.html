@@ -369,10 +369,13 @@
         <section class="content-section">
             <div class="topic-section">
                 <h2>🎨 Button, form, and toggle patterns</h2>
-                <p class="mb-2">After learning about safety and purpose, Prof. Teeters taught me practical patterns for the most common UI interactions. Every pattern emphasizes restraint: 2 to 4 pixels for button lifts, 5 pixels maximum for error shakes, and always multiple cues for accessibility!</p>
+                <p class="mb-2">After learning about safety and purpose, Prof. Teeters taught me practical patterns for
+                    the most common UI interactions. Every pattern emphasizes restraint: 2 to 4 pixels for button lifts,
+                    5 pixels maximum for error shakes, and always multiple cues for accessibility!</p>
 
                 <h3 class="mt-2">Part A: Button state feedback</h3>
-                <p class="mb-2">Buttons need to communicate their interactive nature through hover, active, and focus states. Prof. Teeters constantly reminded me: micro means micro, not helicopter!</p>
+                <p class="mb-2">Buttons need to communicate their interactive nature through hover, active, and focus
+                    states. Prof. Teeters constantly reminded me: micro means micro, not helicopter!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
@@ -380,7 +383,18 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's button journey: helicopter vs subtle lift</h3>
-                        <p>I was so excited to create my first interactive button! I added a hover effect that lifted the button 30 pixels into the air. I thought it looked dynamic and exciting — users would definitely notice the button was clickable! Then I showed Prof. Teeters, and she watched silently as I hovered over the button. It practically flew off the screen. She looked at me and asked, "HAP, is that a button or a helicopter?" I was confused, so she explained: micro-interactions are called micro for a reason. A 30-pixel lift is excessive, distracting, and unprofessional. She changed my hover to just 2 pixels — barely noticeable, I thought! But when I tested it, the subtle movement was perfect. It communicated "clickable" without screaming "LOOK AT ME!" She taught me that 2 to 4 pixels is plenty for button lifts. Anything more starts feeling like the button is trying too hard. I learned that restraint creates polish, and subtle movements feel professional. The helicopter test became my constant reminder: if it looks like it's taking flight, it's too much!</p>
+                        <p>I was so excited to create my first interactive button! I added a hover effect that lifted
+                            the button 30 pixels into the air. I thought it looked dynamic and exciting — users would
+                            definitely notice the button was clickable! Then I showed Prof. Teeters, and she watched
+                            silently as I hovered over the button. It practically flew off the screen. She looked at me
+                            and asked, "HAP, is that a button or a helicopter?" I was confused, so she explained:
+                            micro-interactions are called micro for a reason. A 30-pixel lift is excessive, distracting,
+                            and unprofessional. She changed my hover to just 2 pixels — barely noticeable, I thought!
+                            But when I tested it, the subtle movement was perfect. It communicated "clickable" without
+                            screaming "LOOK AT ME!" She taught me that 2 to 4 pixels is plenty for button lifts.
+                            Anything more starts feeling like the button is trying too hard. I learned that restraint
+                            creates polish, and subtle movements feel professional. The helicopter test became my
+                            constant reminder: if it looks like it's taking flight, it's too much!</p>
                     </div>
                 </div>
 
@@ -424,17 +438,27 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">Prof. Teeters' complete button pattern: 2px lift on hover (not 30px!), press-down on active, visible focus outline for keyboard users, and always respect prefers-reduced-motion!</p>
+                    <p class="code-comment mt-1">Prof. Teeters' complete button pattern: 2px lift on hover (not 30px!),
+                        press-down on active, visible focus outline for keyboard users, and always respect
+                        prefers-reduced-motion!</p>
                 </div>
 
                 <div class="button-states-demo">
-                    <h4>🎯 Interactive Demo: Try the button states</h4>
-                    <p>Hover over the button, click it, then press Tab to see the focus state. Notice how 2px feels professional, not excessive!</p>
-                    <button type="button" class="micro-button-demo">Try Me!</button>
+                    <h4>🎯 Interactive Demo: Try all three button states</h4>
+                    <p>Hover over Button 1 to see the 2px lift, click it to see the active press-down state, then press
+                        Tab to move to Button 2 and see the keyboard focus outline!</p>
+                    <div class="demo-button-group">
+                        <button type="button" class="micro-button-demo">Button 1</button>
+                        <button type="button" class="micro-button-demo">Button 2</button>
+                    </div>
+                    <p class="demo-note mt-1"><strong>Accessibility note:</strong> The orange focus outline appears when
+                        keyboard users navigate with Tab. Mouse users see hover states instead. Both interaction methods
+                        need clear visual feedback!</p>
                 </div>
 
                 <h3 class="mt-3">Part B: Form feedback patterns</h3>
-                <p class="mb-2">Form validation needs clear, accessible feedback. Prof. Teeters taught me that animations enhance error communication but never replace text, color, and icons!</p>
+                <p class="mb-2">Form validation needs clear, accessible feedback. Prof. Teeters taught me that
+                    animations enhance error communication but never replace text, color, and icons!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
@@ -442,7 +466,19 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's violent shake mistake: earthquake not shake</h3>
-                        <p>When I built my first form with error validation, I wanted the error feedback to be really obvious. I created a shake animation that moved the input field 50 pixels left and right. It shook violently back and forth like an earthquake! I thought users would definitely notice the error with such dramatic movement. When Prof. Teeters tested my form and entered invalid data, the entire screen seemed to shake. She pulled back from her monitor and said, "HAP, I thought my screen broke! That's not a gentle shake, that's an earthquake!" I felt embarrassed, but she explained patiently: error shakes should be noticeable but not alarming. Users are already frustrated that they made an error — don't make them think the interface is broken too. She changed my shake to just 5 pixels left and right. I worried it wouldn't be noticeable enough, but when I tested it, the subtle movement clearly communicated "error" without being aggressive. She taught me that 5 pixels is plenty for error shakes. Small movement with clear message. And she made an important point: the shake is just one cue among many. It should never be the only way users know about errors!</p>
+                        <p>When I built my first form with error validation, I wanted the error feedback to be really
+                            obvious. I created a shake animation that moved the input field 50 pixels left and right. It
+                            shook violently back and forth like an earthquake! I thought users would definitely notice
+                            the error with such dramatic movement. When Prof. Teeters tested my form and entered invalid
+                            data, the entire screen seemed to shake. She pulled back from her monitor and said, "HAP, I
+                            thought my screen broke! That's not a gentle shake, that's an earthquake!" I felt
+                            embarrassed, but she explained patiently: error shakes should be noticeable but not
+                            alarming. Users are already frustrated that they made an error — don't make them think the
+                            interface is broken too. She changed my shake to just 5 pixels left and right. I worried it
+                            wouldn't be noticeable enough, but when I tested it, the subtle movement clearly
+                            communicated "error" without being aggressive. She taught me that 5 pixels is plenty for
+                            error shakes. Small movement with clear message. And she made an important point: the shake
+                            is just one cue among many. It should never be the only way users know about errors!</p>
                     </div>
                 </div>
 
@@ -468,7 +504,8 @@
     animation: none; /* Border color change remains */
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The shake runs once only, moves just 5 pixels (not 50!), and respects reduced-motion by removing animation but keeping the red border!</p>
+                    <p class="code-comment mt-1">The shake runs once only, moves just 5 pixels (not 50!), and respects
+                        reduced-motion by removing animation but keeping the red border!</p>
                 </div>
 
                 <div class="prompt-box mt-2">
@@ -491,16 +528,29 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The checkmark fades in and scales from 0 to 1, providing gentle success confirmation without celebration!</p>
+                    <p class="code-comment mt-1">The checkmark fades in and scales from 0 to 1, providing gentle success
+                        confirmation without celebration!</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
-                        alt="HAP making a promise" width="150" height="150" class="hap-note-image"
-                        decoding="async" loading="lazy">
+                        alt="HAP making a promise" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's accessibility promise</h3>
-                        <p>After I learned about error shakes and success checkmarks, I was proud of my form validation animations. Then Prof. Teeters asked me a critical question: "HAP, what happens if a user can't see the shake animation?" I was confused — the shake was right there on the screen! She explained that some users have prefers-reduced-motion enabled and won't see any animation at all. Some users have visual impairments and might not notice subtle movements. Some users are just focused on the keyboard and not watching the screen closely. She made me promise: never rely on animation alone for error communication. Always provide multiple cues. Cue 1: Animation (the shake) for users who can see motion. Cue 2: Color change (red border) for visual users who can't see motion. Cue 3: Icon (warning symbol) for symbolic recognition. Cue 4: Text message (screen reader accessible) explaining exactly what's wrong. I promised Prof. Teeters that every form error I create will have all four cues. Animation enhances the message, but text, color, and icons make it complete and accessible to everyone!</p>
+                        <p>After I learned about error shakes and success checkmarks, I was proud of my form validation
+                            animations. Then Prof. Teeters asked me a critical question: "HAP, what happens if a user
+                            can't see the shake animation?" I was confused — the shake was right there on the screen!
+                            She explained that some users have prefers-reduced-motion enabled and won't see any
+                            animation at all. Some users have visual impairments and might not notice subtle movements.
+                            Some users are just focused on the keyboard and not watching the screen closely. She made me
+                            promise: never rely on animation alone for error communication. Always provide multiple
+                            cues. Cue 1: Animation (the shake) for users who can see motion. Cue 2: Color change (red
+                            border) for visual users who can't see motion. Cue 3: Icon (warning symbol) for symbolic
+                            recognition. Cue 4: Text message (screen reader accessible) explaining exactly what's wrong.
+                            I promised Prof. Teeters that every form error I create will have all four cues. Animation
+                            enhances the message, but text, color, and icons make it complete and accessible to
+                            everyone!</p>
                     </div>
                 </div>
 
@@ -522,9 +572,11 @@
 
                 <div class="form-feedback-demo">
                     <h4>🎯 Interactive Demo: Test form validation feedback</h4>
-                    <p>Enter text and press Enter or click Validate. Watch for the 5px shake, color change, icons, and message!</p>
+                    <p>Enter text and press Enter or click Validate. Watch for the 5px shake, color change, icons, and
+                        message!</p>
                     <div class="form-demo-field">
-                        <input type="email" class="form-demo-input" placeholder="Enter your email" aria-describedby="demo-message">
+                        <input type="email" class="form-demo-input" placeholder="Enter your email"
+                            aria-describedby="demo-message">
                         <span class="form-demo-icon success-icon" aria-hidden="true">✓</span>
                         <span class="form-demo-icon error-icon" aria-hidden="true">⚠️</span>
                     </div>
@@ -533,7 +585,8 @@
                 </div>
 
                 <h3 class="mt-3">Part C: Toggle state animations</h3>
-                <p class="mb-2">Toggles need to clearly communicate state changes. Prof. Teeters taught me that satisfying micro-interactions increase user engagement!</p>
+                <p class="mb-2">Toggles need to clearly communicate state changes. Prof. Teeters taught me that
+                    satisfying micro-interactions increase user engagement!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
@@ -541,7 +594,17 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's toggle satisfaction</h3>
-                        <p>The first time I created a smooth toggle transition, I spent an hour just clicking it on and off. The little circle sliding from left to right felt so satisfying! I showed Prof. Teeters and said, "I can't stop clicking it!" She smiled and explained that this is exactly what good micro-interactions do — they provide tactile satisfaction that makes interfaces feel responsive and alive. She taught me that toggle animations should be smooth but fast (200 to 300ms), use ease-out timing for immediate response, and clearly show the state change. The sliding motion helps users understand the on/off metaphor instantly. She also pointed out that the satisfaction I felt wasn't from big flashy animation — it was from the small, perfectly-tuned movement. The toggle doesn't jump or bounce excessively. It just smoothly slides from one position to the other with a gentle ease-out curve. That's the power of micro-interactions: tiny movements that feel just right!</p>
+                        <p>The first time I created a smooth toggle transition, I spent an hour just clicking it on and
+                            off. The little circle sliding from left to right felt so satisfying! I showed Prof. Teeters
+                            and said, "I can't stop clicking it!" She smiled and explained that this is exactly what
+                            good micro-interactions do — they provide tactile satisfaction that makes interfaces feel
+                            responsive and alive. She taught me that toggle animations should be smooth but fast (200 to
+                            300ms), use ease-out timing for immediate response, and clearly show the state change. The
+                            sliding motion helps users understand the on/off metaphor instantly. She also pointed out
+                            that the satisfaction I felt wasn't from big flashy animation — it was from the small,
+                            perfectly-tuned movement. The toggle doesn't jump or bounce excessively. It just smoothly
+                            slides from one position to the other with a gentle ease-out curve. That's the power of
+                            micro-interactions: tiny movements that feel just right!</p>
                     </div>
                 </div>
 
@@ -582,7 +645,8 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The satisfying slide: 250ms duration, ease-out timing, smooth transform, and reduced-motion support for instant state change!</p>
+                    <p class="code-comment mt-1">The satisfying slide: 250ms duration, ease-out timing, smooth
+                        transform, and reduced-motion support for instant state change!</p>
                 </div>
 
                 <div class="prompt-box mt-2">
@@ -620,17 +684,19 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The checkmark scales in with a gentle bouncy curve, providing tactile satisfaction without excessive movement!</p>
+                    <p class="code-comment mt-1">The checkmark scales in with a gentle bouncy curve, providing tactile
+                        satisfaction without excessive movement!</p>
                 </div>
 
                 <div class="toggle-demo">
                     <h4>🎯 Interactive Demo: Try the toggle animations</h4>
-                    <p>Click the checkbox and switch. Notice how satisfying the animations feel when perfectly tuned!</p>
+                    <p>Click the checkbox and switch. Notice how satisfying the animations feel when perfectly tuned!
+                    </p>
                     <div class="toggle-demo-grid">
                         <div class="toggle-demo-item">
                             <div class="toggle-demo-label">Checkbox with checkmark</div>
                             <label class="checkbox-demo-wrapper">
-                                <input type="checkbox" class="checkbox-demo-input">
+                                <input type="checkbox" class="checkbox-demo-input" aria-label="Checkbox with checkmark">
                                 <div class="custom-checkbox-demo">
                                     <span class="checkmark">✓</span>
                                 </div>
@@ -639,7 +705,7 @@
                         <div class="toggle-demo-item">
                             <div class="toggle-demo-label">Switch toggle</div>
                             <label class="switch-demo-wrapper">
-                                <input type="checkbox" class="switch-demo-input">
+                                <input type="checkbox" class="switch-demo-input" aria-label="Switch toggle">
                                 <div class="toggle-switch-demo">
                                     <div class="toggle-circle-demo"></div>
                                 </div>
@@ -654,18 +720,34 @@
         <section class="content-section">
             <div class="topic-section">
                 <h2>🔄 Icon transformations and navigation</h2>
-                <p class="mb-2">Prof. Teeters taught me that icon transformations create magical moments where users feel the interface responding intelligently. Navigation animations must be fast (200 to 300ms maximum), and loading indicators need restraint!</p>
+                <p class="mb-2">Prof. Teeters taught me that icon transformations create magical moments where users
+                    feel the interface responding intelligently. Navigation animations must be fast (200 to 300ms
+                    maximum), and loading indicators need restraint!</p>
 
                 <h3 class="mt-2">Part A: Icon transformation patterns</h3>
-                <p class="mb-2">When icons transform between states, they help users understand relationships and state changes. The hamburger to X transformation was my first "aha moment" with micro-interactions!</p>
+                <p class="mb-2">When icons transform between states, they help users understand relationships and state
+                    changes. The hamburger to X transformation was my first "aha moment" with micro-interactions!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
-                        alt="HAP discovering the magic of transformations" width="150" height="150" class="hap-note-image"
-                        decoding="async" loading="lazy">
+                        alt="HAP discovering the magic of transformations" width="150" height="150"
+                        class="hap-note-image" decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's transformation revelation</h3>
-                        <p>I was building my first hamburger menu icon, and Prof. Teeters suggested making it transform into an X when clicked instead of just disappearing. I spent an afternoon figuring out how to rotate and move the three lines into an X shape. When I finally got it working, I clicked it over and over, watching the smooth transformation. I couldn't stop smiling! Prof. Teeters noticed and asked, "HAP, why are you smiling?" I said, "It just feels magical! The lines becoming an X makes so much sense — it shows that clicking the same button will close the menu!" She explained that this is exactly what good icon transformations do: they create mini aha moments that help users understand how the interface works. The transformation isn't decoration — it teaches users the relationship between the hamburger icon and the close action. She taught me that icon transformations should be smooth but quick (250 to 300ms), use meaningful motion that makes sense for the transformation, and always show the relationship between states. That moment made me realize micro-interactions aren't just about making things pretty — they're about making interfaces feel intelligent and responsive!</p>
+                        <p>I was building my first hamburger menu icon, and Prof. Teeters suggested making it transform
+                            into an X when clicked instead of just disappearing. I spent an afternoon figuring out how
+                            to rotate and move the three lines into an X shape. When I finally got it working, I clicked
+                            it over and over, watching the smooth transformation. I couldn't stop smiling! Prof. Teeters
+                            noticed and asked, "HAP, why are you smiling?" I said, "It just feels magical! The lines
+                            becoming an X makes so much sense — it shows that clicking the same button will close the
+                            menu!" She explained that this is exactly what good icon transformations do: they create
+                            mini aha moments that help users understand how the interface works. The transformation
+                            isn't decoration — it teaches users the relationship between the hamburger icon and the
+                            close action. She taught me that icon transformations should be smooth but quick (250 to
+                            300ms), use meaningful motion that makes sense for the transformation, and always show the
+                            relationship between states. That moment made me realize micro-interactions aren't just
+                            about making things pretty — they're about making interfaces feel intelligent and
+                            responsive!</p>
                     </div>
                 </div>
 
@@ -720,12 +802,14 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The magical transformation: top and bottom lines rotate into X, middle line fades out, 300ms duration, and reduced-motion instant state change!</p>
+                    <p class="code-comment mt-1">The magical transformation: top and bottom lines rotate into X, middle
+                        line fades out, 300ms duration, and reduced-motion instant state change!</p>
                 </div>
 
                 <div class="hamburger-demo">
                     <h4>🎯 Interactive Demo: Click the hamburger icon</h4>
-                    <p>Watch the magical transformation! Click again to reverse it. This is icon-only — no actual menu!</p>
+                    <p>Watch the magical transformation! Click again to reverse it. This is icon-only — no actual menu!
+                    </p>
                     <button type="button" class="hamburger-button-demo" aria-label="Toggle menu" aria-expanded="false">
                         <div class="hamburger-icon-demo">
                             <span class="hamburger-line-demo"></span>
@@ -736,15 +820,29 @@
                 </div>
 
                 <h3 class="mt-3">Part B: Navigation feedback</h3>
-                <p class="mb-2">Navigation animations must be fast! Prof. Teeters taught me that 1 second feels like forever when users are trying to navigate. 200 to 300ms maximum!</p>
+                <p class="mb-2">Navigation animations must be fast! Prof. Teeters taught me that 1 second feels like
+                    forever when users are trying to navigate. 200 to 300ms maximum!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
-                        alt="HAP learning about speed" width="150" height="150" class="hap-note-image"
-                        decoding="async" loading="lazy">
+                        alt="HAP learning about speed" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's navigation speed lesson</h3>
-                        <p>I built a beautiful navigation menu with a sliding underline indicator that moved between tabs. I made the animation 1 second long because I thought users would appreciate seeing the smooth, elegant movement. It looked stunning! Then Prof. Teeters tested it by clicking between tabs quickly, the way real users navigate. The underline was still sliding to the previous tab when she clicked the next one. She looked frustrated and said, "HAP, I'm trying to get somewhere, and your animation is holding me hostage!" I was confused — wasn't smooth animation good? She explained that there's a critical difference between decorative animations and functional animations. Navigation is functional — users are trying to accomplish a task, and slow animations block them from their goal. She changed my 1-second animation to 250 milliseconds. I worried it would feel too fast, but when I tested it, the movement was still visible and elegant, yet it didn't slow me down. She taught me Prof. Teeters' navigation rule: 200 to 300 milliseconds maximum for navigation animations. Speed over drama. Users are navigating to accomplish something, not to watch your animations perform!</p>
+                        <p>I built a beautiful navigation menu with a sliding underline indicator that moved between
+                            tabs. I made the animation 1 second long because I thought users would appreciate seeing the
+                            smooth, elegant movement. It looked stunning! Then Prof. Teeters tested it by clicking
+                            between tabs quickly, the way real users navigate. The underline was still sliding to the
+                            previous tab when she clicked the next one. She looked frustrated and said, "HAP, I'm trying
+                            to get somewhere, and your animation is holding me hostage!" I was confused — wasn't smooth
+                            animation good? She explained that there's a critical difference between decorative
+                            animations and functional animations. Navigation is functional — users are trying to
+                            accomplish a task, and slow animations block them from their goal. She changed my 1-second
+                            animation to 250 milliseconds. I worried it would feel too fast, but when I tested it, the
+                            movement was still visible and elegant, yet it didn't slow me down. She taught me Prof.
+                            Teeters' navigation rule: 200 to 300 milliseconds maximum for navigation animations. Speed
+                            over drama. Users are navigating to accomplish something, not to watch your animations
+                            perform!</p>
                     </div>
                 </div>
 
@@ -780,11 +878,13 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">Fast navigation feedback: 300ms maximum, scaleX from 0 to 1, ease-out for immediate response!</p>
+                    <p class="code-comment mt-1">Fast navigation feedback: 300ms maximum, scaleX from 0 to 1, ease-out
+                        for immediate response!</p>
                 </div>
 
                 <h3 class="mt-3">Part C: Loading and notification patterns</h3>
-                <p class="mb-2">Loading indicators and notifications need restraint! Prof. Teeters constantly reminded me: 10 pixels for loading dots, 2 pixels for notification bounces, not 50!</p>
+                <p class="mb-2">Loading indicators and notifications need restraint! Prof. Teeters constantly reminded
+                    me: 10 pixels for loading dots, 2 pixels for notification bounces, not 50!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495999/hap-confused-map_q8q0ej.jpg"
@@ -792,7 +892,20 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's loading dot refinement</h3>
-                        <p>My first loading indicator was three dots that bounced 50 pixels high in sequence. I thought it looked fun and energetic! When Prof. Teeters saw it, she said, "HAP, those aren't loading dots, those are bouncing balls!" I defended my design — the high bounce made it really noticeable! She explained patiently that loading indicators should communicate "something is happening" without being distracting or exhausting to watch. Users might stare at loading indicators for several seconds, and excessive motion becomes annoying or even nauseating for users with vestibular disorders. She changed my dots to bounce just 10 pixels high. I thought they'd be barely visible, but when I tested it, the gentle wave motion was perfect. The staggered delay (each dot bouncing 0.16 seconds after the previous one) created a smooth wave effect that clearly communicated loading without being aggressive. She taught me that 10 pixels is plenty for loading dots — tiny movements create the pattern. She also made an important accessibility point: always provide a reduced-motion alternative where the dots appear static. Users with motion sensitivity still need to know something is loading, just without the animation!</p>
+                        <p>My first loading indicator was three dots that bounced 50 pixels high in sequence. I thought
+                            it looked fun and energetic! When Prof. Teeters saw it, she said, "HAP, those aren't loading
+                            dots, those are bouncing balls!" I defended my design — the high bounce made it really
+                            noticeable! She explained patiently that loading indicators should communicate "something is
+                            happening" without being distracting or exhausting to watch. Users might stare at loading
+                            indicators for several seconds, and excessive motion becomes annoying or even nauseating for
+                            users with vestibular disorders. She changed my dots to bounce just 10 pixels high. I
+                            thought they'd be barely visible, but when I tested it, the gentle wave motion was perfect.
+                            The staggered delay (each dot bouncing 0.16 seconds after the previous one) created a smooth
+                            wave effect that clearly communicated loading without being aggressive. She taught me that
+                            10 pixels is plenty for loading dots — tiny movements create the pattern. She also made an
+                            important accessibility point: always provide a reduced-motion alternative where the dots
+                            appear static. Users with motion sensitivity still need to know something is loading, just
+                            without the animation!</p>
                     </div>
                 </div>
 
@@ -832,12 +945,13 @@
     animation: none; /* Static dots */
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The wave pattern: 10px bounce (not 50px!), staggered delay creates smooth wave, reduced-motion shows static dots!</p>
+                    <p class="code-comment mt-1">The wave pattern: 10px bounce (not 50px!), staggered delay creates
+                        smooth wave, reduced-motion shows static dots!</p>
                 </div>
 
                 <div class="loading-demo">
                     <h4>🎯 Interactive Demo: Loading dots animation</h4>
-                    <p>Watch the gentle wave pattern! Notice how 10-12px is plenty — restraint creates elegance!</p>
+                    <p>Watch the gentle wave pattern! Notice how 10px is plenty — restraint creates elegance!</p>
                     <div class="loading-dots-demo">
                         <div class="loading-dot-demo"></div>
                         <div class="loading-dot-demo"></div>
@@ -851,7 +965,21 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's notification restraint</h3>
-                        <p>This story comes full circle to where Station 4 started — my 50-pixel notification badge bounce! When I first created notification badges, I wanted them to really grab users' attention. A new message is important, so I made the badge bounce 50 pixels when it appeared. It bounced wildly, practically flying around the screen! Prof. Teeters watched it bounce and said, "HAP, that's a macro-distraction, not a micro-interaction." I thought bigger movement meant more attention, but she taught me something important about appropriate attention-grabbing. A notification badge needs to catch the user's eye without being aggressive or annoying. She changed my bounce to just 2 pixels. Just 2! I was certain users would never notice it. But when I tested it, the tiny gentle bounce was perfect. It caught my attention through subtle movement without demanding all my focus. She explained that 2 pixels is enough because the badge also has color (bright red), position (near important content), and shape (circular with number) to grab attention. The animation enhances those cues but doesn't need to do all the work alone. I learned that restraint creates professionalism, and subtle movements respect users' attention while still being effective!</p>
+                        <p>This story comes full circle to where Station 4 started — my 50-pixel notification badge
+                            bounce! When I first created notification badges, I wanted them to really grab users'
+                            attention. A new message is important, so I made the badge bounce 50 pixels when it
+                            appeared. It bounced wildly, practically flying around the screen! Prof. Teeters watched it
+                            bounce and said, "HAP, that's a macro-distraction, not a micro-interaction." I thought
+                            bigger movement meant more attention, but she taught me something important about
+                            appropriate attention-grabbing. A notification badge needs to catch the user's eye without
+                            being aggressive or annoying. She changed my bounce to just 2 pixels. Just 2! I was certain
+                            users would never notice it. But when I tested it, the tiny gentle bounce was perfect. It
+                            caught my attention through subtle movement without demanding all my focus. She explained
+                            that 2 pixels is enough because the badge also has color (bright red), position (near
+                            important content), and shape (circular with number) to grab attention. The animation
+                            enhances those cues but doesn't need to do all the work alone. I learned that restraint
+                            creates professionalism, and subtle movements respect users' attention while still being
+                            effective!</p>
                     </div>
                 </div>
 
@@ -883,7 +1011,8 @@
     transform: scale(1); /* Appears instantly */
   }
 }</code></pre>
-                    <p class="code-comment mt-1">Gentle bounce: slight overshoot to 1.15, settles at 1.0, grabs attention without flying around the screen!</p>
+                    <p class="code-comment mt-1">Gentle bounce: slight overshoot to 1.15, settles at 1.0, grabs
+                        attention without flying around the screen!</p>
                 </div>
 
                 <div class="prompt-box mt-2">
@@ -908,7 +1037,8 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">Subtle tooltip: 5px movement, 200ms duration, fades in smoothly without demanding attention!</p>
+                    <p class="code-comment mt-1">Subtle tooltip: 5px movement, 200ms duration, fades in smoothly without
+                        demanding attention!</p>
                 </div>
 
                 <div class="prompt-box mt-2">
@@ -931,7 +1061,8 @@
     transition: none;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">Toast entry: slides from offscreen with fade, 300ms duration, ease-out for immediate response!</p>
+                    <p class="code-comment mt-1">Toast entry: slides from offscreen with fade, 300ms duration, ease-out
+                        for immediate response!</p>
                 </div>
             </div>
         </section>
@@ -940,7 +1071,9 @@
         <section class="content-section">
             <div class="topic-section">
                 <h2>💪 Try it yourself: Like button with heart icon</h2>
-                <p class="mb-2">Prof. Teeters says this exercise is her favorite because it combines everything we learned: restraint (subtle hover, gentle bounce), purpose (feedback on user action), accessibility (reduced-motion support), and that satisfying feeling of a well-tuned micro-interaction!</p>
+                <p class="mb-2">Prof. Teeters says this exercise is her favorite because it combines everything we
+                    learned: restraint (subtle hover, gentle bounce), purpose (feedback on user action), accessibility
+                    (reduced-motion support), and that satisfying feeling of a well-tuned micro-interaction!</p>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-laptop_xiewar.jpg"
@@ -948,12 +1081,24 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's exercise encouragement</h3>
-                        <p>When Prof. Teeters assigned me this exercise, she said, "HAP, I want you to feel the satisfaction of a perfectly-tuned micro-interaction." I spent an hour tweaking the bounce amount — too little felt flat and boring, too much felt excessive and annoying. When I finally found the sweet spot (scaling to 1.2, then settling at 1.1), I couldn't stop clicking it! She explained that this feeling — the satisfaction of clicking something that responds just right — is what we're aiming for with all micro-interactions. It's not about big flashy animations. It's about tiny movements that feel perfect. Your challenge: create a like button with a heart icon that feels satisfying to click. Start with my recommended values, then experiment! Try different bounce amounts. Try different durations. Try different timing functions. Prof. Teeters always says: feel it, don't just see it. You'll know when you've found the right balance because you won't be able to stop clicking it. That's the magic of micro-interactions!</p>
+                        <p>When Prof. Teeters assigned me this exercise, she said, "HAP, I want you to feel the
+                            satisfaction of a perfectly-tuned micro-interaction." I spent an hour tweaking the bounce
+                            amount — too little felt flat and boring, too much felt excessive and annoying. When I
+                            finally found the sweet spot (scaling to 1.2, then settling at 1.1), I couldn't stop
+                            clicking it! She explained that this feeling — the satisfaction of clicking something that
+                            responds just right — is what we're aiming for with all micro-interactions. It's not about
+                            big flashy animations. It's about tiny movements that feel perfect. Your challenge: create a
+                            like button with a heart icon that feels satisfying to click. Start with my recommended
+                            values, then experiment! Try different bounce amounts. Try different durations. Try
+                            different timing functions. Prof. Teeters always says: feel it, don't just see it. You'll
+                            know when you've found the right balance because you won't be able to stop clicking it.
+                            That's the magic of micro-interactions!</p>
                     </div>
                 </div>
 
                 <h3 class="mt-3">The challenge</h3>
-                <p class="mb-2">Build a like button with a heart icon that demonstrates everything you learned in Station 4:</p>
+                <p class="mb-2">Build a like button with a heart icon that demonstrates everything you learned in
+                    Station 4:</p>
 
                 <ul class="mt-1">
                     <li><strong>Hover state:</strong> Subtle scale from 1 to 1.05 (micro means micro!)</li>
@@ -971,6 +1116,9 @@
     &lt;path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="currentColor"/&gt;
   &lt;/svg&gt;
 &lt;/button&gt;</code></pre>
+                    <p class="code-comment mt-1"><strong>Hint:</strong> Remove the fill attributes from the SVG to allow CSS
+                        control. You can also increase the icon size (try 48×48) to make the 5% scale more visible — larger
+                        base size = more noticeable micro effect!</p>
                 </div>
 
                 <details class="mt-2">
@@ -978,15 +1126,26 @@
                     <div class="hint-content mt-1">
                         <p><strong>HAP's hints:</strong></p>
                         <ol class="mt-1">
-                            <li><strong>Start with the base button:</strong> Remove default button styles, add cursor pointer, set up transition for transform (300ms ease-out from Station 3!)</li>
-                            <li><strong>Style the heart icon:</strong> Set initial fill color to gray using hsl(0, 0%, 60%), add transition for fill property</li>
-                            <li><strong>Add hover state:</strong> Remember the helicopter test! Scale to 1.05, not 1.5</li>
-                            <li><strong>Create liked state:</strong> Add a .liked class that changes heart fill to red hsl(0, 73%, 50%)</li>
-                            <li><strong>Add bounce animation:</strong> Use @keyframes with a gentle bouncy cubic-bezier from Station 3</li>
-                            <li><strong>Add JavaScript toggle:</strong> Simple click listener that toggles the .liked class</li>
-                            <li><strong>Don't forget accessibility:</strong> Prefers-reduced-motion removes transitions and animations</li>
+                            <li><strong>Set up CSS custom properties:</strong> Create color variables in :root for
+                                --heart-gray, --heart-red, and --heart-red-hover for clean, maintainable code</li>
+                            <li><strong>Style the base button:</strong> Remove default button styles, add cursor pointer,
+                                set up transition for transform (300ms ease-out from Station 3!)</li>
+                            <li><strong>Style the heart icon default:</strong> Target .heart-icon path and set fill to
+                                var(--heart-gray), add transition for fill property</li>
+                            <li><strong>Add compound hover effects:</strong> Scale to 1.05 on button hover, AND add color
+                                preview by changing path fill to var(--heart-red-hover) — two micro effects together!</li>
+                            <li><strong>Create liked state:</strong> Add a .liked class that changes heart fill to
+                                var(--heart-red) for both .heart-icon and .heart-icon path</li>
+                            <li><strong>Add bounce animation:</strong> Use @keyframes with a gentle bouncy cubic-bezier
+                                from Station 3 (scale 1 → 1.2 → 1.1)</li>
+                            <li><strong>Add JavaScript toggle:</strong> Simple click listener that toggles the .liked
+                                class</li>
+                            <li><strong>Don't forget accessibility:</strong> Prefers-reduced-motion removes transitions
+                                and animations</li>
                         </ol>
-                        <p class="mt-1"><strong>Prof. Teeters' reminder:</strong> Test with keyboard navigation (Tab to focus, Space/Enter to click) and test with reduced-motion enabled!</p>
+                        <p class="mt-1"><strong>Prof. Teeters' reminder:</strong> The path selector (.heart-icon path) is
+                            key for CSS control of SVG fill. Test with keyboard navigation (Tab to focus, Space/Enter to
+                            click) and test with reduced-motion enabled!</p>
                     </div>
                 </details>
 
@@ -995,12 +1154,19 @@
                 </div>
 
                 <div id="solution-content" class="solution-content" style="display: none;">
-                    <h3 class="mt-2">✅ HAP's solution</h3>
-                    <p class="mb-2">Here's how I built it using everything Prof. Teeters taught me about micro-interactions!</p>
+                    <h3 class="mt-2">✅ HAP's solution journey</h3>
+                    <p class="mb-2">I'm showing you my PROGRESSION from basic (meets requirements) to enhanced (solves
+                        the visibility problem). This is how real development works — you start with something that works,
+                        then you iterate to make it better!</p>
 
-                    <div class="prompt-box mt-2">
-                        <div class="prompt-label">Complete CSS solution</div>
-                        <pre><code class="language-css">/* Like button base */
+                    <div class="solution-section mt-2">
+                        <h4>Step 1: Basic solution (meets all challenge requirements)</h4>
+                        <p class="mb-2">This approach does exactly what the challenge asked for — no more, no less. It
+                            works!</p>
+
+                        <div class="prompt-box mt-2">
+                            <div class="prompt-label">Basic CSS solution</div>
+                            <pre><code class="language-css">/* Like button base */
 .like-button {
   background: transparent;
   border: none;
@@ -1010,9 +1176,9 @@
   transition: transform 300ms ease-out;
 }
 
+/* Hover: Scale from 1 to 1.05 (requirement met ✓) */
 .like-button:hover {
   transform: scale(1.05);
-  /* Subtle hover, saves drama for click */
 }
 
 /* Focus state for keyboard accessibility */
@@ -1021,25 +1187,26 @@
   outline-offset: 2px;
 }
 
-/* Heart icon */
+/* Heart icon default: gray fill */
 .heart-icon {
   fill: hsl(0, 0%, 60%);
   transition: fill 300ms ease-out;
 }
 
-/* Liked state */
+/* Click action: Fill gray to red (requirement met ✓) */
 .like-button.liked .heart-icon {
   fill: hsl(0, 73%, 50%);
   animation: heartBounce 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Click animation: Bounce scale 1→1.2→1.1 (requirement met ✓) */
 @keyframes heartBounce {
   0% { transform: scale(1); }
   50% { transform: scale(1.2); }
   100% { transform: scale(1.1); }
 }
 
-/* Accessibility: Respect reduced motion */
+/* Accessibility: Respects prefers-reduced-motion (requirement met ✓) */
 @media (prefers-reduced-motion: reduce) {
   .like-button {
     transition: none;
@@ -1048,9 +1215,137 @@
     animation: none;
   }
 }</code></pre>
+                        </div>
+
+                        <p class="mt-2"><strong>✅ All requirements met:</strong> Hover scale 1.05, gray→red fill on
+                            click, gentle bounce animation, reduced-motion support, transform-based (no layout-thrashing
+                            properties).</p>
                     </div>
 
-                    <div class="prompt-box mt-2">
+                    <div class="warning-box mt-3">
+                        <h3>⚠️ HAP's discovery: The visibility problem</h3>
+                        <p>When I tested the basic solution, I noticed something frustrating — I could barely see the hover
+                            effect! On a 24×24px icon, a 5% scale increase is only 1.2 pixels of growth. My mouse moved
+                            over the button and... nothing seemed to happen.</p>
+                        <p class="mt-1">I showed Prof. Teeters and said, "Can I just make the scale bigger? Like 1.2
+                            instead of 1.05?" She shook her head. "That's 20% growth, HAP. You'd be violating the micro
+                            constraint we just learned! Micro means micro — 2 to 5 percent maximum."</p>
+                        <p class="mt-1">She taught me two ways to solve this without breaking constraints:</p>
+                        <ol class="mt-1">
+                            <li><strong>Increase icon base size:</strong> 48×48px makes 5% scale = 2.4px growth (much more
+                                visible than 1.2px)</li>
+                            <li><strong>Compound micro effects:</strong> Add a SECOND subtle effect (color preview) that
+                                combines with scale for visibility</li>
+                        </ol>
+                        <p class="mt-1"><strong>Key insight:</strong> When one micro effect is too subtle, don't make it
+                            bigger — add another micro effect! Each stays within constraints, but together they create clear
+                            feedback.</p>
+                    </div>
+
+                    <div class="solution-section mt-3">
+                        <h4>Step 2: Enhanced solution (compound effects approach)</h4>
+                        <p class="mb-2">This solution fixes the visibility problem while keeping ALL effects within micro
+                            constraints. This is what the working demo below demonstrates!</p>
+
+                        <div class="prompt-box mt-2">
+                            <div class="prompt-label">Enhanced CSS solution</div>
+                            <pre><code class="language-css">/* CSS custom properties for clean color management */
+:root {
+  --heart-gray: hsl(0, 0%, 60%);
+  --heart-red: hsl(0, 73%, 50%);
+  --heart-red-hover: hsl(0, 73%, 60%);  /* NEW: Hover preview color */
+}
+
+/* Like button base (same as basic) */
+.like-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  transform: scale(1);
+  transition: transform 300ms ease-out;
+}
+
+/* Hover: Still 1.05 scale (micro constraint ✓) */
+.like-button:hover {
+  transform: scale(1.05);
+  /* Combining with color preview below */
+}
+
+/* Focus state for keyboard accessibility */
+.like-button:focus {
+  outline: 2px solid hsl(32, 76%, 63%);
+  outline-offset: 2px;
+}
+
+/* Heart icon default state */
+.heart-icon {
+  transition: fill 300ms ease-out;
+}
+
+/* Target the path for CSS fill control */
+.heart-icon path {
+  fill: var(--heart-gray);
+}
+
+/* NEW: Hover preview - SECOND micro effect for compound visibility */
+.like-button:hover .heart-icon path {
+  fill: var(--heart-red-hover);
+  /* Subtle color shift (gray→light red) + scale = clearly visible! */
+}
+
+/* Liked state: full red + bounce (same as basic) */
+.like-button.liked .heart-icon {
+  fill: var(--heart-red);
+  animation: heartBounce 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.like-button.liked .heart-icon path {
+  fill: var(--heart-red);
+}
+
+/* Bounce animation (same as basic) */
+@keyframes heartBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1.1); }
+}
+
+/* Accessibility (same as basic) */
+@media (prefers-reduced-motion: reduce) {
+  .like-button {
+    transition: none;
+  }
+  .like-button.liked .heart-icon {
+    animation: none;
+  }
+}</code></pre>
+                        </div>
+
+                        <p class="mt-2"><strong>What's different from basic:</strong></p>
+                        <ul class="mt-1">
+                            <li>CSS custom properties for maintainable colors</li>
+                            <li>Path selector (`.heart-icon path`) for precise SVG fill control</li>
+                            <li><strong>Color preview on hover</strong> — the key enhancement that creates compound visibility
+                            </li>
+                            <li>Recommended: Use 48×48px icon (makes 5% scale more visible)</li>
+                        </ul>
+                    </div>
+
+                    <div class="like-button-demo-container mt-3">
+                        <h4>🎯 Try HAP's solution: Click the heart!</h4>
+                        <p>Feel the satisfaction! Hover to see the subtle scale (1.05) and color preview, then click for
+                            the gentle bounce. Click again to unlike! Notice how combining micro effects creates visibility.</p>
+                        <button type="button" class="like-button-demo" aria-label="Like this content">
+                            <svg class="heart-icon-demo" width="48" height="48" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="prompt-box mt-3">
                         <div class="prompt-label">JavaScript for toggle functionality</div>
                         <pre><code class="language-javascript">// Simple toggle on click
 document.querySelector('.like-button').addEventListener('click', function() {
@@ -1058,20 +1353,41 @@ document.querySelector('.like-button').addEventListener('click', function() {
 });</code></pre>
                     </div>
 
-                    <h4 class="mt-3">Why this solution works</h4>
+                    <h4 class="mt-3">🎓 What you learned from this progression</h4>
+
+                    <p><strong>Basic solution taught you:</strong> How to meet exact requirements with proper micro
+                        constraints, reduced-motion support, and transform-based animations.</p>
+
+                    <p class="mt-1"><strong>Enhanced solution taught you:</strong></p>
                     <ul class="mt-1">
-                        <li><strong>Restraint in hover:</strong> 1.05 scale is subtle — just enough to say "I'm interactive" without screaming</li>
-                        <li><strong>Purpose is clear:</strong> Provides feedback (heart fills, bounce confirms action)</li>
-                        <li><strong>Gentle bounce:</strong> The cubic-bezier creates a satisfying overshoot without being excessive</li>
-                        <li><strong>Smart animation timing:</strong> Bounce only happens on click (liked state), not on hover</li>
-                        <li><strong>Performance:</strong> Using transform and fill (not layout properties)</li>
-                        <li><strong>Accessibility:</strong> Focus outline for keyboard users, reduced-motion support</li>
-                        <li><strong>Inline SVG benefit:</strong> Can directly animate fill property with CSS</li>
+                        <li><strong>Compound effects strategy:</strong> When one micro effect is too subtle, don't make it
+                            bigger — add a second micro effect! Scale (5%) + color shift (subtle) = clearly visible</li>
+                        <li><strong>Icon size matters:</strong> Larger base size (48×48px) makes the same percentage growth
+                            more noticeable (2.4px vs 1.2px) without violating constraints</li>
+                        <li><strong>Professional problem-solving:</strong> Real development is iteration — start working,
+                            identify problems, enhance without breaking constraints</li>
+                        <li><strong>CSS custom properties:</strong> Maintainable color system with semantic names makes code
+                            clean and reusable</li>
+                        <li><strong>Path selector precision:</strong> Targeting `.heart-icon path` gives precise SVG fill
+                            control for animations</li>
                     </ul>
 
-                    <p class="mt-2"><strong>Prof. Teeters' note:</strong> The sweet spot is scale(1.2) at 50%. Try changing it to scale(1.5) and you'll see it becomes too aggressive. Try scale(1.1) and it feels flat. This is why Prof. Teeters always says: feel it, don't just see it. Micro-interactions are about finding that perfect balance!</p>
+                    <p class="mt-2"><strong>Prof. Teeters' key lesson:</strong> The enhanced solution demonstrates the most
+                        important principle of micro-interactions — <strong>restraint through composition</strong>. Instead
+                        of making one effect bigger (violating constraints), we combined multiple small effects that each
+                        stay within limits but together create unmistakable feedback. This is how professional UX designers
+                        solve the "visible but still micro" challenge!</p>
 
-                    <p class="mt-2"><strong>HAP's final encouragement:</strong> Now experiment! Change the bounce amount. Try different cubic-bezier curves from Station 3. Try adding a subtle rotation. Make it your own, but remember: micro means micro. Restraint is power, and subtle is professional! 🟠</p>
+                    <p class="mt-2"><strong>The bounce sweet spot:</strong> Notice that scale(1.2) at 50% feels just right.
+                        Try changing it to scale(1.5) — too aggressive! Try scale(1.1) — feels flat. This is why Prof.
+                        Teeters always says: feel it, don't just see it. Micro-interactions are about finding that perfect
+                        balance through experimentation.</p>
+
+                    <p class="mt-2"><strong>HAP's final encouragement:</strong> You now have TWO tools in your toolbox —
+                        the basic approach for simple needs, and the compound effects approach for better visibility. Start
+                        with basic, then enhance if needed. Both are valid! Now experiment with the enhanced version. Try
+                        different cubic-bezier curves from Station 3. Try adding a subtle rotation. Make it your own, but
+                        remember: micro means micro. Restraint through composition is power! 🟠</p>
                 </div>
             </div>
         </section>
@@ -1286,7 +1602,7 @@ document.querySelector('.like-button').addEventListener('click', function() {
             if (toggleButton && solutionContent) {
                 let isFirstReveal = true;
 
-                toggleButton.addEventListener('click', function() {
+                toggleButton.addEventListener('click', function () {
                     const isHidden = solutionContent.style.display === 'none';
                     solutionContent.style.display = isHidden ? 'block' : 'none';
                     toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
@@ -1413,9 +1729,22 @@ document.querySelector('.like-button').addEventListener('click', function() {
             const hamburgerButton = document.querySelector('.hamburger-button-demo');
 
             if (hamburgerButton) {
-                hamburgerButton.addEventListener('click', function() {
+                hamburgerButton.addEventListener('click', function () {
                     const isOpen = this.classList.toggle('open');
                     this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+        });
+    </script>
+
+    <!-- Demo 6: Like button demo functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const likeButton = document.querySelector('.like-button-demo');
+
+            if (likeButton) {
+                likeButton.addEventListener('click', function () {
+                    this.classList.toggle('liked');
                 });
             }
         });

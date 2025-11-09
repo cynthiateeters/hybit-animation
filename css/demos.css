@@ -5,6 +5,19 @@
    This file is loaded after style.css for demo components.
    ============================================================================ */
 
+/* CSS Custom Properties for Demos
+   ================================= */
+:root {
+    --heart-gray: hsl(0, 0%, 60%);
+    /* Unhovered/unliked state */
+    --heart-red: hsl(0, 73%, 50%);
+    /* Liked state */
+    --heart-red-hover: hsl(0, 73%, 60%);
+    /* Hover preview */
+    --warm-orange: hsl(32, 76%, 63%);
+    --very-dark-brown: hsl(25, 42%, 17%);
+}
+
 /* Three-Column Animation Comparison Demo
    ========================================= */
 
@@ -48,10 +61,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: hsl(32, 76%, 63%);
-    color: hsl(25, 42%, 17%);
-    ;
-    color: hsl(0, 0%, 100%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     transform: scale(1);
 }
 
@@ -113,12 +124,12 @@
 /* Focus states for accessibility */
 .button-instant:focus-visible,
 .button-smooth:focus-visible {
-    outline: 3px solid hsl(32, 76%, 63%);
+    outline: 3px solid var(--warm-orange);
     outline-offset: 3px;
 }
 
 .demo-column input[type="checkbox"]:focus-visible {
-    outline: 3px solid hsl(32, 76%, 63%);
+    outline: 3px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -137,10 +148,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: hsl(32, 76%, 63%);
+    background: var(--warm-orange);
     color: white;
-    color: hsl(25, 42%, 17%);
-    font-weight: bold;
+    color: var(--very-dark-brown) font-weight: bold;
     transition: transform 300ms ease-out;
 }
 
@@ -158,8 +168,7 @@
     align-items: center;
     justify-content: center;
     color: white;
-    color: hsl(25, 42%, 17%);
-    font-weight: bold;
+    color: var(--very-dark-brown) font-weight: bold;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -197,16 +206,15 @@
     align-items: center;
     justify-content: center;
     color: white;
-    color: hsl(25, 42%, 17%);
-    font-weight: bold;
+    color: var(--very-dark-brown) font-weight: bold;
     font-size: 0.875rem;
     transition: transform 300ms ease-out;
     cursor: pointer;
 }
 
 .scale-demo-box-1 {
-    background: hsl(32, 76%, 63%);
-    color: hsl(25, 42%, 17%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown)
 }
 
 .scale-demo-box-1:hover {
@@ -298,10 +306,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: hsl(32, 76%, 63%);
+    background: var(--warm-orange);
     color: white;
-    color: hsl(25, 42%, 17%);
-    font-weight: bold;
+    color: var(--very-dark-brown) font-weight: bold;
     font-size: 0.75rem;
     position: absolute;
 }
@@ -379,7 +386,7 @@
     margin-top: 1.5rem;
     padding: 1rem;
     background: hsl(32, 76%, 95%);
-    border-left: 4px solid hsl(32, 76%, 63%);
+    border-left: 4px solid var(--warm-orange);
     border-radius: 4px;
 }
 
@@ -417,9 +424,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
-    color: hsl(25, 42%, 17%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     margin-bottom: 0.75rem;
 }
 
@@ -513,9 +519,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
-    color: hsl(25, 42%, 17%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     transform: scale(1);
     margin-bottom: 1rem;
 }
@@ -613,9 +618,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
-    color: hsl(25, 42%, 17%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     transform: scale(1);
     transition: transform 300ms ease-out,
         background 300ms ease-out;
@@ -683,12 +687,12 @@
 .duration-demo-button:focus-visible,
 .property-demo-button:focus-visible,
 .reduced-motion-demo-button:focus-visible {
-    outline: 3px solid hsl(32, 76%, 63%);
+    outline: 3px solid var(--warm-orange);
     outline-offset: 3px;
 }
 
 .reduced-motion-toggle input[type="checkbox"]:focus-visible {
-    outline: 3px solid hsl(32, 76%, 63%);
+    outline: 3px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -725,9 +729,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
-    color: hsl(25, 42%, 17%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     transform: scale(1);
     margin-bottom: 0.75rem;
 }
@@ -829,9 +832,8 @@
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
-    color: hsl(25, 42%, 17%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     transform: scale(1);
     margin-bottom: 0.75rem;
 }
@@ -921,9 +923,8 @@
 
 /* Brand personality timing */
 .brand-energetic {
-    background: hsl(32, 76%, 63%);
-    color: hsl(25, 42%, 17%);
-    transition: transform 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown) transition: transform 250ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .brand-professional {
@@ -994,7 +995,7 @@
 .timing-demo-button:focus-visible,
 .custom-curves-button:focus-visible,
 .brand-demo-button:focus-visible {
-    outline: 3px solid hsl(32, 76%, 63%);
+    outline: 3px solid var(--warm-orange);
     outline-offset: 3px;
 }
 
@@ -1014,7 +1015,7 @@
 .button-states-demo h4 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: hsl(32, 76%, 45%);
+    color: var(--very-dark-brown);
     font-size: 1.1rem;
 }
 
@@ -1023,9 +1024,33 @@
     color: hsl(0, 0%, 30%);
 }
 
+.demo-button-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.demo-note {
+    font-size: 0.9rem;
+    color: hsl(0, 0%, 40%);
+    margin-top: 1rem;
+}
+
+.solution-section {
+    border-left: 4px solid var(--warm-orange);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.solution-section h4 {
+    color: var(--very-dark-brown);
+    margin-bottom: 0.5rem;
+}
+
 .micro-button-demo {
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     padding: 0.75rem 1.5rem;
     border: none;
     border-radius: 4px;
@@ -1049,7 +1074,7 @@
 }
 
 .micro-button-demo:focus-visible {
-    outline: 2px solid hsl(32, 76%, 63%);
+    outline: 2px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -1071,7 +1096,7 @@
 .form-feedback-demo h4 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: hsl(32, 76%, 45%);
+    color: var(--very-dark-brown);
     font-size: 1.1rem;
 }
 
@@ -1097,7 +1122,7 @@
 
 .form-demo-input:focus {
     outline: none;
-    border-color: hsl(32, 76%, 63%);
+    border-color: var(--warm-orange);
 }
 
 .form-demo-field.input-success .form-demo-input {
@@ -1149,8 +1174,8 @@
 .form-demo-validate-btn {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
+    background: var(--warm-orange);
+    color: var(--very-dark-brown);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -1164,7 +1189,7 @@
 }
 
 .form-demo-validate-btn:focus-visible {
-    outline: 2px solid hsl(32, 76%, 63%);
+    outline: 2px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -1210,7 +1235,7 @@
 .toggle-demo h4 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: hsl(32, 76%, 45%);
+    color: var(--very-dark-brown);
     font-size: 1.1rem;
 }
 
@@ -1270,8 +1295,8 @@
 }
 
 .checkbox-demo-input:checked + .custom-checkbox-demo {
-    background: hsl(32, 76%, 63%);
-    border-color: hsl(32, 76%, 63%);
+    background: var(--warm-orange);
+    border-color: var(--warm-orange);
 }
 
 .checkbox-demo-input:checked + .custom-checkbox-demo .checkmark {
@@ -1280,7 +1305,7 @@
 }
 
 .checkbox-demo-input:focus-visible + .custom-checkbox-demo {
-    outline: 2px solid hsl(32, 76%, 63%);
+    outline: 2px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -1318,7 +1343,7 @@
 }
 
 .switch-demo-input:checked + .toggle-switch-demo {
-    background: hsl(32, 76%, 63%);
+    background: var(--warm-orange);
 }
 
 .switch-demo-input:checked + .toggle-switch-demo .toggle-circle-demo {
@@ -1326,7 +1351,7 @@
 }
 
 .switch-demo-input:focus-visible + .toggle-switch-demo {
-    outline: 2px solid hsl(32, 76%, 63%);
+    outline: 2px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -1358,7 +1383,7 @@
 .hamburger-demo h4 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: hsl(32, 76%, 45%);
+    color: var(--very-dark-brown);
     font-size: 1.1rem;
 }
 
@@ -1377,11 +1402,11 @@
 }
 
 .hamburger-button-demo:hover {
-    border-color: hsl(32, 76%, 63%);
+    border-color: var(--warm-orange);
 }
 
 .hamburger-button-demo:focus-visible {
-    outline: 2px solid hsl(32, 76%, 63%);
+    outline: 2px solid var(--warm-orange);
     outline-offset: 2px;
 }
 
@@ -1447,7 +1472,7 @@
 .loading-demo h4 {
     margin-top: 0;
     margin-bottom: 1rem;
-    color: hsl(32, 76%, 45%);
+    color: var(--very-dark-brown);
     font-size: 1.1rem;
 }
 
@@ -1465,7 +1490,7 @@
 .loading-dot-demo {
     width: 12px;
     height: 12px;
-    background: hsl(32, 76%, 63%);
+    background: var(--warm-orange);
     border-radius: 50%;
     animation: dotBounce 1.4s infinite ease-out;
 }
@@ -1487,12 +1512,103 @@
     }
 
     40% {
-        transform: translateY(-12px);
+        transform: translateY(-10px);
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
     .loading-dot-demo {
+        animation: none;
+    }
+}
+
+/* Demo 6: Like Button Demo (Exercise Solution) */
+.like-button-demo-container {
+    background: hsl(0, 0%, 98%);
+    border: 2px solid hsl(32, 76%, 85%);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.like-button-demo-container h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--very-dark-brown);
+    font-size: 1.1rem;
+}
+
+.like-button-demo-container p {
+    margin-bottom: 1.5rem;
+    color: hsl(0, 0%, 30%);
+}
+
+.like-button-demo {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transform: scale(1);
+    transition: transform 300ms ease-out;
+}
+
+.like-button-demo:hover {
+    transform: scale(1.05);
+    /* 5% scale - micro constraint + 48px icon = visible */
+}
+
+.like-button-demo:focus-visible {
+    outline: 2px solid var(--warm-orange);
+    outline-offset: 2px;
+}
+
+.heart-icon-demo {
+    transition: fill 300ms ease-out;
+}
+
+/* Default fill for the path */
+.heart-icon-demo path {
+    fill: var(--heart-gray);
+}
+
+/* Hover state: preview the red color */
+.like-button-demo:hover .heart-icon-demo path {
+    fill: var(--heart-red-hover);
+}
+
+/* Liked state: solid red + bounce animation */
+.like-button-demo.liked .heart-icon-demo {
+    fill: var(--heart-red);
+    /* Keep for compatibility */
+    animation: heartBounceDemo 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.like-button-demo.liked .heart-icon-demo path {
+    fill: var(--heart-red);
+}
+
+@keyframes heartBounceDemo {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .like-button-demo {
+        transition: none;
+    }
+
+    .like-button-demo.liked .heart-icon-demo {
         animation: none;
     }
 }
