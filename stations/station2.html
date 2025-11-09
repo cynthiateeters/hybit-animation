@@ -52,7 +52,12 @@
                 </div>
             </div>
             <div class="intro-box">
-                <p><strong>Welcome to Station 2!</strong> In Station 1, my transforms happened instantly — click, and the element just snapped to its new position. Then Prof. Teeters showed me a button with smooth color changes, and I watched it fade from orange to darker orange over a fraction of a second. My mind was completely blown! She explained that transitions are what make transforms feel smooth instead of jarring. One line of CSS code turned my choppy interfaces into polished, professional animations. This is where everything I learned in Station 1 comes alive! 🔬</p>
+                <p><strong>Welcome to Station 2!</strong> In Station 1, my transforms happened instantly — click, and
+                    the element just snapped to its new position. Then Prof. Teeters showed me a button with smooth
+                    color changes, and I watched it fade from orange to darker orange over a fraction of a second. My
+                    mind was completely blown! She explained that transitions are what make transforms feel smooth
+                    instead of jarring. One line of CSS code turned my choppy interfaces into polished, professional
+                    animations. This is where everything I learned in Station 1 comes alive! 🔬</p>
             </div>
         </div>
     </header>
@@ -75,7 +80,11 @@
                     <h3><span class="insight-icon">↔️</span> Transitions animate state changes</h3>
                     <p class="stat-large">Two states</p>
                     <p><strong>Start state → End state, automatically smoothed</strong></p>
-                    <p>I was amazed at how simple the syntax is! Prof. Teeters showed me that transitions work between a starting state and an ending state — like a button's normal appearance versus its hover state. Once you set up the transition property, the browser automatically creates all the in-between frames. No JavaScript required, no complex animation libraries, just one line of CSS. The automatic interpolation felt like magic!</p>
+                    <p>I was amazed at how simple the syntax is! Prof. Teeters showed me that transitions work between a
+                        starting state and an ending state — like a button's normal appearance versus its hover state.
+                        Once you set up the transition property, the browser automatically creates all the in-between
+                        frames. No JavaScript required, no complex animation libraries, just one line of CSS. The
+                        automatic interpolation felt like magic!</p>
                 </div>
 
                 <!-- Insight Card 2: Speed Matters More Than You Think -->
@@ -83,7 +92,11 @@
                     <h3><span class="insight-icon">⚡</span> Speed matters more than you think</h3>
                     <p class="stat-large stat-teal">250-500ms</p>
                     <p><strong>UI animations should be fast and snappy</strong></p>
-                    <p>I made my first button transition 2 seconds long, thinking more animation would be impressive. Prof. Teeters watched me hover over it, waited through the agonizingly slow color change, and just started laughing. She taught me that anything over 1 second feels sluggish for user interface animations. The sweet spot is 250 to 500 milliseconds — fast enough to feel responsive, slow enough to see the change happen.</p>
+                    <p>I made my first button transition 2 seconds long, thinking more animation would be impressive.
+                        Prof. Teeters watched me hover over it, waited through the agonizingly slow color change, and
+                        just started laughing. She taught me that anything over 1 second feels sluggish for user
+                        interface animations. The sweet spot is 250 to 500 milliseconds — fast enough to feel
+                        responsive, slow enough to see the change happen.</p>
                 </div>
 
                 <!-- Insight Card 3: Never Transition All Properties -->
@@ -91,7 +104,12 @@
                     <h3><span class="insight-icon">🎯</span> Never transition all properties</h3>
                     <p class="stat-large stat-brown">Be specific</p>
                     <p><strong>Transition: all is convenient but causes performance problems</strong></p>
-                    <p>Prof. Teeters has a strict rule about this with absolutely no exceptions. Using <code>transition: all</code> is tempting because it's convenient, but it animates every property that changes — even invisible ones you didn't intend to animate. This creates janky animations on slower devices, especially budget phones. I learned to always list the exact properties I want to transition. The extra typing is worth the smooth performance!</p>
+                    <p>Prof. Teeters has a strict rule about this with absolutely no exceptions. Using
+                        <code>transition: all</code> is tempting because it's convenient, but it animates every property
+                        that changes — even invisible ones you didn't intend to animate. This creates janky animations
+                        on slower devices, especially budget phones. I learned to always list the exact properties I
+                        want to transition. The extra typing is worth the smooth performance!
+                    </p>
                 </div>
             </div>
 
@@ -102,7 +120,13 @@
                     decoding="async" loading="lazy">
                 <div class="hap-note-content">
                     <h3>HAP's confession: I thought more animation was always better</h3>
-                    <p>When I first learned about transitions, I went absolutely wild. I made everything transition — buttons, text, borders, shadows, even properties that probably shouldn't animate at all. I created a fade effect that lasted 3 seconds because I thought it looked "cinematic." Prof. Teeters patiently watched my demo, then explained that I was thinking about animation backwards. The goal isn't to show off what CSS can do — it's to make interfaces feel responsive and natural. She taught me that subtle and fast beats slow and showy every single time. Restraint is harder than excess, but it's what separates professional animations from amateur ones!</p>
+                    <p>When I first learned about transitions, I went absolutely wild. I made everything transition —
+                        buttons, text, borders, shadows, even properties that probably shouldn't animate at all. I
+                        created a fade effect that lasted 3 seconds because I thought it looked "cinematic." Prof.
+                        Teeters patiently watched my demo, then explained that I was thinking about animation backwards.
+                        The goal isn't to show off what CSS can do — it's to make interfaces feel responsive and
+                        natural. She taught me that subtle and fast beats slow and showy every single time. Restraint is
+                        harder than excess, but it's what separates professional animations from amateur ones!</p>
                 </div>
             </div>
         </section>
@@ -112,19 +136,29 @@
             <div class="topic-section">
                 <h2>Introduction to CSS transitions</h2>
 
-                <p class="mb-2">Transitions are the simplest way to add smooth animation to CSS. They automatically animate property values between two states over a specified duration. No JavaScript required, no complex animation libraries — just one line of CSS tells the browser to smoothly interpolate values instead of changing them instantly.</p>
+                <p class="mb-2">Transitions are the simplest way to add smooth animation to CSS. They automatically
+                    animate property values between two states over a specified duration. No JavaScript required, no
+                    complex animation libraries — just one line of CSS tells the browser to smoothly interpolate values
+                    instead of changing them instantly.</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>What transitions are</h3>
                         <p><strong>Smooth animation between two states</strong></p>
-                        <p>Transitions work by detecting when a CSS property value changes — like when you hover over a button and its background color changes. Instead of snapping instantly to the new value, the browser calculates all the in-between values and creates a smooth animation. The starting state and ending state are automatic; you just control the duration and which properties to animate.</p>
+                        <p>Transitions work by detecting when a CSS property value changes — like when you hover over a
+                            button and its background color changes. Instead of snapping instantly to the new value, the
+                            browser calculates all the in-between values and creates a smooth animation. The starting
+                            state and ending state are automatic; you just control the duration and which properties to
+                            animate.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>How transitions work</h3>
                         <p><strong>Browser automatically calculates in-between values</strong></p>
-                        <p>When a property changes, the browser looks at the old value and the new value, then gradually changes from one to the other over the time you specified. This process is called interpolation. For colors, it blends between shades. For transforms, it smoothly moves through intermediate positions. The browser handles all the math automatically!</p>
+                        <p>When a property changes, the browser looks at the old value and the new value, then gradually
+                            changes from one to the other over the time you specified. This process is called
+                            interpolation. For colors, it blends between shades. For transforms, it smoothly moves
+                            through intermediate positions. The browser handles all the math automatically!</p>
                     </div>
                 </div>
 
@@ -139,7 +173,9 @@
   background: hsl(32, 76%, 53%);
   /* Smoothly transitions from lighter to darker orange */
 }</code></pre>
-                    <p class="code-comment mt-1">The <code>transition</code> property goes on the base state (not the hover state). This tells the browser: "When background changes, animate it over 300 milliseconds." That's all you need for smooth color changes!</p>
+                    <p class="code-comment mt-1">The <code>transition</code> property goes on the base state (not the
+                        hover state). This tells the browser: "When background changes, animate it over 300
+                        milliseconds." That's all you need for smooth color changes!</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -148,7 +184,15 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's first experience with smooth transitions</h3>
-                        <p>I was building a simple button interface for Prof. Teeters, and every time I hovered over a button, the color would just snap from one shade to another. Click, instant change. It worked, but it felt jarring and cheap. Then Prof. Teeters added one line — <code>transition: background 300ms;</code> — and suddenly the same button felt completely different. The color smoothly faded from light orange to darker orange when I hovered. I must have hovered over that button 20 times in a row, just watching the smooth animation happen. Prof. Teeters smiled and said, "That's the difference between functional and polished." I finally understood why smooth changes matter so much!</p>
+                        <p>I was building a simple button interface for Prof. Teeters, and every time I hovered over a
+                            button, the color would just snap from one shade to another. Click, instant change. It
+                            worked, but it felt jarring and cheap. Then Prof. Teeters added one line —
+                            <code>transition: background 300ms;</code> — and suddenly the same button felt completely
+                            different. The color smoothly faded from light orange to darker orange when I hovered. I
+                            must have hovered over that button 20 times in a row, just watching the smooth animation
+                            happen. Prof. Teeters smiled and said, "That's the difference between functional and
+                            polished." I finally understood why smooth changes matter so much!
+                        </p>
                     </div>
                 </div>
 
@@ -181,21 +225,32 @@
   /* Smoothly transitions to new values — feels polished */
 }</code></pre>
 
-                    <p class="mt-1">Prof. Teeters taught me that the only difference between these two buttons is the transition property. Same hover states, same property changes, but one feels mechanical and the other feels responsive. Users can actually <em>see</em> the change happening with transitions, which creates a connection between their action (hovering) and the result (visual change).</p>
+                    <p class="mt-1">Prof. Teeters taught me that the only difference between these two buttons is the
+                        transition property. Same hover states, same property changes, but one feels mechanical and the
+                        other feels responsive. Users can actually <em>see</em> the change happening with transitions,
+                        which creates a connection between their action (hovering) and the result (visual change).</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-waving_dgzacg.jpg"
-                        alt="HAP waving" width="150" height="150" class="hap-note-image"
-                        decoding="async" loading="lazy">
+                        alt="HAP waving" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's simplicity revelation</h3>
-                        <p>When Prof. Teeters first told me we were going to learn animations, I expected complex code with lots of moving parts. I thought we'd need JavaScript libraries, complicated timelines, and dozens of lines of code for even simple effects. But then she showed me that transitions are just <em>one CSS property</em>. I kept asking, "But where's the rest of the code? Where do we define the in-between states?" She explained that the browser handles all of that automatically. All I had to do was say which property to animate and how long it should take. That's when I realized that good animation doesn't require complexity — it just requires knowing which simple tool to use!</p>
+                        <p>When Prof. Teeters first told me we were going to learn animations, I expected complex code
+                            with lots of moving parts. I thought we'd need JavaScript libraries, complicated timelines,
+                            and dozens of lines of code for even simple effects. But then she showed me that transitions
+                            are just <em>one CSS property</em>. I kept asking, "But where's the rest of the code? Where
+                            do we define the in-between states?" She explained that the browser handles all of that
+                            automatically. All I had to do was say which property to animate and how long it should
+                            take. That's when I realized that good animation doesn't require complexity — it just
+                            requires knowing which simple tool to use!</p>
                     </div>
                 </div>
 
                 <h3 class="mt-2">Common use cases for transitions</h3>
-                <p class="mb-2">Transitions work best for simple state changes where you have a clear starting point and ending point. Here are the most common situations where I use them:</p>
+                <p class="mb-2">Transitions work best for simple state changes where you have a clear starting point and
+                    ending point. Here are the most common situations where I use them:</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
@@ -226,28 +281,42 @@
             <div class="topic-section">
                 <h2>Duration and property selection</h2>
 
-                <p class="mb-2">Getting transitions right comes down to two critical decisions: how long should they last, and which properties should animate. I learned both of these lessons through spectacular failures — a 2-second button that felt like watching paint dry, and a phone that stuttered because I animated everything at once!</p>
+                <p class="mb-2">Getting transitions right comes down to two critical decisions: how long should they
+                    last, and which properties should animate. I learned both of these lessons through spectacular
+                    failures — a 2-second button that felt like watching paint dry, and a phone that stuttered because I
+                    animated everything at once!</p>
 
                 <h3 class="mt-2">Understanding duration: How long is just right?</h3>
-                <p class="mb-2">Duration controls how long the transition takes from start to finish. You can specify it in milliseconds (ms) or seconds (s), but Prof. Teeters taught me to always use milliseconds for consistency. The duration you choose completely changes how the animation feels!</p>
+                <p class="mb-2">Duration controls how long the transition takes from start to finish. You can specify it
+                    in milliseconds (ms) or seconds (s), but Prof. Teeters taught me to always use milliseconds for
+                    consistency. The duration you choose completely changes how the animation feels!</p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>The sweet spot: 250-500ms</h3>
                         <p><strong>Fast enough to feel responsive, slow enough to see</strong></p>
-                        <p>This range works for most UI animations. Buttons, links, hover states, menu items — if you're unsure about duration, start with 300ms. Prof. Teeters calls it the "default duration" because it works in almost every situation. It's fast enough that users don't feel like they're waiting, but slow enough that the motion is visible and smooth.</p>
+                        <p>This range works for most UI animations. Buttons, links, hover states, menu items — if you're
+                            unsure about duration, start with 300ms. Prof. Teeters calls it the "default duration"
+                            because it works in almost every situation. It's fast enough that users don't feel like
+                            they're waiting, but slow enough that the motion is visible and smooth.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>Too fast: 100ms and under</h3>
                         <p><strong>Barely noticeable on many screens</strong></p>
-                        <p>At 100ms, the transition happens so quickly that users might not even register it as motion. It feels almost instant, which defeats the purpose of smooth transitions. Prof. Teeters explained that animations this fast only work for very subtle effects where you want a hint of motion without drawing attention.</p>
+                        <p>At 100ms, the transition happens so quickly that users might not even register it as motion.
+                            It feels almost instant, which defeats the purpose of smooth transitions. Prof. Teeters
+                            explained that animations this fast only work for very subtle effects where you want a hint
+                            of motion without drawing attention.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>Too slow: 1000ms (1 second) and above</h3>
                         <p><strong>Feels sluggish and frustrating</strong></p>
-                        <p>Anything over 1 second makes users feel like they're waiting for the interface to catch up with them. For UI elements, slow animations communicate "loading" or "processing," not polish. Prof. Teeters has a strict rule: if an animation makes you tap your fingers waiting for it to finish, it's too slow!</p>
+                        <p>Anything over 1 second makes users feel like they're waiting for the interface to catch up
+                            with them. For UI elements, slow animations communicate "loading" or "processing," not
+                            polish. Prof. Teeters has a strict rule: if an animation makes you tap your fingers waiting
+                            for it to finish, it's too slow!</p>
                     </div>
                 </div>
 
@@ -272,7 +341,9 @@
 .button-ridiculous {
   transition: background 2000ms;
 }</code></pre>
-                    <p class="code-comment mt-1">Prof. Teeters taught me to hover over each of these durations to feel the difference. The 300ms version feels polished and professional. The 2000ms version feels like a joke!</p>
+                    <p class="code-comment mt-1">Prof. Teeters taught me to hover over each of these durations to feel
+                        the difference. The 300ms version feels polished and professional. The 2000ms version feels like
+                        a joke!</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -281,7 +352,15 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's 2-second button disaster</h3>
-                        <p>When I first learned about transitions, I thought "more animation equals more impressive." I created a button with a 2-second background color transition because I wanted people to really <em>see</em> the effect happening. I was so proud of it! I showed it to Prof. Teeters, hovering over the button and watching the excruciatingly slow color fade. She didn't say anything at first — she just watched the entire 2-second transition happen, then started laughing. "HAP," she said, "that's not polished, that's paint drying." She changed it to 300ms and had me hover again. The difference was instant — the button felt responsive instead of broken. I learned that fast beats slow every single time for UI animations. Speed equals polish, not the other way around!</p>
+                        <p>When I first learned about transitions, I thought "more animation equals more impressive." I
+                            created a button with a 2-second background color transition because I wanted people to
+                            really <em>see</em> the effect happening. I was so proud of it! I showed it to Prof.
+                            Teeters, hovering over the button and watching the excruciatingly slow color fade. She
+                            didn't say anything at first — she just watched the entire 2-second transition happen, then
+                            started laughing. "HAP," she said, "that's not polished, that's paint drying." She changed
+                            it to 300ms and had me hover again. The difference was instant — the button felt responsive
+                            instead of broken. I learned that fast beats slow every single time for UI animations. Speed
+                            equals polish, not the other way around!</p>
                     </div>
                 </div>
 
@@ -298,11 +377,17 @@
   transition: background 0.3s;
   /* Harder to compare and coordinate with JavaScript */
 }</code></pre>
-                    <p class="code-comment mt-1">JavaScript uses milliseconds for timing (like <code>setTimeout(fn, 300)</code>), so using milliseconds in CSS makes coordination easier. Prof. Teeters taught me that consistency across languages prevents confusion!</p>
+                    <p class="code-comment mt-1">JavaScript uses milliseconds for timing (like
+                        <code>setTimeout(fn, 300)</code>), so using milliseconds in CSS makes coordination easier. Prof.
+                        Teeters taught me that consistency across languages prevents confusion!
+                    </p>
                 </div>
 
                 <h3 class="mt-2">Understanding property selection: Be specific, always</h3>
-                <p class="mb-2">The second critical decision is <strong>which properties to transition</strong>. This is where I made my biggest mistake — using <code>transition: all</code> because it seemed convenient. Prof. Teeters has a strict rule about this with absolutely no exceptions: <strong>Never use transition: all</strong>.</p>
+                <p class="mb-2">The second critical decision is <strong>which properties to transition</strong>. This is
+                    where I made my biggest mistake — using <code>transition: all</code> because it seemed convenient.
+                    Prof. Teeters has a strict rule about this with absolutely no exceptions: <strong>Never use
+                        transition: all</strong>.</p>
 
                 <div class="warning-box mt-2">
                     <h3>🔴 The danger of transition: all</h3>
@@ -335,12 +420,19 @@
 
                     <p class="mt-1"><strong>Why specific properties matter:</strong></p>
                     <ul class="mt-1">
-                        <li><strong>Performance</strong>: <code>transition: all</code> watches every property for changes, even ones you didn't intend to animate. This creates extra work for the browser.</li>
-                        <li><strong>Unexpected animations</strong>: Properties like width, margin, padding might change in ways you didn't expect, causing janky motion.</li>
-                        <li><strong>Mobile suffers</strong>: On slower devices (budget phones), <code>transition: all</code> causes visible stuttering and dropped frames.</li>
-                        <li><strong>Debugging nightmare</strong>: When something animates unexpectedly, you can't tell which property is causing the problem.</li>
+                        <li><strong>Performance</strong>: <code>transition: all</code> watches every property for
+                            changes, even ones you didn't intend to animate. This creates extra work for the browser.
+                        </li>
+                        <li><strong>Unexpected animations</strong>: Properties like width, margin, padding might change
+                            in ways you didn't expect, causing janky motion.</li>
+                        <li><strong>Mobile suffers</strong>: On slower devices (budget phones),
+                            <code>transition: all</code> causes visible stuttering and dropped frames.
+                        </li>
+                        <li><strong>Debugging nightmare</strong>: When something animates unexpectedly, you can't tell
+                            which property is causing the problem.</li>
                     </ul>
-                    <p class="mt-1">Prof. Teeters taught me that the few extra seconds to list specific properties is always worth the smooth performance you get in return!</p>
+                    <p class="mt-1">Prof. Teeters taught me that the few extra seconds to list specific properties is
+                        always worth the smooth performance you get in return!</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -349,7 +441,18 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's transition: all phone stuttering experience</h3>
-                        <p>I built a card component with hover effects — background color change, slight scale transform, and a subtle shadow. I used <code>transition: all 300ms</code> because it was convenient and seemed to work perfectly. On my desktop Mac, it looked smooth and professional. I showed Prof. Teeters my work and she said, "Now test it on this phone." She handed me her budget Android phone, and when I hovered (tapped) on the cards, they stuttered badly. The motion was choppy and janky, nothing like the smooth animation on my Mac. We opened Chrome DevTools to see what was actually animating — turns out the card's width and margin were also being transitioned, even though they weren't changing! The browser was doing extra work watching and interpolating properties I didn't intend to animate. Prof. Teeters had me rewrite it listing only transform, background, and box-shadow. Suddenly the phone was smooth again. That's when I understood why "all" is forbidden — desktop hides performance problems that mobile devices can't!</p>
+                        <p>I built a card component with hover effects — background color change, slight scale
+                            transform, and a subtle shadow. I used <code>transition: all 300ms</code> because it was
+                            convenient and seemed to work perfectly. On my desktop Mac, it looked smooth and
+                            professional. I showed Prof. Teeters my work and she said, "Now test it on this phone." She
+                            handed me her budget Android phone, and when I hovered (tapped) on the cards, they stuttered
+                            badly. The motion was choppy and janky, nothing like the smooth animation on my Mac. We
+                            opened Chrome DevTools to see what was actually animating — turns out the card's width and
+                            margin were also being transitioned, even though they weren't changing! The browser was
+                            doing extra work watching and interpolating properties I didn't intend to animate. Prof.
+                            Teeters had me rewrite it listing only transform, background, and box-shadow. Suddenly the
+                            phone was smooth again. That's when I understood why "all" is forbidden — desktop hides
+                            performance problems that mobile devices can't!</p>
                     </div>
                 </div>
 
@@ -371,25 +474,31 @@
   box-shadow: 0 4px 8px hsla(0, 0%, 0%, 0.15);
   /* All three properties smoothly transition */
 }</code></pre>
-                    <p class="code-comment mt-1">Yes, it's more typing than <code>transition: all</code>. But it's explicit, performant, and works smoothly on all devices. Prof. Teeters says the extra 10 seconds is always worth it!</p>
+                    <p class="code-comment mt-1">Yes, it's more typing than <code>transition: all</code>. But it's
+                        explicit, performant, and works smoothly on all devices. Prof. Teeters says the extra 10 seconds
+                        is always worth it!</p>
                 </div>
 
                 <h3 class="mt-2">🎨 See it in action: Specific vs all comparison</h3>
-                <p class="mb-2">Both buttons below do the same thing (change background and scale on hover), but one uses specific properties and the other uses <code>transition: all</code>. On desktop they might feel similar, but the specific version is more performant, especially on mobile devices!</p>
+                <p class="mb-2">Both buttons below do the same thing (change background and scale on hover), but one
+                    uses specific properties and the other uses <code>transition: all</code>. On desktop they might feel
+                    similar, but the specific version is more performant, especially on mobile devices!</p>
 
                 <div class="property-demo-grid">
                     <div class="property-demo-column recommended">
                         <p class="property-demo-label">✅ Specific properties (RECOMMENDED)</p>
                         <button type="button" class="property-demo-button property-demo-specific">Hover me</button>
                         <p class="property-demo-code"><code>transition: transform 300ms,<br>background 300ms;</code></p>
-                        <p class="property-demo-note">Only animates the two properties that change. Performant on all devices!</p>
+                        <p class="property-demo-note">Only animates the two properties that change. Performant on all
+                            devices!</p>
                     </div>
 
                     <div class="property-demo-column not-recommended">
                         <p class="property-demo-label">❌ All properties (NOT RECOMMENDED)</p>
                         <button type="button" class="property-demo-button property-demo-all">Hover me</button>
                         <p class="property-demo-code"><code>transition: all 300ms;</code></p>
-                        <p class="property-demo-note">Watches ALL properties for changes. Works on desktop but can stutter on budget phones!</p>
+                        <p class="property-demo-note">Watches ALL properties for changes. Works on desktop but can
+                            stutter on budget phones!</p>
                     </div>
                 </div>
 
@@ -399,7 +508,21 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's testing insight</h3>
-                        <p>On my Mac, both buttons feel identical — smooth and professional. But when Prof. Teeters had me test on her budget Android phone, the difference was obvious. The "all" button stuttered slightly, especially when I hovered rapidly. The specific button stayed smooth. Prof. Teeters explained that desktop hardware is so powerful it hides performance problems that slower devices can't. <strong>Always test on real devices, and always be specific!</strong></p>
+                        <p>On my Mac, both buttons feel identical — smooth and professional. But when Prof. Teeters had
+                            me test on her budget Android phone, the difference was obvious. The "all" button stuttered
+                            slightly, especially when I hovered rapidly. The specific button stayed smooth. Prof.
+                            Teeters explained that desktop hardware is so powerful it hides performance problems that
+                            slower devices can't. <strong>Always test on real devices, and always be specific!</strong>
+                        </p>
+                        <h3 class="mt-1">Prof. Teeters' GPU "fast lane"</h3>
+                        <p>I was confused why Prof. Teeters kept saying "use <code>transform</code> and
+                            <code>opacity</code>" for everything. She finally explained: these properties get a special
+                            "fast lane" through the computer's graphics card (GPU). When I animate <code>width</code> or
+                            <code>margin</code> instead, the browser has to recalculate the entire page layout on every
+                            frame — and that stutters on slower devices. I didn't need to understand all the technical
+                            details. The rule was simple: <strong>transform and opacity = smooth; width and height =
+                                janky</strong>. Following this rule made my animations instantly feel more professional!
+                        </p>
                     </div>
                 </div>
 
@@ -409,27 +532,32 @@
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>Buttons and links: 200-300ms</h3>
-                        <p>Fast and responsive. Users interact with these constantly, so animations should be quick. 250ms is the sweet spot for hover effects on buttons.</p>
+                        <p>Fast and responsive. Users interact with these constantly, so animations should be quick.
+                            250ms is the sweet spot for hover effects on buttons.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>Modals and panels: 300-400ms</h3>
-                        <p>Slightly longer for larger elements appearing/disappearing. This gives users time to notice the movement and understand what's happening.</p>
+                        <p>Slightly longer for larger elements appearing/disappearing. This gives users time to notice
+                            the movement and understand what's happening.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>Small UI details: 150-250ms</h3>
-                        <p>Subtle effects like icon rotations, color shifts, or tiny scale changes can be faster. They're small enough that you want just a hint of motion.</p>
+                        <p>Subtle effects like icon rotations, color shifts, or tiny scale changes can be faster.
+                            They're small enough that you want just a hint of motion.</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>When in doubt: 300ms</h3>
-                        <p>Prof. Teeters calls this the "universal duration" because it works in almost every situation. Start here and adjust only if you have a specific reason!</p>
+                        <p>Prof. Teeters calls this the "universal duration" because it works in almost every situation.
+                            Start here and adjust only if you have a specific reason!</p>
                     </div>
                 </div>
 
                 <h3 class="mt-2">🎨 See it in action: Duration comparison</h3>
-                <p class="mb-2">Hover over each button below to feel the difference between durations. The 300ms button is highlighted because it's in the sweet spot for UI animations!</p>
+                <p class="mb-2">Hover over each button below to feel the difference between durations. The 300ms button
+                    is highlighted because it's in the sweet spot for UI animations!</p>
 
                 <div class="duration-demo-grid">
                     <div class="duration-demo-item">
@@ -459,11 +587,15 @@
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-waving_dgzacg.jpg"
-                        alt="HAP waving" width="150" height="150" class="hap-note-image"
-                        decoding="async" loading="lazy">
+                        alt="HAP waving" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's observation</h3>
-                        <p>Prof. Teeters had me hover over the 2000ms button and I literally started laughing — waiting 2 full seconds for a hover effect is absurd! The 300ms button feels instant but still smooth. That's the one I use for almost everything now. The 100ms button is so fast you barely notice the transition happening, and the 1000ms button makes you feel like you're waiting for the interface to catch up. Speed really does equal polish!</p>
+                        <p>Prof. Teeters had me hover over the 2000ms button and I literally started laughing — waiting
+                            2 full seconds for a hover effect is absurd! The 300ms button feels instant but still
+                            smooth. That's the one I use for almost everything now. The 100ms button is so fast you
+                            barely notice the transition happening, and the 1000ms button makes you feel like you're
+                            waiting for the interface to catch up. Speed really does equal polish!</p>
                     </div>
                 </div>
             </div>
@@ -474,22 +606,34 @@
             <div class="topic-section">
                 <h2>Delay, shorthand syntax, and accessibility</h2>
 
-                <p class="mb-2">Now that we understand duration and property selection, there are three more critical pieces to master: transition delay for choreographing multiple animations, the shorthand syntax for writing transitions efficiently, and the absolutely mandatory accessibility pattern that respects user motion preferences.</p>
+                <p class="mb-2">Now that we understand duration and property selection, there are three more critical
+                    pieces to master: transition delay for choreographing multiple animations, the shorthand syntax for
+                    writing transitions efficiently, and the absolutely mandatory accessibility pattern that respects
+                    user motion preferences.</p>
 
                 <h3 class="mt-2">Understanding transition delay</h3>
-                <p class="mb-2">Delay controls how long to wait <em>before</em> the transition starts. It's measured in milliseconds just like duration. When I first learned about delay, I completely misunderstood its purpose — I thought it was for making users wait. Prof. Teeters had to correct that thinking fast!</p>
+                <p class="mb-2">Delay controls how long to wait <em>before</em> the transition starts. It's measured in
+                    milliseconds just like duration. When I first learned about delay, I completely misunderstood its
+                    purpose — I thought it was for making users wait. Prof. Teeters had to correct that thinking fast!
+                </p>
 
                 <div class="analysis-grid">
                     <div class="analysis-point">
                         <h3>What delay is for: Rhythm and choreography</h3>
                         <p><strong>Creating sequential animations, not obstruction</strong></p>
-                        <p>Delay is useful when you want multiple elements to animate in sequence, like menu items appearing one after another with a slight stagger. The delays should be very short (50-100ms) to create rhythm, not long waits. Prof. Teeters taught me that delay is about polish, not punishment!</p>
+                        <p>Delay is useful when you want multiple elements to animate in sequence, like menu items
+                            appearing one after another with a slight stagger. The delays should be very short
+                            (50-100ms) to create rhythm, not long waits. Prof. Teeters taught me that delay is about
+                            polish, not punishment!</p>
                     </div>
 
                     <div class="analysis-point">
                         <h3>What delay is NOT for: Making users wait</h3>
                         <p><strong>Never use delay to slow down interactions</strong></p>
-                        <p>I made the mistake of adding 2-second delays to popup notifications because I thought users needed time to "prepare" for them. Prof. Teeters explained that delays like that just frustrate users. If an element needs to appear, it should appear quickly. Delays are for choreography, not obstruction!</p>
+                        <p>I made the mistake of adding 2-second delays to popup notifications because I thought users
+                            needed time to "prepare" for them. Prof. Teeters explained that delays like that just
+                            frustrate users. If an element needs to appear, it should appear quickly. Delays are for
+                            choreography, not obstruction!</p>
                     </div>
                 </div>
 
@@ -523,7 +667,8 @@
   opacity: 1;
   transform: translateY(0);
 }</code></pre>
-                    <p class="code-comment mt-1">The menu items create a cascading effect with 50ms increments. This adds rhythm without making users wait — the total stagger is only 200ms from first to last!</p>
+                    <p class="code-comment mt-1">The menu items create a cascading effect with 50ms increments. This
+                        adds rhythm without making users wait — the total stagger is only 200ms from first to last!</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
@@ -532,12 +677,24 @@
                         decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's delay misunderstanding: Making users wait</h3>
-                        <p>When Prof. Teeters introduced transition delay, I thought it was for giving users time to prepare for animations. I added a 2-second delay to popup notifications so users could "get ready" for them to appear. I was so proud of being thoughtful about user experience! Prof. Teeters tested my notifications and just stared at the screen, waiting. After what felt like forever, the popup finally appeared. She turned to me and said, "HAP, why did you make me wait 2 seconds to see an error message?" I explained my reasoning about preparation time, and she laughed. "Users don't need preparation — they need speed. Delay is for rhythm, not obstruction." She showed me a menu where items appeared with 50ms delays between them, creating a subtle cascading effect. The entire animation took less than 300ms total, but it felt choreographed and polished. That's when I understood delay is about making multiple things flow together, not making users wait for single things to happen!</p>
+                        <p>When Prof. Teeters introduced transition delay, I thought it was for giving users time to
+                            prepare for animations. I added a 2-second delay to popup notifications so users could "get
+                            ready" for them to appear. I was so proud of being thoughtful about user experience! Prof.
+                            Teeters tested my notifications and just stared at the screen, waiting. After what felt like
+                            forever, the popup finally appeared. She turned to me and said, "HAP, why did you make me
+                            wait 2 seconds to see an error message?" I explained my reasoning about preparation time,
+                            and she laughed. "Users don't need preparation — they need speed. Delay is for rhythm, not
+                            obstruction." She showed me a menu where items appeared with 50ms delays between them,
+                            creating a subtle cascading effect. The entire animation took less than 300ms total, but it
+                            felt choreographed and polished. That's when I understood delay is about making multiple
+                            things flow together, not making users wait for single things to happen!</p>
                     </div>
                 </div>
 
                 <h3 class="mt-2">Transition shorthand syntax: The PDTD order</h3>
-                <p class="mb-2">You can write transitions in shorthand format by listing all four values in a specific order: <strong>Property, Duration, Timing function, Delay</strong>. Prof. Teeters taught me to remember this with the mnemonic "PDTD."</p>
+                <p class="mb-2">You can write transitions in shorthand format by listing all four values in a specific
+                    order: <strong>Property, Duration, Timing function, Delay</strong>. Prof. Teeters taught me to
+                    remember this with the mnemonic "PDTD."</p>
 
                 <div class="prompt-box mt-2">
                     <div class="prompt-label">Shorthand syntax breakdown:</div>
@@ -559,26 +716,40 @@
               background 300ms ease-out,
               opacity 200ms ease-in;
 }</code></pre>
-                    <p class="code-comment mt-1">Property and duration are required. Timing function and delay are optional — if you leave them out, the browser uses defaults (ease timing, 0ms delay).</p>
+                    <p class="code-comment mt-1">Property and duration are required. Timing function and delay are
+                        optional — if you leave them out, the browser uses defaults (ease timing, 0ms delay).</p>
                 </div>
 
                 <div class="hap-note-callout mt-2">
                     <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-waving_dgzacg.jpg"
-                        alt="HAP waving" width="150" height="150" class="hap-note-image"
-                        decoding="async" loading="lazy">
+                        alt="HAP waving" width="150" height="150" class="hap-note-image" decoding="async"
+                        loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's PDTD memory trick</h3>
-                        <p>I kept mixing up the order of shorthand values — sometimes I'd write duration before property, other times I'd put delay before timing. My transitions would either fail silently or behave weirdly, and I couldn't figure out why. Prof. Teeters noticed my confusion and taught me the PDTD mnemonic: <strong>Property Duration Timing Delay</strong>. She made me repeat it out loud: "P-D-T-D, P-D-T-D." Then she explained that you can remember it like talking to a friend: "This PROPERTY takes this DURATION with this TIMING, starting after this DELAY." Once I had the mnemonic, I never mixed up the order again. Now every time I write shorthand syntax, I hear Prof. Teeters' voice saying "P-D-T-D!"</p>
+                        <p>I kept mixing up the order of shorthand values — sometimes I'd write duration before
+                            property, other times I'd put delay before timing. My transitions would either fail silently
+                            or behave weirdly, and I couldn't figure out why. Prof. Teeters noticed my confusion and
+                            taught me the PDTD mnemonic: <strong>Property Duration Timing Delay</strong>. She made me
+                            repeat it out loud: "P-D-T-D, P-D-T-D." Then she explained that you can remember it like
+                            talking to a friend: "This PROPERTY takes this DURATION with this TIMING, starting after
+                            this DELAY." Once I had the mnemonic, I never mixed up the order again. Now every time I
+                            write shorthand syntax, I hear Prof. Teeters' voice saying "P-D-T-D!"</p>
                     </div>
                 </div>
 
                 <h3 class="mt-2">🔴 CRITICAL: Respecting user motion preferences with prefers-reduced-motion</h3>
-                <p class="mb-2">This is the most important part of Station 2. <strong>Every transition you create MUST include the <code>prefers-reduced-motion</code> media query.</strong> This is not optional, not a nice-to-have, and not something you can skip. It's absolutely required for accessibility.</p>
+                <p class="mb-2">This is the most important part of Station 2. <strong>Every transition you create MUST
+                        include the <code>prefers-reduced-motion</code> media query.</strong> This is not optional, not
+                    a nice-to-have, and not something you can skip. It's absolutely required for accessibility.</p>
 
                 <div class="warning-box mt-2">
                     <h3>Why prefers-reduced-motion matters</h3>
-                    <p><strong>Some users experience motion sickness, migraines, or vestibular disorders from animations</strong></p>
-                    <p>Prof. Teeters explained that animations we think are subtle and polished can cause real physical discomfort for some users. People with vestibular disorders can experience nausea, dizziness, or headaches from motion on screen. The good news is that operating systems let users set a "reduce motion" preference, and CSS can detect and respect that preference with a media query!</p>
+                    <p><strong>Some users experience motion sickness, migraines, or vestibular disorders from
+                            animations</strong></p>
+                    <p>Prof. Teeters explained that animations we think are subtle and polished can cause real physical
+                        discomfort for some users. People with vestibular disorders can experience nausea, dizziness, or
+                        headaches from motion on screen. The good news is that operating systems let users set a "reduce
+                        motion" preference, and CSS can detect and respect that preference with a media query!</p>
 
                     <p class="mt-1"><strong>How it works:</strong></p>
                     <ul class="mt-1">
@@ -589,7 +760,9 @@
                         <li>Functionality is preserved, motion is removed</li>
                     </ul>
 
-                    <p class="mt-1"><strong>Prof. Teeters' rule:</strong> Station 1 transforms were instant (no motion), so reduced motion was easy. Station 2 introduces MOTION, which means this query is now mandatory for every single transition. No exceptions!</p>
+                    <p class="mt-1"><strong>Prof. Teeters' rule:</strong> Station 1 transforms were instant (no motion),
+                        so reduced motion was easy. Station 2 introduces MOTION, which means this query is now mandatory
+                        for every single transition. No exceptions!</p>
                 </div>
 
                 <div class="prompt-box mt-2">
@@ -624,7 +797,9 @@
     transition: none !important;
   }
 }</code></pre>
-                    <p class="code-comment mt-1">The first approach (targeting specific elements) gives you fine control. The second approach (global wildcard) is simpler and ensures you never miss an element. Prof. Teeters recommends the global approach for most projects!</p>
+                    <p class="code-comment mt-1">The first approach (targeting specific elements) gives you fine
+                        control. The second approach (global wildcard) is simpler and ensures you never miss an element.
+                        Prof. Teeters recommends the global approach for most projects!</p>
                 </div>
 
                 <div class="prompt-box mt-2">
@@ -641,12 +816,14 @@
                             <li>Elements should still work — they just change instantly instead of smoothly</li>
                             <li>Switch back to "no-preference" to see transitions return</li>
                         </ol>
-                        <p class="mt-1">Prof. Teeters taught me to test EVERY page with this setting before considering it done. This is part of the workflow, not an optional check!</p>
+                        <p class="mt-1">Prof. Teeters taught me to test EVERY page with this setting before considering
+                            it done. This is part of the workflow, not an optional check!</p>
                     </div>
                 </div>
 
                 <h3 class="mt-2">🎨 See it in action: Reduced motion toggle</h3>
-                <p class="mb-2">This demo simulates what happens when a user enables reduced motion in their system settings. Toggle the checkbox below to see the button transition turn on and off instantly!</p>
+                <p class="mb-2">This demo simulates what happens when a user enables reduced motion in their system
+                    settings. Toggle the checkbox below to see the button transition turn on and off instantly!</p>
 
                 <div class="reduced-motion-demo-container" id="reducedMotionDemoContainer">
                     <div class="reduced-motion-demo-content">
@@ -661,7 +838,8 @@
                         </div>
 
                         <div class="reduced-motion-status motion-on" id="motionStatus">
-                            <strong>Status:</strong> Transitions are <strong>enabled</strong> — button smoothly animates on hover
+                            <strong>Status:</strong> Transitions are <strong>enabled</strong> — button smoothly animates
+                            on hover
                         </div>
                     </div>
                 </div>
@@ -672,8 +850,22 @@
                         class="hap-note-image" decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's accessibility awakening: The moment Station 2 got serious</h3>
-                        <p>In Station 1, accessibility was relatively straightforward — transforms happened instantly, so there was no motion to cause problems. I learned about semantic HTML, ARIA labels, and keyboard navigation, but it felt manageable. Then in Station 2, Prof. Teeters introduced transitions and everything changed. She sat me down and explained that the smooth animations I was so excited about could make some users physically sick. People with vestibular disorders experience real nausea and dizziness from motion on screen. I felt terrible — I'd been so focused on making things look polished that I hadn't considered the harm animations could cause!</p>
-                        <p class="mt-1">Prof. Teeters showed me the <code>prefers-reduced-motion</code> media query and made me promise to include it in every transition from that point forward. We tested my buttons with reduced motion enabled, and they worked perfectly — still changed color and scale, just instantly instead of smoothly. The functionality was completely preserved! That's when I understood that accessibility doesn't mean sacrificing features — it means making features work for everyone. Now I test every transition with DevTools' reduced motion setting before I consider my work done. Station 2 taught me that creating motion means taking responsibility for that motion!</p>
+                        <p>In Station 1, accessibility was relatively straightforward — transforms happened instantly,
+                            so there was no motion to cause problems. I learned about semantic HTML, ARIA labels, and
+                            keyboard navigation, but it felt manageable. Then in Station 2, Prof. Teeters introduced
+                            transitions and everything changed. She sat me down and explained that the smooth animations
+                            I was so excited about could make some users physically sick. People with vestibular
+                            disorders experience real nausea and dizziness from motion on screen. I felt terrible — I'd
+                            been so focused on making things look polished that I hadn't considered the harm animations
+                            could cause!</p>
+                        <p class="mt-1">Prof. Teeters showed me the <code>prefers-reduced-motion</code> media query and
+                            made me promise to include it in every transition from that point forward. We tested my
+                            buttons with reduced motion enabled, and they worked perfectly — still changed color and
+                            scale, just instantly instead of smoothly. The functionality was completely preserved!
+                            That's when I understood that accessibility doesn't mean sacrificing features — it means
+                            making features work for everyone. Now I test every transition with DevTools' reduced motion
+                            setting before I consider my work done. Station 2 taught me that creating motion means
+                            taking responsibility for that motion!</p>
                     </div>
                 </div>
             </div>
@@ -690,13 +882,17 @@
                         class="hap-note-image" decoding="async" loading="lazy">
                     <div class="hap-note-content">
                         <h3>HAP's learning moment</h3>
-                        <p>Prof. Teeters always gives me challenges after teaching new concepts. She says reading code is helpful, but writing code is where real learning happens. This exercise combines everything from Station 2: duration, property selection, shorthand syntax, and the mandatory accessibility pattern. Take your time and experiment!</p>
+                        <p>Prof. Teeters always gives me challenges after teaching new concepts. She says reading code
+                            is helpful, but writing code is where real learning happens. This exercise combines
+                            everything from Station 2: duration, property selection, shorthand syntax, and the mandatory
+                            accessibility pattern. Take your time and experiment!</p>
                     </div>
                 </div>
 
                 <div class="warning-box mt-2">
                     <h3>🎯 Your challenge</h3>
-                    <p><strong>Create a button with smooth hover transitions that respects user motion preferences.</strong></p>
+                    <p><strong>Create a button with smooth hover transitions that respects user motion
+                            preferences.</strong></p>
 
                     <p class="mt-1"><strong>Requirements:</strong></p>
                     <ul class="mt-1">
@@ -723,12 +919,16 @@
                         <summary class="hint-summary">Need a hint? Click to expand</summary>
                         <div class="hint-content">
                             <h3>HAP's hints for solving this</h3>
-                            <p><strong>Step 1:</strong> Start with the base button state — set background and transform properties</p>
-                            <p><strong>Step 2:</strong> Add transition property listing BOTH properties (transform and background) with 300ms duration and ease-out timing</p>
+                            <p><strong>Step 1:</strong> Start with the base button state — set background and transform
+                                properties</p>
+                            <p><strong>Step 2:</strong> Add transition property listing BOTH properties (transform and
+                                background) with 300ms duration and ease-out timing</p>
                             <p><strong>Step 3:</strong> Create hover state changing both background and transform</p>
-                            <p><strong>Step 4:</strong> Add the <code>@media (prefers-reduced-motion: reduce)</code> query setting <code>transition: none;</code></p>
+                            <p><strong>Step 4:</strong> Add the <code>@media (prefers-reduced-motion: reduce)</code>
+                                query setting <code>transition: none;</code></p>
                             <p><strong>Remember:</strong> Transition goes on the base state, NOT the hover state!</p>
-                            <p><strong>Remember:</strong> Use PDTD order (Property Duration Timing Delay), but delay is optional</p>
+                            <p><strong>Remember:</strong> Use PDTD order (Property Duration Timing Delay), but delay is
+                                optional</p>
                         </div>
                     </details>
                 </div>
@@ -765,15 +965,25 @@
 
                         <div class="hap-note-callout mt-2">
                             <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_150,c_limit/v1759495998/hap-waving_dgzacg.jpg"
-                                alt="HAP waving" width="150" height="150" class="hap-note-image"
-                                decoding="async" loading="lazy">
+                                alt="HAP waving" width="150" height="150" class="hap-note-image" decoding="async"
+                                loading="lazy">
                             <div class="hap-note-content">
                                 <h3>Why this solution works</h3>
-                                <p><strong>Property selection:</strong> We listed transform and background specifically instead of using <code>transition: all</code>. This is performant and prevents unexpected animations.</p>
-                                <p class="mt-1"><strong>Duration choice:</strong> 300ms is in the sweet spot (250-500ms) for UI animations — fast enough to feel responsive, slow enough to see the motion.</p>
-                                <p class="mt-1"><strong>Shorthand syntax:</strong> We followed PDTD order (Property Duration Timing Delay), omitting delay since we don't need it. The browser uses default delay of 0ms.</p>
-                                <p class="mt-1"><strong>Accessibility:</strong> The <code>prefers-reduced-motion</code> query turns off transitions while preserving functionality. Users with motion sensitivity still get a working button!</p>
-                                <p class="mt-1"><strong>Prof. Teeters' feedback:</strong> "Perfect! This is exactly how transitions should be written — specific properties, fast duration, and always respecting user preferences."</p>
+                                <p><strong>Property selection:</strong> We listed transform and background specifically
+                                    instead of using <code>transition: all</code>. This is performant and prevents
+                                    unexpected animations.</p>
+                                <p class="mt-1"><strong>Duration choice:</strong> 300ms is in the sweet spot (250-500ms)
+                                    for UI animations — fast enough to feel responsive, slow enough to see the motion.
+                                </p>
+                                <p class="mt-1"><strong>Shorthand syntax:</strong> We followed PDTD order (Property
+                                    Duration Timing Delay), omitting delay since we don't need it. The browser uses
+                                    default delay of 0ms.</p>
+                                <p class="mt-1"><strong>Accessibility:</strong> The <code>prefers-reduced-motion</code>
+                                    query turns off transitions while preserving functionality. Users with motion
+                                    sensitivity still get a working button!</p>
+                                <p class="mt-1"><strong>Prof. Teeters' feedback:</strong> "Perfect! This is exactly how
+                                    transitions should be written — specific properties, fast duration, and always
+                                    respecting user preferences."</p>
                             </div>
                         </div>
 
@@ -785,11 +995,15 @@
                                     <li>Change duration to 100ms — does it feel too fast?</li>
                                     <li>Change duration to 1000ms — does it feel sluggish?</li>
                                     <li>Add a third property like <code>box-shadow</code> to the transition</li>
-                                    <li>Try different timing functions (<code>ease-in</code>, <code>ease</code>, <code>linear</code>)</li>
+                                    <li>Try different timing functions (<code>ease-in</code>, <code>ease</code>,
+                                        <code>linear</code>)
+                                    </li>
                                     <li>Add a small delay (50ms) and see how it feels</li>
                                     <li>Test with DevTools reduced motion setting every time!</li>
                                 </ul>
-                                <p class="mt-1">Prof. Teeters taught me that experimenting with different values helps you build intuition for what "feels right." There's no substitute for hands-on practice!</p>
+                                <p class="mt-1">Prof. Teeters taught me that experimenting with different values helps
+                                    you build intuition for what "feels right." There's no substitute for hands-on
+                                    practice!</p>
                             </div>
                         </div>
                     </div>
@@ -807,7 +1021,10 @@
                     <div class="tip-number">1</div>
                     <div>
                         <h3>Fast beats slow for UI</h3>
-                        <p>UI transitions should be 250 to 500 milliseconds. Faster feels more responsive and professional. Anything over 1 second feels sluggish and frustrating. Prof. Teeters taught me that when in doubt, go faster. My 2-second button transition was ridiculous — 300ms is the sweet spot for most interface animations.</p>
+                        <p>UI transitions should be 250 to 500 milliseconds. Faster feels more responsive and
+                            professional. Anything over 1 second feels sluggish and frustrating. Prof. Teeters taught me
+                            that when in doubt, go faster. My 2-second button transition was ridiculous — 300ms is the
+                            sweet spot for most interface animations.</p>
                     </div>
                 </div>
 
@@ -816,7 +1033,10 @@
                     <div class="tip-number">2</div>
                     <div>
                         <h3>Never use transition all</h3>
-                        <p>Always list specific properties to transition. Using <code>transition: all</code> causes performance problems — it works fine on desktop but stutters on phones. Being specific prevents unexpected animations and keeps performance smooth. Prof. Teeters has a strict rule about this with no exceptions. The extra typing is worth it!</p>
+                        <p>Always list specific properties to transition. Using <code>transition: all</code> causes
+                            performance problems — it works fine on desktop but stutters on phones. Being specific
+                            prevents unexpected animations and keeps performance smooth. Prof. Teeters has a strict rule
+                            about this with no exceptions. The extra typing is worth it!</p>
                     </div>
                 </div>
 
@@ -825,7 +1045,10 @@
                     <div class="tip-number">3</div>
                     <div>
                         <h3>Use milliseconds for consistency</h3>
-                        <p>Both milliseconds and seconds work in CSS, but milliseconds are recommended for clarity. JavaScript uses milliseconds too, so matching helps when coordinating animations. 300ms is clearer than 0.3s when you're reading code. It's easier to compare durations and has become the industry standard practice.</p>
+                        <p>Both milliseconds and seconds work in CSS, but milliseconds are recommended for clarity.
+                            JavaScript uses milliseconds too, so matching helps when coordinating animations. 300ms is
+                            clearer than 0.3s when you're reading code. It's easier to compare durations and has become
+                            the industry standard practice.</p>
                     </div>
                 </div>
 
@@ -834,7 +1057,11 @@
                     <div class="tip-number">4</div>
                     <div>
                         <h3>Always include reduced motion query</h3>
-                        <p>Every transition needs the <code>prefers-reduced-motion</code> media query. This is not optional — it's absolutely required. Some users experience motion sickness from animations, and CSS can detect and respect their system preference. Turn off transitions when motion is reduced. Elements still work, they just change instantly instead of smoothly. Test with Chrome DevTools every time!</p>
+                        <p>Every transition needs the <code>prefers-reduced-motion</code> media query. This is not
+                            optional — it's absolutely required. Some users experience motion sickness from animations,
+                            and CSS can detect and respect their system preference. Turn off transitions when motion is
+                            reduced. Elements still work, they just change instantly instead of smoothly. Test with
+                            Chrome DevTools every time!</p>
                     </div>
                 </div>
             </div>
@@ -850,7 +1077,9 @@
                     class="hap-note-image" decoding="async" loading="lazy">
                 <div class="hap-note-content">
                     <h3>Check your understanding before Station 3</h3>
-                    <p>Prof. Teeters taught me to master the fundamentals before moving forward. Make sure you can do all of these before heading to Station 3 where we'll learn about timing functions and make our animations flow even more naturally!</p>
+                    <p>Prof. Teeters taught me to master the fundamentals before moving forward. Make sure you can do
+                        all of these before heading to Station 3 where we'll learn about timing functions and make our
+                        animations flow even more naturally!</p>
                 </div>
             </div>
 
@@ -927,8 +1156,8 @@
                             <li>Know that specific properties perform better than all</li>
                             <li>Understand that some properties are slower to animate</li>
                             <li>Recognize that desktop performance differs from mobile</li>
-                            <li>Aware that Station 3 will cover this deeper</li>
-                            <li>Ready to learn about GPU versus CPU animation</li>
+                            <li>Understand the "fast lane" rule: transform and opacity are smoothest</li>
+                            <li>Ready to master timing curves and DevTools workflow in Station 3</li>
                         </ul>
                     </div>
                 </div>
@@ -948,7 +1177,8 @@
     <footer class="footer">
         <p><strong>HAP's Learning Lab</strong> | An AI-Enhanced Educational Experience by Prof. Cynthia Teeters</p>
         <p class="footer-reminder readable-width">
-            Fast animations (250-500ms), specific properties (never all), and always include prefers-reduced-motion — that's what Prof. Teeters taught me about smooth transitions! 🔬 — HAP
+            Fast animations (250-500ms), specific properties (never all), and always include prefers-reduced-motion —
+            that's what Prof. Teeters taught me about smooth transitions! 🔬 — HAP
         </p>
         <div class="footer-copyright">
             <img src="https://res.cloudinary.com/cynthia-teeters/image/upload/f_auto,q_auto,w_80,c_limit/v1759497938/HAP-learner_dvehmt.jpg"
@@ -1019,7 +1249,7 @@
             if (toggleButton && solutionContent) {
                 let isFirstReveal = true;
 
-                toggleButton.addEventListener('click', function() {
+                toggleButton.addEventListener('click', function () {
                     const isHidden = solutionContent.style.display === 'none';
                     solutionContent.style.display = isHidden ? 'block' : 'none';
                     toggleButton.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
@@ -1075,7 +1305,7 @@
         const motionStatus = document.getElementById('motionStatus');
 
         if (reducedMotionCheckbox && reducedMotionContainer && motionStatus) {
-            reducedMotionCheckbox.addEventListener('change', function() {
+            reducedMotionCheckbox.addEventListener('change', function () {
                 if (this.checked) {
                     reducedMotionContainer.classList.add('demo-motion-reduced');
                     motionStatus.classList.remove('motion-on');
