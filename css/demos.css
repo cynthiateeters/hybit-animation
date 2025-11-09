@@ -1655,6 +1655,7 @@
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -1666,7 +1667,7 @@
     margin: 0 auto;
     padding: 0.75rem 1.5rem;
     background: hsl(32, 76%, 63%);
-    color: hsl(0, 0%, 100%);
+    color: var(--very-dark-brown);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -1688,6 +1689,406 @@
 @media (prefers-reduced-motion: reduce) {
     .demo-card {
         animation: none;
-        opacity: 1; /* Appears instantly */
+        opacity: 1;
+        /* Appears instantly */
+    }
+}
+
+/* Demo 2: Animation Controls (Section 3) */
+.animation-controls-demo-container {
+    background: hsl(0, 0%, 98%);
+    border: 2px solid hsl(32, 76%, 85%);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
+
+.demo-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.control-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--very-dark-brown);
+}
+
+.control-group select {
+    padding: 0.5rem;
+    border: 2px solid hsl(32, 76%, 85%);
+    border-radius: 4px;
+    background: hsl(0, 0%, 100%);
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.control-group select:focus {
+    outline: 2px solid hsl(32, 76%, 63%);
+    outline-offset: 2px;
+}
+
+.control-button {
+    padding: 0.5rem 1rem;
+    background: hsl(32, 76%, 63%);
+    color: var(--very-dark-brown);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 200ms ease-out;
+}
+
+.control-button:hover {
+    background: hsl(32, 76%, 55%);
+}
+
+.control-button:focus-visible {
+    outline: 2px solid hsl(32, 76%, 63%);
+    outline-offset: 2px;
+}
+
+.demo-animation-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    background: hsl(0, 0%, 95%);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.animated-box {
+    width: 120px;
+    height: 120px;
+    background: hsl(32, 76%, 63%);
+    color: var(--very-dark-brown);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    animation: pulse 2s ease-in-out 3 normal forwards running;
+}
+
+.animated-box.paused {
+    animation-play-state: paused;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        background: hsl(32, 76%, 63%);
+    }
+
+    50% {
+        transform: scale(1.2);
+        background: hsl(32, 76%, 53%);
+    }
+}
+
+.current-css-display {
+    background: hsl(0, 0%, 100%);
+    border: 2px solid hsl(32, 76%, 85%);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.current-css-display h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--very-dark-brown);
+}
+
+.current-css-display pre {
+    margin: 0;
+}
+
+.current-css-display code {
+    font-size: 0.85rem;
+}
+
+/* Demo 3: Pattern Library (Section 4) */
+.pattern-library-demo-container {
+    background: hsl(0, 0%, 98%);
+    border: 2px solid hsl(32, 76%, 85%);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-top: 1.5rem;
+}
+
+.demo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.demo-header h4 {
+    margin: 0;
+    color: var(--very-dark-brown);
+}
+
+.reduced-motion-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reduced-motion-toggle label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.reduced-motion-toggle input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.pattern-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pattern-category h4 {
+    margin: 0 0 1rem 0;
+    color: var(--very-dark-brown);
+    font-size: 1.1rem;
+}
+
+.pattern-examples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.pattern-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pattern-demo-box {
+    background: hsl(0, 0%, 100%);
+    border: 2px solid hsl(32, 76%, 70%);
+    border-radius: 8px;
+    padding: 1.5rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    color: var(--very-dark-brown);
+}
+
+.replay-pattern-button {
+    padding: 0.5rem 1rem;
+    background: hsl(32, 76%, 63%);
+    color: var(--very-dark-brown);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background 200ms ease-out;
+}
+
+.replay-pattern-button:hover {
+    background: hsl(32, 76%, 55%);
+}
+
+.replay-pattern-button:focus-visible {
+    outline: 2px solid hsl(32, 76%, 63%);
+    outline-offset: 2px;
+}
+
+.reduced-motion-status {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: hsl(0, 0%, 100%);
+    border: 2px solid hsl(32, 76%, 85%);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.reduced-motion-status p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Pattern keyframes */
+@keyframes fadeInPattern {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRightPattern {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutPattern {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutRightPattern {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes pulsePattern {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes spinPattern {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Pattern demo classes with animations */
+.entrance-fade {
+    animation: fadeInPattern 400ms ease-out forwards;
+}
+
+.entrance-slide {
+    animation: slideInRightPattern 400ms ease-out forwards;
+}
+
+.exit-fade {
+    animation: fadeOutPattern 300ms ease-in forwards;
+}
+
+.exit-slide {
+    animation: slideOutRightPattern 300ms ease-in forwards;
+}
+
+.attention-pulse {
+    animation: pulsePattern 1.5s ease-in-out 3;
+}
+
+.spinner-demo {
+    width: 40px;
+    height: 40px;
+    border: 4px solid hsl(0, 0%, 90%);
+    border-top-color: hsl(32, 76%, 63%);
+    border-radius: 50%;
+    animation: spinPattern 1s linear infinite;
+}
+
+/* Reduced motion simulation class */
+.pattern-library-demo-container.reduced-motion-active .entrance-fade,
+.pattern-library-demo-container.reduced-motion-active .entrance-slide {
+    animation: none;
+    opacity: 1;
+    transform: none;
+}
+
+.pattern-library-demo-container.reduced-motion-active .exit-fade,
+.pattern-library-demo-container.reduced-motion-active .exit-slide {
+    animation: none;
+    opacity: 0;
+    transform: none;
+}
+
+.pattern-library-demo-container.reduced-motion-active .attention-pulse {
+    animation: none;
+}
+
+.pattern-library-demo-container.reduced-motion-active .spinner-demo {
+    animation: none;
+    border-color: hsl(32, 76%, 63%);
+}
+
+.pattern-library-demo-container.reduced-motion-active .spinner-demo::after {
+    content: 'Loading...';
+    position: absolute;
+    margin-left: 50px;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    color: var(--very-dark-brown);
+}
+
+/* Accessibility: Respect actual reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .animated-box {
+        animation: none;
+        transform: none;
+    }
+
+    .entrance-fade,
+    .entrance-slide {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .exit-fade,
+    .exit-slide {
+        animation: none;
+        opacity: 0;
+        transform: none;
+    }
+
+    .attention-pulse {
+        animation: none;
+    }
+
+    .spinner-demo {
+        animation: none;
     }
 }
